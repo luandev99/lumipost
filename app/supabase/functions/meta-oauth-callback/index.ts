@@ -3,7 +3,7 @@ import { sha256 } from "../_shared/crypto.ts";
 import { getMetaProfile, getRecentMetaMedia } from "../_shared/meta.ts";
 
 const redirect = (path: string, result: "success" | "error", code?: string) => {
-  const safePath = ["/social-accounts", "/brand"].includes(path)
+  const safePath = ["/social-accounts", "/brand", "/onboarding"].includes(path)
     ? path
     : "/social-accounts";
   const destination = new URL(safePath, appUrl());

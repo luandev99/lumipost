@@ -177,7 +177,7 @@ export const updateSocialAccount = createAsyncThunk(
 );
 export const connectInstagram = createAsyncThunk(
   "social/connectInstagram",
-  () => appContainer.connectInstagram(),
+  (returnPath?: string) => appContainer.connectInstagram(returnPath),
 );
 export const disconnectInstagram = createAsyncThunk(
   "social/disconnectInstagram",

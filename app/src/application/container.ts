@@ -248,8 +248,8 @@ export class ApplicationContainer {
       );
     return this.backend.createBillingPortal();
   }
-  async connectInstagram() {
-    if (this.backend) return this.backend.startMetaOAuth("/social-accounts");
+  async connectInstagram(returnPath = "/social-accounts") {
+    if (this.backend) return this.backend.startMetaOAuth(returnPath);
     return { authorizationUrl: "" };
   }
   async disconnectInstagram(socialAccountId: string) {

@@ -1,5 +1,5 @@
 import { useEffect, useState, type FormEvent } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
   ArrowRight,
@@ -305,32 +305,62 @@ function ChoiceGrid({
   );
 }
 
+const ONBOARDING_STEP_KEY = "lumipost:onboarding:step";
+
 export function OnboardingPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
   const user = useAppSelector((state) => state.auth.user);
-  const [step, setStep] = useState(0);
+  const socialAccounts = useAppSelector((state) => state.socialAccounts.items);
+  const instagramAccount = socialAccounts.find(
+    (account) => account.network === "instagram" && account.connected,
+  );
+  const [step, setStep] = useState(() => {
+    const stored = Number(sessionStorage.getItem(ONBOARDING_STEP_KEY));
+    return Number.isFinite(stored) && stored >= 0 && stored <= 5 ? stored : 0;
+  });
   const [brand, setBrand] = useState<BrandProfile>({
     ...defaultBrand,
     brandName: user?.name ? `Marca de ${user.name.split(" ")[0]}` : "",
   });
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   const [saving, setSaving] = useState(false);
   const steps = [
+    "Instagram",
     "Sua marca",
     "Seu público",
     "Objetivos",
     "Personalidade",
     "Visual",
-    "Instagram",
   ];
+  useEffect(() => {
+    sessionStorage.setItem(ONBOARDING_STEP_KEY, String(step));
+  }, [step]);
+  useEffect(() => {
+    const instagramStatus = new URLSearchParams(location.search).get(
+      "instagram",
+    );
+    if (!instagramStatus) return;
+    if (instagramStatus === "success") {
+      setMessage("Instagram conectado com sucesso.");
+      void dispatch(restoreSession());
+    } else {
+      setError(
+        "Não foi possível conectar o Instagram. Tente novamente.",
+      );
+    }
+    navigate("/onboarding", { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const valid = () => {
-    if (step === 0 && (!brand.brandName || !brand.description))
+    if (step === 1 && (!brand.brandName || !brand.description))
       return "Conte o nome e o que sua marca faz.";
-    if (step === 1 && !brand.audience) return "Descreva seu público.";
-    if (step === 2 && (!brand.goals.length || !brand.contentTypes.length))
+    if (step === 2 && !brand.audience) return "Descreva seu público.";
+    if (step === 3 && (!brand.goals.length || !brand.contentTypes.length))
       return "Escolha objetivos e formatos.";
-    if (step === 3 && (!brand.personality.length || !brand.tone.length))
+    if (step === 4 && (!brand.personality.length || !brand.tone.length))
       return "Escolha personalidade e tom.";
     return "";
   };
@@ -345,6 +375,7 @@ export function OnboardingPage() {
     setSaving(true);
     try {
       await dispatch(completeOnboarding({ userId: user.id, brand })).unwrap();
+      sessionStorage.removeItem(ONBOARDING_STEP_KEY);
       navigate("/assinar");
     } catch (caught) {
       setError(errorText(caught));
@@ -354,9 +385,12 @@ export function OnboardingPage() {
   };
   const startInstagramConnection = async () => {
     setError("");
+    setMessage("");
     setSaving(true);
     try {
-      const { authorizationUrl } = await dispatch(connectInstagram()).unwrap();
+      const { authorizationUrl } = await dispatch(
+        connectInstagram("/onboarding"),
+      ).unwrap();
       if (!authorizationUrl) throw new Error("A conexão com o Instagram não está disponível.");
       window.location.assign(authorizationUrl);
     } catch (caught) {
@@ -390,7 +424,43 @@ export function OnboardingPage() {
       </div>
       <Card className="p-5 sm:p-8">
         <p className="eyebrow mb-2">{steps[step]}</p>
+        {message && (
+          <div className="mb-4">
+            <Notice tone="success">{message}</Notice>
+          </div>
+        )}
         {step === 0 && (
+          <div className="space-y-5">
+            <h1 className="text-2xl font-bold">Conecte seu Instagram</h1>
+            <div className="surface-subtle flex items-center gap-4 p-4">
+              <Instagram className="text-app-primary" />
+              <div className="flex-1">
+                <b className="block text-sm">Conexão oficial da Meta</b>
+                <p className="text-muted mt-1 text-xs">Você entrará no Instagram para autorizar uma conta profissional. A Lumipost não recebe nem armazena sua senha.</p>
+              </div>
+            </div>
+            {instagramAccount ? (
+              <div className="flex items-center gap-3 rounded-2xl border border-green-500/30 bg-green-500/10 p-4 text-sm font-bold text-green-500">
+                <Check size={17} />
+                Conectado como @{instagramAccount.handle}
+              </div>
+            ) : (
+              <button
+                type="button"
+                disabled={saving}
+                onClick={() => void startInstagramConnection()}
+                className="flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl border border-app-border bg-app-surface text-sm font-bold text-app-primary disabled:opacity-60"
+              >
+                <Instagram size={17} />
+                {saving ? "Preparando conexão…" : "Conectar com Instagram"}
+              </button>
+            )}
+            <Notice>
+              Você pode concluir sem conectar agora, mas uma conta profissional será necessária antes de agendar publicações.
+            </Notice>
+          </div>
+        )}
+        {step === 1 && (
           <div className="space-y-4">
             <h1 className="text-2xl font-bold">Vamos conhecer sua marca</h1>
             <Input
@@ -428,7 +498,7 @@ export function OnboardingPage() {
             />
           </div>
         )}
-        {step === 1 && (
+        {step === 2 && (
           <div className="space-y-4">
             <h1 className="text-2xl font-bold">Para quem você cria?</h1>
             <Textarea
@@ -443,7 +513,7 @@ export function OnboardingPage() {
             </p>
           </div>
         )}
-        {step === 2 && (
+        {step === 3 && (
           <div className="space-y-5">
             <h1 className="text-2xl font-bold">O que quer alcançar?</h1>
             <ChoiceGrid
@@ -466,7 +536,7 @@ export function OnboardingPage() {
             </div>
           </div>
         )}
-        {step === 3 && (
+        {step === 4 && (
           <div className="space-y-5">
             <h1 className="text-2xl font-bold">Como sua marca se expressa?</h1>
             <div>
@@ -487,7 +557,7 @@ export function OnboardingPage() {
             </div>
           </div>
         )}
-        {step === 4 && (
+        {step === 5 && (
           <div className="space-y-5">
             <h1 className="text-2xl font-bold">Sua direção visual</h1>
             <label className="surface-subtle flex cursor-pointer items-center gap-4 p-4">
@@ -548,30 +618,6 @@ export function OnboardingPage() {
               <option>Ousado</option>
               <option>Orgânico</option>
             </Select>
-          </div>
-        )}
-        {step === 5 && (
-          <div className="space-y-5">
-            <h1 className="text-2xl font-bold">Conecte seu Instagram</h1>
-            <div className="surface-subtle flex items-center gap-4 p-4">
-              <Instagram className="text-app-primary" />
-              <div className="flex-1">
-                <b className="block text-sm">Conexão oficial da Meta</b>
-                <p className="text-muted mt-1 text-xs">Você entrará no Instagram para autorizar uma conta profissional. A Lumipost não recebe nem armazena sua senha.</p>
-              </div>
-            </div>
-            <button
-              type="button"
-              disabled={saving}
-              onClick={() => void startInstagramConnection()}
-              className="flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl border border-app-border bg-app-surface text-sm font-bold text-app-primary disabled:opacity-60"
-            >
-              <Instagram size={17} />
-              {saving ? "Preparando conexão…" : "Conectar com Instagram"}
-            </button>
-            <Notice>
-              Você pode concluir sem conectar agora, mas uma conta profissional será necessária antes de agendar publicações.
-            </Notice>
           </div>
         )}
         {error && (

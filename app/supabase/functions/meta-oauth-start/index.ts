@@ -13,7 +13,7 @@ import {
 const inputSchema = z
   .object({
     returnPath: z
-      .enum(["/social-accounts", "/brand"])
+      .enum(["/social-accounts", "/brand", "/onboarding"])
       .default("/social-accounts"),
   })
   .strict();
