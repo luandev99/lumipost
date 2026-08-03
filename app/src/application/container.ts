@@ -718,7 +718,8 @@ export class ApplicationContainer {
   }
 
   async confirmWeek(userId: string, weekStart: string, slots: WeeklySlot[]) {
-    if (slots.length < 1 || slots.length > 7)
+    const distinctDays = new Set(slots.map((slot) => slot.date)).size;
+    if (distinctDays < 1 || distinctDays > 7)
       throw new Error("Selecione entre 1 e 7 dias da semana.");
 
     const conflicts = new Set<string>();
