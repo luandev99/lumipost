@@ -497,7 +497,12 @@ export function WeeklyPlanningPage() {
                   variant="secondary"
                   className="w-full"
                   loading={generatingPlan}
-                  disabled={!selectedDays.length || !selectedFormats.length}
+                  disabled={
+                    !selectedDays.length ||
+                    !selectedFormats.length ||
+                    generatingPlan ||
+                    confirming
+                  }
                   onClick={() => void generatePlan()}
                 >
                   <PencilLine size={17} />
@@ -509,7 +514,9 @@ export function WeeklyPlanningPage() {
                   disabled={
                     !selectedDays.length ||
                     !selectedFormats.length ||
-                    !instagramAccount
+                    !instagramAccount ||
+                    generatingPlan ||
+                    confirming
                   }
                   onClick={() => void generateContents()}
                 >
