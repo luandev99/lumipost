@@ -1,0 +1,263 @@
+{
+  "props": {
+    "bgColor1": "#e8f4fc",
+    "bgColor2": "#1a56db",
+    "bgColor3": "#a8d4f5",
+    "textColor1": "#1a56db",
+    "textColor2": "#6b7280",
+    "textColor3": "#8b6914"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "calc(var(--image-width) * 0.3481)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6519)",
+        "height": "var(--image-height-post)"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_grid_pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><path d=\"M 40 0 L 0 0 0 40\" fill=\"none\" stroke=\"{{primary}}\" stroke-width=\"0.5\" opacity=\"0.15\"/></pattern></defs><rect width=\"100%\" height=\"100%\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.035)",
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "fontFamily": "Mosvita",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "textShadow": "none",
+        "verticalAlign": "bottom",
+        "WebkitTextStroke": ""
+      },
+      "zIndex": 2,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.168)",
+        "left": "calc(var(--image-width) * 0.3887)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3993)",
+        "height": "calc(var(--image-height-post) * 0.15)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "headline"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.1194)",
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "fontFamily": "Behind The Nineties",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "verticalAlign": "top"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "30%",
+        "minFontSize": "3%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3305)",
+        "left": "calc(var(--image-width) * 0.3887)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.577)",
+        "height": "calc(var(--image-height-post) * 0.5015)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "subtitle"
+      },
+      "textSplitParts": [
+        {
+          "textStyles": {
+            "textShadow": "none",
+            "borderRadius": "0px",
+            "backgroundColor": "transparent",
+            "WebkitTextStroke": "",
+            "highlightPaddingH": "0px",
+            "highlightPaddingV": "0px"
+          },
+          "wordPercent": 33
+        },
+        {
+          "textStyles": {
+            "fontStyle": "italic",
+            "textShadow": "none"
+          },
+          "wordPercent": 34
+        },
+        {
+          "textStyles": {
+            "textShadow": "none"
+          },
+          "wordPercent": 33
+        }
+      ],
+      "textSplitLayout": "inline"
+    },
+    {
+      "id": "layer_footer_left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.2em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4417)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Footer Left"
+      }
+    },
+    {
+      "id": "layer_footer_right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.2em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.5083)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4417)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Footer Right"
+      }
+    },
+    {
+      "id": "layer_1775049935983_0bbii",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": -1,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "filters": {},
+      "position": {
+        "top": "0",
+        "left": "calc(var(--image-width) * -0.3333)",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "var(--image-height-post)"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal",
+        "locked": true
+      }
+    }
+  ],
+  "packageId": "package-5",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "carousel-2-middle-4",
+  "aspectRatio": "1:1.25",
+  "templateName": "carousel-2-middle-4",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "businessName",
+      "username"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

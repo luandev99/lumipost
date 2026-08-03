@@ -1,0 +1,236 @@
+{
+  "props": {
+    "image": "",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "textFont1": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true
+      }
+    },
+    {
+      "id": "grid-texture",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"45\" height=\"45\" patternUnits=\"userSpaceOnUse\"><path d=\"M45 0 L0 0 0 45\" fill=\"none\" stroke=\"{{c}}\" stroke-width=\"0.4\" opacity=\"0.12\"/></pattern></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Grid",
+        "locked": true
+      }
+    },
+    {
+      "id": "watercolor-blob",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"wc\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><path d=\"M180 320 Q260 290, 340 330 T 470 350 Q530 360, 550 420 T 510 520 Q470 560, 400 550 T 270 510 Q210 480, 190 420 T 180 320 Z\" fill=\"url(#wc)\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Blob",
+        "locked": true
+      }
+    },
+    {
+      "id": "ornate-frame",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"420\" height=\"300\" viewBox=\"0 0 420 300\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"fg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"50%\" stop-color=\"{{c2}}\"/><stop offset=\"100%\" stop-color=\"{{c1}}\"/></linearGradient></defs><rect x=\"20\" y=\"20\" width=\"380\" height=\"260\" stroke=\"url(#fg)\" stroke-width=\"10\" fill=\"none\" opacity=\"0.12\" rx=\"3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "420px",
+        "height": "300px"
+      },
+      "editorMeta": {
+        "name": "Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "88px",
+        "minFontSize": "64px",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "300px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "400px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "0px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "800px",
+        "left": "240px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Image"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 8,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1780px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "imobiliario-02",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "reminder-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "reminder-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "fontFields": [
+      "textFont1"
+    ],
+    "textFields": [
+      "headline"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "bgColor3",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "image",
+      "businessLogo"
+    ],
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "requiredFields": [
+      "headline",
+      "image",
+      "businessLogo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

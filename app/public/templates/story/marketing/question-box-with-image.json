@@ -1,0 +1,358 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Saiba mais",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#d4d4d4",
+    "citation": "Citação",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "subtitle": "Subtítulo",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "afterImage": "",
+    "afterLabel": "Depois",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "beforeImage": "",
+    "beforeLabel": "Antes",
+    "slideNumber": "1",
+    "slidesCount": "5",
+    "businessLogo": "",
+    "businessName": "Usuário",
+    "contentList0": "Item 1",
+    "contentList1": "Item 2",
+    "contentList2": "Item 3",
+    "contentList3": "Item 4",
+    "profilePhoto": "",
+    "businessSlogan": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "neon-top-block",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "480px"
+      },
+      "editorMeta": {
+        "name": "Neon Top Block",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-name-top",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "letterSpacing": "0.05em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "40px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "30px"
+      },
+      "editorMeta": {
+        "name": "Business Name Top",
+        "editable": true,
+        "fieldName": "businessName"
+      }
+    },
+    {
+      "id": "headline-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "64px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.03em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "position": {
+        "top": "100px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "960px",
+        "height": "340px"
+      },
+      "editorMeta": {
+        "name": "Headline",
+        "editable": true,
+        "fieldName": "headline"
+      },
+      "textBehavior": {
+        "autoFit": {
+          "maxFontSize": 64,
+          "minFontSize": 42
+        }
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "filter": "grayscale(100%) contrast(1.2)",
+        "objectFit": "cover"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Imagem",
+        "source": "{{image}}"
+      },
+      "position": {
+        "top": "480px",
+        "left": "0",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Main Image",
+        "editable": true,
+        "fieldName": "image"
+      }
+    },
+    {
+      "id": "subtitle-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.3",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "position": {
+        "top": "1160px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "240px"
+      },
+      "editorMeta": {
+        "name": "Subtitle",
+        "editable": true,
+        "fieldName": "subtitle"
+      },
+      "textBehavior": {
+        "autoFit": {
+          "maxFontSize": 40,
+          "minFontSize": 22
+        }
+      }
+    },
+    {
+      "id": "checkered-bottom-right",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 360 360\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"ckbr\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><rect width=\"20\" height=\"20\" fill=\"{{c1}}\"/><rect x=\"20\" width=\"20\" height=\"20\" fill=\"{{c2}}\"/><rect y=\"20\" width=\"20\" height=\"20\" fill=\"{{c2}}\"/><rect x=\"20\" y=\"20\" width=\"20\" height=\"20\" fill=\"{{c1}}\"/></pattern></defs><rect width=\"360\" height=\"360\" fill=\"url(#ckbr)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1560px",
+        "left": "720px",
+        "type": "absolute",
+        "width": "360px",
+        "height": "360px"
+      },
+      "editorMeta": {
+        "name": "Checkered Bottom Right",
+        "locked": true
+      }
+    },
+    {
+      "id": "grid-line-h1",
+      "type": "container",
+      "styles": {
+        "opacity": "0.25",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "480px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Grid Line H1",
+        "locked": true
+      }
+    },
+    {
+      "id": "grid-line-h2",
+      "type": "container",
+      "styles": {
+        "opacity": "0.25",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "1080px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Grid Line H2",
+        "locked": true
+      }
+    },
+    {
+      "id": "grid-line-v1",
+      "type": "container",
+      "styles": {
+        "opacity": "0.15",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "0",
+        "left": "720px",
+        "type": "absolute",
+        "width": "2px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Grid Line V1",
+        "locked": true
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Imagem",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1820px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Business Logo",
+        "editable": true,
+        "fieldName": "businessLogo"
+      }
+    },
+    {
+      "id": "business-name-bottom",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "letterSpacing": "0.1em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 11,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "1820px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Business Name Bottom",
+        "editable": true,
+        "fieldName": "businessName"
+      }
+    }
+  ],
+  "packageId": "marketing",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "question-box-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "question-box-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "businessName",
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo",
+      "businessName"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

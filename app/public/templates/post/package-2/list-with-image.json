@@ -1,0 +1,223 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "hidden": false,
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1768590581574_5uz1h",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "27px 0px 0px 0px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0526)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2315)",
+        "height": "calc(var(--image-height-post) * 0.1852)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1768590683213_atz7n",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "27px",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0526)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8685)",
+        "height": "calc(var(--image-height-post) * 0.2941)"
+      },
+      "editorMeta": {
+        "name": "Image"
+      }
+    },
+    {
+      "id": "layer_1768590732599_g0mqq",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0593)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.36)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7944)",
+        "height": "calc(var(--image-height-post) * 0.1556)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_1768590778916_83jra",
+      "type": "container",
+      "styles": {
+        "borderRadius": "27px",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 4,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.5244)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8685)",
+        "height": "calc(var(--image-height-post) * 0.3867)"
+      },
+      "editorMeta": {
+        "name": "Content Background"
+      }
+    },
+    {
+      "id": "layer_1768590828042_v31eb",
+      "type": "list-container",
+      "zIndex": 5,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.54)",
+        "left": "calc(var(--image-width) * 0.0935)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.812)",
+        "height": "calc(var(--image-height-post) * 0.3559)"
+      },
+      "editorMeta": {
+        "name": "Lista"
+      },
+      "listConfig": {
+        "columns": 1,
+        "itemGap": "calc(var(--image-width) * 0.040)",
+        "iconSize": "calc(var(--image-width) * 0.055)",
+        "maxItems": 5,
+        "iconColor": "{{bgColor1}}",
+        "iconStyle": "check-circle",
+        "itemAlign": "center",
+        "textStyles": {
+          "color": "{{textColor2}}",
+          "fontSize": "calc(var(--image-width) * 0.03)",
+          "textAlign": "left",
+          "fontFamily": "{{textFont2}}",
+          "fontWeight": "400",
+          "lineHeight": "1"
+        },
+        "iconTextGap": "calc(var(--image-width) * 0.020)",
+        "startNumber": 1,
+        "iconStrokeWidth": 1,
+        "iconColorSecondary": "{{bgColor2}}",
+        "itemVariablePrefix": "contentList"
+      }
+    },
+    {
+      "id": "layer_1768591069354_dpz3f",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.9244)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7981)",
+        "height": "calc(var(--image-height-post) * 0.0281)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA"
+      }
+    }
+  ],
+  "packageId": "package-2",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-with-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "list-with-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "maxListItems": 5,
+    "textVariables": [
+      "headline",
+      "contentList",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

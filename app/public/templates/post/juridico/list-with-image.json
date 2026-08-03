@@ -1,0 +1,505 @@
+{
+  "props": {
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-giant-text",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"540\" y=\"300\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"320\" font-weight=\"900\" fill=\"{{c1}}\" opacity=\"0.035\" letter-spacing=\"-0.06em\">LISTA</text><text x=\"540\" y=\"780\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"280\" font-weight=\"900\" fill=\"{{c1}}\" opacity=\"0.025\" letter-spacing=\"-0.05em\">TOPICOS</text></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "BG Giant Text",
+        "locked": true
+      }
+    },
+    {
+      "id": "spot-lights",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"sp1\" cx=\"0.15\" cy=\"0.15\" r=\"0.35\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.16\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"sp2\" cx=\"0.85\" cy=\"0.6\" r=\"0.4\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.14\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#sp1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#sp2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Spot Lights",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-curves",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"cG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0.6\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"cN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"12\"/></filter></defs><path d=\"M-50 300 C150 180, 380 420, 540 320 S780 180, 940 300\" stroke=\"url(#cG)\" stroke-width=\"3.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.5\"/><path d=\"M-50 300 C150 180, 380 420, 540 320 S780 180, 940 300\" stroke=\"url(#cG)\" stroke-width=\"3.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.25\" filter=\"url(#cN)\"/><path d=\"M1100 900 C920 820, 680 1000, 540 920 S280 800, 120 900\" stroke=\"url(#cG)\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.45\"/><path d=\"M1100 900 C920 820, 680 1000, 540 920 S280 800, 120 900\" stroke=\"url(#cG)\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.22\" filter=\"url(#cN)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Organic Curves",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "0px"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Main image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "50px",
+        "left": "740px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image (No BG)"
+      }
+    },
+    {
+      "id": "word-overlap",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"420\" height=\"160\" viewBox=\"0 0 420 160\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"wG\" x1=\"0\" y1=\"0\" x2=\"0.6\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"60%\" stop-color=\"{{c1}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0.06\"/></linearGradient></defs><text x=\"20\" y=\"130\" font-family=\"{{f1}}\" font-size=\"140\" font-weight=\"900\" fill=\"url(#wG)\" letter-spacing=\"-0.04em\">DIREITO</text></svg>"
+        }
+      },
+      "position": {
+        "top": "280px",
+        "left": "680px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "160px"
+      },
+      "editorMeta": {
+        "name": "Word Overlap",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "0.95",
+        "letterSpacing": "-0.04em",
+        "verticalAlign": "top"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 0.95
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "80px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "620px",
+        "height": "120px"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "accent-bar",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"120\" height=\"4\" viewBox=\"0 0 120 4\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"abG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"abN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"3\"/></filter></defs><rect width=\"120\" height=\"4\" rx=\"2\" fill=\"url(#abG)\"/><rect width=\"120\" height=\"4\" rx=\"2\" fill=\"url(#abG)\" filter=\"url(#abN)\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "218px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "120px",
+        "height": "4px"
+      },
+      "editorMeta": {
+        "name": "Neon Accent Bar"
+      }
+    },
+    {
+      "id": "list-item-0",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont2}}"
+          },
+          "texts": {
+            "t1": "{{contentList0}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}",
+            "c3": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"860\" height=\"110\" viewBox=\"0 0 860 110\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"iG0\" x1=\"0\" y1=\"0\" x2=\"0.3\" y2=\"0.3\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"iN0\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"5\"/></filter></defs><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG0)\" opacity=\"0.12\"/><circle cx=\"32\" cy=\"55\" r=\"28\" stroke=\"url(#iG0)\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG0)\" opacity=\"0.08\" filter=\"url(#iN0)\"/><path d=\"M22 55 L29 62 L42 48\" stroke=\"{{c3}}\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"90\" y=\"65\" font-family=\"{{f1}}\" font-size=\"22\" font-weight=\"600\" fill=\"{{c3}}\" dominant-baseline=\"middle\">{{t1}}</text></svg>"
+        }
+      },
+      "position": {
+        "top": "460px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "110px"
+      },
+      "editorMeta": {
+        "name": "List Item 1"
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont2}}"
+          },
+          "texts": {
+            "t1": "{{contentList1}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}",
+            "c3": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"860\" height=\"110\" viewBox=\"0 0 860 110\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"iG1\" x1=\"0\" y1=\"0\" x2=\"0.3\" y2=\"0.3\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"iN1\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"5\"/></filter></defs><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG1)\" opacity=\"0.12\"/><circle cx=\"32\" cy=\"55\" r=\"28\" stroke=\"url(#iG1)\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG1)\" opacity=\"0.08\" filter=\"url(#iN1)\"/><path d=\"M22 55 L29 62 L42 48\" stroke=\"{{c3}}\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"90\" y=\"65\" font-family=\"{{f1}}\" font-size=\"22\" font-weight=\"600\" fill=\"{{c3}}\" dominant-baseline=\"middle\">{{t1}}</text></svg>"
+        }
+      },
+      "position": {
+        "top": "580px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "110px"
+      },
+      "editorMeta": {
+        "name": "List Item 2"
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont2}}"
+          },
+          "texts": {
+            "t1": "{{contentList2}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}",
+            "c3": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"860\" height=\"110\" viewBox=\"0 0 860 110\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"iG2\" x1=\"0\" y1=\"0\" x2=\"0.3\" y2=\"0.3\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"iN2\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"5\"/></filter></defs><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG2)\" opacity=\"0.12\"/><circle cx=\"32\" cy=\"55\" r=\"28\" stroke=\"url(#iG2)\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG2)\" opacity=\"0.08\" filter=\"url(#iN2)\"/><path d=\"M22 55 L29 62 L42 48\" stroke=\"{{c3}}\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"90\" y=\"65\" font-family=\"{{f1}}\" font-size=\"22\" font-weight=\"600\" fill=\"{{c3}}\" dominant-baseline=\"middle\">{{t1}}</text></svg>"
+        }
+      },
+      "position": {
+        "top": "700px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "110px"
+      },
+      "editorMeta": {
+        "name": "List Item 3"
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont2}}"
+          },
+          "texts": {
+            "t1": "{{contentList3}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}",
+            "c3": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"860\" height=\"110\" viewBox=\"0 0 860 110\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"iG3\" x1=\"0\" y1=\"0\" x2=\"0.3\" y2=\"0.3\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"iN3\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"5\"/></filter></defs><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG3)\" opacity=\"0.12\"/><circle cx=\"32\" cy=\"55\" r=\"28\" stroke=\"url(#iG3)\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG3)\" opacity=\"0.08\" filter=\"url(#iN3)\"/><path d=\"M22 55 L29 62 L42 48\" stroke=\"{{c3}}\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"90\" y=\"65\" font-family=\"{{f1}}\" font-size=\"22\" font-weight=\"600\" fill=\"{{c3}}\" dominant-baseline=\"middle\">{{t1}}</text></svg>"
+        }
+      },
+      "position": {
+        "top": "820px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "110px"
+      },
+      "editorMeta": {
+        "name": "List Item 4"
+      }
+    },
+    {
+      "id": "list-item-4",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont2}}"
+          },
+          "texts": {
+            "t1": "{{contentList4}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}",
+            "c3": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"860\" height=\"110\" viewBox=\"0 0 860 110\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"iG4\" x1=\"0\" y1=\"0\" x2=\"0.3\" y2=\"0.3\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"iN4\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"5\"/></filter></defs><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG4)\" opacity=\"0.12\"/><circle cx=\"32\" cy=\"55\" r=\"28\" stroke=\"url(#iG4)\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"32\" cy=\"55\" r=\"28\" fill=\"url(#iG4)\" opacity=\"0.08\" filter=\"url(#iN4)\"/><path d=\"M22 55 L29 62 L42 48\" stroke=\"{{c3}}\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"90\" y=\"65\" font-family=\"{{f1}}\" font-size=\"22\" font-weight=\"600\" fill=\"{{c3}}\" dominant-baseline=\"middle\">{{t1}}</text></svg>"
+        }
+      },
+      "position": {
+        "top": "940px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "110px"
+      },
+      "editorMeta": {
+        "name": "List Item 5"
+      }
+    },
+    {
+      "id": "cta-pill-bg",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"360\" height=\"64\" viewBox=\"0 0 360 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"cG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"cN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"9\"/></filter></defs><rect width=\"360\" height=\"64\" rx=\"32\" fill=\"url(#cG)\" opacity=\"0.14\" filter=\"url(#cN)\"/><rect width=\"360\" height=\"64\" rx=\"32\" fill=\"url(#cG)\" opacity=\"0.11\"/><rect x=\"1.5\" y=\"1.5\" width=\"357\" height=\"61\" rx=\"30.5\" stroke=\"url(#cG)\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1080px",
+        "left": "360px",
+        "type": "absolute",
+        "width": "360px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill BG"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1",
+        "letterSpacing": "0.04em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1080px",
+        "left": "360px",
+        "type": "absolute",
+        "width": "360px",
+        "height": "64px"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo-divider",
+      "type": "svg",
+      "zIndex": 9,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1\" viewBox=\"0 0 1080 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"0.5\" x2=\"1000\" y2=\"0.5\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1268px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Logo Divider",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1282px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "52px"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "juridico",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-with-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "list-with-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "props": {
+    "ctaText": "SAIBA MAIS",
+    "bgColor1": "#1a2e1a",
+    "bgColor2": "#d4af37",
+    "bgColor3": "#2d4a2d",
+    "headline": "O Segredo Para Multiplicar Seu Patrimonio",
+    "subtitle": "Aprenda estrategias comprovadas para fazer seu dinheiro trabalhar por voce e conquistar a liberdade financeira.",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#f5f0e6",
+    "textColor2": "#d4af37",
+    "textColor3": "#ffffff",
+    "preheadline": "EDUCACAO FINANCEIRA"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "inner-frame",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"40\" width=\"1000\" height=\"1270\" rx=\"24\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Inner Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-elements",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"100\" cy=\"1160\" r=\"70\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.28\"/><circle cx=\"100\" cy=\"1160\" r=\"48\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.22\"/><text x=\"100\" y=\"1176\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"44\" fill=\"{{c1}}\" opacity=\"0.38\">$</text><circle cx=\"260\" cy=\"1250\" r=\"52\" stroke=\"{{c2}}\" stroke-width=\"2\" fill=\"{{c2}}\" fill-opacity=\"0.1\" opacity=\"0.34\"/><text x=\"260\" y=\"1264\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"32\" fill=\"{{c2}}\" opacity=\"0.44\">%</text><circle cx=\"420\" cy=\"1190\" r=\"38\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.2\"/><text x=\"420\" y=\"1200\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"24\" fill=\"{{c1}}\" opacity=\"0.28\">$</text><circle cx=\"940\" cy=\"1140\" r=\"68\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.26\"/><circle cx=\"940\" cy=\"1140\" r=\"46\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.2\"/><text x=\"940\" y=\"1156\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"42\" fill=\"{{c1}}\" opacity=\"0.34\">$</text><circle cx=\"790\" cy=\"1240\" r=\"48\" stroke=\"{{c2}}\" stroke-width=\"2\" fill=\"{{c2}}\" fill-opacity=\"0.08\" opacity=\"0.3\"/><path d=\"M620 1280 L665 1220 L710 1255 L755 1185 L800 1230 L845 1160\" stroke=\"{{c2}}\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.38\"/><rect x=\"580\" y=\"1210\" width=\"18\" height=\"70\" fill=\"{{c2}}\" opacity=\"0.16\"/><rect x=\"608\" y=\"1245\" width=\"18\" height=\"35\" fill=\"{{c2}}\" opacity=\"0.13\"/><rect x=\"636\" y=\"1195\" width=\"18\" height=\"85\" fill=\"{{c2}}\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Decorative Elements",
+        "locked": true
+      }
+    },
+    {
+      "id": "preheadline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "14px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.2",
+        "letterSpacing": "0.15em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{preheadline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "40px"
+      },
+      "fieldName": "preheadline",
+      "editorMeta": {
+        "name": "Preheadline"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "86px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "90px",
+        "minFontSize": "46px",
+        "lineHeightRatio": 1.05
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "260px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "380px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "opacity": "0.85",
+        "fontSize": "21px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "23px",
+        "minFontSize": "16px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "680px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "600px",
+        "height": "110px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"250\" height=\"56\" viewBox=\"0 0 250 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"248\" height=\"54\" rx=\"27\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "700px",
+        "left": "750px",
+        "type": "absolute",
+        "width": "250px",
+        "height": "56px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "13px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "56px",
+        "letterSpacing": "0.1em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "700px",
+        "left": "750px",
+        "type": "absolute",
+        "width": "250px",
+        "height": "56px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    }
+  ],
+  "packageId": "comercio",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-subtitle-and-description-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-subtitle-and-description-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "preheadline",
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

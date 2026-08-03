@@ -1,0 +1,409 @@
+{
+  "props": {
+    "bgColor1": "#0a0a14",
+    "bgColor2": "#6366f1",
+    "bgColor3": "#818cf8",
+    "headline": "Checklist financeiro",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "textColor1": "#ffffff",
+    "textColor2": "#a1a1aa",
+    "textColor3": "#6366f1",
+    "contentList0": "Reserva de emergencia",
+    "contentList1": "Orcamento mensal definido",
+    "contentList2": "Dividas quitadas",
+    "contentList3": "Investimentos diversificados",
+    "contentList4": "Planejamento de aposentadoria"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"60\" height=\"60\" patternUnits=\"userSpaceOnUse\"><path d=\"M 60 0 L 0 0 0 60\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.03em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "280px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "150px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "check-icon-0",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"40\" height=\"40\" rx=\"8\" fill=\"{{c1}}\"/><path d=\"M12 20 L17 25 L28 14\" stroke=\"{{c2}}\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "520px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Check Icon 0",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-0",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "525px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "50px"
+      },
+      "fieldName": "contentList0",
+      "editorMeta": {
+        "name": "List Item 0"
+      }
+    },
+    {
+      "id": "check-icon-1",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"40\" height=\"40\" rx=\"8\" fill=\"{{c1}}\"/><path d=\"M12 20 L17 25 L28 14\" stroke=\"{{c2}}\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "620px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Check Icon 1",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "625px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "50px"
+      },
+      "fieldName": "contentList1",
+      "editorMeta": {
+        "name": "List Item 1"
+      }
+    },
+    {
+      "id": "check-icon-2",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"40\" height=\"40\" rx=\"8\" fill=\"{{c1}}\"/><path d=\"M12 20 L17 25 L28 14\" stroke=\"{{c2}}\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "720px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Check Icon 2",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "725px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "50px"
+      },
+      "fieldName": "contentList2",
+      "editorMeta": {
+        "name": "List Item 2"
+      }
+    },
+    {
+      "id": "check-icon-3",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"40\" height=\"40\" rx=\"8\" fill=\"{{c1}}\"/><path d=\"M12 20 L17 25 L28 14\" stroke=\"{{c2}}\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "820px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Check Icon 3",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "825px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "50px"
+      },
+      "fieldName": "contentList3",
+      "editorMeta": {
+        "name": "List Item 3"
+      }
+    },
+    {
+      "id": "check-icon-4",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"40\" height=\"40\" rx=\"8\" fill=\"{{c1}}\"/><path d=\"M12 20 L17 25 L28 14\" stroke=\"{{c2}}\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "920px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Check Icon 4",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "925px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "50px"
+      },
+      "fieldName": "contentList4",
+      "editorMeta": {
+        "name": "List Item 4"
+      }
+    },
+    {
+      "id": "business-logo",
+      "size": {
+        "width": 140,
+        "height": 70
+      },
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "content": {
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "x": 470,
+        "y": 1850
+      }
+    }
+  ],
+  "packageId": "tecnologia",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "checklist",
+  "aspectRatio": "9:16",
+  "templateName": "checklist",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

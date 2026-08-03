@@ -1,0 +1,213 @@
+{
+  "props": {
+    "bgColor1": "#0a0a14",
+    "bgColor2": "#1a1a2e",
+    "bgColor3": "#6366f1",
+    "mainText": "INVESTIR NÃO É SORTE. É ESTRATÉGIA.",
+    "textColor1": "#ffffff",
+    "textColor2": "#a5b4fc",
+    "textColor3": "#6366f1",
+    "fontFamily1": "Inter",
+    "fontFamily2": "Inter"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "size": {
+        "width": 1080,
+        "height": 1920
+      },
+      "type": "rectangle",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "size": {
+        "width": 1080,
+        "height": 1920
+      },
+      "type": "rectangle",
+      "styles": {
+        "opacity": 0.8,
+        "backgroundSize": "60px 60px",
+        "backgroundImage": "linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px)"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "glow-top",
+      "size": {
+        "width": 800,
+        "height": 400
+      },
+      "type": "ellipse",
+      "styles": {
+        "filter": "blur(120px)",
+        "opacity": 0.08,
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 300
+      }
+    },
+    {
+      "id": "central-circle",
+      "size": {
+        "width": 700,
+        "height": 700
+      },
+      "type": "ellipse",
+      "styles": {
+        "boxShadow": "0 0 80px rgba(99, 102, 241, 0.15)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 800
+      }
+    },
+    {
+      "id": "circle-border",
+      "size": {
+        "width": 720,
+        "height": 720
+      },
+      "type": "ellipse",
+      "styles": {
+        "border": "2px solid rgba(99, 102, 241, 0.2)",
+        "backgroundColor": "transparent"
+      },
+      "position": {
+        "x": 540,
+        "y": 800
+      }
+    },
+    {
+      "id": "business-logo",
+      "size": {
+        "width": 140,
+        "height": 70
+      },
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "content": {
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "x": 470,
+        "y": 1850
+      }
+    },
+    {
+      "id": "main-text",
+      "size": {
+        "width": 580,
+        "height": "auto"
+      },
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "64px",
+        "textAlign": "center",
+        "fontFamily": "{{fontFamily1}}",
+        "fontWeight": "800",
+        "lineHeight": "1.2",
+        "letterSpacing": "2px",
+        "textTransform": "uppercase"
+      },
+      "content": {
+        "text": "{{mainText}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 800
+      }
+    },
+    {
+      "id": "accent-line",
+      "size": {
+        "width": 120,
+        "height": 6
+      },
+      "type": "rectangle",
+      "styles": {
+        "borderRadius": "3px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 1000
+      }
+    },
+    {
+      "id": "decorative-arc",
+      "size": {
+        "width": 900,
+        "height": 300
+      },
+      "type": "path",
+      "styles": {
+        "fill": "none",
+        "stroke": "{{bgColor3}}",
+        "opacity": 0.6,
+        "strokeWidth": "3px"
+      },
+      "content": {
+        "pathData": "M 0 300 Q 450 0 900 300"
+      },
+      "position": {
+        "x": 540,
+        "y": 1450
+      }
+    },
+    {
+      "id": "glow-bottom",
+      "size": {
+        "width": 600,
+        "height": 300
+      },
+      "type": "ellipse",
+      "styles": {
+        "filter": "blur(100px)",
+        "opacity": 0.12,
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 1700
+      }
+    }
+  ],
+  "packageId": "tecnologia",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "main-text-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "main-text-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "mainText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

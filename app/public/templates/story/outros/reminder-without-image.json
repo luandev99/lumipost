@@ -1,0 +1,261 @@
+{
+  "props": {
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-giant-text",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"540\" y=\"1100\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"700\" font-weight=\"900\" fill=\"{{c1}}\" opacity=\"0.025\" letter-spacing=\"-0.08em\">!</text></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "BG Giant Exclamation",
+        "locked": true
+      }
+    },
+    {
+      "id": "spot-lights",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"sp1\" cx=\"0.5\" cy=\"0.5\" r=\"0.55\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.22\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"sp2\" cx=\"0.25\" cy=\"0.82\" r=\"0.35\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.16\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#sp1)\"/><rect width=\"1080\" height=\"1920\" fill=\"url(#sp2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Spot Lights",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-curves",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"cG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"cN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"14\"/></filter></defs><path d=\"M-80 700 C120 520, 340 760, 560 600 S820 400, 1000 580 S1200 880, 1160 980\" stroke=\"url(#cG)\" stroke-width=\"5.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.54\"/><path d=\"M-80 700 C120 520, 340 760, 560 600 S820 400, 1000 580 S1200 880, 1160 980\" stroke=\"url(#cG)\" stroke-width=\"5.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.32\" filter=\"url(#cN)\"/><path d=\"M1140 1280 C980 1420, 820 1260, 680 1360 S480 1520, 360 1400\" stroke=\"url(#cG)\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.48\"/><path d=\"M1140 1280 C980 1420, 820 1260, 680 1360 S480 1520, 360 1400\" stroke=\"url(#cG)\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.26\" filter=\"url(#cN)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Organic Curves Neon",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "110px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "0.94",
+        "letterSpacing": "-0.05em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 8,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "116px",
+        "minFontSize": "64px",
+        "lineHeightRatio": 0.94
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "620px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "680px"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "accent-bars-top",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"320\" height=\"8\" viewBox=\"0 0 320 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"tG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"tN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"5\"/></filter></defs><rect width=\"320\" height=\"8\" rx=\"4\" fill=\"url(#tG)\"/><rect width=\"320\" height=\"8\" rx=\"4\" fill=\"url(#tG)\" filter=\"url(#tN)\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "560px",
+        "left": "380px",
+        "type": "absolute",
+        "width": "320px",
+        "height": "8px"
+      },
+      "editorMeta": {
+        "name": "Neon Accent Bar Top"
+      }
+    },
+    {
+      "id": "accent-bars-bottom",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"320\" height=\"8\" viewBox=\"0 0 320 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"bG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"bN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"5\"/></filter></defs><rect width=\"320\" height=\"8\" rx=\"4\" fill=\"url(#bG)\"/><rect width=\"320\" height=\"8\" rx=\"4\" fill=\"url(#bG)\" filter=\"url(#bN)\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1352px",
+        "left": "380px",
+        "type": "absolute",
+        "width": "320px",
+        "height": "8px"
+      },
+      "editorMeta": {
+        "name": "Neon Accent Bar Bottom"
+      }
+    },
+    {
+      "id": "logo-divider",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1\" viewBox=\"0 0 1080 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"0.5\" x2=\"1000\" y2=\"0.5\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.12\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1790px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Logo Divider",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1814px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "72px"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "outros",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "reminder-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "reminder-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

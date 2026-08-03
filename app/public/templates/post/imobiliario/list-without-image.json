@@ -1,0 +1,408 @@
+{
+  "props": {
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "textFont1": "Kenony",
+    "textFont2": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessLogo": "",
+    "contentList0": "Item 1",
+    "contentList1": "Item 2",
+    "contentList2": "Item 3",
+    "contentList3": "Item 4",
+    "contentList4": "Item 5"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-texture",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><path d=\"M 40 0 L 0 0 0 40\" fill=\"none\" stroke=\"{{c}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Texture",
+        "locked": true
+      }
+    },
+    {
+      "id": "watercolor-blob-1",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M180 220 Q280 180, 380 240 T 520 260 Q 460 380, 320 420 T 180 340 Z\" fill=\"{{c}}\" opacity=\"0.12\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Watercolor Blob 1",
+        "locked": true
+      }
+    },
+    {
+      "id": "watercolor-blob-2",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M720 880 Q820 840, 920 900 T 1000 920 Q 940 1040, 800 1080 T 720 1000 Z\" fill=\"{{c}}\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Watercolor Blob 2",
+        "locked": true
+      }
+    },
+    {
+      "id": "ornate-frame-top",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"200\" viewBox=\"0 0 200 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"200\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"8\" rx=\"4\"/><rect x=\"15\" y=\"15\" width=\"170\" height=\"170\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "40px",
+        "left": "40px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "Ornate Frame Top",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-container",
+      "type": "container",
+      "zIndex": 4,
+      "position": {
+        "top": "360px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "auto"
+      },
+      "editorMeta": {
+        "name": "List Container"
+      }
+    },
+    {
+      "id": "list-item-0",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "• {{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "380px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "auto"
+      },
+      "fieldName": "contentList0",
+      "editorMeta": {
+        "name": "List Item 1"
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "• {{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "480px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "auto"
+      },
+      "fieldName": "contentList1",
+      "editorMeta": {
+        "name": "List Item 2"
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "• {{contentList2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "580px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "auto"
+      },
+      "fieldName": "contentList2",
+      "editorMeta": {
+        "name": "List Item 3"
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "• {{contentList3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "680px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "auto"
+      },
+      "fieldName": "contentList3",
+      "editorMeta": {
+        "name": "List Item 4"
+      }
+    },
+    {
+      "id": "list-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "• {{contentList4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "780px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "auto"
+      },
+      "fieldName": "contentList4",
+      "editorMeta": {
+        "name": "List Item 5"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.2",
+        "borderRadius": "40px",
+        "backgroundColor": "{{textColor1}}"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "960px",
+        "left": "350px",
+        "type": "absolute",
+        "width": "380px",
+        "height": "80px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Button"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 6,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1180px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "100px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "metadata": {
+    "name": "Lista sem Imagem - Psicologia",
+    "tags": [
+      "list",
+      "no-image",
+      "cta",
+      "classical"
+    ],
+    "category": "psychology",
+    "packageId": "pack-universal",
+    "aspectRatio": "4:5",
+    "description": "Template de lista com 5 itens e CTA, sem imagem, estética clássica"
+  },
+  "packageId": "imobiliario",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "list-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "fontFields": [
+      "textFont1",
+      "textFont2"
+    ],
+    "textFields": [
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4",
+      "ctaText"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [],
+    "textVariables": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "requiredFields": [
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4",
+      "ctaText",
+      "businessLogo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

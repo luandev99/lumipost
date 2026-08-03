@@ -1,0 +1,165 @@
+{
+  "props": {
+    "bgColor1": "#1A0533",
+    "bgColor2": "#7B2CBF",
+    "bgColor3": "#FF6B35",
+    "headline": "Não esqueça de fazer sua reserva!",
+    "textFont1": "Montserrat",
+    "textFont2": "Inter",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#E0E0E0",
+    "textColor3": "#FF6B35",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "gradient-overlay",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"glow1\" cx=\"0.5\" cy=\"0.5\" r=\"0.7\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.25\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#glow1)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Gradient Overlay",
+        "locked": true
+      }
+    },
+    {
+      "id": "bell-icon",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"300\" height=\"300\" viewBox=\"0 0 300 300\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M150 30C150 30 150 30 150 30C95 30 50 75 50 130V200L30 230V250H270V230L250 200V130C250 75 205 30 150 30Z\" stroke=\"{{c1}}\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/><path d=\"M115 250C115 270 130 290 150 290C170 290 185 270 185 250\" stroke=\"{{c1}}\" stroke-width=\"12\" stroke-linecap=\"round\" fill=\"none\"/><circle cx=\"150\" cy=\"50\" r=\"15\" fill=\"{{c2}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "550px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "300px"
+      },
+      "editorMeta": {
+        "name": "Bell Icon",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "950px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "300px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1850px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "turismo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "reminder-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "reminder-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

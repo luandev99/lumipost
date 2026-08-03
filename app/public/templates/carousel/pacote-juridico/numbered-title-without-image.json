@@ -1,0 +1,489 @@
+{
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-giant-number",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "variables": {
+            "sn": "{{slideNumber}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"nG\" x1=\"0\" y1=\"0\" x2=\"0.6\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.06\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0.02\"/></linearGradient></defs><text x=\"540\" y=\"820\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"900\" font-weight=\"900\" fill=\"url(#nG)\" letter-spacing=\"-0.06em\">{{sn}}</text></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "BG Giant Number",
+        "locked": true
+      }
+    },
+    {
+      "id": "spot-lights",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"sp1\" cx=\"0.5\" cy=\"0.4\" r=\"0.45\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.15\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"sp2\" cx=\"0.2\" cy=\"0.8\" r=\"0.3\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#sp1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#sp2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Spot Lights",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-curves",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"cG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"cN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"10\"/></filter></defs><path d=\"M-40 300 C100 200, 260 380, 420 280 S640 160, 780 260 S960 380, 1120 280\" stroke=\"url(#cG)\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.45\"/><path d=\"M-40 300 C100 200, 260 380, 420 280 S640 160, 780 260 S960 380, 1120 280\" stroke=\"url(#cG)\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.25\" filter=\"url(#cN)\"/><path d=\"M-40 1050 C120 960, 300 1100, 480 1000 S720 880, 900 1000 S1060 1100, 1120 1020\" stroke=\"url(#cG)\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.35\"/><path d=\"M-40 1050 C120 960, 300 1100, 480 1000 S720 880, 900 1000 S1060 1100, 1120 1020\" stroke=\"url(#cG)\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.18\" filter=\"url(#cN)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Organic Curves",
+        "locked": true
+      }
+    },
+    {
+      "id": "guide-lines",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"0\" x2=\"80\" y2=\"1350\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.06\"/><line x1=\"1000\" y1=\"0\" x2=\"1000\" y2=\"1350\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.06\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Guide Lines",
+        "locked": true
+      }
+    },
+    {
+      "id": "neon-dots",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"dG\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"6\"/></filter></defs><circle cx=\"160\" cy=\"200\" r=\"4\" fill=\"{{c1}}\" opacity=\"0.6\"/><circle cx=\"160\" cy=\"200\" r=\"4\" fill=\"{{c1}}\" opacity=\"0.3\" filter=\"url(#dG)\"/><circle cx=\"920\" cy=\"360\" r=\"3.5\" fill=\"{{c2}}\" opacity=\"0.55\"/><circle cx=\"920\" cy=\"360\" r=\"3.5\" fill=\"{{c2}}\" opacity=\"0.28\" filter=\"url(#dG)\"/><circle cx=\"140\" cy=\"1000\" r=\"4\" fill=\"{{c1}}\" opacity=\"0.5\"/><circle cx=\"140\" cy=\"1000\" r=\"4\" fill=\"{{c1}}\" opacity=\"0.25\" filter=\"url(#dG)\"/><circle cx=\"940\" cy=\"1100\" r=\"3\" fill=\"{{c2}}\" opacity=\"0.5\"/><circle cx=\"940\" cy=\"1100\" r=\"3\" fill=\"{{c2}}\" opacity=\"0.25\" filter=\"url(#dG)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Neon Accent Dots",
+        "locked": true
+      }
+    },
+    {
+      "id": "slide-indicator",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"80\" height=\"36\" viewBox=\"0 0 80 36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"80\" height=\"36\" rx=\"18\" fill=\"{{c1}}\" opacity=\"0.08\"/><rect x=\"0.5\" y=\"0.5\" width=\"79\" height=\"35\" rx=\"17.5\" stroke=\"{{c1}}\" stroke-width=\"0.8\" fill=\"none\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "60px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "36px"
+      },
+      "editorMeta": {
+        "name": "Slide Indicator BG"
+      }
+    },
+    {
+      "id": "slide-number",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "14px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1",
+        "letterSpacing": "0.06em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 11,
+      "content": {
+        "text": "{{slideNumber}}/{{slidesCount}}"
+      },
+      "position": {
+        "top": "60px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "36px"
+      },
+      "editorMeta": {
+        "name": "Slide Number"
+      }
+    },
+    {
+      "id": "accent-bar",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"140\" height=\"5\" viewBox=\"0 0 140 5\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"abG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"abN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"4\"/></filter></defs><rect width=\"140\" height=\"5\" rx=\"2.5\" fill=\"url(#abG)\"/><rect width=\"140\" height=\"5\" rx=\"2.5\" fill=\"url(#abG)\" filter=\"url(#abN)\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "490px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "5px"
+      },
+      "editorMeta": {
+        "name": "Neon Accent Bar"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "84px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "0.95",
+        "letterSpacing": "-0.04em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 8,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "88px",
+        "minFontSize": "40px",
+        "lineHeightRatio": 0.95
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "520px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "300px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "24px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "verticalAlign": "top"
+      },
+      "zIndex": 8,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "26px",
+        "minFontSize": "16px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "850px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "680px",
+        "height": "80px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "glass-info-bar",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"60\" viewBox=\"0 0 920 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"920\" height=\"60\" rx=\"14\" fill=\"{{c1}}\" opacity=\"0.05\"/><rect x=\"0.5\" y=\"0.5\" width=\"919\" height=\"59\" rx=\"13.5\" stroke=\"{{c1}}\" stroke-width=\"0.5\" fill=\"none\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1148px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Glass Info Bar"
+      }
+    },
+    {
+      "id": "business-name",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "19px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "1148px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Business Name"
+      }
+    },
+    {
+      "id": "username",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "17px",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "1148px",
+        "left": "540px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "logo-divider",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1\" viewBox=\"0 0 1080 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"0.5\" x2=\"1000\" y2=\"0.5\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1262px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Logo Divider",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1278px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "52px"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "pacote-juridico",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "advocacia-carousel-numbered",
+  "aspectRatio": "4:5",
+  "templateName": "numbered-title-without-image",
+  "templateType": "carousel",
+  "contentRequirements": {
+    "fontFields": [
+      {
+        "label": "Primary Font",
+        "fieldName": "textFont1"
+      },
+      {
+        "label": "Secondary Font",
+        "fieldName": "textFont2"
+      }
+    ],
+    "textFields": [
+      {
+        "label": "Headline",
+        "fieldName": "headline",
+        "maxLength": 50,
+        "placeholder": "Conheca seus direitos trabalhistas"
+      },
+      {
+        "label": "Subtitle",
+        "fieldName": "subtitle",
+        "maxLength": 120,
+        "placeholder": "Entenda o que a lei garante para voce como trabalhador."
+      }
+    ],
+    "colorFields": [
+      {
+        "label": "Background",
+        "fieldName": "bgColor1"
+      },
+      {
+        "label": "Accent 1",
+        "fieldName": "bgColor2"
+      },
+      {
+        "label": "Accent 2",
+        "fieldName": "bgColor3"
+      },
+      {
+        "label": "Text Primary",
+        "fieldName": "textColor1"
+      },
+      {
+        "label": "Text Secondary",
+        "fieldName": "textColor2"
+      }
+    ],
+    "imageFields": [
+      {
+        "label": "Business Logo",
+        "required": false,
+        "fieldName": "businessLogo"
+      }
+    ]
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1769086929915_7wrjn",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0274)",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "calc(var(--image-height-story) * 0.9452)"
+      },
+      "editorMeta": {
+        "name": "Second Background",
+        "hidden": false,
+        "locked": true
+      }
+    },
+    {
+      "id": "svg-1769087036459",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"567\" height=\"104\" viewBox=\"0 0 567 104\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n  <mask id=\"mask0_9_1505\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"104\">\n    <path d=\"M0 0H567V104H0V0Z\" fill=\"white\"/>\n  </mask>\n\n  <g mask=\"url(#mask0_9_1505)\">\n    <mask id=\"mask1_9_1505\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"114\">\n      <path\n        d=\"M90.5166 0H476.489C487.778 0 498.369 5.47203 504.925 14.6914L564.969 99.1238C566.984 101.956 567.25 105.683 565.667 108.777C564.079 111.871 560.897 113.815 557.429 113.815H9.57087C6.10288 113.815 2.9265 111.871 1.33831 108.777C-0.249883 105.683 0.0208909 101.956 2.03607 99.1238L62.0801 14.6914C68.636 5.47203 79.2274 0 90.5166 0Z\"\n        fill=\"white\"\n      />\n    </mask>\n\n    <g mask=\"url(#mask1_9_1505)\">\n      <!-- COR FINAL DO SVG -->\n      <path\n        d=\"M-8.41479 0H575.415V113.815H-8.41479V0Z\"\n        fill=\"{{primary}}\"\n      />\n    </g>\n  </g>\n</svg>\n"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.9462)",
+        "left": "calc(var(--image-width) * 0.2375)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.525)",
+        "height": "calc(var(--image-height-story) * 0.0542)"
+      },
+      "editorMeta": {
+        "name": "logoBackground"
+      }
+    },
+    {
+      "id": "layer_1769087132040_btwja",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.9483)",
+        "left": "calc(var(--image-width) * 0.319)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.362)",
+        "height": "calc(var(--image-height-story) * 0.0521)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1769096556897_qtimc",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0444)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "Checklist"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.1276)",
+        "left": "calc(var(--image-width) * 0.1102)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2797)",
+        "height": "calc(var(--image-height-story) * 0.0443)"
+      },
+      "editorMeta": {
+        "name": "Checklist"
+      }
+    },
+    {
+      "id": "svg-1769097069963",
+      "type": "svg",
+      "zIndex": 8,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"64\" height=\"64\" viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<mask id=\"mask0_28_58\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"64\" height=\"64\">\n<path d=\"M0 0H64V64H0V0Z\" fill=\"{{primary}}\"/>\n</mask>\n<g mask=\"url(#mask0_28_58)\">\n<path d=\"M36.4681 31.9419C36.4681 32.5293 36.3518 33.1029 36.126 33.6493C35.9002 34.1957 35.5787 34.6737 35.1545 35.0904C34.7371 35.5138 34.2582 35.8348 33.7108 36.0602C33.1566 36.2855 32.5887 36.4016 32.0003 36.4016C31.405 36.4016 30.8372 36.2855 30.2898 36.0602C29.7424 35.8348 29.2567 35.5138 28.8393 35.0904C28.4151 34.6737 28.0935 34.1957 27.8677 33.6493C27.6419 33.1029 27.5256 32.5293 27.5256 31.9419C27.5256 31.3477 27.6419 30.7809 27.8677 30.2345C28.0935 29.6882 28.4151 29.2033 28.8393 28.7867C29.2567 28.3632 29.7424 28.0422 30.2898 27.8169C30.8372 27.5915 31.405 27.4754 32.0003 27.4754C32.5887 27.4754 33.1566 27.5915 33.7108 27.8169C34.2582 28.0422 34.7371 28.3632 35.1545 28.7867C35.5787 29.2033 35.9002 29.6882 36.126 30.2345C36.3518 30.7809 36.4681 31.3477 36.4681 31.9419Z\" fill=\"{{primary}}\"/>\n<path d=\"M20.4643 31.9419C20.4643 32.5293 20.3549 33.1029 20.1222 33.6493C19.8964 34.1957 19.5749 34.6737 19.1575 35.0904C18.7401 35.5138 18.2544 35.8348 17.707 36.0602C17.1596 36.2855 16.5918 36.4016 15.9965 36.4016C15.4013 36.4016 14.8334 36.2855 14.286 36.0602C13.7387 35.8348 13.2529 35.5138 12.8355 35.0904C12.4181 34.6737 12.0897 34.1957 11.8639 33.6493C11.6382 33.1029 11.5287 32.5293 11.5287 31.9419C11.5287 31.3477 11.6382 30.7809 11.8639 30.2345C12.0897 29.6882 12.4181 29.2033 12.8355 28.7867C13.2529 28.3632 13.7387 28.0422 14.286 27.8169C14.8334 27.5915 15.4013 27.4754 15.9965 27.4754C16.5918 27.4754 17.1596 27.5915 17.707 27.8169C18.2544 28.0422 18.7401 28.3632 19.1575 28.7867C19.5749 29.2033 19.8964 29.6882 20.1222 30.2345C20.3549 30.7809 20.4643 31.3477 20.4643 31.9419Z\" fill=\"{{primary}}\"/>\n<path d=\"M52.4643 31.9419C52.4643 32.5293 52.3549 33.1029 52.1291 33.6493C51.9033 34.1957 51.5749 34.6737 51.1575 35.0904C50.7401 35.5138 50.2544 35.8348 49.707 36.0602C49.1596 36.2855 48.5918 36.4016 47.9965 36.4016C47.4081 36.4016 46.8334 36.2855 46.286 36.0602C45.7387 35.8348 45.2597 35.5138 44.8355 35.0904C44.4181 34.6737 44.0966 34.1957 43.8708 33.6493C43.6382 33.1029 43.5287 32.5293 43.5287 31.9419C43.5287 31.3477 43.6382 30.7809 43.8708 30.2345C44.0966 29.6882 44.4181 29.2033 44.8355 28.7867C45.2597 28.3632 45.7387 28.0422 46.286 27.8169C46.8334 27.5915 47.4081 27.4754 47.9965 27.4754C48.5918 27.4754 49.1596 27.5915 49.707 27.8169C50.2544 28.0422 50.7401 28.3632 51.1575 28.7867C51.5749 29.2033 51.9033 29.6882 52.1291 30.2345C52.3549 30.7809 52.4643 31.3477 52.4643 31.9419Z\" fill=\"{{primary}}\"/>\n<path d=\"M32.0011 63.8703C14.3556 63.8703 0.00793457 49.5487 0.00793457 31.942C0.00793457 14.3286 14.3556 0.00692749 32.0011 0.00692749C49.6397 0.00692749 63.9874 14.3286 63.9874 31.942C63.9874 49.5487 49.6397 63.8703 32.0011 63.8703ZM32.0011 3.42172C16.244 3.42172 3.42893 16.2135 3.42893 31.942C3.42893 47.6637 16.244 60.4555 32.0011 60.4555C47.7514 60.4555 60.5664 47.6637 60.5664 31.942C60.5664 16.2135 47.7514 3.42172 32.0011 3.42172Z\" fill=\"{{primary}}\"/>\n</g>\n</svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.1313)",
+        "left": "calc(var(--image-width) * 0.9037)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0556)",
+        "height": "calc(var(--image-height-story) * 0.0313)"
+      },
+      "editorMeta": {
+        "name": "Menu Icon"
+      }
+    },
+    {
+      "id": "layer_1769097162352_4qqtm",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.06)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.1865)",
+        "left": "calc(var(--image-width) * 0.0736)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8528)",
+        "height": "calc(var(--image-height-story) * 0.126)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_1769097203659_zcs73",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{textColor1}}"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3427)",
+        "left": "calc(var(--image-width) * 0.0426)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9204)",
+        "height": "calc(var(--image-height-story) * 0.001)"
+      },
+      "editorMeta": {
+        "name": "Line"
+      }
+    },
+    {
+      "id": "layer_1769097236651_3hzbf",
+      "type": "list-container",
+      "zIndex": 11,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.372)",
+        "left": "calc(var(--image-width) * 0.0736)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8528)",
+        "height": "calc(var(--image-height-story) * 0.5416)"
+      },
+      "editorMeta": {
+        "name": "Lista"
+      },
+      "listConfig": {
+        "columns": 1,
+        "itemGap": "calc(var(--image-width) * 0.100)",
+        "iconSize": "calc(var(--image-width) * 0.060)",
+        "maxItems": 5,
+        "iconColor": "{{textColor1}}",
+        "iconStyle": "check-empty",
+        "itemAlign": "center",
+        "textStyles": {
+          "color": "{{textColor1}}",
+          "fontSize": "calc(var(--image-width) * 0.03)",
+          "textAlign": "left",
+          "fontFamily": "{{textFont2}}",
+          "fontWeight": "400",
+          "lineHeight": "1.2"
+        },
+        "iconTextGap": "calc(var(--image-width) * 0.030)",
+        "startNumber": 1,
+        "iconStrokeWidth": 1,
+        "iconColorSecondary": "{{bgColor2}}",
+        "itemVariablePrefix": "contentList"
+      },
+      "itemOverrides": {
+        "0": {
+          "iconStyle": "check-circle"
+        },
+        "1": {
+          "iconStyle": "check-circle"
+        }
+      }
+    },
+    {
+      "id": "svg-1769195964070",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"64\" height=\"64\" viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M38.25 47L23.25 32L38.25 17M62 32C62 48.5685 48.5685 62 32 62C15.4315 62 2 48.5685 2 32C2 15.4315 15.4315 2 32 2C48.5685 2 62 15.4315 62 32Z\" stroke=\"{{primary}}\" stroke-width=\"4\" stroke-miterlimit=\"10\"/>\n</svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.1313)",
+        "left": "calc(var(--image-width) * 0.0426)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0556)",
+        "height": "calc(var(--image-height-story) * 0.0313)"
+      },
+      "editorMeta": {
+        "name": "Return Icon"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "checklist",
+  "aspectRatio": "9:16",
+  "templateName": "checklist",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "maxListItems": 5,
+    "textVariables": [
+      "headline",
+      "contentList"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

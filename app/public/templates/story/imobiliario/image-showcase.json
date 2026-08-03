@@ -1,0 +1,371 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "textFont1": "Kenony",
+    "textFont2": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-giant-text",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"540\" y=\"900\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"320\" font-weight=\"900\" fill=\"{{c1}}\" opacity=\"0.03\" letter-spacing=\"-0.06em\">DESTAQUE</text></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "BG Giant Text",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-glow",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"mainGlow\" cx=\"0.5\" cy=\"0.45\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.18\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><ellipse cx=\"540\" cy=\"860\" rx=\"540\" ry=\"520\" fill=\"url(#mainGlow)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Main Glow",
+        "locked": true
+      }
+    },
+    {
+      "id": "spot-lights",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"sp1\" cx=\"0.5\" cy=\"0.25\" r=\"0.45\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.16\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"sp2\" cx=\"0.2\" cy=\"0.7\" r=\"0.4\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.12\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#sp1)\"/><rect width=\"1080\" height=\"1920\" fill=\"url(#sp2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Spot Lights",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-curves-back",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"cG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"cN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"10\"/></filter></defs><path d=\"M-40 400 C140 260, 320 480, 500 360 S760 200, 920 360\" stroke=\"url(#cG)\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.4\"/><path d=\"M-40 400 C140 260, 320 480, 500 360 S760 200, 920 360\" stroke=\"url(#cG)\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.2\" filter=\"url(#cN)\"/><path d=\"M1120 1520 C920 1640, 720 1500, 520 1600 S280 1780, 80 1660\" stroke=\"url(#cG)\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Organic Curves Back",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Main image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "380px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "960px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "destaque-text",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor3}}",
+        "opacity": "0.22",
+        "fontSize": "64px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "DESTAQUE"
+      },
+      "position": {
+        "top": "320px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Destaque",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "56px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900",
+        "lineHeight": "1.1"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "60px",
+        "minFontSize": "32px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1380px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "140px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta-pill-bg",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"500\" height=\"88\" viewBox=\"0 0 500 88\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"cG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"cN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"10\"/></filter></defs><rect width=\"500\" height=\"88\" rx=\"44\" fill=\"url(#cG)\" opacity=\"0.12\" filter=\"url(#cN)\"/><rect width=\"500\" height=\"88\" rx=\"44\" fill=\"url(#cG)\" opacity=\"0.1\"/><rect x=\"1.5\" y=\"1.5\" width=\"497\" height=\"85\" rx=\"42.5\" stroke=\"url(#cG)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.45\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1560px",
+        "left": "290px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "88px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill BG"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "26px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "lineHeight": "1",
+        "letterSpacing": "0.04em"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1560px",
+        "left": "290px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "88px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo-divider",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1\" viewBox=\"0 0 1080 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"0.5\" x2=\"1000\" y2=\"0.5\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1790px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Logo Divider",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1814px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "72px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "imobiliario",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "image-showcase",
+  "aspectRatio": "9:16",
+  "templateName": "image-showcase",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "fontFields": [
+      "textFont1",
+      "textFont2"
+    ],
+    "textFields": [
+      "headline",
+      "ctaText"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "bgColor3",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "image",
+      "businessLogo"
+    ],
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "requiredFields": [
+      "headline",
+      "ctaText",
+      "image",
+      "businessLogo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

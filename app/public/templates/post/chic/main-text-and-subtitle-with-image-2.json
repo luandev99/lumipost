@@ -1,0 +1,202 @@
+{
+  "props": {
+    "bgColor1": "#6b4423",
+    "bgColor2": "#f5ebe0",
+    "bgColor3": "#8b6914",
+    "textColor1": "#ffffff",
+    "textColor2": "#2d2d2d",
+    "textColor3": "#6b4423"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_main_image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.25)",
+        "left": "calc(var(--image-width) * 0.25)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.75)",
+        "height": "calc(var(--image-height-post) * 0.55)"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal",
+        "locked": true
+      }
+    },
+    {
+      "id": "layer_username",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.022)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{username}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.03)",
+        "left": "calc(var(--image-width) * 0.04)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.35)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.11)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "300",
+        "lineHeight": "1.0",
+        "letterSpacing": "0.02em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "14%",
+        "minFontSize": "5%",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.10)",
+        "left": "calc(var(--image-width) * 0.04)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.65)",
+        "height": "calc(var(--image-height-post) * 0.28)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.03)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "top"
+      },
+      "zIndex": 7,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "4%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.82)",
+        "left": "calc(var(--image-width) * 0.04)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.45)",
+        "height": "calc(var(--image-height-post) * 0.10)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 8,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.90)",
+        "left": "calc(var(--image-width) * 0.72)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.24)",
+        "height": "calc(var(--image-height-post) * 0.07)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-with-image-2",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-and-subtitle-with-image-2",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo",
+      "username"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

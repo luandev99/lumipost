@@ -1,0 +1,260 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Ver destinos",
+    "bgColor1": "#1A0533",
+    "bgColor2": "#6B24AA",
+    "bgColor3": "#FF6B35",
+    "headline": "Onde deseja pousar na próxima viagem?",
+    "subtitle": "Descubra destinos incríveis com pacotes exclusivos e condições especiais para você realizar o sonho de viajar.",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#E8E8E8",
+    "textColor3": "#FF6B35",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "gradient-ambience",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"glow1\" cx=\"0.7\" cy=\"0.4\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.35\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"glow2\" cx=\"0.2\" cy=\"0.9\" r=\"0.35\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.2\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#glow1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#glow2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Gradient Ambience",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 2,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "80px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "600px",
+        "height": "220px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "image-frame",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"520\" height=\"580\" viewBox=\"0 0 520 580\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"frameG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect x=\"10\" y=\"10\" width=\"500\" height=\"560\" rx=\"30\" stroke=\"url(#frameG)\" stroke-width=\"3\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "200px",
+        "left": "500px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Image Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "24px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Travel destination",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "220px",
+        "left": "520px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "28px",
+        "minFontSize": "18px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "850px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "600px",
+        "height": "150px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "32px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1",
+        "textDecoration": "underline"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1050px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "30px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "turismo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-with-image-1",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-and-subtitle-with-image-1",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

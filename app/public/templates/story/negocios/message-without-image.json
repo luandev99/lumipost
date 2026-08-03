@@ -1,0 +1,246 @@
+{
+  "props": {
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#FAFAF8",
+    "bgColor2": "#1A1A1A",
+    "bgColor3": "#2C2C2C",
+    "headline": "Headline: lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+    "textFont1": "Playfair Display, serif",
+    "textFont2": "Inter, sans-serif",
+    "textColor1": "#1A1A1A",
+    "textColor2": "#5A5A5A",
+    "textColor3": "#FAFAF8",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "organic-arch-top",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"500\" height=\"500\" viewBox=\"0 0 500 500\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 500 L0 250 Q0 0, 250 0 Q500 0, 500 250 L500 500 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "-100px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "500px"
+      },
+      "editorMeta": {
+        "name": "Organic Arch Top",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-shape-left",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"600\" viewBox=\"0 0 400 600\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"200\" cy=\"300\" rx=\"200\" ry=\"300\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "800px",
+        "left": "-200px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "600px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Left",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-shape-right",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"300\" height=\"400\" viewBox=\"0 0 300 400\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"150\" cy=\"200\" rx=\"150\" ry=\"200\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1400px",
+        "left": "880px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "400px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Right",
+        "locked": true
+      }
+    },
+    {
+      "id": "accent-line",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"2\" viewBox=\"0 0 200 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"2\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "720px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Accent Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.15",
+        "letterSpacing": "-0.02em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.15
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "780px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "350px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4",
+        "letterSpacing": "0.08em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "60px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1770px",
+        "left": "500px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "negocios",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "message-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "message-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

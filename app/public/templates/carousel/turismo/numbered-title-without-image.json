@@ -1,0 +1,233 @@
+{
+  "props": {
+    "bgColor1": "#1A0533",
+    "bgColor2": "#7B2CBF",
+    "bgColor3": "#FF6B35",
+    "headline": "Maldivas",
+    "subtitle": "Praias paradisíacas com águas cristalinas e resorts de luxo para uma experiência inesquecível",
+    "textFont1": "Montserrat",
+    "textFont2": "Inter",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#E0E0E0",
+    "textColor3": "#FF6B35",
+    "slideNumber": "01",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "gradient-overlay",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"glow1\" cx=\"0.8\" cy=\"0.3\" r=\"0.6\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.2\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#glow1)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Gradient Overlay",
+        "locked": true
+      }
+    },
+    {
+      "id": "big-number",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "opacity": "0.15",
+        "fontSize": "300px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900",
+        "lineHeight": "1",
+        "letterSpacing": "-0.05em"
+      },
+      "zIndex": 2,
+      "content": {
+        "text": "{{slideNumber}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "180px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "350px"
+      },
+      "fieldName": "slideNumber",
+      "editorMeta": {
+        "name": "Big Number"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1",
+        "letterSpacing": "-0.04em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "500px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "200px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "accent-line",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"6\" viewBox=\"0 0 200 6\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"6\" rx=\"3\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "720px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "6px"
+      },
+      "editorMeta": {
+        "name": "Accent Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "32px",
+        "minFontSize": "22px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "780px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "200px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "turismo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "numbered-title-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "numbered-title-without-image",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

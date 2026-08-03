@@ -1,0 +1,281 @@
+{
+  "props": {
+    "bgColor1": "#FAFAF8",
+    "bgColor2": "#1A1A1A",
+    "bgColor3": "#2C2C2C",
+    "headline": "Headline: lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+    "subtitle": "Subtitle: lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+    "textFont1": "Playfair Display, serif",
+    "textFont2": "Inter, sans-serif",
+    "textColor1": "#1A1A1A",
+    "textColor2": "#5A5A5A",
+    "textColor3": "#FAFAF8",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "organic-shape-top-right",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"500\" height=\"500\" viewBox=\"0 0 500 500\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0 L500 0 L500 250 Q500 500, 250 500 Q0 500, 0 250 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "-100px",
+        "left": "680px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "500px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Top Right",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-shape-bottom-left",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"450\" height=\"500\" viewBox=\"0 0 450 500\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M450 500 L0 500 L0 250 Q0 0, 225 0 Q450 0, 450 250 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "950px",
+        "left": "-100px",
+        "type": "absolute",
+        "width": "450px",
+        "height": "500px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Bottom Left",
+        "locked": true
+      }
+    },
+    {
+      "id": "accent-line",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"2\" viewBox=\"0 0 200 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"2\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "420px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Accent Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em",
+        "verticalAlign": "top"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "460px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "320px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.6",
+        "verticalAlign": "top"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "40px",
+        "minFontSize": "40px",
+        "lineHeightRatio": 1.6
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "810px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "700px",
+        "height": "140px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "footer-separator",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"1\" viewBox=\"0 0 920 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"920\" height=\"1\" fill=\"{{c1}}\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Footer Separator",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1200px",
+        "left": "500px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    },
+    {
+      "id": "slide-indicator",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "opacity": "0.6",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{slideNumber}}/{{slidesCount}}"
+      },
+      "position": {
+        "top": "1280px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "30px"
+      },
+      "editorMeta": {
+        "name": "Slide Indicator"
+      }
+    }
+  ],
+  "packageId": "negocios",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "title-and-subtitle-without-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "title-and-subtitle-without-image",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

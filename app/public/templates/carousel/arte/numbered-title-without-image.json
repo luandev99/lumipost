@@ -1,0 +1,305 @@
+{
+  "props": {
+    "bgColor1": "#0a1628",
+    "bgColor2": "#1a3a5c",
+    "bgColor3": "#d4af37",
+    "headline": "Investimentos Inteligentes",
+    "subtitle": "Diversifique sua carteira e proteja seu patrimonio com estrategias comprovadas pelos maiores investidores",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#ffffff",
+    "textColor2": "#c9d1d9",
+    "textColor3": "#d4af37",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "renaissance-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"rp1\" cx=\"0.5\" cy=\"0.3\" r=\"0.7\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.06\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"rp2\" cx=\"0.2\" cy=\"0.8\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.04\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#rp1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#rp2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Renaissance Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "content-frame",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"950\" viewBox=\"0 0 920 950\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"918\" height=\"948\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "950px"
+      },
+      "editorMeta": {
+        "name": "Content Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "slide-number",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"120\" height=\"80\" viewBox=\"0 0 120 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"0\" y=\"65\" font-family=\"{{f1}}\" font-size=\"72\" font-weight=\"400\" fill=\"{{c1}}\" opacity=\"0.15\">01</text></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "120px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Slide Number",
+        "locked": true
+      }
+    },
+    {
+      "id": "golden-line",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"4\" height=\"200\" viewBox=\"0 0 4 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"4\" height=\"200\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "340px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "4px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "Golden Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.05
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "320px",
+        "left": "160px",
+        "type": "absolute",
+        "width": "760px",
+        "height": "280px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "26px",
+        "minFontSize": "18px",
+        "lineHeightRatio": 1.6
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "640px",
+        "left": "160px",
+        "type": "absolute",
+        "width": "760px",
+        "height": "160px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "roman-numerals-side",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"80\" height=\"400\" viewBox=\"0 0 80 400\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"40\" y=\"50\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"20\" fill=\"{{c1}}\" opacity=\"0.25\">I</text><text x=\"40\" y=\"110\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"20\" fill=\"{{c1}}\" opacity=\"0.25\">II</text><text x=\"40\" y=\"170\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"20\" fill=\"{{c1}}\" opacity=\"0.25\">III</text><text x=\"40\" y=\"230\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"20\" fill=\"{{c1}}\" opacity=\"0.25\">IV</text><text x=\"40\" y=\"290\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"20\" fill=\"{{c1}}\" opacity=\"0.25\">V</text></svg>"
+        }
+      },
+      "position": {
+        "top": "300px",
+        "left": "920px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "400px"
+      },
+      "editorMeta": {
+        "name": "Roman Numerals",
+        "locked": true
+      }
+    },
+    {
+      "id": "logo-bar",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"160\" height=\"50\" viewBox=\"0 0 160 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"160\" height=\"50\" rx=\"6\" fill=\"{{c1}}\" fill-opacity=\"0.08\"/><rect x=\"0.5\" y=\"0.5\" width=\"159\" height=\"49\" rx=\"5.5\" stroke=\"{{c1}}\" stroke-opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "160px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "Logo Bar",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 6,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1157px",
+        "left": "470px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "36px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "arte",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "numbered-title-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "numbered-title-without-image",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "props": {
+    "ctaText": "Peça agora",
+    "bgColor1": "#5A6B4A",
+    "bgColor2": "#F5F0E6",
+    "bgColor3": "#8B7355",
+    "headline": "Feito com Amor e Tradição",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#FFFBF2",
+    "textColor2": "#E8E4DC",
+    "textColor3": "#5A6B4A",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "texture-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"dots\" width=\"30\" height=\"30\" patternUnits=\"userSpaceOnUse\"><circle cx=\"15\" cy=\"15\" r=\"1.5\" fill=\"{{c1}}\" opacity=\"0.1\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#dots)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Texture Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-circle-1",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"400\" viewBox=\"0 0 400 400\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"200\" cy=\"200\" r=\"198\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "-100px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "400px"
+      },
+      "editorMeta": {
+        "name": "Decorative Circle 1",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-circle-2",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"400\" viewBox=\"0 0 400 400\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"200\" cy=\"200\" r=\"198\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "850px",
+        "left": "780px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "400px"
+      },
+      "editorMeta": {
+        "name": "Decorative Circle 2",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "450px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "350px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta-pill-bg",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"280\" height=\"56\" viewBox=\"0 0 280 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"280\" height=\"56\" rx=\"28\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1100px",
+        "left": "400px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "56px",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1100px",
+        "left": "400px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1210px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

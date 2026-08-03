@@ -1,0 +1,575 @@
+{
+  "props": {
+    "bgColor1": "#a10000",
+    "bgColor2": "#ff7171",
+    "bgColor3": "#ffb1b1",
+    "textColor1": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-ambient-glow",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"gA\" cx=\"0.75\" cy=\"0.12\" r=\"0.55\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.14\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"gB\" cx=\"0.2\" cy=\"0.85\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.10\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#gA)\"/><rect width=\"1080\" height=\"1920\" fill=\"url(#gB)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Ambient Glow",
+        "locked": true
+      }
+    },
+    {
+      "id": "decor-dot-grid",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"dg\" x=\"0\" y=\"0\" width=\"54\" height=\"54\" patternUnits=\"userSpaceOnUse\"><circle cx=\"2\" cy=\"2\" r=\"1.2\" fill=\"{{c1}}\" opacity=\"0.07\"/></pattern></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#dg)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Dot Grid",
+        "locked": true
+      }
+    },
+    {
+      "id": "decor-sphere-top-right",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"380\" height=\"380\" viewBox=\"0 0 380 380\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"s1\" cx=\"0.35\" cy=\"0.35\" r=\"0.65\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.3\"/><stop offset=\"55%\" stop-color=\"{{c1}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><circle cx=\"190\" cy=\"190\" r=\"180\" fill=\"url(#s1)\"/><ellipse cx=\"145\" cy=\"140\" rx=\"55\" ry=\"30\" fill=\"white\" opacity=\"0.06\" transform=\"rotate(-25 145 140)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "-50px",
+        "left": "810px",
+        "type": "absolute",
+        "width": "380px",
+        "height": "380px"
+      },
+      "editorMeta": {
+        "name": "3D Sphere Top-Right"
+      }
+    },
+    {
+      "id": "decor-sphere-bottom-left",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"320\" height=\"320\" viewBox=\"0 0 320 320\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"s2\" cx=\"0.4\" cy=\"0.35\" r=\"0.6\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.25\"/><stop offset=\"50%\" stop-color=\"{{c1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><circle cx=\"160\" cy=\"160\" r=\"155\" fill=\"url(#s2)\"/><ellipse cx=\"120\" cy=\"115\" rx=\"45\" ry=\"25\" fill=\"white\" opacity=\"0.05\" transform=\"rotate(-22 120 115)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1580px",
+        "left": "-80px",
+        "type": "absolute",
+        "width": "320px",
+        "height": "320px"
+      },
+      "editorMeta": {
+        "name": "3D Sphere Bottom-Left"
+      }
+    },
+    {
+      "id": "decor-ring-center-right",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"180\" height=\"180\" viewBox=\"0 0 180 180\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"90\" cy=\"90\" r=\"80\" stroke=\"{{c1}}\" stroke-width=\"1.8\" opacity=\"0.12\"/><circle cx=\"90\" cy=\"90\" r=\"55\" stroke=\"{{c1}}\" stroke-width=\"1\" opacity=\"0.06\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "750px",
+        "left": "950px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "180px"
+      },
+      "editorMeta": {
+        "name": "Ring Center-Right"
+      }
+    },
+    {
+      "id": "decor-diamond-left",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"45\" height=\"45\" viewBox=\"0 0 45 45\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"22\" y=\"2\" width=\"30\" height=\"30\" rx=\"4\" transform=\"rotate(45 22 2)\" stroke=\"{{c1}}\" stroke-width=\"1.2\" opacity=\"0.08\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1300px",
+        "left": "25px",
+        "type": "absolute",
+        "width": "45px",
+        "height": "45px"
+      },
+      "editorMeta": {
+        "name": "Diamond Left"
+      }
+    },
+    {
+      "id": "image-card-shadow",
+      "type": "svg",
+      "zIndex": 9,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"996\" height=\"1036\" viewBox=\"0 0 996 1036\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"imgSh\" x=\"0\" y=\"0\" width=\"996\" height=\"1036\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"10\" stdDeviation=\"18\" flood-color=\"#000\" flood-opacity=\"0.22\"/></filter></defs><rect x=\"18\" y=\"10\" width=\"960\" height=\"1000\" rx=\"28\" fill=\"{{c1}}\" filter=\"url(#imgSh)\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "88px",
+        "left": "42px",
+        "type": "absolute",
+        "width": "996px",
+        "height": "1036px"
+      },
+      "editorMeta": {
+        "name": "Image Card Shadow",
+        "locked": true
+      }
+    },
+    {
+      "id": "image-card-bg",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"960\" height=\"1000\" viewBox=\"0 0 960 1000\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"960\" height=\"1000\" rx=\"24\" fill=\"{{c1}}\" opacity=\"0.08\"/><rect x=\"1\" y=\"1\" width=\"958\" height=\"998\" rx=\"23\" stroke=\"{{c1}}\" stroke-width=\"1.5\" opacity=\"0.12\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "960px",
+        "height": "1000px"
+      },
+      "editorMeta": {
+        "name": "Image Card Border",
+        "locked": true
+      }
+    },
+    {
+      "id": "image-accent-line",
+      "type": "svg",
+      "zIndex": 14,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"960\" height=\"8\" viewBox=\"0 0 960 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"acL\" x1=\"0\" y1=\"4\" x2=\"960\" y2=\"4\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect width=\"960\" height=\"5\" rx=\"2.5\" fill=\"url(#acL)\" opacity=\"0.7\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "960px",
+        "height": "8px"
+      },
+      "editorMeta": {
+        "name": "Image Accent Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "20px"
+      },
+      "zIndex": 13,
+      "content": {
+        "alt": "Showcase image",
+        "source": "{{mainImage}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "110px",
+        "left": "70px",
+        "type": "absolute",
+        "width": "940px",
+        "height": "980px"
+      },
+      "fieldName": "mainImage",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "image-shine",
+      "type": "svg",
+      "zIndex": 14,
+      "content": {
+        "embedded": {
+          "colors": {},
+          "svgContent": "<svg width=\"940\" height=\"490\" viewBox=\"0 0 940 490\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"shG\" x1=\"470\" y1=\"0\" x2=\"470\" y2=\"490\"><stop offset=\"0%\" stop-color=\"white\" stop-opacity=\"0.06\"/><stop offset=\"100%\" stop-color=\"white\" stop-opacity=\"0\"/></linearGradient></defs><rect width=\"940\" height=\"490\" rx=\"20\" fill=\"url(#shG)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "110px",
+        "left": "70px",
+        "type": "absolute",
+        "width": "940px",
+        "height": "490px"
+      },
+      "editorMeta": {
+        "name": "Image Shine Overlay",
+        "locked": true
+      }
+    },
+    {
+      "id": "image-bottom-fade",
+      "type": "svg",
+      "zIndex": 14,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"940\" height=\"200\" viewBox=\"0 0 940 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"bfG\" x1=\"470\" y1=\"0\" x2=\"470\" y2=\"200\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0.4\"/></linearGradient></defs><rect width=\"940\" height=\"200\" fill=\"url(#bfG)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "890px",
+        "left": "70px",
+        "type": "absolute",
+        "width": "940px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "Image Bottom Fade",
+        "locked": true
+      }
+    },
+    {
+      "id": "divider-post-image",
+      "type": "svg",
+      "zIndex": 11,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"800\" height=\"12\" viewBox=\"0 0 800 12\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"dv\" x1=\"0\" y1=\"6\" x2=\"800\" y2=\"6\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"50%\" stop-color=\"{{c1}}\" stop-opacity=\"0.2\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></linearGradient></defs><rect y=\"5\" width=\"800\" height=\"1.5\" rx=\"0.75\" fill=\"url(#dv)\"/><circle cx=\"400\" cy=\"6\" r=\"3\" fill=\"{{c1}}\" opacity=\"0.25\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1140px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "12px"
+      },
+      "editorMeta": {
+        "name": "Divider Post-Image",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "72px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "1.12",
+        "letterSpacing": "-0.02em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 12,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "80px",
+        "minFontSize": "32px",
+        "lineHeightRatio": 1.12
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1175px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "200px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "headline-underline",
+      "type": "svg",
+      "zIndex": 11,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"700\" height=\"10\" viewBox=\"0 0 700 10\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"hlUl\" x1=\"0\" y1=\"5\" x2=\"700\" y2=\"5\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"30%\" stop-color=\"{{c1}}\" stop-opacity=\"0.6\"/><stop offset=\"70%\" stop-color=\"{{c2}}\" stop-opacity=\"0.6\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></linearGradient></defs><rect y=\"3\" width=\"700\" height=\"4\" rx=\"2\" fill=\"url(#hlUl)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1385px",
+        "left": "190px",
+        "type": "absolute",
+        "width": "700px",
+        "height": "10px"
+      },
+      "editorMeta": {
+        "name": "Headline Underline"
+      }
+    },
+    {
+      "id": "cta-shadow",
+      "type": "svg",
+      "zIndex": 15,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"570\" height=\"110\" viewBox=\"0 0 570 110\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"ctSh\" x=\"0\" y=\"0\" width=\"570\" height=\"110\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"5\" stdDeviation=\"10\" flood-color=\"#000\" flood-opacity=\"0.18\"/></filter><linearGradient id=\"ctGr\" x1=\"0\" y1=\"40\" x2=\"540\" y2=\"40\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect x=\"15\" y=\"10\" width=\"540\" height=\"78\" rx=\"39\" fill=\"url(#ctGr)\" filter=\"url(#ctSh)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1430px",
+        "left": "255px",
+        "type": "absolute",
+        "width": "570px",
+        "height": "110px"
+      },
+      "editorMeta": {
+        "name": "CTA Shadow",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-shine",
+      "type": "svg",
+      "zIndex": 16,
+      "content": {
+        "embedded": {
+          "colors": {},
+          "svgContent": "<svg width=\"540\" height=\"39\" viewBox=\"0 0 540 39\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M20 0 Q270 0 520 0 Q540 0 540 20 L540 39 Q270 30 0 39 L0 20 Q0 0 20 0Z\" fill=\"white\" opacity=\"0.08\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1440px",
+        "left": "270px",
+        "type": "absolute",
+        "width": "540px",
+        "height": "39px"
+      },
+      "editorMeta": {
+        "name": "CTA Shine",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "34px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "letterSpacing": "0.03em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 17,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "38px",
+        "minFontSize": "20px",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.7536)",
+        "left": "calc(var(--image-width) * 0.2778)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4509)",
+        "height": "calc(var(--image-height-story) * 0.0365)"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo-bar-trapezoid",
+      "type": "svg",
+      "zIndex": 20,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"140\" viewBox=\"0 0 1080 140\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"lbg\" x1=\"0\" y1=\"70\" x2=\"1080\" y2=\"70\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><path d=\"M0 35 L1080 0 L1080 140 L0 140 Z\" fill=\"url(#lbg)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1780px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "140px"
+      },
+      "editorMeta": {
+        "name": "Logo Bar Trapezoid"
+      }
+    },
+    {
+      "id": "logo-bar-shine",
+      "type": "svg",
+      "zIndex": 21,
+      "content": {
+        "embedded": {
+          "colors": {},
+          "svgContent": "<svg width=\"1080\" height=\"70\" viewBox=\"0 0 1080 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 35 L1080 0 L1080 70 L0 70 Z\" fill=\"white\" opacity=\"0.06\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1780px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "Logo Bar Shine",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 22,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.9453)",
+        "left": "calc(var(--image-width) * 0.282)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4361)",
+        "height": "calc(var(--image-height-story) * 0.05)"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "package-4",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "image-showcase",
+  "aspectRatio": "9:16",
+  "templateName": "image-showcase",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

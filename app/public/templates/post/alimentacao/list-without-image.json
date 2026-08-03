@@ -1,0 +1,573 @@
+{
+  "props": {
+    "ctaText": "Salve para depois",
+    "bgColor1": "#5A6B4A",
+    "bgColor2": "#F5F0E6",
+    "bgColor3": "#8B7355",
+    "headline": "Por que nos escolher",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#FFFBF2",
+    "textColor2": "#E8E4DC",
+    "textColor3": "#5A6B4A",
+    "businessLogo": "",
+    "contentList0": "Ingredientes frescos e selecionados",
+    "contentList1": "Preparo artesanal diário",
+    "contentList2": "Receitas tradicionais",
+    "contentList3": "Sabor autêntico caseiro",
+    "contentList4": "Amor em cada detalhe"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "decorative-circles",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"900\" cy=\"200\" r=\"180\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.1\"/><circle cx=\"150\" cy=\"1150\" r=\"120\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.1\"/><circle cx=\"980\" cy=\"1100\" r=\"80\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.08\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Decorative Circles",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "80px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "240px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "80px"
+      },
+      "fieldName": "contentList0",
+      "editorMeta": {
+        "name": "List Item 1"
+      }
+    },
+    {
+      "id": "list-number-1",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "01"
+      },
+      "position": {
+        "top": "240px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "50px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "List Number 1",
+        "locked": true
+      }
+    },
+    {
+      "id": "divider-1",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"2\" viewBox=\"0 0 920 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"0\" y1=\"1\" x2=\"920\" y2=\"1\" stroke=\"{{c1}}\" stroke-width=\"1\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "340px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Divider 1",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "380px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "80px"
+      },
+      "fieldName": "contentList1",
+      "editorMeta": {
+        "name": "List Item 2"
+      }
+    },
+    {
+      "id": "list-number-2",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "02"
+      },
+      "position": {
+        "top": "380px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "50px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "List Number 2",
+        "locked": true
+      }
+    },
+    {
+      "id": "divider-2",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"2\" viewBox=\"0 0 920 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"0\" y1=\"1\" x2=\"920\" y2=\"1\" stroke=\"{{c1}}\" stroke-width=\"1\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "480px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Divider 2",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "520px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "80px"
+      },
+      "fieldName": "contentList2",
+      "editorMeta": {
+        "name": "List Item 3"
+      }
+    },
+    {
+      "id": "list-number-3",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "03"
+      },
+      "position": {
+        "top": "520px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "50px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "List Number 3",
+        "locked": true
+      }
+    },
+    {
+      "id": "divider-3",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"2\" viewBox=\"0 0 920 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"0\" y1=\"1\" x2=\"920\" y2=\"1\" stroke=\"{{c1}}\" stroke-width=\"1\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "620px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Divider 3",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "660px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "80px"
+      },
+      "fieldName": "contentList3",
+      "editorMeta": {
+        "name": "List Item 4"
+      }
+    },
+    {
+      "id": "list-number-4",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "04"
+      },
+      "position": {
+        "top": "660px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "50px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "List Number 4",
+        "locked": true
+      }
+    },
+    {
+      "id": "divider-4",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"2\" viewBox=\"0 0 920 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"0\" y1=\"1\" x2=\"920\" y2=\"1\" stroke=\"{{c1}}\" stroke-width=\"1\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "760px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Divider 4",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-5",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "800px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "80px"
+      },
+      "fieldName": "contentList4",
+      "editorMeta": {
+        "name": "List Item 5"
+      }
+    },
+    {
+      "id": "list-number-5",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "05"
+      },
+      "position": {
+        "top": "800px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "50px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "List Number 5",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-pill-bg",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"280\" height=\"56\" viewBox=\"0 0 280 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"280\" height=\"56\" rx=\"28\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1220px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "56px",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1220px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1210px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "list-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "headline",
+      "ctaText",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

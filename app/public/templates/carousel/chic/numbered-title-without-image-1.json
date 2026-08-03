@@ -1,0 +1,192 @@
+{
+  "props": {
+    "bgColor1": "#C5A880",
+    "bgColor2": "#F5F0E6",
+    "bgColor3": "#1A1A1A",
+    "textColor1": "#1A1A1A",
+    "textColor2": "#666666",
+    "textColor3": "#F5F0E6"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "border-frame",
+      "type": "container",
+      "styles": {
+        "border": "1px solid {{bgColor1}}",
+        "backgroundColor": "transparent"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.03)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9)",
+        "height": "calc(var(--image-height-post) * 0.94)"
+      },
+      "editorMeta": {
+        "name": "Border Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.05)",
+        "left": "calc(var(--image-width) * 0.75)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.15)",
+        "height": "calc(var(--image-height-post) * 0.05)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.065)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "300",
+        "lineHeight": "1",
+        "letterSpacing": "0.1em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "3%",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.06)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6)",
+        "height": "calc(var(--image-height-post) * 0.06)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.14)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.55)",
+        "height": "calc(var(--image-height-post) * 0.45)"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal",
+        "locked": true
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.022)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.6
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.62)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8)",
+        "height": "calc(var(--image-height-post) * 0.3)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "numbered-title-without-image-1",
+  "aspectRatio": "1:1.25",
+  "templateName": "numbered-title-without-image-1",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "props": {
+    "image": "",
+    "bgColor1": "#0a0a14",
+    "bgColor2": "#6366f1",
+    "bgColor3": "#4f46e5",
+    "headline": "SEU DINHEIRO TRABALHANDO POR VOCE",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "textColor1": "#ffffff",
+    "textColor2": "#a5b4fc",
+    "textColor3": "#c7d2fe",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"60\" height=\"60\" patternUnits=\"userSpaceOnUse\"><path d=\"M 60 0 L 0 0 0 60\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.15\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "glow-bottom",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"glow1\" cx=\"0.5\" cy=\"1\" r=\"0.6\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.35\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#glow1)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Glow Bottom",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "20px"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Main image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "100px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "image-overlay",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"800\" height=\"600\" viewBox=\"0 0 800 600\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"imgOverlay\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0.6\"/></linearGradient></defs><rect width=\"800\" height=\"600\" rx=\"20\" fill=\"url(#imgOverlay)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "600px"
+      },
+      "editorMeta": {
+        "name": "Image Overlay",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "470px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.03em",
+        "verticalAlign": "top"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.05
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "760px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "300px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "accent-line",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"180\" height=\"6\" viewBox=\"0 0 180 6\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"180\" height=\"6\" rx=\"3\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "6px"
+      },
+      "editorMeta": {
+        "name": "Accent Line",
+        "locked": true
+      }
+    }
+  ],
+  "packageId": "tecnologia",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-image-1",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-with-image-1",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

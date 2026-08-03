@@ -1,0 +1,222 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Conhecer mais",
+    "bgColor1": "#1A0533",
+    "bgColor2": "#6B24AA",
+    "bgColor3": "#FF6B35",
+    "headline": "Santorini, Grécia",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#E8E8E8",
+    "textColor3": "#FF6B35",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "40px"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Travel destination",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "image-overlay",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"800\" viewBox=\"0 0 920 800\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"overlayG\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"70%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0.7\"/></linearGradient></defs><rect width=\"920\" height=\"800\" rx=\"40\" fill=\"url(#overlayG)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "800px"
+      },
+      "editorMeta": {
+        "name": "Image Overlay",
+        "locked": true
+      }
+    },
+    {
+      "id": "image-frame",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"950\" height=\"830\" viewBox=\"0 0 950 830\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"frameG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect x=\"15\" y=\"15\" width=\"920\" height=\"800\" rx=\"40\" stroke=\"url(#frameG)\" stroke-width=\"2\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "85px",
+        "left": "65px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Image Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "970px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "150px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1",
+        "textDecoration": "underline"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1150px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "40px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 6,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "turismo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-image-3",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-with-image-3",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

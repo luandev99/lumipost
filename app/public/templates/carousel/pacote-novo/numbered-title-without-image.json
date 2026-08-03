@@ -1,0 +1,297 @@
+{
+  "props": {
+    "bgColor1": "#e8f4fc",
+    "bgColor2": "#1a56db",
+    "bgColor3": "#6b7280",
+    "textColor1": "#1a56db",
+    "textColor2": "#6b7280",
+    "textColor3": "#8b6914"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_grid_pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><path d=\"M 40 0 L 0 0 0 40\" fill=\"none\" stroke=\"{{primary}}\" stroke-width=\"0.5\" opacity=\"0.15\"/></pattern></defs><rect width=\"100%\" height=\"100%\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "layer_pre_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.035)",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "top"
+      },
+      "zIndex": 2,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "8%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{preHeadline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.1)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6)",
+        "height": "calc(var(--image-height-post) * 0.08)"
+      },
+      "fieldName": "img_content_pre_headline",
+      "editorMeta": {
+        "name": "Pre-Headline"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.1)",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.1",
+        "verticalAlign": "top"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "15%",
+        "minFontSize": "3%",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.18)",
+        "left": "calc(var(--image-width) * 0.06)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.88)",
+        "height": "calc(var(--image-height-post) * 0.5)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_arrow_svg",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"40\" height=\"30\" viewBox=\"0 0 40 30\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5 5 C 15 5, 20 25, 35 20\" stroke=\"{{primary}}\" stroke-width=\"2\" fill=\"none\"/><path d=\"M30 15 L 35 20 L 28 22\" stroke=\"{{primary}}\" stroke-width=\"2\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.68)",
+        "left": "calc(var(--image-width) * 0.45)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.08)",
+        "height": "calc(var(--image-height-post) * 0.05)"
+      },
+      "editorMeta": {
+        "name": "Arrow"
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.035)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "top"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "8%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.68)",
+        "left": "calc(var(--image-width) * 0.52)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.1)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "layer_footer_left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.2em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Footer Left"
+      }
+    },
+    {
+      "id": "layer_footer_center",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.2em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "TEMA"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Footer Center"
+      }
+    },
+    {
+      "id": "layer_footer_right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.2em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.7)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Footer Right"
+      }
+    }
+  ],
+  "packageId": "pacote-novo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "numbered-title-without-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "numbered-title-without-image",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "preHeadline",
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "businessName",
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

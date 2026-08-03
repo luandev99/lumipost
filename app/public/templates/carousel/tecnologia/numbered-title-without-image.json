@@ -1,0 +1,239 @@
+{
+  "props": {
+    "bgColor1": "#0a0a14",
+    "bgColor2": "#6366f1",
+    "bgColor3": "#818cf8",
+    "headline": "Defina seus objetivos financeiros",
+    "subtitle": "Antes de comecar a investir, e fundamental saber onde voce quer chegar. Metas claras ajudam a escolher os melhores investimentos.",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "textColor1": "#ffffff",
+    "textColor2": "#a1a1aa",
+    "textColor3": "#6366f1",
+    "slideNumber": "01",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"60\" height=\"60\" patternUnits=\"userSpaceOnUse\"><path d=\"M 60 0 L 0 0 0 60\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "big-number",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "variables": {
+            "n1": "{{slideNumber}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"350\" viewBox=\"0 0 400 350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"0\" y=\"280\" font-family=\"{{f1}}\" font-size=\"280\" font-weight=\"900\" fill=\"{{c1}}\" opacity=\"0.08\">{{n1}}</text></svg>"
+        }
+      },
+      "position": {
+        "top": "180px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "350px"
+      },
+      "editorMeta": {
+        "name": "Big Number",
+        "locked": true
+      }
+    },
+    {
+      "id": "slide-number-badge",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{textColor1}}"
+          },
+          "variables": {
+            "n1": "{{slideNumber}}"
+          },
+          "svgContent": "<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"{{c1}}\"/><text x=\"50\" y=\"62\" text-anchor=\"middle\" font-family=\"Inter\" font-size=\"36\" font-weight=\"800\" fill=\"{{c2}}\">{{n1}}</text></svg>"
+        }
+      },
+      "position": {
+        "top": "440px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "100px"
+      },
+      "editorMeta": {
+        "name": "Slide Number Badge",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.15",
+        "letterSpacing": "-0.03em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.15
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "580px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "250px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "26px",
+        "minFontSize": "20px",
+        "lineHeightRatio": 1.6
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "860px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "200px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 50,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "470px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "tecnologia",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "numbered-title-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "numbered-title-without-image",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "slideNumber"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

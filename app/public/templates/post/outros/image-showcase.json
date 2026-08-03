@@ -1,0 +1,305 @@
+{
+  "props": {
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-giant-text",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "opacity": "0.03",
+        "fontSize": "200px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900"
+      },
+      "zIndex": 1,
+      "content": {
+        "text": "ADVOCACIA"
+      },
+      "position": {
+        "top": "600px",
+        "left": "50px",
+        "type": "absolute",
+        "width": "600px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "BG Giant Text",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-glow",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"mainGlow\" cx=\"50%\" cy=\"35%\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.2\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><ellipse cx=\"540\" cy=\"470\" rx=\"500\" ry=\"400\" fill=\"url(#mainGlow)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Main Glow",
+        "locked": true
+      }
+    },
+    {
+      "id": "curve-deco",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"500\" height=\"700\" viewBox=\"0 0 500 700\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,200 Q150,50 250,200 T500,200\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"3\" stroke-opacity=\"0.5\"/><defs><filter id=\"curveGlow\"><feGaussianBlur stdDeviation=\"5\"/><feMerge><feMergeNode/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter></defs></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "290px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "700px"
+      },
+      "editorMeta": {
+        "name": "Curve Deco",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Main image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "120px",
+        "left": "240px",
+        "type": "absolute",
+        "width": "600px",
+        "height": "700px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "destaque-text",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor3}}",
+        "opacity": "0.25",
+        "fontSize": "110px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "DESTAQUE"
+      },
+      "position": {
+        "top": "400px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "120px"
+      },
+      "editorMeta": {
+        "name": "Destaque",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "76px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900",
+        "lineHeight": "1.1",
+        "verticalAlign": "top"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "80px",
+        "minFontSize": "38px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "880px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "180px"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta-pill-bg",
+      "type": "container",
+      "styles": {
+        "border": "2px solid {{bgColor3}}",
+        "borderRadius": "40px",
+        "backdropFilter": "blur(10px)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 7,
+      "position": {
+        "top": "1090px",
+        "left": "400px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "24px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1115px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "30px"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "footer-bar",
+      "type": "container",
+      "styles": {
+        "opacity": "0.1",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 9,
+      "position": {
+        "top": "1240px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "110px"
+      },
+      "editorMeta": {
+        "name": "Footer Bar",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1265px",
+        "left": "490px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "outros",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "image-showcase",
+  "aspectRatio": "1:1.25",
+  "templateName": "image-showcase",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Saiba mais",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#d4d4d4",
+    "citation": "Citação",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "subtitle": "Subtítulo",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "afterImage": "",
+    "afterLabel": "Depois",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "beforeImage": "",
+    "beforeLabel": "Antes",
+    "slideNumber": "1",
+    "slidesCount": "5",
+    "businessLogo": "",
+    "businessName": "Usuário",
+    "contentList0": "Item 1",
+    "contentList1": "Item 2",
+    "contentList2": "Item 3",
+    "contentList3": "Item 4",
+    "profilePhoto": "",
+    "businessSlogan": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "neon-top-block",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "480px"
+      },
+      "editorMeta": {
+        "name": "Neon Top Block",
+        "locked": true
+      }
+    },
+    {
+      "id": "checkered-top-right",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 360 240\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"cktr\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><rect width=\"20\" height=\"20\" fill=\"{{c1}}\"/><rect x=\"20\" width=\"20\" height=\"20\" fill=\"{{c2}}\"/><rect y=\"20\" width=\"20\" height=\"20\" fill=\"{{c2}}\"/><rect x=\"20\" y=\"20\" width=\"20\" height=\"20\" fill=\"{{c1}}\"/></pattern></defs><rect width=\"360\" height=\"240\" fill=\"url(#cktr)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "720px",
+        "type": "absolute",
+        "width": "360px",
+        "height": "240px"
+      },
+      "editorMeta": {
+        "name": "Checkered Top Right",
+        "locked": true
+      }
+    },
+    {
+      "id": "triangle-logo",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 120 120\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0 L60 0 L0 60 Z\" fill=\"{{c1}}\" opacity=\"0.9\"/><path d=\"M60 0 L120 0 L120 60 Z\" fill=\"{{c2}}\"/><path d=\"M0 60 L60 120 L0 120 Z\" fill=\"{{c1}}\" opacity=\"0.9\"/><path d=\"M60 60 L120 60 L120 120 L60 120 Z\" fill=\"{{c2}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "60px",
+        "left": "780px",
+        "type": "absolute",
+        "width": "120px",
+        "height": "120px"
+      },
+      "editorMeta": {
+        "name": "Triangle Logo",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-name-top",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "letterSpacing": "0.05em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "40px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "30px"
+      },
+      "editorMeta": {
+        "name": "Business Name Top",
+        "editable": true,
+        "fieldName": "businessName"
+      }
+    },
+    {
+      "id": "headline-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "64px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.03em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "position": {
+        "top": "120px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "640px",
+        "height": "320px"
+      },
+      "editorMeta": {
+        "name": "Headline",
+        "editable": true,
+        "fieldName": "headline"
+      },
+      "textBehavior": {
+        "autoFit": {
+          "maxFontSize": 64,
+          "minFontSize": 42
+        }
+      }
+    },
+    {
+      "id": "list-item-0-block",
+      "type": "container",
+      "styles": {
+        "opacity": "0.08",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 3,
+      "position": {
+        "top": "560px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "960px",
+        "height": "90px"
+      },
+      "editorMeta": {
+        "name": "List Item 0 BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-check-0",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" fill=\"{{c1}}\"/><path d=\"M18 32 L28 42 L46 22\" stroke=\"{{c2}}\" stroke-width=\"4\" stroke-linecap=\"square\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "572px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "64px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "Check Icon 0",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-0",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "64px",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList0}}"
+      },
+      "position": {
+        "top": "572px",
+        "left": "144px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "List Item 0",
+        "editable": true,
+        "fieldName": "contentList0"
+      },
+      "textBehavior": {
+        "autoFit": {
+          "maxFontSize": 26,
+          "minFontSize": 16
+        }
+      }
+    },
+    {
+      "id": "list-check-1",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" fill=\"{{c1}}\"/><path d=\"M18 32 L28 42 L46 22\" stroke=\"{{c2}}\" stroke-width=\"4\" stroke-linecap=\"square\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "692px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "64px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "Check Icon 1",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "64px",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList1}}"
+      },
+      "position": {
+        "top": "692px",
+        "left": "144px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "List Item 1",
+        "editable": true,
+        "fieldName": "contentList1"
+      },
+      "textBehavior": {
+        "autoFit": {
+          "maxFontSize": 26,
+          "minFontSize": 16
+        }
+      }
+    },
+    {
+      "id": "list-item-2-block",
+      "type": "container",
+      "styles": {
+        "opacity": "0.08",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 3,
+      "position": {
+        "top": "800px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "960px",
+        "height": "90px"
+      },
+      "editorMeta": {
+        "name": "List Item 2 BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-check-2",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" fill=\"{{c1}}\"/><path d=\"M18 32 L28 42 L46 22\" stroke=\"{{c2}}\" stroke-width=\"4\" stroke-linecap=\"square\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "812px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "64px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "Check Icon 2",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "64px",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList2}}"
+      },
+      "position": {
+        "top": "812px",
+        "left": "144px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "List Item 2",
+        "editable": true,
+        "fieldName": "contentList2"
+      },
+      "textBehavior": {
+        "autoFit": {
+          "maxFontSize": 26,
+          "minFontSize": 16
+        }
+      }
+    },
+    {
+      "id": "list-check-3",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"64\" height=\"64\" fill=\"{{c1}}\"/><path d=\"M18 32 L28 42 L46 22\" stroke=\"{{c2}}\" stroke-width=\"4\" stroke-linecap=\"square\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "932px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "64px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "Check Icon 3",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "64px",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList3}}"
+      },
+      "position": {
+        "top": "932px",
+        "left": "144px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "List Item 3",
+        "editable": true,
+        "fieldName": "contentList3"
+      },
+      "textBehavior": {
+        "autoFit": {
+          "maxFontSize": 26,
+          "minFontSize": 16
+        }
+      }
+    },
+    {
+      "id": "checkered-bottom-left",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 360 360\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"ckbl\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><rect width=\"20\" height=\"20\" fill=\"{{c1}}\"/><rect x=\"20\" width=\"20\" height=\"20\" fill=\"{{c2}}\"/><rect y=\"20\" width=\"20\" height=\"20\" fill=\"{{c2}}\"/><rect x=\"20\" y=\"20\" width=\"20\" height=\"20\" fill=\"{{c1}}\"/></pattern></defs><rect width=\"360\" height=\"360\" fill=\"url(#ckbl)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1560px",
+        "left": "0",
+        "type": "absolute",
+        "width": "360px",
+        "height": "360px"
+      },
+      "editorMeta": {
+        "name": "Checkered Bottom Left",
+        "locked": true
+      }
+    },
+    {
+      "id": "grid-line-h1",
+      "type": "container",
+      "styles": {
+        "opacity": "0.25",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "480px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Grid Line H1",
+        "locked": true
+      }
+    },
+    {
+      "id": "grid-line-h2",
+      "type": "container",
+      "styles": {
+        "opacity": "0.25",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "1560px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Grid Line H2",
+        "locked": true
+      }
+    },
+    {
+      "id": "grid-line-v1",
+      "type": "container",
+      "styles": {
+        "opacity": "0.15",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "0",
+        "left": "360px",
+        "type": "absolute",
+        "width": "2px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Grid Line V1",
+        "locked": true
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Imagem",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1820px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Business Logo",
+        "editable": true,
+        "fieldName": "businessLogo"
+      }
+    },
+    {
+      "id": "business-name-bottom",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "letterSpacing": "0.1em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 11,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "1820px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Business Name Bottom",
+        "editable": true,
+        "fieldName": "businessName"
+      }
+    }
+  ],
+  "packageId": "marketing",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "checklist",
+  "aspectRatio": "9:16",
+  "templateName": "checklist",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "businessName",
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3"
+    ],
+    "businessFields": [
+      "logo",
+      "businessName"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

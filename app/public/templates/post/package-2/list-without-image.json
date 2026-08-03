@@ -1,0 +1,407 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "hidden": false,
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1768590581574_5uz1h",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "0px 0px 0px 0px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0526)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2315)",
+        "height": "calc(var(--image-height-post) * 0.1852)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1768590778916_83jra",
+      "type": "container",
+      "styles": {
+        "borderRadius": "27px",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 14,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3691)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8685)",
+        "height": "calc(var(--image-height-post) * 0.5074)"
+      },
+      "editorMeta": {
+        "name": "Content Background"
+      }
+    },
+    {
+      "id": "layer_1768590828042_v31eb",
+      "type": "list-container",
+      "zIndex": 20,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.461)",
+        "left": "calc(var(--image-width) * 0.0973)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.812)",
+        "height": "calc(var(--image-height-post) * 0.3937)"
+      },
+      "editorMeta": {
+        "name": "Numbered List",
+        "hidden": false,
+        "locked": false
+      },
+      "listConfig": {
+        "columns": 1,
+        "itemGap": "calc(var(--image-width) * 0.040)",
+        "iconSize": "calc(var(--image-width) * 0.055)",
+        "maxItems": 5,
+        "iconColor": "{{textColor2}}",
+        "iconStyle": "numbered",
+        "itemAlign": "center",
+        "textStyles": {
+          "color": "#000000",
+          "fontSize": "calc(var(--image-width) * 0.03)",
+          "textAlign": "left",
+          "fontFamily": "{{textFont2}}",
+          "fontWeight": "400",
+          "lineHeight": "1"
+        },
+        "iconTextGap": "calc(var(--image-width) * 0.020)",
+        "startNumber": 1,
+        "iconStrokeWidth": 1,
+        "iconColorSecondary": "{{bgColor2}}",
+        "itemVariablePrefix": "contentList"
+      }
+    },
+    {
+      "id": "layer_1768591229755_x1j9w",
+      "type": "container",
+      "styles": {
+        "borderRadius": "27px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 6,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2506)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8685)",
+        "height": "calc(var(--image-height-post) * 0.1119)"
+      },
+      "editorMeta": {
+        "name": "Content Background 1"
+      }
+    },
+    {
+      "id": "layer_1768591280799_u3kdh",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "svg": "getThreeDotsIconSvg",
+        "params": [
+          "{{textColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.275)",
+        "left": "calc(var(--image-width) * 0.0954)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0463)",
+        "height": "calc(var(--image-height-post) * 0.0089)"
+      },
+      "editorMeta": {
+        "name": "Menu Icon 1"
+      }
+    },
+    {
+      "id": "layer_1768591312418_luzny",
+      "type": "svg",
+      "zIndex": 8,
+      "content": {
+        "svg": "getChevronDownCircleIconSvg",
+        "params": [
+          "{{textColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2684)",
+        "left": "calc(var(--image-width) * 0.877)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0278)",
+        "height": "calc(var(--image-height-post) * 0.0222)"
+      },
+      "editorMeta": {
+        "name": "Expand Icon 1"
+      }
+    },
+    {
+      "id": "layer_1768591395394_vngok",
+      "type": "container",
+      "styles": {
+        "borderRadius": "27px",
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 11,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3069)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8685)",
+        "height": "calc(var(--image-height-post) * 0.1119)"
+      },
+      "editorMeta": {
+        "name": "Content Background 2"
+      }
+    },
+    {
+      "id": "layer_1768591426924_t3qvs",
+      "type": "svg",
+      "zIndex": 12,
+      "content": {
+        "svg": "getThreeDotsIconSvg",
+        "params": [
+          "{{textColor1}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3313)",
+        "left": "calc(var(--image-width) * 0.0954)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0463)",
+        "height": "calc(var(--image-height-post) * 0.0089)"
+      },
+      "editorMeta": {
+        "name": "Menu Icon 2"
+      }
+    },
+    {
+      "id": "layer_1768591462232_d4yoz",
+      "type": "svg",
+      "zIndex": 13,
+      "content": {
+        "svg": "getChevronDownCircleIconSvg",
+        "params": [
+          "{{textColor1}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3262)",
+        "left": "calc(var(--image-width) * 0.877)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0278)",
+        "height": "calc(var(--image-height-post) * 0.0222)"
+      },
+      "editorMeta": {
+        "name": "Expand Icon 2"
+      }
+    },
+    {
+      "id": "layer_1768591558319_nja6y",
+      "type": "svg",
+      "zIndex": 16,
+      "content": {
+        "svg": "getThreeDotsIconSvg",
+        "params": [
+          "{{textColor2}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.401)",
+        "left": "calc(var(--image-width) * 0.0954)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0463)",
+        "height": "calc(var(--image-height-post) * 0.0089)"
+      },
+      "editorMeta": {
+        "name": "Menu Icon 3"
+      }
+    },
+    {
+      "id": "layer_1768591560149_khacn",
+      "type": "svg",
+      "zIndex": 13,
+      "content": {
+        "svg": "getChevronDownCircleIconSvg",
+        "params": [
+          "{{textColor1}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3262)",
+        "left": "calc(var(--image-width) * 0.877)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0278)",
+        "height": "calc(var(--image-height-post) * 0.0222)"
+      },
+      "editorMeta": {
+        "name": "Expand Icon 3"
+      }
+    },
+    {
+      "id": "layer_1768591627243_3o71b",
+      "type": "svg",
+      "zIndex": 18,
+      "content": {
+        "svg": "getChevronUpCircleIconSvg",
+        "params": [
+          "{{textColor2}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3958)",
+        "left": "calc(var(--image-width) * 0.877)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0278)",
+        "height": "calc(var(--image-height-post) * 0.0222)"
+      },
+      "editorMeta": {
+        "name": "Colapse Icon"
+      }
+    },
+    {
+      "id": "layer_1768591657992_hgaiw",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{textColor2}}"
+      },
+      "zIndex": 19,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.4321)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8685)",
+        "height": "calc(var(--image-height-post) * 0.0007)"
+      },
+      "editorMeta": {
+        "name": "Content Line"
+      }
+    },
+    {
+      "id": "layer_1768592201658_97xrn",
+      "type": "container",
+      "styles": {
+        "borderRadius": "100px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 21,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8904)",
+        "left": "calc(var(--image-width) * 0.1713)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6565)",
+        "height": "calc(var(--image-height-post) * 0.057)"
+      },
+      "editorMeta": {
+        "name": "Retângulo"
+      }
+    },
+    {
+      "id": "layer_1768592237492_qveia",
+      "type": "svg",
+      "zIndex": 22,
+      "content": {
+        "svg": "getCircleIconSvg",
+        "params": [
+          "{{textColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.9156)",
+        "left": "calc(var(--image-width) * 0.1981)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0074)",
+        "height": "calc(var(--image-height-post) * 0.0059)"
+      },
+      "editorMeta": {
+        "name": "Ponto"
+      }
+    },
+    {
+      "id": "layer_1768592267270_2c2vc",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 23,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.9067)",
+        "left": "calc(var(--image-width) * 0.2241)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5759)",
+        "height": "calc(var(--image-height-post) * 0.0281)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA"
+      }
+    }
+  ],
+  "packageId": "package-2",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-without-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "list-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "maxListItems": 5,
+    "textVariables": [
+      "contentList",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

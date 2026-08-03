@@ -1,0 +1,130 @@
+{
+  "props": {
+    "bgColor1": "#C5A880",
+    "bgColor2": "#F5F0E6",
+    "bgColor3": "#1A1A1A",
+    "textColor1": "#1A1A1A",
+    "textColor2": "#666666",
+    "textColor3": "#F5F0E6"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "border-frame",
+      "type": "container",
+      "styles": {
+        "border": "1px solid {{bgColor1}}",
+        "backgroundColor": "transparent"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.03)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9)",
+        "height": "calc(var(--image-height-post) * 0.94)"
+      },
+      "editorMeta": {
+        "name": "Border Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.022)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
+      },
+      "zIndex": 2,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.6
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.06)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8)",
+        "height": "calc(var(--image-height-post) * 0.3)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.4)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8)",
+        "height": "calc(var(--image-height-post) * 0.5)"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal",
+        "locked": true
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "numbered-title-without-image-2",
+  "aspectRatio": "1:1.25",
+  "templateName": "numbered-title-without-image-2",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "subtitle"
+    ],
+    "businessFields": [],
+    "hasImagePlaceholder": true
+  }
+}

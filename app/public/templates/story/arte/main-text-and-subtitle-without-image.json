@@ -1,0 +1,281 @@
+{
+  "props": {
+    "ctaText": "Comece Agora",
+    "bgColor1": "#0a1628",
+    "bgColor2": "#1a3a5c",
+    "bgColor3": "#d4af37",
+    "headline": "Liberdade Financeira",
+    "subtitle": "Aprenda a construir riqueza de forma consistente e alcance seus sonhos",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#ffffff",
+    "textColor2": "#c9d1d9",
+    "textColor3": "#d4af37",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "golden-ambient",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"ga1\" cx=\"0.5\" cy=\"0.4\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#ga1)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Golden Ambient",
+        "locked": true
+      }
+    },
+    {
+      "id": "elegant-frame",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"900\" viewBox=\"0 0 920 900\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"918\" height=\"898\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.4\"/><line x1=\"0\" y1=\"450\" x2=\"40\" y2=\"450\" stroke=\"{{c2}}\" stroke-width=\"3\"/><line x1=\"880\" y1=\"450\" x2=\"920\" y2=\"450\" stroke=\"{{c2}}\" stroke-width=\"3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "400px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Elegant Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "600px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "280px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "28px",
+        "minFontSize": "18px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "920px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "160px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"70\" viewBox=\"0 0 400 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"400\" height=\"70\" rx=\"35\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1450px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "CTA Button",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "70px",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1450px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "70px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo-container",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"160\" height=\"50\" viewBox=\"0 0 160 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"160\" height=\"50\" rx=\"6\" fill=\"{{c1}}\" fill-opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1820px",
+        "left": "460px",
+        "type": "absolute",
+        "width": "160px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "Logo Container",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1827px",
+        "left": "470px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "36px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "arte",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "main-text-and-subtitle-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "main-text-and-subtitle-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

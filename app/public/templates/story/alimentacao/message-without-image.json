@@ -1,0 +1,244 @@
+{
+  "props": {
+    "ctaText": "Confira agora",
+    "bgColor1": "#5A6B4A",
+    "bgColor2": "#F5F0E6",
+    "bgColor3": "#FFFBF2",
+    "headline": "Novo Menu Disponivel",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#F5F0E6",
+    "textColor2": "#FFFBF2",
+    "textColor3": "#5A6B4A",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"60\" height=\"60\" patternUnits=\"userSpaceOnUse\"><path d=\"M 60 0 L 0 0 0 60\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.1\"/></pattern></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-circles",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"900\" cy=\"300\" r=\"180\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.15\"/><circle cx=\"180\" cy=\"1600\" r=\"120\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.15\"/><circle cx=\"950\" cy=\"1400\" r=\"80\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Decorative Circles",
+        "locked": true
+      }
+    },
+    {
+      "id": "center-card",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"720\" viewBox=\"0 0 920 720\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"920\" height=\"720\" rx=\"32\" fill=\"{{c1}}\" opacity=\"0.1\"/><rect x=\"2\" y=\"2\" width=\"916\" height=\"716\" rx=\"30\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "600px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "720px"
+      },
+      "editorMeta": {
+        "name": "Center Card",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "760px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "280px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta-pill-bg",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"80\" viewBox=\"0 0 400 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"400\" height=\"80\" rx=\"40\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1120px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "ctaText",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.5",
+        "letterSpacing": "0.05em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1138px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "44px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1840px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "message-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "message-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

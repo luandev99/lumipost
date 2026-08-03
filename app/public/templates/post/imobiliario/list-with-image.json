@@ -1,0 +1,523 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "textFont1": "Kenony",
+    "textFont2": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessName": "Usuário",
+    "contentList0": "Item 1",
+    "contentList1": "Item 2",
+    "contentList2": "Item 3",
+    "contentList3": "Item 4",
+    "contentList4": "Item 5"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-texture",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"45\" height=\"45\" patternUnits=\"userSpaceOnUse\"><path d=\"M45 0 L0 0 0 45\" fill=\"none\" stroke=\"{{c}}\" stroke-width=\"0.4\" opacity=\"0.12\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Texture",
+        "locked": true
+      }
+    },
+    {
+      "id": "watercolor-blobs",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"wc1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><path d=\"M180 320 Q260 290, 340 330 T 470 350 Q530 360, 550 420 T 510 520 Q470 560, 400 550 T 270 510 Q210 480, 190 420 T 180 320 Z\" fill=\"url(#wc1)\" opacity=\"0.1\"/><path d=\"M720 240 Q800 210, 880 250 T 1010 270 Q1060 280, 1070 330 T 1040 420 Q1000 460, 930 450 T 800 410 Q740 380, 720 320 T 720 240 Z\" fill=\"url(#wc1)\" opacity=\"0.08\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Watercolor Blobs",
+        "locked": true
+      }
+    },
+    {
+      "id": "ornate-frame-top",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"420\" height=\"300\" viewBox=\"0 0 420 300\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"fg1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"50%\" stop-color=\"{{c2}}\"/><stop offset=\"100%\" stop-color=\"{{c1}}\"/></linearGradient></defs><rect x=\"20\" y=\"20\" width=\"380\" height=\"260\" stroke=\"url(#fg1)\" stroke-width=\"12\" fill=\"none\" opacity=\"0.15\" rx=\"4\"/><path d=\"M40 40 L60 40 L60 50 L50 50 L50 60 L40 60 Z\" fill=\"url(#fg1)\" opacity=\"0.12\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "420px",
+        "height": "300px"
+      },
+      "editorMeta": {
+        "name": "Ornate Frame Top",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "0px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Post image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "120px",
+        "left": "630px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "560px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "64px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "0.95",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "80px",
+        "minFontSize": "48px",
+        "lineHeightRatio": 0.95
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "140px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "520px",
+        "height": "160px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "list-item-0",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "26px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "28px",
+        "minFontSize": "20px",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "• {{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "380px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "80px"
+      },
+      "fieldName": "contentList0",
+      "editorMeta": {
+        "name": "List Item 1"
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "26px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "28px",
+        "minFontSize": "20px",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "• {{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "470px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "80px"
+      },
+      "fieldName": "contentList1",
+      "editorMeta": {
+        "name": "List Item 2"
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "26px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "28px",
+        "minFontSize": "20px",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "• {{contentList2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "560px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "80px"
+      },
+      "fieldName": "contentList2",
+      "editorMeta": {
+        "name": "List Item 3"
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "26px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "28px",
+        "minFontSize": "20px",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "• {{contentList3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "650px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "80px"
+      },
+      "fieldName": "contentList3",
+      "editorMeta": {
+        "name": "List Item 4"
+      }
+    },
+    {
+      "id": "list-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "26px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "28px",
+        "minFontSize": "20px",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "• {{contentList4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "740px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "80px"
+      },
+      "fieldName": "contentList4",
+      "editorMeta": {
+        "name": "List Item 5"
+      }
+    },
+    {
+      "id": "cta-button-bg",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"320\" height=\"70\" viewBox=\"0 0 320 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"320\" height=\"70\" rx=\"35\" fill=\"{{c}}\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "900px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "320px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "915px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "320px",
+        "height": "40px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "brand-top-left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 9,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "50px",
+        "left": "50px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "40px"
+      },
+      "fieldName": "businessName",
+      "editorMeta": {
+        "name": "Business Name Top"
+      }
+    },
+    {
+      "id": "brand-bottom",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 10,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1270px",
+        "left": "50px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "40px"
+      },
+      "fieldName": "businessName",
+      "editorMeta": {
+        "name": "Business Name Bottom"
+      }
+    }
+  ],
+  "packageId": "imobiliario",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-with-image",
+  "aspectRatio": "4:5",
+  "templateName": "list-with-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "fontFields": [
+      "textFont1",
+      "textFont2"
+    ],
+    "textFields": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4",
+      "ctaText",
+      "businessName"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "bgColor3",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "image"
+    ],
+    "textVariables": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4",
+      "ctaText",
+      "businessName"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "optionalFields": [],
+    "requiredFields": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4",
+      "ctaText",
+      "image",
+      "businessName"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

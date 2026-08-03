@@ -1,0 +1,361 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "subtitle": "Subtitle placeholder",
+    "textFont1": "Kenony",
+    "textFont2": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-texture",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"45\" height=\"45\" patternUnits=\"userSpaceOnUse\"><path d=\"M45 0 L0 0 0 45\" fill=\"none\" stroke=\"{{c}}\" stroke-width=\"0.4\" opacity=\"0.12\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Texture",
+        "locked": true
+      }
+    },
+    {
+      "id": "watercolor-blobs",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"wc1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><path d=\"M180 320 Q260 290, 340 330 T 470 350 Q530 360, 550 420 T 510 520 Q470 560, 400 550 T 270 510 Q210 480, 190 420 T 180 320 Z\" fill=\"url(#wc1)\" opacity=\"0.1\"/><path d=\"M720 240 Q800 210, 880 250 T 1010 270 Q1060 280, 1070 330 T 1040 420 Q1000 460, 930 450 T 800 410 Q740 380, 720 320 T 720 240 Z\" fill=\"url(#wc1)\" opacity=\"0.08\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Watercolor Blobs",
+        "locked": true
+      }
+    },
+    {
+      "id": "ornate-frame",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"420\" height=\"300\" viewBox=\"0 0 420 300\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"fg1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"50%\" stop-color=\"{{c2}}\"/><stop offset=\"100%\" stop-color=\"{{c1}}\"/></linearGradient></defs><rect x=\"20\" y=\"20\" width=\"380\" height=\"260\" stroke=\"url(#fg1)\" stroke-width=\"12\" fill=\"none\" opacity=\"0.15\" rx=\"4\"/><rect x=\"32\" y=\"32\" width=\"356\" height=\"236\" stroke=\"url(#fg1)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.1\" rx=\"2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "420px",
+        "height": "300px"
+      },
+      "editorMeta": {
+        "name": "Ornate Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "0px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Professional",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "180px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "0.95",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 7,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "100px",
+        "minFontSize": "50px",
+        "lineHeightRatio": 0.95
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "900px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "200px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle-bg",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"720\" height=\"70\" viewBox=\"0 0 720 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"720\" height=\"70\" rx=\"4\" fill=\"{{c}}\" opacity=\"0.18\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1120px",
+        "left": "180px",
+        "type": "absolute",
+        "width": "720px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "Subtitle BG"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "40px",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.25"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1130px",
+        "left": "200px",
+        "type": "absolute",
+        "width": "680px",
+        "height": "50px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "500",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1210px",
+        "left": "360px",
+        "type": "absolute",
+        "width": "360px",
+        "height": "40px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "slide-indicator",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "opacity": "0.5",
+        "fontSize": "16px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{slideNumber}}/{{slidesCount}}"
+      },
+      "position": {
+        "top": "1280px",
+        "left": "490px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "30px"
+      },
+      "editorMeta": {
+        "name": "Slide Indicator",
+        "locked": true
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1200px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "imobiliario-02",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "cover-title-and-subtitle-with-image-1",
+  "aspectRatio": "4:5",
+  "templateName": "cover-title-and-subtitle-with-image-1",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "cover",
+  "contentRequirements": {
+    "hasList": false,
+    "fontFields": [
+      "textFont1",
+      "textFont2"
+    ],
+    "textFields": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "bgColor3",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "image",
+      "businessLogo"
+    ],
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "carouselFields": [
+      "slideNumber",
+      "slidesCount"
+    ],
+    "optionalFields": [],
+    "requiredFields": [
+      "headline",
+      "subtitle",
+      "ctaText",
+      "image",
+      "businessLogo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

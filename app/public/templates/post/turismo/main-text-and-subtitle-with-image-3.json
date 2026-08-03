@@ -1,0 +1,338 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Saiba mais",
+    "bgColor1": "#1A0533",
+    "bgColor2": "#6B24AA",
+    "bgColor3": "#FF6B35",
+    "headline": "Dubai em 10x sem juros",
+    "subtitle": "Hospedagem de luxo, passeios incríveis e experiências únicas na cidade do futuro.",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#E8E8E8",
+    "textColor3": "#FF6B35",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "gradient-spots",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"sp1\" cx=\"0.2\" cy=\"0.3\" r=\"0.4\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.3\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"sp2\" cx=\"0.9\" cy=\"0.7\" r=\"0.35\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.25\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#sp1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#sp2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Gradient Spots",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "30px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Travel destination",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "80px",
+        "left": "540px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "image-frame",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"510\" height=\"630\" viewBox=\"0 0 510 630\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"frameG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect x=\"15\" y=\"15\" width=\"480\" height=\"600\" rx=\"30\" stroke=\"url(#frameG)\" stroke-width=\"2\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "65px",
+        "left": "525px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Image Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.05
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "280px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "26px",
+        "minFontSize": "18px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "520px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "150px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "divider-line",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"4\" viewBox=\"0 0 920 4\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"divG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect width=\"920\" height=\"4\" rx=\"2\" fill=\"url(#divG)\" opacity=\"0.4\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "750px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "4px"
+      },
+      "editorMeta": {
+        "name": "Divider Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "features-row",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}",
+            "c3": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"200\" viewBox=\"0 0 920 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"iconG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><circle cx=\"80\" cy=\"60\" r=\"40\" fill=\"url(#iconG)\" opacity=\"0.2\"/><circle cx=\"310\" cy=\"60\" r=\"40\" fill=\"url(#iconG)\" opacity=\"0.2\"/><circle cx=\"540\" cy=\"60\" r=\"40\" fill=\"url(#iconG)\" opacity=\"0.2\"/><path d=\"M65 60 L80 45 L95 60 M80 45 L80 75\" stroke=\"{{c1}}\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M295 50 L310 65 L325 50 M295 70 L310 55 L325 70\" stroke=\"{{c1}}\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M525 60 L555 60 M540 45 L540 75\" stroke=\"{{c1}}\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><text x=\"80\" y=\"130\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"16\" font-weight=\"600\" fill=\"{{c3}}\">Voo direto</text><text x=\"310\" y=\"130\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"16\" font-weight=\"600\" fill=\"{{c3}}\">Hotel 5 estrelas</text><text x=\"540\" y=\"130\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"16\" font-weight=\"600\" fill=\"{{c3}}\">Passeios inclusos</text></svg>"
+        }
+      },
+      "position": {
+        "top": "820px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "Features Row",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-button-bg",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"300\" height=\"65\" viewBox=\"0 0 300 65\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"ctaG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect width=\"300\" height=\"65\" rx=\"32\" fill=\"url(#ctaG)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "65px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1118px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "30px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 8,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "turismo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-with-image-3",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-and-subtitle-with-image-3",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

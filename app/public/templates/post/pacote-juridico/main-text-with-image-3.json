@@ -1,0 +1,300 @@
+{
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-giant-text",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"540\" y=\"700\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"460\" font-weight=\"900\" fill=\"{{c1}}\" opacity=\"0.028\" letter-spacing=\"-0.07em\" transform=\"rotate(-8 540 700)\">LEI</text></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "BG Giant Text",
+        "locked": true
+      }
+    },
+    {
+      "id": "spot-lights",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"sp1\" cx=\"0.15\" cy=\"0.5\" r=\"0.42\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.17\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"sp2\" cx=\"0.82\" cy=\"0.45\" r=\"0.38\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.14\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#sp1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#sp2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Spot Lights",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "0px"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Main image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "80px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "480px",
+        "height": "680px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image (No BG)"
+      }
+    },
+    {
+      "id": "organic-curves",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"cG\" x1=\"0\" y1=\"0\" x2=\"0.8\" y2=\"0.6\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"cN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"12\"/></filter></defs><path d=\"M560 50 C440 180, 320 80, 200 200 S60 420, 180 540\" stroke=\"url(#cG)\" stroke-width=\"3.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.48\"/><path d=\"M560 50 C440 180, 320 80, 200 200 S60 420, 180 540\" stroke=\"url(#cG)\" stroke-width=\"3.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.24\" filter=\"url(#cN)\"/><path d=\"M1100 260 C960 340, 820 240, 680 320 S500 460, 620 560\" stroke=\"url(#cG)\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.42\"/><path d=\"M1100 260 C960 340, 820 240, 680 320 S500 460, 620 560\" stroke=\"url(#cG)\" stroke-width=\"3\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.21\" filter=\"url(#cN)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Organic Curves",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "82px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "0.96",
+        "letterSpacing": "-0.04em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "88px",
+        "minFontSize": "42px",
+        "lineHeightRatio": 0.96
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "220px",
+        "left": "600px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "460px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta-pill-bg",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"660\" height=\"70\" viewBox=\"0 0 660 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"cG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"cN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"10\"/></filter></defs><rect width=\"660\" height=\"70\" rx=\"35\" fill=\"url(#cG)\" opacity=\"0.17\" filter=\"url(#cN)\"/><rect width=\"660\" height=\"70\" rx=\"35\" fill=\"url(#cG)\" opacity=\"0.12\"/><rect x=\"2.5\" y=\"2.5\" width=\"655\" height=\"65\" rx=\"32.5\" stroke=\"url(#cG)\" stroke-width=\"2.5\" fill=\"none\" opacity=\"0.55\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "940px",
+        "left": "210px",
+        "type": "absolute",
+        "width": "660px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill BG"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "23px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "lineHeight": "1",
+        "letterSpacing": "0.04em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "940px",
+        "left": "210px",
+        "type": "absolute",
+        "width": "660px",
+        "height": "70px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo-divider",
+      "type": "svg",
+      "zIndex": 9,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1\" viewBox=\"0 0 1080 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"0.5\" x2=\"1000\" y2=\"0.5\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1268px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Logo Divider",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1282px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "52px"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "pacote-juridico",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-image-3",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-with-image-3",
+  "templateType": "post",
+  "contentRequirements": {
+    "textFields": [
+      {
+        "label": "Headline",
+        "fieldName": "headline",
+        "maxLength": 50,
+        "placeholder": "Advocacia Com Excelencia"
+      },
+      {
+        "label": "CTA",
+        "fieldName": "ctaText",
+        "maxLength": 30,
+        "placeholder": "Agende sua consulta"
+      }
+    ],
+    "imageFields": [
+      {
+        "label": "Main Image (sem fundo)",
+        "required": true,
+        "fieldName": "image"
+      },
+      {
+        "label": "Business Logo",
+        "required": true,
+        "fieldName": "businessLogo"
+      }
+    ]
+  }
+}

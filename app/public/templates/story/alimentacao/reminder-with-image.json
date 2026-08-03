@@ -1,0 +1,215 @@
+{
+  "props": {
+    "image": "",
+    "bgColor1": "#F5F0E6",
+    "bgColor2": "#5A6B4A",
+    "bgColor3": "#FFFBF2",
+    "headline": "Nao Esqueca: Promocao Termina Hoje",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#5A6B4A",
+    "textColor2": "#3D4A32",
+    "textColor3": "#F5F0E6",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"60\" height=\"60\" patternUnits=\"userSpaceOnUse\"><path d=\"M 60 0 L 0 0 0 60\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.15\"/></pattern></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "reminder-label",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"60\" viewBox=\"0 0 400 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"400\" height=\"60\" rx=\"30\" fill=\"{{c1}}\"/><text x=\"200\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter\" font-size=\"22\" font-weight=\"600\" fill=\"{{c2}}\" letter-spacing=\"0.15em\">LEMBRETE</text></svg>"
+        }
+      },
+      "position": {
+        "top": "200px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Reminder Label",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "50%"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Reminder image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "340px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "image-frame",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"800\" height=\"800\" viewBox=\"0 0 800 800\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"400\" cy=\"400\" r=\"398\" stroke=\"{{c1}}\" stroke-width=\"3\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "340px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Image Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1240px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "340px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1840px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "reminder-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "reminder-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

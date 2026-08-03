@@ -1,0 +1,449 @@
+{
+  "props": {
+    "bgColor1": "#1a1a2e",
+    "bgColor2": "#e94560",
+    "bgColor3": "#0f3460",
+    "textColor1": "#ffffff",
+    "textColor2": "#e0e0e0",
+    "textColor3": "#a0a0a0"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-ambient-glow",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"gA\" cx=\"0.5\" cy=\"0.6\" r=\"0.55\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.16\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"gB\" cx=\"0.2\" cy=\"0.2\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.12\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#gA)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#gB)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Ambient Glow",
+        "locked": true
+      }
+    },
+    {
+      "id": "decor-dot-grid",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"dg\" x=\"0\" y=\"0\" width=\"54\" height=\"54\" patternUnits=\"userSpaceOnUse\"><circle cx=\"2\" cy=\"2\" r=\"1.2\" fill=\"{{c1}}\" opacity=\"0.07\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#dg)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Dot Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "decor-sphere-top-left",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"432\" height=\"432\" viewBox=\"0 0 432 432\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"s1\" cx=\"0.4\" cy=\"0.35\" r=\"0.65\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.3\"/><stop offset=\"50%\" stop-color=\"{{c1}}\" stop-opacity=\"0.12\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><circle cx=\"216\" cy=\"216\" r=\"205\" fill=\"url(#s1)\"/><ellipse cx=\"168\" cy=\"158\" rx=\"64\" ry=\"35\" fill=\"white\" opacity=\"0.06\" transform=\"rotate(-25 168 158)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * -0.06)",
+        "left": "calc(var(--image-width) * -0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)",
+        "height": "calc(var(--image-width) * 0.4)"
+      },
+      "editorMeta": {
+        "name": "3D Sphere Top-Left"
+      }
+    },
+    {
+      "id": "decor-sphere-top-right",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"389\" height=\"389\" viewBox=\"0 0 389 389\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"s2\" cx=\"0.35\" cy=\"0.35\" r=\"0.65\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.28\"/><stop offset=\"50%\" stop-color=\"{{c1}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><circle cx=\"194\" cy=\"194\" r=\"185\" fill=\"url(#s2)\"/><ellipse cx=\"150\" cy=\"140\" rx=\"55\" ry=\"30\" fill=\"white\" opacity=\"0.05\" transform=\"rotate(-22 150 140)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * -0.03)",
+        "left": "calc(var(--image-width) * 0.72)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.36)",
+        "height": "calc(var(--image-width) * 0.36)"
+      },
+      "editorMeta": {
+        "name": "3D Sphere Top-Right"
+      }
+    },
+    {
+      "id": "decor-ring-center",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"324\" height=\"324\" viewBox=\"0 0 324 324\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"162\" cy=\"162\" r=\"150\" stroke=\"{{c1}}\" stroke-width=\"2\" opacity=\"0.08\"/><circle cx=\"162\" cy=\"162\" r=\"110\" stroke=\"{{c1}}\" stroke-width=\"1\" opacity=\"0.04\"/><circle cx=\"162\" cy=\"162\" r=\"70\" stroke=\"{{c2}}\" stroke-width=\"0.8\" opacity=\"0.03\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.08)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3)",
+        "height": "calc(var(--image-width) * 0.3)"
+      },
+      "editorMeta": {
+        "name": "Decorative Rings Center"
+      }
+    },
+    {
+      "id": "decor-diamond-left",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"2\" width=\"39\" height=\"39\" rx=\"5\" transform=\"rotate(45 30 2)\" stroke=\"{{c1}}\" stroke-width=\"1.5\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.35)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.055)",
+        "height": "calc(var(--image-width) * 0.055)"
+      },
+      "editorMeta": {
+        "name": "Decorative Diamond"
+      }
+    },
+    {
+      "id": "divider-top",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"756\" height=\"18\" viewBox=\"0 0 756 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"dT\" x1=\"0\" y1=\"9\" x2=\"756\" y2=\"9\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"35%\" stop-color=\"{{c1}}\" stop-opacity=\"0.4\"/><stop offset=\"50%\" stop-color=\"{{c2}}\" stop-opacity=\"0.5\"/><stop offset=\"65%\" stop-color=\"{{c2}}\" stop-opacity=\"0.4\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></linearGradient></defs><rect y=\"7\" width=\"756\" height=\"2\" rx=\"1\" fill=\"url(#dT)\"/><circle cx=\"378\" cy=\"9\" r=\"4\" fill=\"{{c2}}\" opacity=\"0.4\"/><circle cx=\"348\" cy=\"9\" r=\"1.5\" fill=\"{{c1}}\" opacity=\"0.2\"/><circle cx=\"408\" cy=\"9\" r=\"1.5\" fill=\"{{c1}}\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.35)",
+        "left": "calc(var(--image-width) * 0.15)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7)",
+        "height": "calc(var(--image-height-post) * 0.013)"
+      },
+      "editorMeta": {
+        "name": "Ornamental Divider Top"
+      }
+    },
+    {
+      "id": "headline-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.088)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "1.15",
+        "letterSpacing": "-0.01em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 12,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "11%",
+        "minFontSize": "4%",
+        "lineHeightRatio": 1.15
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.38)",
+        "left": "calc(var(--image-width) * 0.074)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.852)",
+        "height": "calc(var(--image-height-post) * 0.22)"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "headline-underline",
+      "type": "svg",
+      "zIndex": 11,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"648\" height=\"11\" viewBox=\"0 0 648 11\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"hU\" x1=\"0\" y1=\"5\" x2=\"648\" y2=\"5\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"30%\" stop-color=\"{{c1}}\" stop-opacity=\"0.7\"/><stop offset=\"70%\" stop-color=\"{{c2}}\" stop-opacity=\"0.7\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></linearGradient></defs><rect y=\"3\" width=\"648\" height=\"5\" rx=\"2.5\" fill=\"url(#hU)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.608)",
+        "left": "calc(var(--image-width) * 0.2)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6)",
+        "height": "calc(var(--image-height-post) * 0.008)"
+      },
+      "editorMeta": {
+        "name": "Headline Underline"
+      }
+    },
+    {
+      "id": "subtitle-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.04)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.55",
+        "verticalAlign": "top"
+      },
+      "zIndex": 12,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "2.5%",
+        "lineHeightRatio": 1.55
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.63)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8)",
+        "height": "calc(var(--image-height-post) * 0.1474)"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "divider-bottom",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"756\" height=\"18\" viewBox=\"0 0 756 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"dB\" x1=\"0\" y1=\"9\" x2=\"756\" y2=\"9\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"35%\" stop-color=\"{{c1}}\" stop-opacity=\"0.4\"/><stop offset=\"50%\" stop-color=\"{{c2}}\" stop-opacity=\"0.5\"/><stop offset=\"65%\" stop-color=\"{{c2}}\" stop-opacity=\"0.4\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></linearGradient></defs><rect y=\"7\" width=\"756\" height=\"2\" rx=\"1\" fill=\"url(#dB)\"/><circle cx=\"378\" cy=\"9\" r=\"4\" fill=\"{{c2}}\" opacity=\"0.4\"/><circle cx=\"348\" cy=\"9\" r=\"1.5\" fill=\"{{c1}}\" opacity=\"0.2\"/><circle cx=\"408\" cy=\"9\" r=\"1.5\" fill=\"{{c1}}\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.75)",
+        "left": "calc(var(--image-width) * 0.15)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7)",
+        "height": "calc(var(--image-height-post) * 0.013)"
+      },
+      "editorMeta": {
+        "name": "Ornamental Divider Bottom"
+      }
+    },
+    {
+      "id": "cta-pill-shadow",
+      "type": "svg",
+      "zIndex": 13,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"648\" height=\"74\" viewBox=\"0 0 648 74\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"cs\" x=\"-8\" y=\"-4\" width=\"664\" height=\"90\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"5\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter><linearGradient id=\"cg\" x1=\"0\" y1=\"37\" x2=\"648\" y2=\"37\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect x=\"4\" y=\"4\" width=\"640\" height=\"64\" rx=\"32\" fill=\"url(#cg)\" filter=\"url(#cs)\"/><rect x=\"4\" y=\"4\" width=\"640\" height=\"32\" rx=\"32\" fill=\"white\" opacity=\"0.06\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.795)",
+        "left": "calc(var(--image-width) * 0.2)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6)",
+        "height": "calc(var(--image-height-post) * 0.055)"
+      },
+      "editorMeta": {
+        "name": "CTA Pill Shadow"
+      }
+    },
+    {
+      "id": "cta-button-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.033)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "letterSpacing": "0.03em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 14,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "4.5%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.798)",
+        "left": "calc(var(--image-width) * 0.22)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.56)",
+        "height": "calc(var(--image-height-post) * 0.05)"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Button Text"
+      }
+    },
+    {
+      "id": "logo-bar-shape",
+      "type": "svg",
+      "zIndex": 14,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"567\" height=\"104\" viewBox=\"0 0 567 104\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><mask id=\"m0\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"104\"><path d=\"M0 0H567V104H0V0Z\" fill=\"white\"/></mask><g mask=\"url(#m0)\"><mask id=\"m1\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"114\"><path d=\"M90.5166 0H476.489C487.778 0 498.369 5.47203 504.925 14.6914L564.969 99.1238C566.984 101.956 567.25 105.683 565.667 108.777C564.079 111.871 560.897 113.815 557.429 113.815H9.57087C6.10288 113.815 2.9265 111.871 1.33831 108.777C-0.249883 105.683 0.0208909 101.956 2.03607 99.1238L62.0801 14.6914C68.636 5.47203 79.2274 0 90.5166 0Z\" fill=\"white\"/></mask><g mask=\"url(#m1)\"><path d=\"M-8.41479 0H575.415V113.815H-8.41479V0Z\" fill=\"{{primary}}\"/></g></g></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.923)",
+        "left": "calc(var(--image-width) * 0.237)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.525)",
+        "height": "calc(var(--image-height-post) * 0.077)"
+      },
+      "editorMeta": {
+        "name": "Logo Bar Shape"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 15,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.9244)",
+        "left": "calc(var(--image-width) * 0.319)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.362)",
+        "height": "calc(var(--image-height-post) * 0.0741)"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "package-4",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-without-image-2",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-and-subtitle-without-image-2",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

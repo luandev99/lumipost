@@ -1,0 +1,247 @@
+{
+  "props": {
+    "bgColor1": "#c9bfaa",
+    "bgColor2": "#3d2b1f",
+    "bgColor3": "#8b7355",
+    "textColor1": "#3d2b1f",
+    "textColor2": "#5a4a3a",
+    "textColor3": "#3d2b1f"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_image_1",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "calc(var(--image-width) * 0.025)",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Imagem 1",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.08)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.28)",
+        "height": "calc(var(--image-height-post) * 0.16)"
+      },
+      "editorMeta": {
+        "name": "Imagem 1"
+      }
+    },
+    {
+      "id": "layer_text_1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.032)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.3",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.1)",
+        "left": "calc(var(--image-width) * 0.42)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5)",
+        "height": "calc(var(--image-height-post) * 0.12)"
+      },
+      "editorMeta": {
+        "name": "Texto Item 1"
+      }
+    },
+    {
+      "id": "layer_image_2",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "calc(var(--image-width) * 0.025)",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Imagem 2",
+        "source": "{{image2Url}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.28)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.28)",
+        "height": "calc(var(--image-height-post) * 0.16)"
+      },
+      "editorMeta": {
+        "name": "Imagem 2"
+      }
+    },
+    {
+      "id": "layer_text_2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.032)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.3",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3)",
+        "left": "calc(var(--image-width) * 0.42)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5)",
+        "height": "calc(var(--image-height-post) * 0.12)"
+      },
+      "editorMeta": {
+        "name": "Texto Item 2"
+      }
+    },
+    {
+      "id": "layer_image_3",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "calc(var(--image-width) * 0.025)",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Imagem 3",
+        "source": "{{backgroundImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.48)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.28)",
+        "height": "calc(var(--image-height-post) * 0.16)"
+      },
+      "editorMeta": {
+        "name": "Imagem 3"
+      }
+    },
+    {
+      "id": "layer_text_3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.032)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.3",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.5)",
+        "left": "calc(var(--image-width) * 0.42)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5)",
+        "height": "calc(var(--image-height-post) * 0.12)"
+      },
+      "editorMeta": {
+        "name": "Texto Item 3"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.055)",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 10,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "8%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.72)",
+        "left": "calc(var(--image-width) * 0.06)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.88)",
+        "height": "calc(var(--image-height-post) * 0.2)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    }
+  ],
+  "packageId": "pacote-novo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-with-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "list-with-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "headline"
+    ],
+    "businessFields": [],
+    "hasImagePlaceholder": true
+  },
+  "textGenerationInstructions": "imagem sem fundo"
+}

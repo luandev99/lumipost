@@ -1,0 +1,370 @@
+{
+  "props": {
+    "bgColor1": "#1A1A1A",
+    "bgColor2": "#A8C686",
+    "bgColor3": "#D4A853",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#A8C686",
+    "textColor3": "#D4A853"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_main_image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Main Image",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "layer_gradient_overlay",
+      "type": "container",
+      "styles": {
+        "background": "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, transparent 100%)"
+      },
+      "zIndex": 2,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.4)",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "calc(var(--image-height-story) * 0.6)"
+      },
+      "editorMeta": {
+        "name": "Gradient Overlay"
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.04)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2)",
+        "height": "calc(var(--image-height-story) * 0.035)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_tag",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.022)",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.1em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{tagText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.04)",
+        "left": "calc(var(--image-width) * 0.55)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)",
+        "height": "calc(var(--image-height-story) * 0.025)"
+      },
+      "fieldName": "img_content_tag",
+      "editorMeta": {
+        "name": "Tag Text"
+      }
+    },
+    {
+      "id": "layer_headline_line1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.12)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "1.0",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "15%",
+        "minFontSize": "5%",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headlineTop}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.58)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9)",
+        "height": "calc(var(--image-height-story) * 0.07)"
+      },
+      "fieldName": "img_content_headline_top",
+      "editorMeta": {
+        "name": "Headline Line 1"
+      }
+    },
+    {
+      "id": "layer_headline_line2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.12)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "1.0",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "15%",
+        "minFontSize": "5%",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headlineMiddle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.65)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9)",
+        "height": "calc(var(--image-height-story) * 0.07)"
+      },
+      "fieldName": "img_content_headline_middle",
+      "editorMeta": {
+        "name": "Headline Line 2"
+      }
+    },
+    {
+      "id": "layer_headline_line3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.12)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.0",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "15%",
+        "minFontSize": "5%",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headlineBottom}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.72)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5)",
+        "height": "calc(var(--image-height-story) * 0.07)"
+      },
+      "fieldName": "img_content_headline_bottom",
+      "editorMeta": {
+        "name": "Headline Line 3"
+      }
+    },
+    {
+      "id": "layer_line",
+      "type": "svg",
+      "zIndex": 8,
+      "content": {
+        "svg": "getLineSvg",
+        "params": [
+          "{{textColor1}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.745)",
+        "left": "calc(var(--image-width) * 0.52)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-story) * 0.002)"
+      },
+      "editorMeta": {
+        "name": "Decorative Line"
+      }
+    },
+    {
+      "id": "layer_headline_line4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.12)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.0",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "15%",
+        "minFontSize": "5%",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headlineLast}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.79)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5)",
+        "height": "calc(var(--image-height-story) * 0.07)"
+      },
+      "fieldName": "img_content_headline_last",
+      "editorMeta": {
+        "name": "Headline Line 4"
+      }
+    },
+    {
+      "id": "layer_cta_button",
+      "type": "container",
+      "styles": {
+        "borderColor": "{{bgColor2}}",
+        "borderStyle": "solid",
+        "borderWidth": "2px",
+        "borderRadius": "30px",
+        "backgroundColor": "transparent"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.82)",
+        "left": "calc(var(--image-width) * 0.45)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-story) * 0.035)"
+      },
+      "editorMeta": {
+        "name": "CTA Button Background"
+      }
+    },
+    {
+      "id": "layer_cta_text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.028)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "letterSpacing": "0.1em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 11,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.825)",
+        "left": "calc(var(--image-width) * 0.46)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)",
+        "height": "calc(var(--image-height-story) * 0.025)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "message-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "message-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headlineTop",
+      "headlineMiddle",
+      "headlineBottom",
+      "headlineLast",
+      "tagText",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

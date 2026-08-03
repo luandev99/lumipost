@@ -1,0 +1,258 @@
+{
+  "props": {
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "textFont1": "Kenony",
+    "textFont2": "Kenony",
+    "afterImage": "",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "beforeImage": "",
+    "businessLogo": "",
+    "businessName": "Usuário"
+  },
+  "layers": [
+    {
+      "id": "bg",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"30\" height=\"30\" patternUnits=\"userSpaceOnUse\"><path d=\"M 30 0 L 0 0 0 30\" fill=\"none\" stroke=\"{{color}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid",
+        "locked": true
+      }
+    },
+    {
+      "id": "before-label",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.032)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700"
+      },
+      "zIndex": 2,
+      "content": {
+        "text": "ANTES"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.12)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.38)"
+      },
+      "editorMeta": {
+        "name": "Before Label"
+      }
+    },
+    {
+      "id": "before-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Before",
+        "source": "{{beforeImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Before Image"
+      }
+    },
+    {
+      "id": "after-label",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.032)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700"
+      },
+      "zIndex": 2,
+      "content": {
+        "text": "DEPOIS"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.12)",
+        "left": "calc(var(--image-width) * 0.54)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.38)"
+      },
+      "editorMeta": {
+        "name": "After Label"
+      }
+    },
+    {
+      "id": "after-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "After",
+        "source": "{{afterImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2)",
+        "left": "calc(var(--image-width) * 0.54)",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "After Image"
+      }
+    },
+    {
+      "id": "arrow",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color": "{{textColor1}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 120 80\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10,40 L90,40 M90,40 L70,25 M90,40 L70,55\" stroke=\"{{color}}\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.42)",
+        "left": "calc(var(--image-width) * 0.44)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.12)",
+        "height": "calc(var(--image-width) * 0.08)"
+      },
+      "editorMeta": {
+        "name": "Arrow",
+        "locked": true
+      }
+    },
+    {
+      "id": "name",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont2}}"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.94)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)"
+      },
+      "editorMeta": {
+        "name": "Name"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 6,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1200px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "metadata": {
+    "nicheName": "psicologia",
+    "packageId": "pack-universal",
+    "aspectRatio": "4:5"
+  },
+  "packageId": "imobiliario-02",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "before-and-after",
+  "aspectRatio": "4:5",
+  "displayName": "Before and After",
+  "templateName": "before-and-after",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "fontFields": [
+      "textFont1",
+      "textFont2"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "bgColor3",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "beforeImage",
+      "afterImage"
+    ],
+    "businessFields": [
+      "businessName",
+      "businessLogo"
+    ]
+  }
+}

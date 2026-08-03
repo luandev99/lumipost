@@ -1,0 +1,314 @@
+{
+  "props": {
+    "bgColor1": "#5A6B4A",
+    "bgColor2": "#F5F0E6",
+    "bgColor3": "#8B7355",
+    "headline": "A melhor experiência gastronômica que já tive. Cada prato é uma obra de arte!",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#FFFBF2",
+    "textColor2": "#E8E4DC",
+    "textColor3": "#5A6B4A",
+    "businessLogo": "",
+    "businessName": "Maria Silva",
+    "profilePictureUrl": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "decorative-quotes",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"120\" height=\"100\" viewBox=\"0 0 120 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"0\" y=\"80\" font-family=\"serif\" font-size=\"140\" fill=\"{{c1}}\" opacity=\"0.2\">\"</text></svg>"
+        }
+      },
+      "position": {
+        "top": "250px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "120px",
+        "height": "100px"
+      },
+      "editorMeta": {
+        "name": "Decorative Quotes",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "padding": "0px",
+        "fontSize": "150px",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.3",
+        "textShadow": "none",
+        "borderRadius": "0px",
+        "letterSpacing": "-0.01em",
+        "backgroundColor": "#FFD700",
+        "WebkitTextStroke": "",
+        "highlightPaddingH": "24px",
+        "highlightPaddingV": "1px"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "30%",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.3
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2593)",
+        "left": "calc(var(--image-width) * 0.0741)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8519)",
+        "height": "calc(var(--image-height-post) * 0.1259)"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      },
+      "textSplitParts": [
+        {
+          "textStyles": {
+            "textAlign": "center",
+            "fontWeight": "700",
+            "textDecoration": "underline"
+          },
+          "wordPercent": 60
+        },
+        {
+          "textStyles": {
+            "fontStyle": "italic",
+            "textAlign": "center"
+          },
+          "wordPercent": 50
+        }
+      ],
+      "textSplitLayout": "rows"
+    },
+    {
+      "id": "profile-picture",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "50%"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Profile",
+        "source": "{{profilePictureUrl}}"
+      },
+      "filters": {
+        "blur": 20
+      },
+      "editable": true,
+      "position": {
+        "top": "850px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "profilePictureUrl",
+      "editorMeta": {
+        "name": "Profile Picture"
+      }
+    },
+    {
+      "id": "profile-border",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"108\" height=\"108\" viewBox=\"0 0 108 108\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"54\" cy=\"54\" r=\"52\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "846px",
+        "left": "76px",
+        "type": "absolute",
+        "width": "108px",
+        "height": "108px"
+      },
+      "editorMeta": {
+        "name": "Profile Border",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-name",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "870px",
+        "left": "200px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "businessName",
+      "editorMeta": {
+        "name": "Business Name"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1210px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    },
+    {
+      "id": "layer_1774051798999_4vyq9",
+      "type": "container",
+      "styles": {
+        "opacity": 0.57,
+        "borderStyle": "solid",
+        "borderWidth": "11px",
+        "borderRadius": "38px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 8,
+      "filters": {
+        "blur": 0,
+        "sepia": 0.55,
+        "invert": 0,
+        "hueRotate": 0,
+        "brightness": 0
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.4423)",
+        "left": "calc(var(--image-width) * 0.0523)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8954)",
+        "height": "calc(var(--image-height-post) * 0.1637)"
+      },
+      "editorMeta": {
+        "name": "Retângulo"
+      }
+    },
+    {
+      "id": "layer_1774128447283_d4m9a",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.045)",
+        "textAlign": "center",
+        "fontFamily": "Poppins",
+        "fontWeight": "500",
+        "lineHeight": "1.3"
+      },
+      "zIndex": 9,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.4842)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8)",
+        "height": "calc(var(--image-height-post) * 0.08)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtítulo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-citation",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-with-citation",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "businessName",
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

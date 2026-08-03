@@ -1,0 +1,218 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1770385696619_5yz23",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0252)",
+        "left": "calc(var(--image-width) * 0.6907)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2778)",
+        "height": "calc(var(--image-height-post) * 0.2222)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1770385771338_cnfq4",
+      "type": "container",
+      "styles": {
+        "borderRadius": "calc(var(--image-width) * 0.02)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 3,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8744)",
+        "left": "calc(var(--image-width) * 0.0833)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8333)",
+        "height": "calc(var(--image-height-post) * 0.0741)"
+      },
+      "editorMeta": {
+        "name": "Cta Backgrouns"
+      }
+    },
+    {
+      "id": "layer_1770385890097_xm2jo",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "verticalAlign": "bottom"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": false,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8744)",
+        "left": "calc(var(--image-width) * 0.1065)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.787)",
+        "height": "calc(var(--image-height-post) * 0.037)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA"
+      }
+    },
+    {
+      "id": "layer_1770385952470_5b4qn",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "verticalAlign": "top"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.9114)",
+        "left": "calc(var(--image-width) * 0.1065)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.787)",
+        "height": "calc(var(--image-height-post) * 0.037)"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "layer_1770386167244_kp3hk",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0593)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2778)",
+        "left": "calc(var(--image-width) * 0.1065)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.787)",
+        "height": "calc(var(--image-height-post) * 0.4444)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "svg-1770398215280",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}",
+            "color2": "{{bgColor2}}",
+            "color3": "{{textColor1}}"
+          },
+          "svgContent": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"387\" zoomAndPan=\"magnify\" viewBox=\"0 0 290.25 290.249983\" height=\"387\" preserveAspectRatio=\"xMidYMid meet\" version=\"1.0\"><defs><g/><clipPath id=\"bd92118166\"><path d=\"M 48 0 L 289.5 0 L 289.5 56 L 48 56 Z M 48 0 \" clip-rule=\"nonzero\"/></clipPath><clipPath id=\"372e5fb3f9\"><path d=\"M 0 48 L 56 48 L 56 289.5 L 0 289.5 Z M 0 48 \" clip-rule=\"nonzero\"/></clipPath></defs><g clip-path=\"url(#bd92118166)\"><path fill=\"{{color1}}\" d=\"M 102.808594 0 L 289.238281 0 L 235.375 55.460938 L 48.570312 55.851562 Z M 102.808594 0 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/></g><g clip-path=\"url(#372e5fb3f9)\"><path fill=\"{{color1}}\" d=\"M 0.109375 102.914062 L 0.109375 289.339844 L 55.570312 235.480469 L 55.960938 48.671875 Z M 0.109375 102.914062 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/></g><path fill=\"{{color2}}\" d=\"M 83.886719 89.902344 L 28.035156 144.183594 L 28.035156 176.503906 L 83.800781 122.304688 Z M 83.886719 89.902344 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color1}}\" d=\"M 0.109375 0 L 0.109375 90.425781 L 92.945312 0.269531 Z M 0.109375 0 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color2}}\" d=\"M 28.035156 42.777344 L 28.035156 133.203125 L 120.871094 43.050781 Z M 28.035156 42.777344 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color2}}\" d=\"M 83.886719 133.203125 L 28.035156 187.484375 L 28.035156 219.804688 L 83.800781 165.605469 Z M 83.886719 133.203125 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color3}}\" d=\"M 74.375 59.910156 L 74.375 116.070312 L 132.03125 60.078125 Z M 74.375 59.910156 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color3}}\" d=\"M 65.039062 176.503906 L 65.039062 207.59375 L 96.953125 176.597656 Z M 65.039062 176.503906 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color3}}\" d=\"M 12.078125 229.484375 L 12.078125 260.574219 L 43.996094 229.578125 Z M 12.078125 229.484375 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color3}}\" d=\"M 158.117188 20.59375 L 158.117188 76.753906 L 215.773438 20.761719 Z M 158.117188 20.59375 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color2}}\" d=\"M 218.351562 55.421875 L 218.351562 83.929688 L 247.621094 55.507812 Z M 218.351562 55.421875 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color2}}\" d=\"M 120.867188 87.992188 L 120.867188 116.5 L 150.136719 88.074219 Z M 120.867188 87.992188 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><g fill=\"#000000\" fill-opacity=\"1\"><g transform=\"translate(57.753297, 68.315282)\"></g></g></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4139)",
+        "height": "calc(var(--image-height-post) * 0.3675)"
+      },
+      "editorMeta": {
+        "name": "Upper Decor"
+      }
+    }
+  ],
+  "packageId": "package-3",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-without-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "ctaText",
+      "headline"
+    ],
+    "businessFields": [
+      "logo",
+      "username"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

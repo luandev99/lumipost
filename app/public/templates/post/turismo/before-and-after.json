@@ -1,0 +1,281 @@
+{
+  "props": {
+    "image": "",
+    "image2": "",
+    "bgColor1": "#1A0533",
+    "bgColor2": "#7B2CBF",
+    "bgColor3": "#FF6B35",
+    "textFont1": "Montserrat",
+    "textFont2": "Inter",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#E0E0E0",
+    "textColor3": "#FF6B35",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "before-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "20px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Before Image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "200px",
+        "left": "40px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Before Image"
+      }
+    },
+    {
+      "id": "after-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "20px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "After Image",
+        "source": "{{image2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "200px",
+        "left": "540px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image2",
+      "editorMeta": {
+        "name": "After Image"
+      }
+    },
+    {
+      "id": "before-label-bg",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"70\" viewBox=\"0 0 200 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"70\" rx=\"35\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "80px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "Before Label BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "before-label",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "70px",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "ANTES"
+      },
+      "position": {
+        "top": "80px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "Before Label",
+        "locked": true
+      }
+    },
+    {
+      "id": "after-label-bg",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"70\" viewBox=\"0 0 200 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"70\" rx=\"35\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "80px",
+        "left": "800px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "After Label BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "after-label",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "70px",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "DEPOIS"
+      },
+      "position": {
+        "top": "80px",
+        "left": "800px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "After Label",
+        "locked": true
+      }
+    },
+    {
+      "id": "center-divider",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"20\" height=\"900\" viewBox=\"0 0 20 900\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"8\" width=\"4\" height=\"900\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "200px",
+        "left": "530px",
+        "type": "absolute",
+        "width": "20px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Center Divider",
+        "locked": true
+      }
+    },
+    {
+      "id": "logo-container",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"150\" viewBox=\"0 0 1080 150\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"1080\" height=\"150\" fill=\"{{c1}}\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1200px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "150px"
+      },
+      "editorMeta": {
+        "name": "Logo Container BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "turismo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "before-and-after",
+  "aspectRatio": "4:5",
+  "templateName": "before-and-after",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

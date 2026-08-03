@@ -1,0 +1,229 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "hidden": false,
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1768590581574_5uz1h",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "0px 0px 0px 0px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0526)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2315)",
+        "height": "calc(var(--image-height-post) * 0.1852)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1768932471778_2k5v8",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.1296)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.4",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 1,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": false,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "Frase do dia.\nFrase do dia.\nFrase do dia.\nFrase do dia.\nFrase do dia.\nFrase do dia.\nFrase do dia."
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2593)",
+        "left": "calc(var(--image-width) * 0.0333)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9241)",
+        "height": "calc(var(--image-height-post) * 0.6503)"
+      },
+      "editorMeta": {
+        "name": "Background Decor",
+        "locked": true
+      }
+    },
+    {
+      "id": "svg-1768932876588",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"642\" height=\"540\" viewBox=\"0 0 642 540\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M0 27C0 12.0883 12.0883 0 27 0H210.5H321H431.5H615C629.912 0 642 12.0883 642 27V429.03C642 443.941 629.912 456.03 615 456.03H248.778C243.646 456.03 238.567 457.069 233.848 459.085L52.9303 536.385C27.8601 547.096 0 528.703 0 501.441V456.03V27Z\" fill=\"{{color1}}\"/>\n</svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3474)",
+        "left": "calc(var(--image-width) * 0.2028)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5944)",
+        "height": "calc(var(--image-height-post) * 0.4141)"
+      },
+      "editorMeta": {
+        "name": "Content Background"
+      }
+    },
+    {
+      "id": "layer_1768932930487_vmd1d",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "50%",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Foto de perfil",
+        "source": "{{profilePictureUrl}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3919)",
+        "left": "calc(var(--image-width) * 0.2602)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.1148)",
+        "height": "calc(var(--image-height-post) * 0.0919)"
+      },
+      "editorMeta": {
+        "name": "Foto de Perfil"
+      }
+    },
+    {
+      "id": "layer_1768932947840_t8mw6",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0278)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": false,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3919)",
+        "left": "calc(var(--image-width) * 0.3972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3833)",
+        "height": "calc(var(--image-height-post) * 0.0919)"
+      },
+      "fieldName": "businessName",
+      "editorMeta": {
+        "name": "Nome do Negócio"
+      }
+    },
+    {
+      "id": "layer_1768933008937_p04x6",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.523)",
+        "left": "calc(var(--image-width) * 0.2602)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.487)",
+        "height": "calc(var(--image-height-post) * 0.1119)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    }
+  ],
+  "packageId": "package-2",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-citation",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-with-citation",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo",
+      "businessName"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

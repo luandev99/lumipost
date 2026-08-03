@@ -1,0 +1,237 @@
+{
+  "props": {
+    "image": "",
+    "bgColor1": "#0a1628",
+    "bgColor2": "#1a3a5c",
+    "bgColor3": "#d4af37",
+    "headline": "Construa Seu Patrimonio",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#ffffff",
+    "textColor2": "#c9d1d9",
+    "textColor3": "#d4af37",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Finance image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "0px",
+        "left": "0px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "image-overlay",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"io1\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.3\"/><stop offset=\"50%\" stop-color=\"{{c1}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0.85\"/></linearGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#io1)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Image Overlay",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-frame",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"960\" height=\"1230\" viewBox=\"0 0 960 1230\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"958\" height=\"1228\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "60px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "960px",
+        "height": "1230px"
+      },
+      "editorMeta": {
+        "name": "Decorative Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "golden-bar",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"120\" height=\"4\" viewBox=\"0 0 120 4\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"120\" height=\"4\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1000px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "120px",
+        "height": "4px"
+      },
+      "editorMeta": {
+        "name": "Golden Bar",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.05
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1030px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "880px",
+        "height": "200px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "logo-container",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"120\" height=\"50\" viewBox=\"0 0 120 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"120\" height=\"50\" rx=\"6\" fill=\"{{c1}}\" fill-opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1150px",
+        "left": "460px",
+        "type": "absolute",
+        "width": "160px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "Logo Container",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1157px",
+        "left": "470px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "36px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "arte",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-image-1",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-with-image-1",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

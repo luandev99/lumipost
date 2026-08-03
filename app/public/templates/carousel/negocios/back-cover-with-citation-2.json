@@ -1,0 +1,388 @@
+{
+  "props": {
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#FAFAF8",
+    "bgColor2": "#1A1A1A",
+    "bgColor3": "#2C2C2C",
+    "headline": "Headline: lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+    "username": "@seunegocio",
+    "textFont1": "Playfair Display, serif",
+    "textFont2": "Inter, sans-serif",
+    "textColor1": "#1A1A1A",
+    "textColor2": "#5A5A5A",
+    "textColor3": "#FAFAF8",
+    "businessLogo": "",
+    "businessName": "Nome do Negocio",
+    "profilePictureUrl": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "organic-arch-top",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"500\" height=\"400\" viewBox=\"0 0 500 400\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 400 L0 200 Q0 0, 250 0 Q500 0, 500 200 L500 400 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "-100px",
+        "left": "290px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "400px"
+      },
+      "editorMeta": {
+        "name": "Organic Arch Top",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-shape-left",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"350\" height=\"450\" viewBox=\"0 0 350 450\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"175\" cy=\"225\" rx=\"175\" ry=\"225\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "600px",
+        "left": "-150px",
+        "type": "absolute",
+        "width": "350px",
+        "height": "450px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Left",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-shape-right",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"300\" height=\"400\" viewBox=\"0 0 300 400\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"150\" cy=\"200\" rx=\"150\" ry=\"200\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "800px",
+        "left": "880px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "400px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Right",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "letterSpacing": "-0.02em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 2,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "380px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "280px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "accent-line",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"2\" viewBox=\"0 0 200 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"2\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "700px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Accent Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "profile-picture",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "75px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Profile picture",
+        "source": "{{profilePictureUrl}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "760px",
+        "left": "465px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "profilePictureUrl",
+      "editorMeta": {
+        "name": "Profile Picture"
+      }
+    },
+    {
+      "id": "username",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{username}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "940px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "40px"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "business-name",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "990px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "40px"
+      },
+      "fieldName": "businessName",
+      "editorMeta": {
+        "name": "Business Name"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4",
+        "letterSpacing": "0.08em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "50px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1200px",
+        "left": "500px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    },
+    {
+      "id": "footer-separator",
+      "type": "svg",
+      "zIndex": 8,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"1\" viewBox=\"0 0 920 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"920\" height=\"1\" fill=\"{{c1}}\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Footer Separator",
+        "locked": true
+      }
+    },
+    {
+      "id": "slide-indicator",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "opacity": "0.6",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 9,
+      "content": {
+        "text": "{{slideNumber}}/{{slidesCount}}"
+      },
+      "position": {
+        "top": "1280px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "30px"
+      },
+      "editorMeta": {
+        "name": "Slide Indicator"
+      }
+    }
+  ],
+  "packageId": "negocios",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "back-cover-with-citation-2",
+  "aspectRatio": "1:1.25",
+  "templateName": "back-cover-with-citation-2",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "closing",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo",
+      "businessName",
+      "username",
+      "profilePictureUrl"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

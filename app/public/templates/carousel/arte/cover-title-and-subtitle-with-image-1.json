@@ -1,0 +1,360 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Saiba Mais",
+    "bgColor1": "#0a1628",
+    "bgColor2": "#1a3a5c",
+    "bgColor3": "#d4af37",
+    "headline": "A Nova Era das Financas",
+    "subtitle": "Descubra estrategias inteligentes para multiplicar seu patrimonio",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#ffffff",
+    "textColor2": "#c9d1d9",
+    "textColor3": "#d4af37",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "renaissance-texture",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"rg1\" cx=\"0.3\" cy=\"0.2\" r=\"0.6\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"rg2\" cx=\"0.8\" cy=\"0.7\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.06\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#rg1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#rg2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Renaissance Texture",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "8px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Finance image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "elegant-frame",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"960\" height=\"620\" viewBox=\"0 0 960 620\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"2\" y=\"2\" width=\"956\" height=\"616\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.6\"/><rect x=\"10\" y=\"10\" width=\"940\" height=\"600\" stroke=\"{{c1}}\" stroke-width=\"0.5\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "80px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "960px",
+        "height": "620px"
+      },
+      "editorMeta": {
+        "name": "Elegant Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "golden-accent",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"120\" height=\"4\" viewBox=\"0 0 120 4\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"120\" height=\"4\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "720px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "120px",
+        "height": "4px"
+      },
+      "editorMeta": {
+        "name": "Golden Accent",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "750px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "200px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "24px",
+        "minFontSize": "16px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "970px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "700px",
+        "height": "80px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"56\" viewBox=\"0 0 200 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"198\" height=\"54\" rx=\"4\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1080px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "56px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "56px",
+        "letterSpacing": "0.05em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1080px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "56px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "roman-numerals",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"60\" height=\"300\" viewBox=\"0 0 60 300\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"30\" y=\"30\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"18\" fill=\"{{c1}}\" opacity=\"0.4\">I</text><text x=\"30\" y=\"70\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"18\" fill=\"{{c1}}\" opacity=\"0.4\">II</text><text x=\"30\" y=\"110\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"18\" fill=\"{{c1}}\" opacity=\"0.4\">III</text><text x=\"30\" y=\"150\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"18\" fill=\"{{c1}}\" opacity=\"0.4\">IV</text><text x=\"30\" y=\"190\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"18\" fill=\"{{c1}}\" opacity=\"0.4\">V</text></svg>"
+        }
+      },
+      "position": {
+        "top": "750px",
+        "type": "absolute",
+        "right": "80px",
+        "width": "60px",
+        "height": "300px"
+      },
+      "editorMeta": {
+        "name": "Roman Numerals",
+        "locked": true
+      }
+    },
+    {
+      "id": "logo-container",
+      "type": "svg",
+      "zIndex": 8,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"160\" height=\"50\" viewBox=\"0 0 160 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"160\" height=\"50\" rx=\"6\" fill=\"{{c1}}\" fill-opacity=\"0.1\"/><rect x=\"0.5\" y=\"0.5\" width=\"159\" height=\"49\" rx=\"5.5\" stroke=\"{{c1}}\" stroke-opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1150px",
+        "left": "460px",
+        "type": "absolute",
+        "width": "160px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "Logo Container",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 9,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1157px",
+        "left": "470px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "36px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "arte",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "cover-title-and-subtitle-with-image-1",
+  "aspectRatio": "4:5",
+  "templateName": "cover-title-and-subtitle-with-image-1",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "cover",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

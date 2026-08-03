@@ -1,0 +1,259 @@
+{
+  "props": {
+    "bgColor1": "#2e4a6a",
+    "bgColor2": "#c9bfaa",
+    "bgColor3": "#1a2a3a",
+    "textColor1": "#c9bfaa",
+    "textColor2": "#8a9aaa",
+    "textColor3": "#c9bfaa"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_bg_image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "transparent"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Imagem de fundo",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Imagem de Fundo",
+        "locked": true
+      }
+    },
+    {
+      "id": "layer_overlay_text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "opacity": "0.15",
+        "fontSize": "calc(var(--image-width) * 0.2)",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "0.9"
+      },
+      "zIndex": 2,
+      "content": {
+        "text": "frase de\nimpacto"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.05)",
+        "left": "calc(var(--image-width) * 0.02)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.96)",
+        "height": "calc(var(--image-height-post) * 0.35)"
+      },
+      "editorMeta": {
+        "name": "Texto Decorativo"
+      }
+    },
+    {
+      "id": "layer_header_left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "letterSpacing": "0.2em"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.025)",
+        "left": "calc(var(--image-width) * 0.04)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Username Esquerda"
+      }
+    },
+    {
+      "id": "layer_header_center",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.2em"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{preHeadline}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.025)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Tema"
+      }
+    },
+    {
+      "id": "layer_header_right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "letterSpacing": "0.2em"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.025)",
+        "left": "calc(var(--image-width) * 0.71)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Username Direita"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.065)",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 10,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.12)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.84)",
+        "height": "calc(var(--image-height-post) * 0.18)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.035)",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 11,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "6%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.32)",
+        "left": "calc(var(--image-width) * 0.15)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7)",
+        "height": "calc(var(--image-height-post) * 0.08)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtítulo"
+      }
+    }
+  ],
+  "packageId": "pacote-novo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-with-image-3",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-and-subtitle-with-image-3",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "preHeadline"
+    ],
+    "businessFields": [
+      "username",
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

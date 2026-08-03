@@ -1,0 +1,224 @@
+{
+  "props": {
+    "bgColor1": "#f5ebe0",
+    "bgColor2": "#6b4423",
+    "bgColor3": "#8b6914",
+    "textColor1": "#6b4423",
+    "textColor2": "#2d2d2d",
+    "textColor3": "#f5ebe0"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{textColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_main_image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0452)",
+        "left": "calc(var(--image-width) * 0.2917)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7074)",
+        "height": "calc(var(--image-height-post) * 0.9541)"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal",
+        "locked": true
+      }
+    },
+    {
+      "id": "layer_username",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0185)",
+        "textAlign": "left",
+        "fontFamily": "Montserrat",
+        "fontWeight": "700",
+        "lineHeight": 1,
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{username}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.1037)",
+        "left": "calc(var(--image-width) * 0.0991)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2963)",
+        "height": "calc(var(--image-height-post) * 0.0207)"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0769)",
+        "textAlign": "left",
+        "fontFamily": "Black Mango",
+        "fontWeight": "300",
+        "lineHeight": "1.0",
+        "letterSpacing": "-5.98px",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "14%",
+        "minFontSize": "5%",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2541)",
+        "left": "calc(var(--image-width) * 0.0991)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5444)",
+        "height": "calc(var(--image-height-post) * 0.343)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      },
+      "textSplitParts": [
+        {
+          "wordPercent": 50
+        },
+        {
+          "textStyles": {
+            "color": "{{textColor3}}",
+            "fontWeight": "700"
+          },
+          "wordPercent": 50
+        }
+      ],
+      "textSplitLayout": "inline"
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0324)",
+        "textAlign": "left",
+        "fontFamily": "Montserrat",
+        "fontWeight": "300",
+        "lineHeight": 1,
+        "verticalAlign": "top"
+      },
+      "zIndex": 7,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "4%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.6319)",
+        "left": "calc(var(--image-width) * 0.0991)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5444)",
+        "height": "calc(var(--image-height-post) * 0.1126)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 8,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8548)",
+        "left": "calc(var(--image-width) * 0.0991)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.1667)",
+        "height": "calc(var(--image-height-post) * 0.0667)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "chique",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-with-image-2",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-and-subtitle-with-image-2",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "username",
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  },
+  "imageGenerationInstructions": "Dimensions: 764px width × 1288px height\nBackground: remove background\nComposition: single subject, isolated\nLayout: centered with minimal elements\nSpacing: large, clear spacing between objects\nStructure: no overlapping parts, clean silhouette\nStyle: simple, plain, and easy to cut out"
+}

@@ -1,0 +1,241 @@
+{
+  "props": {
+    "bgColor1": "#f5ebe0",
+    "bgColor2": "#c9a96e",
+    "bgColor3": "#6b4423",
+    "textColor1": "#6b4423",
+    "textColor2": "#f5ebe0",
+    "textColor3": "#f5ebe0"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_main_image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal",
+        "locked": true
+      }
+    },
+    {
+      "id": "layer_overlay",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "rgba(0, 0, 0, 0.35)"
+      },
+      "zIndex": 2,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Overlay",
+        "locked": false
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0933)",
+        "left": "calc(var(--image-width) * 0.4167)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.1667)",
+        "height": "calc(var(--image-height-post) * 0.0889)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0269)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "top"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "4%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2222)",
+        "left": "calc(var(--image-width) * 0.2306)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5389)",
+        "height": "calc(var(--image-height-post) * 0.0933)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.13)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "300",
+        "lineHeight": "0.95",
+        "letterSpacing": "0.02em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "16%",
+        "minFontSize": "5%",
+        "lineHeightRatio": 0.95
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.4)",
+        "left": "calc(var(--image-width) * 0.2278)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5444)",
+        "height": "calc(var(--image-height-post) * 0.2)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_cta_bg",
+      "type": "container",
+      "styles": {
+        "opacity": 0.59,
+        "backgroundColor": "#ffffff"
+      },
+      "zIndex": 8,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8504)",
+        "left": "calc(var(--image-width) * 0.137)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7261)",
+        "height": "calc(var(--image-height-post) * 0.055)"
+      },
+      "editorMeta": {
+        "name": "CTA Background"
+      }
+    },
+    {
+      "id": "layer_1780491536226_xckzc",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.0250)",
+        "textAlign": "center",
+        "fontFamily": "Montserrat",
+        "fontWeight": "700",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8566)",
+        "left": "calc(var(--image-width) * 0.2037)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6)",
+        "height": "calc(var(--image-height-post) * 0.0426)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "user_1780439435967",
+  "aspectRatio": "1:1.25",
+  "templateName": "image-showcase",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "subtitle",
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

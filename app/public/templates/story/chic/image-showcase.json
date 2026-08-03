@@ -1,0 +1,170 @@
+{
+  "props": {
+    "bgColor1": "#d4c4b0",
+    "bgColor2": "#8b7355",
+    "bgColor3": "#ffffff",
+    "headline": "CUIDADOS",
+    "subtitle": "Os cuidados essenciais com a pele baseiam-se em tres pilares diarios: limpeza, hidratacao e protecao solar.",
+    "mainImage": "",
+    "textColor1": "#ffffff",
+    "textColor2": "#8b7355",
+    "textColor3": "#d4c4b0",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_mainImage",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Main Image",
+        "source": "{{mainImage}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.08)",
+        "left": "calc(var(--image-width) * 0.15)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.85)",
+        "height": "calc(var(--image-height-story) * 0.92)"
+      },
+      "fieldName": "mainImage",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.03)",
+        "left": "calc(var(--image-width) * 0.70)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-story) * 0.04)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.18)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "0.85",
+        "writingMode": "vertical-rl",
+        "verticalAlign": "top",
+        "textOrientation": "mixed"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.08)",
+        "left": "calc(var(--image-width) * 0.0)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.18)",
+        "height": "calc(var(--image-height-story) * 0.75)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.038)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "top"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.82)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.60)",
+        "height": "calc(var(--image-height-story) * 0.12)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "image-showcase",
+  "aspectRatio": "9:16",
+  "templateName": "image-showcase",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Saiba Mais",
+    "bgColor1": "#0a1628",
+    "bgColor2": "#1a3a5c",
+    "bgColor3": "#d4af37",
+    "headline": "Invista no Seu Futuro",
+    "subtitle": "Estrategias comprovadas para construir patrimonio de forma inteligente",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#ffffff",
+    "textColor2": "#c9d1d9",
+    "textColor3": "#d4af37",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Finance image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "0px",
+        "left": "0px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "image-overlay",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1000\" viewBox=\"0 0 1080 1000\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"io1\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.2\"/><stop offset=\"60%\" stop-color=\"{{c1}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0.85\"/></linearGradient></defs><rect width=\"1080\" height=\"1000\" fill=\"url(#io1)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1000px"
+      },
+      "editorMeta": {
+        "name": "Image Overlay",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-frame",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"960\" height=\"750\" viewBox=\"0 0 960 750\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"958\" height=\"748\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "150px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "960px",
+        "height": "750px"
+      },
+      "editorMeta": {
+        "name": "Decorative Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "golden-bar",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"80\" height=\"4\" viewBox=\"0 0 80 4\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"80\" height=\"4\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1050px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "4px"
+      },
+      "editorMeta": {
+        "name": "Golden Bar",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.01em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1080px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "880px",
+        "height": "220px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "26px",
+        "minFontSize": "18px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1320px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "880px",
+        "height": "120px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"300\" height=\"70\" viewBox=\"0 0 300 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"300\" height=\"70\" rx=\"35\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1500px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "CTA Button",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "70px",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1500px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "70px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo-container",
+      "type": "svg",
+      "zIndex": 8,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"160\" height=\"50\" viewBox=\"0 0 160 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"160\" height=\"50\" rx=\"6\" fill=\"{{c1}}\" fill-opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1820px",
+        "left": "460px",
+        "type": "absolute",
+        "width": "160px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "Logo Container",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 9,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1827px",
+        "left": "470px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "36px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "arte",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "main-text-and-subtitle-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "main-text-and-subtitle-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

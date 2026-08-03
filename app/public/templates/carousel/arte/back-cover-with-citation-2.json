@@ -1,0 +1,383 @@
+{
+  "props": {
+    "ctaText": "Acompanhe nossas dicas",
+    "bgColor1": "#0a1628",
+    "bgColor2": "#1a3a5c",
+    "bgColor3": "#d4af37",
+    "headline": "Investir em conhecimento rende os melhores juros.",
+    "username": "@financasinteligentes",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#ffffff",
+    "textColor2": "#c9d1d9",
+    "textColor3": "#d4af37",
+    "businessLogo": "",
+    "businessName": "Financas Inteligentes",
+    "profilePictureUrl": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "golden-glow",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"gg1\" cx=\"0.5\" cy=\"0.35\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.12\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"gg2\" cx=\"0.5\" cy=\"0.8\" r=\"0.4\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.06\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#gg1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#gg2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Golden Glow",
+        "locked": true
+      }
+    },
+    {
+      "id": "profile-picture",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "150px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Profile Picture",
+        "source": "{{profilePictureUrl}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "200px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "profilePictureUrl",
+      "editorMeta": {
+        "name": "Profile Picture"
+      }
+    },
+    {
+      "id": "profile-ring",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"320\" height=\"320\" viewBox=\"0 0 320 320\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"160\" cy=\"160\" r=\"155\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\"/><circle cx=\"160\" cy=\"160\" r=\"148\" stroke=\"{{c1}}\" stroke-width=\"0.5\" fill=\"none\" opacity=\"0.4\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "190px",
+        "left": "380px",
+        "type": "absolute",
+        "width": "320px",
+        "height": "320px"
+      },
+      "editorMeta": {
+        "name": "Profile Ring",
+        "locked": true
+      }
+    },
+    {
+      "id": "quote-decoration",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"840\" height=\"400\" viewBox=\"0 0 840 400\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"0\" y=\"70\" font-family=\"{{f1}}\" font-size=\"100\" fill=\"{{c1}}\" opacity=\"0.2\">\"</text><text x=\"790\" y=\"380\" font-family=\"{{f1}}\" font-size=\"100\" fill=\"{{c1}}\" opacity=\"0.2\">\"</text></svg>"
+        }
+      },
+      "position": {
+        "top": "560px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "400px"
+      },
+      "editorMeta": {
+        "name": "Quote Decoration",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.35"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.35
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "580px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "280px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "divider-line",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"2\" viewBox=\"0 0 200 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"2\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "900px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Divider Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-name",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "940px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "40px"
+      },
+      "fieldName": "businessName",
+      "editorMeta": {
+        "name": "Business Name"
+      }
+    },
+    {
+      "id": "username",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{username}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "990px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "30px"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "cta-button-bg",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"500\" height=\"64\" viewBox=\"0 0 500 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"498\" height=\"62\" rx=\"31\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1100px",
+        "left": "290px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "64px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "64px",
+        "letterSpacing": "0.03em"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1100px",
+        "left": "290px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "64px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo-area",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"160\" height=\"50\" viewBox=\"0 0 160 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"160\" height=\"50\" rx=\"6\" fill=\"{{c1}}\" fill-opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1150px",
+        "left": "460px",
+        "type": "absolute",
+        "width": "160px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "Logo Area",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1157px",
+        "left": "470px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "36px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "arte",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "back-cover-with-citation-2",
+  "aspectRatio": "4:5",
+  "templateName": "back-cover-with-citation-2",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "closing",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "username",
+      "businessName",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo",
+      "profilePictureUrl"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

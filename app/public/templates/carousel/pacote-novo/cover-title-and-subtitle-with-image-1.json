@@ -1,0 +1,275 @@
+{
+  "props": {
+    "bgColor1": "#a8d4f0",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#1a5fb4",
+    "textColor1": "#1a5fb4",
+    "textColor2": "#5c5c5c",
+    "textColor3": "#5c3d2e"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": false,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_grid_pattern",
+      "type": "container",
+      "styles": {
+        "backgroundSize": "40px 40px",
+        "backgroundImage": "linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px)"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": false
+      }
+    },
+    {
+      "id": "layer_pre_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.028)",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.3",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 2,
+      "content": {
+        "text": "{{preHeadline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.10)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.50)",
+        "height": "calc(var(--image-height-post) * 0.08)"
+      },
+      "fieldName": "img_content_pre_headline",
+      "editorMeta": {
+        "name": "Pre-Headline"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.09)",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.1",
+        "verticalAlign": "top"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "12%",
+        "minFontSize": "3%",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.18)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.84)",
+        "height": "calc(var(--image-height-post) * 0.45)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.032)",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.65)",
+        "left": "calc(var(--image-width) * 0.45)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.50)",
+        "height": "calc(var(--image-height-post) * 0.10)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "layer_footer_left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.15em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Business Name Left"
+      }
+    },
+    {
+      "id": "layer_footer_center",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.15em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "TEMA"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.30)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Tema"
+      }
+    },
+    {
+      "id": "layer_footer_right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.15em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.70)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Business Name Right"
+      }
+    },
+    {
+      "id": "layer_1774364137887_xctz7",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 1.0055)",
+        "height": "calc(var(--image-height-post) * 1.0015)"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal"
+      }
+    }
+  ],
+  "packageId": "pacote-novo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "cover-title-and-subtitle-with-image-1",
+  "aspectRatio": "1:1.25",
+  "templateName": "cover-title-and-subtitle-with-image-1",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "cover",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "preHeadline",
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "businessName"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

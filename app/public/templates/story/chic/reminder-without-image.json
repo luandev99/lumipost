@@ -1,0 +1,288 @@
+{
+  "props": {
+    "bgColor1": "#F5F5F0",
+    "bgColor2": "#5C4033",
+    "bgColor3": "#D4A853",
+    "textColor1": "#5C4033",
+    "textColor2": "#D4A853",
+    "textColor3": "#808080"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_decorative_curves",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"600\" viewBox=\"0 0 400 600\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"200\" cy=\"300\" rx=\"180\" ry=\"280\" stroke=\"{{primary}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.3\"/><ellipse cx=\"200\" cy=\"300\" rx=\"150\" ry=\"250\" stroke=\"{{primary}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.15)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8)",
+        "height": "calc(var(--image-height-story) * 0.5)"
+      },
+      "editorMeta": {
+        "name": "Decorative Curves"
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.04)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3)",
+        "height": "calc(var(--image-height-story) * 0.05)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.15)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.0",
+        "letterSpacing": "0.05em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "20%",
+        "minFontSize": "5%",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.15)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9)",
+        "height": "calc(var(--image-height-story) * 0.08)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.06)",
+        "fontStyle": "italic",
+        "textAlign": "right",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.23)",
+        "left": "calc(var(--image-width) * 0.4)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.55)",
+        "height": "calc(var(--image-height-story) * 0.04)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "layer_main_image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Main Image",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.28)",
+        "left": "0",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.85)",
+        "height": "calc(var(--image-height-story) * 0.65)"
+      },
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "layer_description_container",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "transparent"
+      },
+      "zIndex": 6,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.45)",
+        "left": "calc(var(--image-width) * 0.55)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)",
+        "height": "calc(var(--image-height-story) * 0.15)"
+      },
+      "editorMeta": {
+        "name": "Description Container"
+      }
+    },
+    {
+      "id": "layer_description_bold",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.028)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "lineHeight": "1.4",
+        "verticalAlign": "top"
+      },
+      "zIndex": 7,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "1%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{descriptionBold}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.46)",
+        "left": "calc(var(--image-width) * 0.58)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.38)",
+        "height": "calc(var(--image-height-story) * 0.08)"
+      },
+      "fieldName": "img_content_description_bold",
+      "editorMeta": {
+        "name": "Description Bold"
+      }
+    },
+    {
+      "id": "layer_description_normal",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.025)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "top"
+      },
+      "zIndex": 8,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "4%",
+        "minFontSize": "1%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{descriptionNormal}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.54)",
+        "left": "calc(var(--image-width) * 0.58)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.38)",
+        "height": "calc(var(--image-height-story) * 0.06)"
+      },
+      "fieldName": "img_content_description_normal",
+      "editorMeta": {
+        "name": "Description Normal"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "reminder-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "reminder-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "descriptionBold",
+      "descriptionNormal"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

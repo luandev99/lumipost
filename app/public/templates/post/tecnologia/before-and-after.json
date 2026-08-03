@@ -1,0 +1,376 @@
+{
+  "props": {
+    "bgColor1": "#0a0a14",
+    "bgColor2": "#6366f1",
+    "bgColor3": "#818cf8",
+    "headline": "Antes vs Depois",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "afterImage": "",
+    "afterLabel": "DEPOIS",
+    "textColor1": "#ffffff",
+    "textColor2": "#a1a1aa",
+    "textColor3": "#6366f1",
+    "beforeImage": "",
+    "beforeLabel": "ANTES",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"60\" height=\"60\" patternUnits=\"userSpaceOnUse\"><path d=\"M 60 0 L 0 0 0 60\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.03em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "80px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "120px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "before-frame",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"440\" height=\"600\" viewBox=\"0 0 440 600\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"2\" y=\"2\" width=\"436\" height=\"596\" rx=\"18\" stroke=\"{{c1}}\" stroke-width=\"2\" stroke-opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "260px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "600px"
+      },
+      "editorMeta": {
+        "name": "Before Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "before-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "16px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Before image",
+        "source": "{{beforeImage}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "270px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "beforeImage",
+      "editorMeta": {
+        "name": "Before Image"
+      }
+    },
+    {
+      "id": "before-label-bg",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"140\" height=\"50\" viewBox=\"0 0 140 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"140\" height=\"50\" rx=\"25\" fill=\"{{c1}}\" fill-opacity=\"0.9\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "780px",
+        "left": "200px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "Before Label BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "before-label",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.5",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{beforeLabel}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "793px",
+        "left": "200px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "24px"
+      },
+      "fieldName": "beforeLabel",
+      "editorMeta": {
+        "name": "Before Label"
+      }
+    },
+    {
+      "id": "after-frame",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"440\" height=\"600\" viewBox=\"0 0 440 600\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"2\" y=\"2\" width=\"436\" height=\"596\" rx=\"18\" stroke=\"{{c1}}\" stroke-width=\"2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "260px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "600px"
+      },
+      "editorMeta": {
+        "name": "After Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "after-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "16px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "After image",
+        "source": "{{afterImage}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "270px",
+        "left": "570px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "afterImage",
+      "editorMeta": {
+        "name": "After Image"
+      }
+    },
+    {
+      "id": "after-label-bg",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"140\" height=\"50\" viewBox=\"0 0 140 50\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"lblGrad\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect width=\"140\" height=\"50\" rx=\"25\" fill=\"url(#lblGrad)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "780px",
+        "left": "680px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "After Label BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "after-label",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.5",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{afterLabel}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "793px",
+        "left": "680px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "24px"
+      },
+      "fieldName": "afterLabel",
+      "editorMeta": {
+        "name": "After Label"
+      }
+    },
+    {
+      "id": "arrow",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"100\" height=\"80\" viewBox=\"0 0 100 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10 40 L70 40 M70 40 L50 20 M70 40 L50 60\" stroke=\"{{c1}}\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "510px",
+        "left": "490px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Arrow",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 50,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "470px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "tecnologia",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "before-and-after",
+  "aspectRatio": "4:5",
+  "templateName": "before-and-after",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "beforeLabel",
+      "afterLabel"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1769086929915_7wrjn",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0281)",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "calc(var(--image-height-story) * 0.9469)"
+      },
+      "editorMeta": {
+        "name": "Second Background",
+        "locked": true
+      }
+    },
+    {
+      "id": "svg-1769087036459",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"567\" height=\"104\" viewBox=\"0 0 567 104\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n  <mask id=\"mask0_9_1505\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"104\">\n    <path d=\"M0 0H567V104H0V0Z\" fill=\"white\"/>\n  </mask>\n\n  <g mask=\"url(#mask0_9_1505)\">\n    <mask id=\"mask1_9_1505\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"114\">\n      <path\n        d=\"M90.5166 0H476.489C487.778 0 498.369 5.47203 504.925 14.6914L564.969 99.1238C566.984 101.956 567.25 105.683 565.667 108.777C564.079 111.871 560.897 113.815 557.429 113.815H9.57087C6.10288 113.815 2.9265 111.871 1.33831 108.777C-0.249883 105.683 0.0208909 101.956 2.03607 99.1238L62.0801 14.6914C68.636 5.47203 79.2274 0 90.5166 0Z\"\n        fill=\"white\"\n      />\n    </mask>\n\n    <g mask=\"url(#mask1_9_1505)\">\n      <!-- COR FINAL DO SVG -->\n      <path\n        d=\"M-8.41479 0H575.415V113.815H-8.41479V0Z\"\n        fill=\"{{primary}}\"\n      />\n    </g>\n  </g>\n</svg>\n"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.9458)",
+        "left": "calc(var(--image-width) * 0.2375)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.525)",
+        "height": "calc(var(--image-height-story) * 0.0542)"
+      },
+      "editorMeta": {
+        "name": "logoBackground"
+      }
+    },
+    {
+      "id": "layer_1769087132040_btwja",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.9479)",
+        "left": "calc(var(--image-width) * 0.319)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.362)",
+        "height": "calc(var(--image-height-story) * 0.0521)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1769099231346_9b4dm",
+      "type": "container",
+      "styles": {
+        "borderRadius": "50px 50px 0px 0px",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 7,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3563)",
+        "left": "calc(var(--image-width) * 0.0833)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8333)",
+        "height": "calc(var(--image-height-story) * 0.0943)"
+      },
+      "editorMeta": {
+        "name": "Question Background"
+      }
+    },
+    {
+      "id": "layer_1769099233461_2bzqs",
+      "type": "container",
+      "styles": {
+        "borderRadius": "0px 0px 50px 50px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 6,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.4438)",
+        "left": "calc(var(--image-width) * 0.0833)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8333)",
+        "height": "calc(var(--image-height-story) * 0.2031)"
+      },
+      "editorMeta": {
+        "name": "Question Content Background"
+      }
+    },
+    {
+      "id": "layer_1769099496333_fcika",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.06)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3631)",
+        "left": "calc(var(--image-width) * 0.1051)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7898)",
+        "height": "calc(var(--image-height-story) * 0.0807)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_1769099549087_dwkb7",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.0370)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.3",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 10,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.4637)",
+        "left": "calc(var(--image-width) * 0.1254)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7491)",
+        "height": "calc(var(--image-height-story) * 0.1634)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtítulo"
+      }
+    }
+  ],
+  "packageId": "package-1",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "question-box-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "question-box-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

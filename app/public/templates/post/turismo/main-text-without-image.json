@@ -1,0 +1,245 @@
+{
+  "props": {
+    "ctaText": "Explorar destinos",
+    "bgColor1": "#1A0533",
+    "bgColor2": "#6B24AA",
+    "bgColor3": "#FF6B35",
+    "headline": "Sua próxima aventura começa aqui",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#E8E8E8",
+    "textColor3": "#FF6B35",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "radial-glow",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"mainGlow\" cx=\"0.5\" cy=\"0.5\" r=\"0.7\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.5\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#mainGlow)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Radial Glow",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-elements",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"circleG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><circle cx=\"900\" cy=\"200\" r=\"180\" stroke=\"url(#circleG)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.3\"/><circle cx=\"900\" cy=\"200\" r=\"240\" stroke=\"url(#circleG)\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.2\"/><circle cx=\"180\" cy=\"1100\" r=\"120\" stroke=\"url(#circleG)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.3\"/><circle cx=\"180\" cy=\"1100\" r=\"180\" stroke=\"url(#circleG)\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.2\"/><path d=\"M0 675 L1080 675\" stroke=\"{{c1}}\" stroke-width=\"1\" stroke-dasharray=\"20 10\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Decorative Elements",
+        "locked": true
+      }
+    },
+    {
+      "id": "plane-icon",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"200\" viewBox=\"0 0 200 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"planeG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><path d=\"M180 20L80 100L20 80L40 100L20 180L60 140L80 180L100 100L180 20Z\" fill=\"url(#planeG)\" opacity=\"0.8\"/><circle cx=\"100\" cy=\"100\" r=\"90\" stroke=\"url(#planeG)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.4\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "320px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "Plane Icon",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.03em"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.05
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "560px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "300px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta-button-bg",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"80\" viewBox=\"0 0 400 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"ctaG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"glow\"><feGaussianBlur stdDeviation=\"10\" result=\"blur\"/><feMerge><feMergeNode in=\"blur\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter></defs><rect width=\"400\" height=\"80\" rx=\"40\" fill=\"url(#ctaG)\" filter=\"url(#glow)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "950px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "975px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "30px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "turismo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

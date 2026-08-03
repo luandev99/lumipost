@@ -1,0 +1,295 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "O poder",
+    "subtitle": "Subtitle placeholder",
+    "textFont1": "Kenony",
+    "textFont2": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessLogo": "",
+    "businessName": "Usuário"
+  },
+  "layers": [
+    {
+      "id": "bg",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-texture",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"30\" height=\"30\" patternUnits=\"userSpaceOnUse\"><path d=\"M 30 0 L 0 0 0 30\" fill=\"none\" stroke=\"{{color}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Texture",
+        "locked": true
+      }
+    },
+    {
+      "id": "blob",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color": "{{bgColor3}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 450 550\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M120,60 Q60,120 90,240 T140,480 Q210,580 330,500 T420,290 Q440,170 350,90 T170,50 Z\" fill=\"{{color}}\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "200px",
+        "left": "600px",
+        "type": "absolute",
+        "width": "450px",
+        "height": "550px"
+      },
+      "editorMeta": {
+        "name": "Organic Blob",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Image",
+        "source": "{{image}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.12)",
+        "left": "calc(var(--image-width) * 0.52)",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "200px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "200px",
+        "minFontSize": "48px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.5)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.84)"
+      },
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "40px",
+        "minFontSize": "24px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.78)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.84)"
+      },
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "padding": "calc(var(--image-width) * 0.018) calc(var(--image-width) * 0.05)",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "borderRadius": "calc(var(--image-width) * 0.03)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.82)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "auto",
+        "height": "auto"
+      },
+      "editorMeta": {
+        "name": "CTA Button"
+      }
+    },
+    {
+      "id": "business-name",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.94)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)"
+      },
+      "editorMeta": {
+        "name": "Business Name"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 8,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1200px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "metadata": {
+    "nicheName": "psicologia",
+    "packageId": "package-1",
+    "aspectRatio": "1:1.25"
+  },
+  "packageId": "imobiliario-03",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-with-image-1",
+  "aspectRatio": "1:1.25",
+  "displayName": "Main Text and Subtitle with Image 1",
+  "templateName": "main-text-and-subtitle-with-image-1",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "fontFields": [
+      "textFont1",
+      "textFont2"
+    ],
+    "textFields": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "bgColor3",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "image"
+    ],
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo",
+      "businessName",
+      "businessLogo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

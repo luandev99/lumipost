@@ -1,0 +1,554 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Salve para depois",
+    "bgColor1": "#F5F0E6",
+    "bgColor2": "#5A6B4A",
+    "bgColor3": "#8B7355",
+    "headline": "5 Receitas Imperdíveis",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#5A6B4A",
+    "textColor2": "#3D4A35",
+    "textColor3": "#FFFBF2",
+    "businessLogo": "",
+    "contentList0": "Pão de fermentação natural",
+    "contentList1": "Croissant amanteigado",
+    "contentList2": "Focaccia com alecrim",
+    "contentList3": "Brioche caseiro",
+    "contentList4": "Ciabatta italiana"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><path d=\"M 40 0 L 0 0 0 40\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "50%"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Food image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "80px",
+        "left": "540px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "image-border",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"480\" height=\"480\" viewBox=\"0 0 480 480\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"240\" cy=\"240\" r=\"238\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "70px",
+        "left": "530px",
+        "type": "absolute",
+        "width": "480px",
+        "height": "480px"
+      },
+      "editorMeta": {
+        "name": "Image Border",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "120px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "200px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "list-container",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"960\" height=\"600\" viewBox=\"0 0 960 600\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"960\" height=\"600\" rx=\"24\" fill=\"{{c1}}\" opacity=\"0.06\"/><rect x=\"1\" y=\"1\" width=\"958\" height=\"598\" rx=\"23\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.12\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "580px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "960px",
+        "height": "600px"
+      },
+      "editorMeta": {
+        "name": "List Container",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "620px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "60px"
+      },
+      "fieldName": "contentList0",
+      "editorMeta": {
+        "name": "List Item 1"
+      }
+    },
+    {
+      "id": "list-number-1",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "01"
+      },
+      "position": {
+        "top": "620px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "List Number 1",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "700px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "60px"
+      },
+      "fieldName": "contentList1",
+      "editorMeta": {
+        "name": "List Item 2"
+      }
+    },
+    {
+      "id": "list-number-2",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "02"
+      },
+      "position": {
+        "top": "700px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "List Number 2",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "780px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "60px"
+      },
+      "fieldName": "contentList2",
+      "editorMeta": {
+        "name": "List Item 3"
+      }
+    },
+    {
+      "id": "list-number-3",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "03"
+      },
+      "position": {
+        "top": "780px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "List Number 3",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "860px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "60px"
+      },
+      "fieldName": "contentList3",
+      "editorMeta": {
+        "name": "List Item 4"
+      }
+    },
+    {
+      "id": "list-number-4",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "04"
+      },
+      "position": {
+        "top": "860px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "List Number 4",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-5",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "940px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "60px"
+      },
+      "fieldName": "contentList4",
+      "editorMeta": {
+        "name": "List Item 5"
+      }
+    },
+    {
+      "id": "list-number-5",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "05"
+      },
+      "position": {
+        "top": "940px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "40px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "List Number 5",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-pill-bg",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"280\" height=\"56\" viewBox=\"0 0 280 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"280\" height=\"56\" rx=\"28\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1220px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "56px",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1220px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1210px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-with-image",
+  "aspectRatio": "4:5",
+  "templateName": "list-with-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "headline",
+      "ctaText",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

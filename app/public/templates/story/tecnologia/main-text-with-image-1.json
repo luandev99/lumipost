@@ -1,0 +1,197 @@
+{
+  "props": {
+    "bgColor1": "#0a0a14",
+    "bgColor2": "#1a1a2e",
+    "bgColor3": "#6366f1",
+    "mainText": "CONTROLE SUAS FINANÇAS",
+    "textColor1": "#ffffff",
+    "textColor2": "#a5b4fc",
+    "textColor3": "#6366f1",
+    "fontFamily1": "Inter",
+    "fontFamily2": "Inter"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "size": {
+        "width": 1080,
+        "height": 1920
+      },
+      "type": "rectangle",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "size": {
+        "width": 1080,
+        "height": 1920
+      },
+      "type": "rectangle",
+      "styles": {
+        "opacity": 0.8,
+        "backgroundSize": "60px 60px",
+        "backgroundImage": "linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px)"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "image-container",
+      "size": {
+        "width": 800,
+        "height": 600
+      },
+      "type": "rectangle",
+      "styles": {
+        "boxShadow": "0 20px 60px rgba(0, 0, 0, 0.4)",
+        "borderRadius": "24px",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 600
+      }
+    },
+    {
+      "id": "image-placeholder",
+      "size": {
+        "width": 800,
+        "height": 600
+      },
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "24px"
+      },
+      "content": {
+        "source": "{{imagePlaceholder}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 600,
+        "width": "900px",
+        "height": "900px"
+      }
+    },
+    {
+      "id": "image-overlay",
+      "size": {
+        "width": 800,
+        "height": 600
+      },
+      "type": "rectangle",
+      "styles": {
+        "background": "linear-gradient(180deg, transparent 0%, rgba(10, 10, 20, 0.8) 100%)",
+        "borderRadius": "24px"
+      },
+      "position": {
+        "x": 540,
+        "y": 600
+      }
+    },
+    {
+      "id": "business-logo",
+      "size": {
+        "width": 140,
+        "height": 70
+      },
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "content": {
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "x": 470,
+        "y": 1850
+      }
+    },
+    {
+      "id": "main-text",
+      "size": {
+        "width": 900,
+        "height": "auto"
+      },
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "64px",
+        "textAlign": "center",
+        "fontFamily": "{{fontFamily1}}",
+        "fontWeight": "800",
+        "lineHeight": "1.15",
+        "letterSpacing": "3px",
+        "textTransform": "uppercase"
+      },
+      "content": {
+        "text": "{{mainText}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 1150
+      }
+    },
+    {
+      "id": "accent-bar",
+      "size": {
+        "width": 200,
+        "height": 8
+      },
+      "type": "rectangle",
+      "styles": {
+        "borderRadius": "4px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 1320
+      }
+    },
+    {
+      "id": "glow-bottom",
+      "size": {
+        "width": 700,
+        "height": 350
+      },
+      "type": "ellipse",
+      "styles": {
+        "filter": "blur(120px)",
+        "opacity": 0.1,
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 1700
+      }
+    }
+  ],
+  "packageId": "tecnologia",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "main-text-with-image-1",
+  "aspectRatio": "9:16",
+  "templateName": "main-text-with-image-1",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "mainText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

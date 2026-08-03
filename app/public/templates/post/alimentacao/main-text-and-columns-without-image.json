@@ -1,0 +1,543 @@
+{
+  "props": {
+    "ctaText": "Saiba mais",
+    "bgColor1": "#F5F0E6",
+    "bgColor2": "#5A6B4A",
+    "bgColor3": "#8B7355",
+    "headline": "Compare e Escolha",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#5A6B4A",
+    "textColor2": "#3D4A35",
+    "textColor3": "#FFFBF2",
+    "businessLogo": "",
+    "contentListLeft0": "Pão tradicional",
+    "contentListLeft1": "Fermentação rápida",
+    "contentListLeft2": "Ingredientes comuns",
+    "contentListLeft3": "Sabor padronizado",
+    "contentListLeft4": "Produção em massa",
+    "contentListRight0": "Pão artesanal",
+    "contentListRight1": "Fermentação natural",
+    "contentListRight2": "Ingredientes premium",
+    "contentListRight3": "Sabor único",
+    "contentListRight4": "Feito à mão"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><path d=\"M 40 0 L 0 0 0 40\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "180px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "left-column-bg",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"460\" height=\"700\" viewBox=\"0 0 460 700\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"460\" height=\"700\" rx=\"20\" fill=\"{{c1}}\" opacity=\"0.08\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "320px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "460px",
+        "height": "700px"
+      },
+      "editorMeta": {
+        "name": "Left Column BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "right-column-bg",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"460\" height=\"700\" viewBox=\"0 0 460 700\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"460\" height=\"700\" rx=\"20\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "320px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "460px",
+        "height": "700px"
+      },
+      "editorMeta": {
+        "name": "Right Column BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-left-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeft0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "380px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListLeft0",
+      "editorMeta": {
+        "name": "List Left 1"
+      }
+    },
+    {
+      "id": "list-left-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeft1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "480px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListLeft1",
+      "editorMeta": {
+        "name": "List Left 2"
+      }
+    },
+    {
+      "id": "list-left-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeft2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "580px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListLeft2",
+      "editorMeta": {
+        "name": "List Left 3"
+      }
+    },
+    {
+      "id": "list-left-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeft3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "680px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListLeft3",
+      "editorMeta": {
+        "name": "List Left 4"
+      }
+    },
+    {
+      "id": "list-left-5",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeft4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "780px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListLeft4",
+      "editorMeta": {
+        "name": "List Left 5"
+      }
+    },
+    {
+      "id": "list-right-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRight0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "380px",
+        "left": "590px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListRight0",
+      "editorMeta": {
+        "name": "List Right 1"
+      }
+    },
+    {
+      "id": "list-right-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRight1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "480px",
+        "left": "590px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListRight1",
+      "editorMeta": {
+        "name": "List Right 2"
+      }
+    },
+    {
+      "id": "list-right-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRight2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "580px",
+        "left": "590px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListRight2",
+      "editorMeta": {
+        "name": "List Right 3"
+      }
+    },
+    {
+      "id": "list-right-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRight3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "680px",
+        "left": "590px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListRight3",
+      "editorMeta": {
+        "name": "List Right 4"
+      }
+    },
+    {
+      "id": "list-right-5",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRight4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "780px",
+        "left": "590px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "fieldName": "contentListRight4",
+      "editorMeta": {
+        "name": "List Right 5"
+      }
+    },
+    {
+      "id": "cta-pill-bg",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"280\" height=\"56\" viewBox=\"0 0 280 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"280\" height=\"56\" rx=\"28\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1100px",
+        "left": "400px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "56px",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1100px",
+        "left": "400px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1210px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-columns-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-and-columns-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "headline",
+      "ctaText",
+      "contentListLeft0",
+      "contentListLeft1",
+      "contentListLeft2",
+      "contentListLeft3",
+      "contentListLeft4",
+      "contentListRight0",
+      "contentListRight1",
+      "contentListRight2",
+      "contentListRight3",
+      "contentListRight4"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

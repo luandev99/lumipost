@@ -1,0 +1,353 @@
+{
+  "props": {
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "subtitle": "Subtitle: lorem ipsum dolor sit amet",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-giant-text",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"80\" y=\"580\" font-family=\"{{f1}}\" font-size=\"520\" font-weight=\"900\" fill=\"{{c1}}\" opacity=\"0.035\" letter-spacing=\"-0.06em\">?</text></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "BG Giant Question Mark",
+        "locked": true
+      }
+    },
+    {
+      "id": "spot-lights",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"sp1\" cx=\"0.5\" cy=\"0.25\" r=\"0.46\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.19\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"sp2\" cx=\"0.18\" cy=\"0.65\" r=\"0.38\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.14\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"sp3\" cx=\"0.8\" cy=\"0.88\" r=\"0.3\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.11\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#sp1)\"/><rect width=\"1080\" height=\"1920\" fill=\"url(#sp2)\"/><rect width=\"1080\" height=\"1920\" fill=\"url(#sp3)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Spot Lights",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-curves-back",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"cG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"cN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"11\"/></filter></defs><path d=\"M-60 340 C100 220, 280 400, 460 300 S700 160, 840 300\" stroke=\"url(#cG)\" stroke-width=\"4.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.48\"/><path d=\"M-60 340 C100 220, 280 400, 460 300 S700 160, 840 300\" stroke=\"url(#cG)\" stroke-width=\"4.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.26\" filter=\"url(#cN)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Organic Curves Back",
+        "locked": true
+      }
+    },
+    {
+      "id": "question-icon",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"150\" height=\"150\" viewBox=\"0 0 150 150\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"qG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"qN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"6\"/></filter></defs><circle cx=\"75\" cy=\"75\" r=\"68\" stroke=\"url(#qG)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.3\"/><circle cx=\"75\" cy=\"75\" r=\"68\" stroke=\"url(#qG)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.18\" filter=\"url(#qN)\"/><text x=\"75\" y=\"105\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"88\" font-weight=\"800\" fill=\"url(#qG)\" opacity=\"0.7\">?</text></svg>"
+        }
+      },
+      "position": {
+        "top": "140px",
+        "left": "465px",
+        "type": "absolute",
+        "width": "150px",
+        "height": "150px"
+      },
+      "editorMeta": {
+        "name": "Question Icon Neon"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "0.98",
+        "letterSpacing": "-0.04em",
+        "verticalAlign": "top"
+      },
+      "zIndex": 8,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 0.98
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "340px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "320px"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline (Question)"
+      }
+    },
+    {
+      "id": "accent-bar",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"180\" height=\"6\" viewBox=\"0 0 180 6\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"abG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"abN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"4\"/></filter></defs><rect width=\"180\" height=\"6\" rx=\"3\" fill=\"url(#abG)\"/><rect width=\"180\" height=\"6\" rx=\"3\" fill=\"url(#abG)\" filter=\"url(#abN)\" opacity=\"0.5\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "700px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "6px"
+      },
+      "editorMeta": {
+        "name": "Neon Accent Bar"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4",
+        "letterSpacing": "-0.01em",
+        "verticalAlign": "top"
+      },
+      "zIndex": 8,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "36px",
+        "minFontSize": "22px",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "750px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "880px",
+        "height": "280px"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle (Answer)"
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "0px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Law professional",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1100px",
+        "left": "190px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image (No BG)"
+      }
+    },
+    {
+      "id": "organic-curves-front",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"fG\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0.4\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient><filter id=\"fN\"><feGaussianBlur in=\"SourceGraphic\" stdDeviation=\"10\"/></filter></defs><path d=\"M-50 1360 C110 1240, 270 1400, 430 1300 S690 1160, 830 1300\" stroke=\"url(#fG)\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.5\"/><path d=\"M-50 1360 C110 1240, 270 1400, 430 1300 S690 1160, 830 1300\" stroke=\"url(#fG)\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.27\" filter=\"url(#fN)\"/><path d=\"M1110 1560 C950 1700, 790 1540, 650 1640\" stroke=\"url(#fG)\" stroke-width=\"3.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.44\"/><path d=\"M1110 1560 C950 1700, 790 1540, 650 1640\" stroke=\"url(#fG)\" stroke-width=\"3.5\" fill=\"none\" stroke-linecap=\"round\" opacity=\"0.22\" filter=\"url(#fN)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Organic Curves Over Image",
+        "locked": true
+      }
+    },
+    {
+      "id": "logo-divider",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1\" viewBox=\"0 0 1080 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"0.5\" x2=\"1000\" y2=\"0.5\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.12\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1790px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Logo Divider",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1814px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "72px"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "juridico",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "question-box-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "question-box-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

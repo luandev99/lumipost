@@ -1,0 +1,269 @@
+{
+  "props": {
+    "image": "",
+    "bgColor1": "#FAFAF8",
+    "bgColor2": "#1A1A1A",
+    "bgColor3": "#2C2C2C",
+    "citation": "Não é o quanto você ganha, mas o quanto você guarda que determina sua riqueza.",
+    "username": "@seuarroba",
+    "textFont1": "Playfair Display, serif",
+    "textFont2": "Inter, sans-serif",
+    "textColor1": "#1A1A1A",
+    "textColor2": "#8A8A8A",
+    "textColor3": "#D4AF37",
+    "businessLogo": "",
+    "citationAuthor": "Warren Buffett"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "image-container",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "organic-overlay",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"100\" viewBox=\"0 0 1080 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,100 L0,100 L1080,100 L1080,0 Q1080,100 930,100 L150,100 Q0,100 0,0 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "500px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "100px"
+      },
+      "editorMeta": {
+        "name": "Organic Overlay",
+        "locked": true
+      }
+    },
+    {
+      "id": "quote-mark-open",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "140px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "\""
+      },
+      "position": {
+        "top": "620px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "100px"
+      },
+      "editorMeta": {
+        "name": "Quote Mark Open",
+        "locked": true
+      }
+    },
+    {
+      "id": "citation",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{citation}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "720px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "880px",
+        "height": "300px"
+      },
+      "fieldName": "citation",
+      "editorMeta": {
+        "name": "Citation"
+      }
+    },
+    {
+      "id": "citation-author",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "3px",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{citationAuthor}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1060px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "880px",
+        "height": "36px"
+      },
+      "fieldName": "citationAuthor",
+      "editorMeta": {
+        "name": "Citation Author"
+      }
+    },
+    {
+      "id": "accent-line",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor3}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"2\" viewBox=\"0 0 200 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"2\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1140px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Accent Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo do negócio",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1200px",
+        "left": "500px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    },
+    {
+      "id": "username",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "2px"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{username}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1300px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "30px"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    }
+  ],
+  "packageId": "negocios",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "citation-with-image",
+  "aspectRatio": "4:5",
+  "templateName": "citation-with-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "citation",
+      "citationAuthor",
+      "username"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

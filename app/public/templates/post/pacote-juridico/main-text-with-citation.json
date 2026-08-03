@@ -1,0 +1,300 @@
+{
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-giant-text",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "opacity": "0.03",
+        "fontSize": "260px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900"
+      },
+      "zIndex": 1,
+      "content": {
+        "text": "ADVOGADO"
+      },
+      "position": {
+        "top": "500px",
+        "left": "50px",
+        "type": "absolute",
+        "width": "600px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "BG Giant Text",
+        "locked": true
+      }
+    },
+    {
+      "id": "glow",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"glow1\" cx=\"50%\" cy=\"50%\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.18\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><ellipse cx=\"540\" cy=\"675\" rx=\"450\" ry=\"450\" fill=\"url(#glow1)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Glow",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "76px",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "verticalAlign": "top"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "80px",
+        "minFontSize": "38px",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "320px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline (citação)"
+      }
+    },
+    {
+      "id": "profile-ring",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"180\" height=\"180\" viewBox=\"0 0 180 180\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"profileGlow\"><feGaussianBlur stdDeviation=\"6\" result=\"blur\"/><feMerge><feMergeNode in=\"blur\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter></defs><circle cx=\"90\" cy=\"90\" r=\"88\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"4\" filter=\"url(#profileGlow)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "550px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "180px"
+      },
+      "editorMeta": {
+        "name": "Profile Ring",
+        "locked": true
+      }
+    },
+    {
+      "id": "profile-picture",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "50%"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Profile",
+        "source": "{{profilePictureUrl}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "565px",
+        "left": "465px",
+        "type": "absolute",
+        "width": "150px",
+        "height": "150px"
+      },
+      "fieldName": "profilePictureUrl",
+      "editorMeta": {
+        "name": "Profile Picture"
+      }
+    },
+    {
+      "id": "business-name",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "36px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "780px",
+        "left": "280px",
+        "type": "absolute",
+        "width": "520px",
+        "height": "50px"
+      },
+      "fieldName": "businessName",
+      "editorMeta": {
+        "name": "Business Name"
+      }
+    },
+    {
+      "id": "username",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "24px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "@{{username}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "840px",
+        "left": "280px",
+        "type": "absolute",
+        "width": "520px",
+        "height": "30px"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "footer-bar",
+      "type": "container",
+      "styles": {
+        "opacity": "0.1",
+        "backdropFilter": "blur(20px)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 6,
+      "position": {
+        "top": "1240px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "110px"
+      },
+      "editorMeta": {
+        "name": "Footer Bar",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1265px",
+        "left": "490px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "pacote-juridico",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-citation",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-with-citation",
+  "templateType": "post",
+  "contentRequirements": {
+    "textFields": [
+      {
+        "label": "Citação",
+        "fieldName": "headline",
+        "maxLength": 120,
+        "placeholder": "Sua citação aqui"
+      },
+      {
+        "label": "Nome do negócio",
+        "fieldName": "businessName",
+        "maxLength": 40,
+        "placeholder": "Nome"
+      },
+      {
+        "label": "Username",
+        "fieldName": "username",
+        "maxLength": 30,
+        "placeholder": "usuario"
+      }
+    ],
+    "imageFields": [
+      {
+        "label": "Foto de perfil",
+        "required": true,
+        "fieldName": "profilePictureUrl"
+      },
+      {
+        "label": "Business Logo",
+        "required": true,
+        "fieldName": "businessLogo"
+      }
+    ]
+  }
+}

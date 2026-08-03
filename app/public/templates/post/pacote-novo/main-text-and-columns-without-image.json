@@ -1,0 +1,297 @@
+{
+  "props": {
+    "bgColor1": "#e8e0d5",
+    "bgColor2": "#3d2b1f",
+    "bgColor3": "#b87333",
+    "textColor1": "#3d2b1f",
+    "textColor2": "#5a4a3a",
+    "textColor3": "#b87333"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_header_left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "letterSpacing": "0.2em"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.025)",
+        "left": "calc(var(--image-width) * 0.04)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Username Esquerda"
+      }
+    },
+    {
+      "id": "layer_header_center",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.2em"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{preHeadline}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.025)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Tema"
+      }
+    },
+    {
+      "id": "layer_header_right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "letterSpacing": "0.2em"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.025)",
+        "left": "calc(var(--image-width) * 0.71)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Username Direita"
+      }
+    },
+    {
+      "id": "layer_title_left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.08)",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 10,
+      "content": {
+        "text": "{{subtitleLeft}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.1)",
+        "left": "calc(var(--image-width) * 0.02)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.46)",
+        "height": "calc(var(--image-height-post) * 0.1)"
+      },
+      "fieldName": "img_content_subtitle_left",
+      "editorMeta": {
+        "name": "Titulo Esquerda"
+      }
+    },
+    {
+      "id": "layer_title_right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.08)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 10,
+      "content": {
+        "text": "{{subtitleRight}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.1)",
+        "left": "calc(var(--image-width) * 0.52)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.46)",
+        "height": "calc(var(--image-height-post) * 0.1)"
+      },
+      "fieldName": "img_content_subtitle_right",
+      "editorMeta": {
+        "name": "Titulo Direita"
+      }
+    },
+    {
+      "id": "layer_image_left",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Imagem Esquerda",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.22)",
+        "left": "calc(var(--image-width) * 0.04)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.55)"
+      },
+      "editorMeta": {
+        "name": "Imagem Esquerda"
+      }
+    },
+    {
+      "id": "layer_image_right",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Imagem Direita",
+        "source": "{{image2Url}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.22)",
+        "left": "calc(var(--image-width) * 0.54)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.55)"
+      },
+      "editorMeta": {
+        "name": "Imagem Direita"
+      }
+    },
+    {
+      "id": "layer_label_left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.028)",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.72)",
+        "left": "calc(var(--image-width) * 0.04)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.05)"
+      },
+      "editorMeta": {
+        "name": "Label Esquerda"
+      }
+    },
+    {
+      "id": "layer_label_right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.028)",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.72)",
+        "left": "calc(var(--image-width) * 0.54)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.05)"
+      },
+      "editorMeta": {
+        "name": "Label Direita"
+      }
+    }
+  ],
+  "packageId": "pacote-novo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-columns-without-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-and-columns-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "maxListItems": 2,
+    "textVariables": [
+      "preHeadline",
+      "headline",
+      "subtitleLeft",
+      "subtitleRight",
+      "contentList"
+    ],
+    "businessFields": [
+      "username",
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

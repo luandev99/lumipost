@@ -1,0 +1,249 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "DESCUBRA MAIS",
+    "bgColor1": "#1a2e1a",
+    "bgColor2": "#d4af37",
+    "bgColor3": "#2d4a2d",
+    "headline": "Seu Futuro Financeiro",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#f5f0e6",
+    "textColor2": "#d4af37",
+    "textColor3": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "inner-frame",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"40\" width=\"1000\" height=\"1270\" rx=\"24\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Inner Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "20px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Showcase image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "140px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "800px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "image-frame",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"800\" height=\"800\" viewBox=\"0 0 800 800\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"2\" y=\"2\" width=\"796\" height=\"796\" rx=\"20\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.4\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "140px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "800px"
+      },
+      "editorMeta": {
+        "name": "Image Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-elements",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"100\" cy=\"1220\" r=\"50\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.28\"/><circle cx=\"100\" cy=\"1220\" r=\"35\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.22\"/><text x=\"100\" y=\"1232\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"32\" fill=\"{{c1}}\" opacity=\"0.36\">$</text><circle cx=\"220\" cy=\"1280\" r=\"38\" stroke=\"{{c2}}\" stroke-width=\"2\" fill=\"{{c2}}\" fill-opacity=\"0.1\" opacity=\"0.32\"/><text x=\"220\" y=\"1290\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"24\" fill=\"{{c2}}\" opacity=\"0.42\">%</text><circle cx=\"960\" cy=\"1200\" r=\"48\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.26\"/><circle cx=\"960\" cy=\"1200\" r=\"34\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.2\"/><text x=\"960\" y=\"1212\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"30\" fill=\"{{c1}}\" opacity=\"0.34\">$</text></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Decorative Elements",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "56px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "60px",
+        "minFontSize": "34px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "980px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "700px",
+        "height": "120px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"250\" height=\"56\" viewBox=\"0 0 250 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"248\" height=\"54\" rx=\"27\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1010px",
+        "left": "750px",
+        "type": "absolute",
+        "width": "250px",
+        "height": "56px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "13px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "56px",
+        "letterSpacing": "0.1em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1010px",
+        "left": "750px",
+        "type": "absolute",
+        "width": "250px",
+        "height": "56px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    }
+  ],
+  "packageId": "comercio",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "image-showcase",
+  "aspectRatio": "4:5",
+  "templateName": "image-showcase",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

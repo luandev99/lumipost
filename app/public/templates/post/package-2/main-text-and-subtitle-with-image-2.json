@@ -1,0 +1,235 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "hidden": false,
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1768590581574_5uz1h",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "27px 0px 0px 0px"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0526)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2315)",
+        "height": "calc(var(--image-height-post) * 0.1852)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1768590683213_atz7n",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "27px",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0526)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8685)",
+        "height": "calc(var(--image-height-post) * 0.4563)"
+      },
+      "editorMeta": {
+        "name": "Image"
+      }
+    },
+    {
+      "id": "layer_1768590732599_g0mqq",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0593)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.5444)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8685)",
+        "height": "calc(var(--image-height-post) * 0.1556)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_1768928005127_cu6ym",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0370)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.3",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.7267)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8685)",
+        "height": "calc(var(--image-height-post) * 0.1363)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtítulo"
+      }
+    },
+    {
+      "id": "layer_1768928060411_z8xze",
+      "type": "container",
+      "styles": {
+        "borderRadius": "100px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 5,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8904)",
+        "left": "calc(var(--image-width) * 0.0657)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6565)",
+        "height": "calc(var(--image-height-post) * 0.057)"
+      },
+      "editorMeta": {
+        "name": "Cta Background"
+      }
+    },
+    {
+      "id": "layer_1768928065519_e58wx",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "svg": "getCircleIconSvg",
+        "params": [
+          "{{textColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.9156)",
+        "left": "calc(var(--image-width) * 0.0926)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0074)",
+        "height": "calc(var(--image-height-post) * 0.0059)"
+      },
+      "editorMeta": {
+        "name": "Cta Icon"
+      }
+    },
+    {
+      "id": "layer_1768928069119_eccod",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.9074)",
+        "left": "calc(var(--image-width) * 0.1185)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5852)",
+        "height": "calc(var(--image-height-post) * 0.0281)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "Cta Text"
+      }
+    }
+  ],
+  "packageId": "package-2",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-with-image-2",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-and-subtitle-with-image-2",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

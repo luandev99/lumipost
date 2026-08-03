@@ -1,0 +1,238 @@
+{
+  "props": {
+    "ctaText": "MARQUE SUA SESSAO",
+    "bgColor1": "#f5ebe0",
+    "bgColor2": "#c9a96e",
+    "bgColor3": "#6b4423",
+    "headline": "LOREM IPSUM",
+    "subtitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "mainImage": "",
+    "textColor1": "#6b4423",
+    "textColor2": "#090909",
+    "textColor3": "#f5ebe0",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_mainImage",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Main Image",
+        "source": "{{mainImage}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.1589)",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "calc(var(--image-height-story) * 0.7839)"
+      },
+      "fieldName": "mainImage",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.1005)",
+        "left": "calc(var(--image-width) * 0.1213)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.1667)",
+        "height": "calc(var(--image-height-story) * 0.0469)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.1778)",
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": 0.8,
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "18%",
+        "minFontSize": "5%",
+        "lineHeightRatio": 0.9
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3688)",
+        "left": "calc(var(--image-width) * 0.1213)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7574)",
+        "height": "calc(var(--image-height-story) * 0.2568)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      },
+      "textSplitParts": [
+        {
+          "textStyles": {
+            "textAlign": "center",
+            "fontFamily": "Black Mango"
+          },
+          "wordPercent": 50
+        },
+        {
+          "textStyles": {
+            "color": "{{textColor1}}",
+            "fontFamily": "Black Mango"
+          },
+          "wordPercent": 50
+        }
+      ],
+      "textSplitLayout": "inline"
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0278)",
+        "textAlign": "left",
+        "fontFamily": "Montserrat",
+        "fontWeight": "700",
+        "lineHeight": 1.1,
+        "verticalAlign": "top"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "6%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.7448)",
+        "left": "calc(var(--image-width) * 0.1213)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3787)",
+        "height": "calc(var(--image-height-story) * 0.112)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      },
+      "textSplitParts": [
+        {
+          "wordPercent": 30
+        },
+        {
+          "textStyles": {
+            "fontWeight": "400"
+          },
+          "wordPercent": 70
+        }
+      ],
+      "textSplitLayout": "inline"
+    },
+    {
+      "id": "layer_1781114234634_72156",
+      "type": "text-path",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.025)",
+        "fontFamily": "Poppins",
+        "fontWeight": "700",
+        "letterSpacing": "2px"
+      },
+      "zIndex": 7,
+      "content": {
+        "path": "",
+        "text": "{{ctaText}}",
+        "radius": "50%",
+        "pathType": "circle"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0609)",
+        "left": "calc(var(--image-width) * 0.6843)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.225)",
+        "height": "calc(var(--image-height-story) * 0.1266)"
+      },
+      "fieldName": "curved_text_3",
+      "editorMeta": {
+        "name": "Texto Circular"
+      }
+    }
+  ],
+  "packageId": "chique",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "main-text-and-subtitle-with-image2",
+  "aspectRatio": "9:16",
+  "templateName": "main-text-and-subtitle-with-image2",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  },
+  "imageGenerationInstructions": "Dimensions: 1080px width × 1505px height\nBackground: remove background\nComposition: single subject, isolated\nLayout: centered with minimal elements\nSpacing: large, clear spacing between objects\nStructure: no overlapping parts, clean silhouette\nStyle: simple, plain, and easy to cut out"
+}

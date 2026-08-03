@@ -1,0 +1,261 @@
+{
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "content-background",
+      "type": "container",
+      "styles": {
+        "gap": "calc(var(--image-height-story) * 0.0208)",
+        "display": "flex",
+        "padding": "calc(var(--image-width) * 0.0648)",
+        "boxSizing": "border-box",
+        "paddingTop": "calc(var(--image-width) * 0.15)",
+        "borderRadius": "calc(var(--image-width) * 0.033)",
+        "flexDirection": "column",
+        "justifyContent": "center",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 1,
+      "children": [],
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0781)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7898)",
+        "height": "calc(var(--image-height-story) * 0.4849)"
+      },
+      "editorMeta": {
+        "name": "Content Background",
+        "hidden": false
+      }
+    },
+    {
+      "id": "layer_1768504409185_tom4x",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 29,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0911)",
+        "left": "calc(var(--image-width) * 0.1204)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2315)",
+        "height": "calc(var(--image-height-story) * 0.1302)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1768504574974_9twkn",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.06)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 30,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.23)",
+        "left": "calc(var(--image-width) * 0.1731)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.638)",
+        "height": "calc(var(--image-height-story) * 0.1302)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Title Text"
+      }
+    },
+    {
+      "id": "layer_1768504779682_me0gz",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.3",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 31,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3739)",
+        "left": "calc(var(--image-width) * 0.1731)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.638)",
+        "height": "calc(var(--image-height-story) * 0.1781)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Content Text"
+      }
+    },
+    {
+      "id": "layer_1768504948485_1w88r",
+      "type": "container",
+      "styles": {
+        "borderRadius": "27px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 32,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.888)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7898)",
+        "height": "calc(var(--image-height-story) * 0.0865)"
+      },
+      "editorMeta": {
+        "name": "Cta Background",
+        "hidden": false
+      }
+    },
+    {
+      "id": "layer_1768504956766_lwdff",
+      "type": "svg",
+      "zIndex": 33,
+      "content": {
+        "svg": "getCircleIconSvg",
+        "params": [
+          "{{textColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.9292)",
+        "left": "calc(var(--image-width) * 0.1204)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0074)",
+        "height": "calc(var(--image-height-story) * 0.0042)"
+      },
+      "editorMeta": {
+        "name": "Cta Icon"
+      }
+    },
+    {
+      "id": "layer_1768504961894_gxe6m",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 34,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.8974)",
+        "left": "calc(var(--image-width) * 0.1528)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6944)",
+        "height": "calc(var(--image-height-story) * 0.0677)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "Cta Text"
+      }
+    },
+    {
+      "id": "layer_1773348709522_lox32",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "58px",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 35,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.5943)",
+        "left": "calc(var(--image-width) * 0.0954)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7814)",
+        "height": "calc(var(--image-height-story) * 0.2672)"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal"
+      }
+    }
+  ],
+  "packageId": "package-2",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "main-text-and-subtitle-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "main-text-and-subtitle-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

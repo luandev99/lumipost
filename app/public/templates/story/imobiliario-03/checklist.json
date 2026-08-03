@@ -1,0 +1,440 @@
+{
+  "props": {
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "O poder",
+    "textFont1": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessLogo": "",
+    "contentList0": "Item 1",
+    "contentList1": "Item 2",
+    "contentList2": "Item 3",
+    "contentList3": "Item 4"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-texture",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"45\" height=\"45\" patternUnits=\"userSpaceOnUse\"><path d=\"M45 0 L0 0 0 45\" fill=\"none\" stroke=\"{{c}}\" stroke-width=\"0.4\" opacity=\"0.12\"/></pattern></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Grid Texture",
+        "locked": true
+      }
+    },
+    {
+      "id": "watercolor-blobs",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"wc1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><path d=\"M180 420 Q260 390, 340 430 T 470 450 Q530 460, 550 520 T 510 620 Q470 660, 400 650 T 270 610 Q210 580, 190 520 T 180 420 Z\" fill=\"url(#wc1)\" opacity=\"0.1\"/><path d=\"M720 840 Q800 810, 880 850 T 1010 870 Q1060 880, 1070 930 T 1040 1020 Q1000 1060, 930 1050 T 800 1010 Q740 980, 720 920 T 720 840 Z\" fill=\"url(#wc1)\" opacity=\"0.08\"/><path d=\"M140 1400 Q200 1370, 260 1410 T 370 1430 Q420 1440, 430 1490 T 400 1570 Q360 1610, 290 1600 T 160 1560 Q110 1530, 120 1470 T 140 1400 Z\" fill=\"url(#wc1)\" opacity=\"0.09\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Watercolor Blobs",
+        "locked": true
+      }
+    },
+    {
+      "id": "ornate-frame-top",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"420\" height=\"300\" viewBox=\"0 0 420 300\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"fg1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"50%\" stop-color=\"{{c2}}\"/><stop offset=\"100%\" stop-color=\"{{c1}}\"/></linearGradient></defs><rect x=\"20\" y=\"20\" width=\"380\" height=\"260\" stroke=\"url(#fg1)\" stroke-width=\"10\" fill=\"none\" opacity=\"0.12\" rx=\"3\"/><path d=\"M40 40 L60 40 L60 50 L50 50 L50 60 L40 60 Z\" fill=\"url(#fg1)\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "420px",
+        "height": "300px"
+      },
+      "editorMeta": {
+        "name": "Ornate Frame Top",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "200px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.01em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "72px",
+        "minFontSize": "48px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "180px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "180px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "list-item-0",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "30px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "620px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "100px"
+      },
+      "fieldName": "contentList0",
+      "editorMeta": {
+        "name": "List Item 1"
+      }
+    },
+    {
+      "id": "checkmark-0",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"ck0\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><circle cx=\"30\" cy=\"30\" r=\"26\" stroke=\"url(#ck0)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.15\"/><path d=\"M20 30 L26 36 L40 22\" stroke=\"url(#ck0)\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "640px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Checkmark 1",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "30px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "780px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "100px"
+      },
+      "fieldName": "contentList1",
+      "editorMeta": {
+        "name": "List Item 2"
+      }
+    },
+    {
+      "id": "checkmark-1",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"ck1\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><circle cx=\"30\" cy=\"30\" r=\"26\" stroke=\"url(#ck1)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.15\"/><path d=\"M20 30 L26 36 L40 22\" stroke=\"url(#ck1)\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "800px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Checkmark 2",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "30px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "940px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "100px"
+      },
+      "fieldName": "contentList2",
+      "editorMeta": {
+        "name": "List Item 3"
+      }
+    },
+    {
+      "id": "checkmark-2",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"ck2\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><circle cx=\"30\" cy=\"30\" r=\"26\" stroke=\"url(#ck2)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.15\"/><path d=\"M20 30 L26 36 L40 22\" stroke=\"url(#ck2)\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "960px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Checkmark 3",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "30px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1100px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "860px",
+        "height": "100px"
+      },
+      "fieldName": "contentList3",
+      "editorMeta": {
+        "name": "List Item 4"
+      }
+    },
+    {
+      "id": "checkmark-3",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"ck3\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><circle cx=\"30\" cy=\"30\" r=\"26\" stroke=\"url(#ck3)\" stroke-width=\"2\" fill=\"none\" opacity=\"0.15\"/><path d=\"M20 30 L26 36 L40 22\" stroke=\"url(#ck3)\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1120px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Checkmark 4",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 8,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1780px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "imobiliario-03",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "checklist",
+  "aspectRatio": "9:16",
+  "templateName": "checklist",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "fontFields": [
+      "textFont1"
+    ],
+    "listFields": [
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3"
+    ],
+    "textFields": [
+      "headline"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "bgColor3",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "businessLogo"
+    ],
+    "textVariables": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "optionalFields": [],
+    "requiredFields": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "businessLogo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

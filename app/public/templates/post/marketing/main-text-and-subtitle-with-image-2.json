@@ -1,0 +1,382 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Saiba mais",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#d4d4d4",
+    "citation": "Citação",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "subtitle": "Subtítulo",
+    "textFont1": "Inter",
+    "textFont2": "Inter",
+    "afterImage": "",
+    "afterLabel": "Depois",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "beforeImage": "",
+    "beforeLabel": "Antes",
+    "slideNumber": "1",
+    "slidesCount": "5",
+    "businessLogo": "",
+    "businessName": "Usuário",
+    "contentList0": "Item 1",
+    "contentList1": "Item 2",
+    "contentList2": "Item 3",
+    "contentList3": "Item 4",
+    "profilePhoto": "",
+    "businessSlogan": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "neon-left-block",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "540px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Neon Left Block",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "filter": "grayscale(100%) contrast(1.2)",
+        "objectFit": "cover"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Imagem",
+        "source": "{{image}}"
+      },
+      "position": {
+        "top": "0",
+        "left": "540px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Main Image",
+        "editable": true,
+        "fieldName": "image"
+      }
+    },
+    {
+      "id": "checkered-pattern-bottomright",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 360 340\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"ck1\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><rect width=\"20\" height=\"20\" fill=\"{{c1}}\"/><rect x=\"20\" width=\"20\" height=\"20\" fill=\"{{c2}}\"/><rect y=\"20\" width=\"20\" height=\"20\" fill=\"{{c2}}\"/><rect x=\"20\" y=\"20\" width=\"20\" height=\"20\" fill=\"{{c1}}\"/></pattern></defs><rect width=\"360\" height=\"340\" fill=\"url(#ck1)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "675px",
+        "left": "720px",
+        "type": "absolute",
+        "width": "360px",
+        "height": "340px"
+      },
+      "editorMeta": {
+        "name": "Checkered Pattern Bottom Right",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "64px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.03em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "position": {
+        "top": "80px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "400px"
+      },
+      "editorMeta": {
+        "name": "Headline",
+        "editable": true,
+        "fieldName": "headline"
+      },
+      "textBehavior": {
+        "autoFit": {
+          "maxFontSize": 64,
+          "minFontSize": 36
+        }
+      }
+    },
+    {
+      "id": "subtitle-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "position": {
+        "top": "520px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "120px"
+      },
+      "editorMeta": {
+        "name": "Subtitle",
+        "editable": true,
+        "fieldName": "subtitle"
+      },
+      "textBehavior": {
+        "autoFit": {
+          "maxFontSize": 28,
+          "minFontSize": 16
+        }
+      }
+    },
+    {
+      "id": "cta-block",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 7,
+      "position": {
+        "top": "700px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "CTA Button Background"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "48px",
+        "letterSpacing": "0.05em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "position": {
+        "top": "700px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "CTA Text",
+        "editable": true,
+        "fieldName": "ctaText"
+      }
+    },
+    {
+      "id": "triangle-logo-element",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 160 160\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0 L80 0 L0 80 Z\" fill=\"{{c1}}\" opacity=\"0.9\"/><path d=\"M80 0 L160 0 L160 80 Z\" fill=\"{{c2}}\"/><path d=\"M0 80 L80 160 L0 160 Z\" fill=\"{{c1}}\" opacity=\"0.9\"/><path d=\"M80 80 L160 80 L160 160 L80 160 Z\" fill=\"{{c2}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "760px",
+        "left": "600px",
+        "type": "absolute",
+        "width": "160px",
+        "height": "160px"
+      },
+      "editorMeta": {
+        "name": "Triangle Logo Element",
+        "locked": true
+      }
+    },
+    {
+      "id": "grid-line-h1",
+      "type": "container",
+      "styles": {
+        "opacity": "0.25",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "675px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Grid Line H1",
+        "locked": true
+      }
+    },
+    {
+      "id": "grid-line-v1",
+      "type": "container",
+      "styles": {
+        "opacity": "0.25",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 10,
+      "position": {
+        "top": "0",
+        "left": "540px",
+        "type": "absolute",
+        "width": "2px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Line V1",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-name-bottom",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.05em"
+      },
+      "zIndex": 11,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "1200px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Business Name Bottom",
+        "editable": true,
+        "fieldName": "businessName"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Imagem",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1240px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Business Logo",
+        "editable": true,
+        "fieldName": "businessLogo"
+      }
+    }
+  ],
+  "packageId": "marketing",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-with-image-2",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-and-subtitle-with-image-2",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText",
+      "businessName"
+    ],
+    "businessFields": [
+      "logo",
+      "businessName"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

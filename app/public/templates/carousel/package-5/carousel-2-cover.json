@@ -1,0 +1,186 @@
+{
+  "props": {
+    "bgColor1": "#ffffff",
+    "bgColor2": "#1a365d",
+    "bgColor3": "#3182ce",
+    "textColor1": "#1a365d",
+    "textColor2": "#ffffff",
+    "textColor3": "#3182ce"
+  },
+  "layers": [
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0481)",
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "fontFamily": "Behind The Nineties",
+        "fontWeight": "400",
+        "lineHeight": "1.3",
+        "borderRadius": "0px",
+        "verticalAlign": "middle",
+        "backgroundColor": "transparent",
+        "highlightPaddingH": "0px",
+        "highlightPaddingV": "0px"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "20%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.3
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3482)",
+        "left": "calc(var(--image-width) * 0.3434)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4252)",
+        "height": "calc(var(--image-height-post) * 0.1749)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      },
+      "textSplitParts": [
+        {
+          "textStyles": {
+            "color": "{{textColor1}}",
+            "textAlign": "left",
+            "textShadow": "none"
+          },
+          "wordPercent": 33
+        },
+        {
+          "textStyles": {
+            "color": "{{textColor1}}",
+            "fontStyle": "italic",
+            "textShadow": "none"
+          },
+          "wordPercent": 34
+        },
+        {
+          "textStyles": {
+            "color": "{{textColor1}}",
+            "textShadow": "none"
+          },
+          "wordPercent": 33
+        }
+      ],
+      "textSplitLayout": "inline"
+    },
+    {
+      "id": "layer_1774982024656_r276s",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "var(--image-height-post)"
+      },
+      "editorMeta": {
+        "name": "imageBackground",
+        "hidden": false,
+        "locked": true
+      }
+    },
+    {
+      "id": "layer_1774982609979_etrf2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0324)",
+        "textAlign": "left",
+        "fontFamily": "Mosvita",
+        "fontWeight": "500",
+        "lineHeight": "1.3",
+        "textShadow": "none",
+        "verticalAlign": "top"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.5231)",
+        "left": "calc(var(--image-width) * 0.4347)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3769)",
+        "height": "calc(var(--image-height-post) * 0.1216)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtítulo"
+      }
+    },
+    {
+      "id": "svg-1775682637001",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor1}}",
+            "color2": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"817\" height=\"700\" viewBox=\"0 0 817 700\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_1045_2)\">\n<path d=\"M378.583 151.813C378.583 116.094 360.505 98.2292 324.354 98.2292C297.354 98.2292 269.177 108.76 239.833 129.813C193.693 162.771 162.333 207.208 145.75 263.125C140.219 281.625 137.458 296.885 137.458 308.896C137.458 320.911 137.667 329.365 138.083 334.25C138.51 339.141 139.365 344.135 140.646 349.229C143.406 361.563 146.115 369.646 148.771 373.479C151.438 377.302 153.031 379.802 153.563 380.979C154.089 382.146 153.609 383.156 152.125 384C148.927 385.281 144.464 379.854 138.729 367.729C131.505 351.995 127.896 334.51 127.896 315.271C127.896 296.036 130.547 276.849 135.854 257.708C141.172 238.573 148.505 220.604 157.854 203.813C167.214 187.01 178.271 171.594 191.021 157.563C203.781 143.521 217.609 131.51 232.5 121.521C263.75 100.052 295.427 89.3125 327.542 89.3125C346.042 89.3125 361.354 94.9479 373.479 106.208C387.297 118.75 394.208 135.917 394.208 157.708C394.208 179.5 390.063 201.406 381.771 223.417C373.479 245.417 362.104 267.052 347.646 288.313C333.188 309.578 316.172 329.833 296.604 349.083C277.047 368.323 256 385.167 233.458 399.625C184.344 431.531 136.505 447.479 89.9375 447.479C48.8958 447.479 21.3594 429.51 7.33333 393.563C2.44271 381.453 0 366.365 0 348.292C0 330.208 3.02604 310.854 9.08333 290.229C15.1354 269.604 23.6354 249.198 34.5833 229C45.5417 208.807 58.6146 189.141 73.8125 170C89.0208 150.865 105.76 132.786 124.042 115.771C142.333 98.7604 161.844 83.1823 182.583 69.0417C203.318 54.9063 224.635 42.7396 246.542 32.5417C293.094 10.849 337.635 0 380.167 0C423.125 0 450.234 13.5 461.5 40.5C464.901 48.5833 466.604 56.0833 466.604 63C466.604 69.9063 466.172 75.8542 465.313 80.8542C464.464 85.8542 463.406 90.8021 462.146 95.6875C458.104 109.51 454.323 118.177 450.813 121.688C447.297 125.188 444.844 126.938 443.458 126.938C442.083 126.938 441.396 126.198 441.396 124.708C441.396 123 442.464 120.766 444.604 118C449.698 111.198 453.151 102.323 454.958 91.375C456.76 80.4323 457.667 71.6146 457.667 64.9167C457.667 58.2083 456.125 51.2448 453.042 44.0208C449.958 36.7865 445.125 30.5104 438.542 25.1875C424.719 14.3542 406.646 8.9375 384.313 8.9375C361.99 8.9375 341.151 12.3437 321.792 19.1458C302.443 25.9375 282.88 35.2917 263.104 47.2083C243.339 59.1146 223.672 73.1458 204.104 89.3125C184.547 105.469 165.885 122.849 148.125 141.458C130.375 160.057 113.896 179.458 98.6875 199.667C83.4896 219.865 70.2604 239.953 59 259.938C35.1771 302.677 23.2708 339.781 23.2708 371.25C23.2708 403.141 36.4583 424.188 62.8333 434.396C71.5417 437.802 83.651 439.5 99.1667 439.5C114.693 439.5 133.193 435.25 154.667 426.75C176.151 418.24 197.469 406.75 218.625 392.292C239.776 377.833 259.969 361.036 279.208 341.896C298.458 322.76 315.422 302.563 330.104 281.313C362.422 234.953 378.583 191.786 378.583 151.813Z\" fill=\"{{color1}}\"/>\n<path d=\"M467 700C660.3 700 817 543.3 817 350C817 156.7 660.3 0 467 0C273.7 0 117 156.7 117 350C117 543.3 273.7 700 467 700Z\" fill=\"url(#paint0_radial_1045_2)\"/>\n</g>\n<defs>\n<radialGradient id=\"paint0_radial_1045_2\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(467 350) rotate(90) scale(350)\">\n<stop offset=\"0.375\" stop-color=\"{{color2}}\" stop-opacity=\"0.7\"/>\n<stop offset=\"0.764423\" stop-color=\"{{color2}}\" stop-opacity=\"0.4\"/>\n<stop offset=\"1\" stop-color=\"{{color2}}\" stop-opacity=\"0\"/>\n</radialGradient>\n<clipPath id=\"clip0_1045_2\">\n<rect width=\"817\" height=\"700\" fill=\"white\"/>\n</clipPath>\n</defs>\n</svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2037)",
+        "left": "calc(var(--image-width) * 0.1296)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7407)",
+        "height": "calc(var(--image-height-post) * 0.5926)"
+      },
+      "editorMeta": {
+        "name": "carouselDecor 1",
+        "hidden": false
+      }
+    }
+  ],
+  "packageId": "package-5",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "carousel-2-cover",
+  "aspectRatio": "1:1.25",
+  "templateName": "carousel-2-cover",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "cover",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [],
+    "hasImagePlaceholder": true
+  }
+}

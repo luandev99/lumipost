@@ -1,0 +1,182 @@
+{
+  "props": {
+    "bgColor1": "#1a2e1a",
+    "bgColor2": "#d4af37",
+    "bgColor3": "#2d4a2d",
+    "headline": "Diversifique Seus Investimentos",
+    "subtitle": "Nao coloque todos os ovos na mesma cesta. Distribua seus recursos entre diferentes tipos de ativos para reduzir riscos.",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#f5f0e6",
+    "textColor2": "#d4af37",
+    "textColor3": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "inner-frame",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"40\" width=\"1000\" height=\"1270\" rx=\"24\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Inner Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-elements",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"120\" cy=\"1180\" r=\"60\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.28\"/><circle cx=\"120\" cy=\"1180\" r=\"42\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.22\"/><text x=\"120\" y=\"1194\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"38\" fill=\"{{c1}}\" opacity=\"0.36\">$</text><circle cx=\"260\" cy=\"1260\" r=\"45\" stroke=\"{{c2}}\" stroke-width=\"2\" fill=\"{{c2}}\" fill-opacity=\"0.1\" opacity=\"0.32\"/><text x=\"260\" y=\"1272\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"28\" fill=\"{{c2}}\" opacity=\"0.42\">%</text><circle cx=\"940\" cy=\"1160\" r=\"58\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.26\"/><circle cx=\"940\" cy=\"1160\" r=\"40\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.2\"/><text x=\"940\" y=\"1174\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"36\" fill=\"{{c1}}\" opacity=\"0.34\">$</text><path d=\"M800 1280 L840 1225 L880 1255 L920 1190 L960 1240\" stroke=\"{{c2}}\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.36\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Decorative Elements",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "86px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.08",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "90px",
+        "minFontSize": "48px",
+        "lineHeightRatio": 1.08
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "300px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "340px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "opacity": "0.85",
+        "fontSize": "24px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "26px",
+        "minFontSize": "18px",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "680px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "160px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    }
+  ],
+  "packageId": "comercio",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "title-and-subtitle-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "title-and-subtitle-without-image",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "props": {
+    "bgColor1": "#e8f4fc",
+    "bgColor2": "#1a56db",
+    "bgColor3": "#a8d4f5",
+    "textColor1": "#1a56db",
+    "textColor2": "#6b7280",
+    "textColor3": "#8b6914"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "opacity": 1,
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "calc(var(--image-height-post) * 0.5)"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "hidden": false,
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_grid_pattern",
+      "type": "svg",
+      "styles": {
+        "opacity": 0.5
+      },
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><path d=\"M 40 0 L 0 0 0 40\" fill=\"none\" stroke=\"{{primary}}\" stroke-width=\"0.5\" opacity=\"0.15\"/></pattern></defs><rect width=\"100%\" height=\"100%\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "fontFamily": "Mosvita",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "verticalAlign": "top"
+      },
+      "zIndex": 2,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.5
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2983)",
+        "left": "calc(var(--image-width) * 0.2288)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5426)",
+        "height": "calc(var(--image-height-post) * 0.1556)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.075)",
+        "fontStyle": "normal",
+        "textAlign": "center",
+        "fontFamily": "Behind The Nineties",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "borderRadius": "8px",
+        "verticalAlign": "middle",
+        "backgroundColor": "{{bgColor1}}",
+        "highlightPaddingH": "10px",
+        "highlightPaddingV": "4px"
+      },
+      "zIndex": 6,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "3%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0462)",
+        "left": "calc(var(--image-width) * 0.2093)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5815)",
+        "height": "calc(var(--image-height-post) * 0.2296)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      },
+      "textSplitParts": [
+        {
+          "textStyles": {
+            "fontSize": "calc(var(--image-width) * 0.0685)",
+            "borderRadius": "0px",
+            "backgroundColor": "transparent",
+            "highlightPaddingH": "0px",
+            "highlightPaddingV": "0px"
+          },
+          "wordPercent": 33
+        },
+        {
+          "textStyles": {
+            "fontSize": "calc(var(--image-width) * 0.0685)",
+            "fontStyle": "italic",
+            "borderRadius": "0px",
+            "backgroundColor": "transparent",
+            "highlightPaddingH": "0px",
+            "highlightPaddingV": "0px"
+          },
+          "wordPercent": 34
+        },
+        {
+          "textStyles": {
+            "fontSize": "calc(var(--image-width) * 0.0685)",
+            "borderRadius": "0px",
+            "backgroundColor": "transparent",
+            "highlightPaddingH": "0px",
+            "highlightPaddingV": "0px"
+          },
+          "wordPercent": 33
+        }
+      ],
+      "textSplitLayout": "inline"
+    },
+    {
+      "id": "layer_footer_left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "left",
+        "fontFamily": "Mosvita",
+        "fontWeight": "500",
+        "letterSpacing": "0.2em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4417)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "businessName"
+      }
+    },
+    {
+      "id": "layer_footer_right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "right",
+        "fontFamily": "Mosvita",
+        "fontWeight": "500",
+        "letterSpacing": "0.2em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.5232)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4268)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "username"
+      }
+    },
+    {
+      "id": "layer_1774983017124_nkuit",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 0,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "var(--image-height-post)"
+      },
+      "editorMeta": {
+        "name": "image",
+        "locked": true
+      }
+    }
+  ],
+  "packageId": "package-5",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "carousel-1-middle-4",
+  "aspectRatio": "1:1.25",
+  "templateName": "carousel-1-middle-4",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "subtitle",
+      "headline"
+    ],
+    "businessFields": [
+      "businessName",
+      "username"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "props": {
+    "bgColor1": "#f5ebe0",
+    "bgColor2": "#c9a96e",
+    "bgColor3": "#6b4423",
+    "textColor1": "#6b4423",
+    "textColor2": "#090909",
+    "textColor3": "#f5ebe0"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bottom-line",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"2\" viewBox=\"0 0 920 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"920\" height=\"2\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.46)",
+        "left": "calc(var(--image-width) * 0.0759)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8481)",
+        "height": "calc(var(--image-height-post) * 0.003)"
+      },
+      "editorMeta": {
+        "name": "Bottom Line",
+        "locked": false
+      }
+    },
+    {
+      "id": "layer_1781295204882_2942k",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0185)",
+        "textAlign": "right",
+        "fontFamily": "Poppins",
+        "fontWeight": "500",
+        "lineHeight": 1,
+        "letterSpacing": "-2.5px",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{preHeadline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0674)",
+        "left": "calc(var(--image-width) * 0.6954)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2324)",
+        "height": "calc(var(--image-height-post) * 0.023)"
+      },
+      "fieldName": "img_content_pre_headline",
+      "editorMeta": {
+        "name": "Pré-Headline"
+      }
+    },
+    {
+      "id": "layer_1781295328620_9gtdt",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0472)",
+        "textAlign": "left",
+        "fontFamily": "Poppins",
+        "fontWeight": "500",
+        "lineHeight": 1,
+        "letterSpacing": "-2px",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.1652)",
+        "left": "calc(var(--image-width) * 0.1037)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5185)",
+        "height": "calc(var(--image-height-post) * 0.0585)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtítulo"
+      }
+    },
+    {
+      "id": "layer_1781295515640_p9mqi",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0222)",
+        "textAlign": "left",
+        "fontFamily": "Montserrat",
+        "fontWeight": "400",
+        "lineHeight": 1.2
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{description}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.5985)",
+        "left": "calc(var(--image-width) * 0.1037)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7185)",
+        "height": "calc(var(--image-height-post) * 0.183)"
+      },
+      "fieldName": "img_content_description",
+      "editorMeta": {
+        "name": "Descrição"
+      }
+    },
+    {
+      "id": "layer_1781295791804_h6z5r",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0472)",
+        "textAlign": "left",
+        "fontFamily": "Poppins",
+        "fontWeight": "500",
+        "lineHeight": 1,
+        "letterSpacing": "-2px",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.517)",
+        "left": "calc(var(--image-width) * 0.1037)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5185)",
+        "height": "calc(var(--image-height-post) * 0.0585)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtítulo (Copy)"
+      }
+    },
+    {
+      "id": "layer_1781295899271_qf8ma",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.0176)",
+        "textAlign": "right",
+        "fontFamily": "Poppins",
+        "fontWeight": "700",
+        "letterSpacing": "0px",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8889)",
+        "left": "calc(var(--image-width) * 0.6769)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.0326)"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "layer_1781295982293_i5fuk",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8719)",
+        "left": "calc(var(--image-width) * 0.1037)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.1667)",
+        "height": "calc(var(--image-height-post) * 0.0667)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1781296075233_pyw8f",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0222)",
+        "textAlign": "left",
+        "fontFamily": "Montserrat",
+        "fontWeight": "400",
+        "lineHeight": 1.2
+      },
+      "zIndex": 11,
+      "content": {
+        "text": "{{description}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.2459)",
+        "left": "calc(var(--image-width) * 0.1037)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7185)",
+        "height": "calc(var(--image-height-post) * 0.183)"
+      },
+      "fieldName": "img_content_description",
+      "editorMeta": {
+        "name": "Descrição (Copy)"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "user_1781295010490",
+  "aspectRatio": "1:1.25",
+  "templateName": "carousel-3-middle-2",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "closing",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "preHeadline",
+      "subtitle",
+      "description"
+    ],
+    "businessFields": [
+      "username",
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

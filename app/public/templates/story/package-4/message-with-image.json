@@ -1,0 +1,520 @@
+{
+  "props": {
+    "bgColor1": "#760000",
+    "bgColor2": "#e76161",
+    "bgColor3": "#d7a3a3",
+    "textColor1": "#ffffff"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-ambient-glow",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"gA\" cx=\"0.5\" cy=\"0.2\" r=\"0.55\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.14\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"gB\" cx=\"0.3\" cy=\"0.8\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.10\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#gA)\"/><rect width=\"1080\" height=\"1920\" fill=\"url(#gB)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Ambient Glow",
+        "locked": true
+      }
+    },
+    {
+      "id": "decor-dot-grid",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"dg\" x=\"0\" y=\"0\" width=\"54\" height=\"54\" patternUnits=\"userSpaceOnUse\"><circle cx=\"2\" cy=\"2\" r=\"1.2\" fill=\"{{c1}}\" opacity=\"0.07\"/></pattern></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#dg)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Dot Grid",
+        "locked": true
+      }
+    },
+    {
+      "id": "decor-sphere-top-left",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"380\" height=\"380\" viewBox=\"0 0 380 380\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"s1\" cx=\"0.35\" cy=\"0.35\" r=\"0.65\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.3\"/><stop offset=\"55%\" stop-color=\"{{c1}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><circle cx=\"190\" cy=\"190\" r=\"180\" fill=\"url(#s1)\"/><ellipse cx=\"145\" cy=\"140\" rx=\"55\" ry=\"30\" fill=\"white\" opacity=\"0.06\" transform=\"rotate(-25 145 140)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "-50px",
+        "left": "-100px",
+        "type": "absolute",
+        "width": "380px",
+        "height": "380px"
+      },
+      "editorMeta": {
+        "name": "3D Sphere Top-Left"
+      }
+    },
+    {
+      "id": "decor-sphere-bottom-right",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"330\" height=\"330\" viewBox=\"0 0 330 330\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"s2\" cx=\"0.4\" cy=\"0.35\" r=\"0.6\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.25\"/><stop offset=\"50%\" stop-color=\"{{c1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient></defs><circle cx=\"165\" cy=\"165\" r=\"160\" fill=\"url(#s2)\"/><ellipse cx=\"125\" cy=\"118\" rx=\"46\" ry=\"25\" fill=\"white\" opacity=\"0.05\" transform=\"rotate(-22 125 118)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1560px",
+        "left": "820px",
+        "type": "absolute",
+        "width": "330px",
+        "height": "330px"
+      },
+      "editorMeta": {
+        "name": "3D Sphere Bottom-Right"
+      }
+    },
+    {
+      "id": "decor-ring-right",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"170\" height=\"170\" viewBox=\"0 0 170 170\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"85\" cy=\"85\" r=\"76\" stroke=\"{{c1}}\" stroke-width=\"1.8\" opacity=\"0.12\"/><circle cx=\"85\" cy=\"85\" r=\"52\" stroke=\"{{c1}}\" stroke-width=\"1\" opacity=\"0.06\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "350px",
+        "left": "960px",
+        "type": "absolute",
+        "width": "170px",
+        "height": "170px"
+      },
+      "editorMeta": {
+        "name": "Ring Right"
+      }
+    },
+    {
+      "id": "decor-diamond-left",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"48\" height=\"48\" viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"24\" y=\"2\" width=\"30\" height=\"30\" rx=\"4\" transform=\"rotate(45 24 2)\" stroke=\"{{c1}}\" stroke-width=\"1.2\" opacity=\"0.08\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1100px",
+        "left": "20px",
+        "type": "absolute",
+        "width": "48px",
+        "height": "48px"
+      },
+      "editorMeta": {
+        "name": "Diamond Left"
+      }
+    },
+    {
+      "id": "image-3d-shadow",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"940\" height=\"700\" viewBox=\"0 0 940 700\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"imgSh\" x=\"-20\" y=\"-10\" width=\"980\" height=\"740\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"10\" stdDeviation=\"18\" flood-color=\"#000\" flood-opacity=\"0.3\"/></filter></defs><rect x=\"5\" y=\"5\" width=\"930\" height=\"690\" rx=\"28\" fill=\"{{c1}}\" filter=\"url(#imgSh)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "80px",
+        "left": "70px",
+        "type": "absolute",
+        "width": "940px",
+        "height": "700px"
+      },
+      "editorMeta": {
+        "name": "Image 3D Shadow",
+        "locked": true
+      }
+    },
+    {
+      "id": "image-card-bg",
+      "type": "container",
+      "styles": {
+        "borderRadius": "24px",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 5,
+      "position": {
+        "top": "85px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "690px"
+      },
+      "editorMeta": {
+        "name": "Image Card Background"
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "18px"
+      },
+      "zIndex": 6,
+      "content": {
+        "alt": "Featured image",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "100px",
+        "left": "95px",
+        "type": "absolute",
+        "width": "890px",
+        "height": "660px"
+      },
+      "editorMeta": {
+        "name": "Featured Image"
+      }
+    },
+    {
+      "id": "image-shine",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {},
+          "svgContent": "<svg width=\"890\" height=\"660\" viewBox=\"0 0 890 660\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"sh\" x1=\"0\" y1=\"0\" x2=\"0.5\" y2=\"0.7\"><stop offset=\"0%\" stop-color=\"white\" stop-opacity=\"0.1\"/><stop offset=\"40%\" stop-color=\"white\" stop-opacity=\"0.02\"/><stop offset=\"100%\" stop-color=\"white\" stop-opacity=\"0\"/></linearGradient></defs><rect width=\"890\" height=\"660\" rx=\"18\" fill=\"url(#sh)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "95px",
+        "type": "absolute",
+        "width": "890px",
+        "height": "660px"
+      },
+      "editorMeta": {
+        "name": "Image Shine",
+        "locked": true
+      }
+    },
+    {
+      "id": "image-top-accent",
+      "type": "svg",
+      "zIndex": 8,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"890\" height=\"6\" viewBox=\"0 0 890 6\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"ta\" x1=\"0\" y1=\"3\" x2=\"890\" y2=\"3\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"20%\" stop-color=\"{{c1}}\" stop-opacity=\"0.7\"/><stop offset=\"80%\" stop-color=\"{{c2}}\" stop-opacity=\"0.7\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></linearGradient></defs><rect width=\"890\" height=\"4\" rx=\"2\" fill=\"url(#ta)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "95px",
+        "type": "absolute",
+        "width": "890px",
+        "height": "6px"
+      },
+      "editorMeta": {
+        "name": "Image Top Accent"
+      }
+    },
+    {
+      "id": "divider-mid",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"880\" height=\"16\" viewBox=\"0 0 880 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"dm\" x1=\"0\" y1=\"8\" x2=\"880\" y2=\"8\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"30%\" stop-color=\"{{c1}}\" stop-opacity=\"0.5\"/><stop offset=\"50%\" stop-color=\"{{c2}}\" stop-opacity=\"0.6\"/><stop offset=\"70%\" stop-color=\"{{c2}}\" stop-opacity=\"0.5\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></linearGradient></defs><rect y=\"6\" width=\"880\" height=\"3\" rx=\"1.5\" fill=\"url(#dm)\"/><circle cx=\"440\" cy=\"8\" r=\"5\" fill=\"{{c2}}\" opacity=\"0.4\"/><circle cx=\"400\" cy=\"8\" r=\"2\" fill=\"{{c1}}\" opacity=\"0.2\"/><circle cx=\"480\" cy=\"8\" r=\"2\" fill=\"{{c1}}\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "835px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "880px",
+        "height": "16px"
+      },
+      "editorMeta": {
+        "name": "Divider Mid"
+      }
+    },
+    {
+      "id": "headline-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "76px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "1.15",
+        "letterSpacing": "-0.02em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 12,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "86px",
+        "minFontSize": "36px",
+        "lineHeightRatio": 1.15
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "880px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "250px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "headline-underline",
+      "type": "svg",
+      "zIndex": 11,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"700\" height=\"10\" viewBox=\"0 0 700 10\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"hlUl\" x1=\"0\" y1=\"5\" x2=\"700\" y2=\"5\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/><stop offset=\"30%\" stop-color=\"{{c1}}\" stop-opacity=\"0.6\"/><stop offset=\"70%\" stop-color=\"{{c2}}\" stop-opacity=\"0.6\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></linearGradient></defs><rect y=\"3\" width=\"700\" height=\"4\" rx=\"2\" fill=\"url(#hlUl)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1140px",
+        "left": "190px",
+        "type": "absolute",
+        "width": "700px",
+        "height": "10px"
+      },
+      "editorMeta": {
+        "name": "Headline Underline"
+      }
+    },
+    {
+      "id": "cta-pill-shadow",
+      "type": "svg",
+      "zIndex": 13,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"650\" height=\"80\" viewBox=\"0 0 650 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"cs\" x=\"-8\" y=\"-4\" width=\"666\" height=\"96\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"6\" stdDeviation=\"10\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter><linearGradient id=\"cg\" x1=\"0\" y1=\"40\" x2=\"650\" y2=\"40\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect x=\"4\" y=\"4\" width=\"642\" height=\"70\" rx=\"35\" fill=\"url(#cg)\" filter=\"url(#cs)\"/><rect x=\"4\" y=\"4\" width=\"642\" height=\"35\" rx=\"17\" fill=\"white\" opacity=\"0.08\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1200px",
+        "left": "215px",
+        "type": "absolute",
+        "width": "650px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "CTA Pill Shadow"
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "36px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "letterSpacing": "0.05em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 14,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "40px",
+        "minFontSize": "22px",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.6313)",
+        "left": "calc(var(--image-width) * 0.2222)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.55)",
+        "height": "calc(var(--image-height-story) * 0.0286)"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo-bar-trapezoid",
+      "type": "svg",
+      "zIndex": 20,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"140\" viewBox=\"0 0 1080 140\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"lbg\" x1=\"0\" y1=\"70\" x2=\"1080\" y2=\"70\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><path d=\"M0 35 L1080 0 L1080 140 L0 140 Z\" fill=\"url(#lbg)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1780px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "140px"
+      },
+      "editorMeta": {
+        "name": "Logo Bar Trapezoid"
+      }
+    },
+    {
+      "id": "logo-bar-shine",
+      "type": "svg",
+      "zIndex": 21,
+      "content": {
+        "embedded": {
+          "colors": {},
+          "svgContent": "<svg width=\"1080\" height=\"70\" viewBox=\"0 0 1080 70\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 35 L1080 0 L1080 70 L0 70 Z\" fill=\"white\" opacity=\"0.06\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1780px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "70px"
+      },
+      "editorMeta": {
+        "name": "Logo Bar Shine",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 22,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.9432)",
+        "left": "calc(var(--image-width) * 0.2676)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4741)",
+        "height": "calc(var(--image-height-story) * 0.0511)"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "package-4",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "message-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "message-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

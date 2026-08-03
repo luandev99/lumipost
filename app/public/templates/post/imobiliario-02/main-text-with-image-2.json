@@ -1,0 +1,226 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "textFont1": "Kenony",
+    "textFont2": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessLogo": "",
+    "businessName": "Usuário"
+  },
+  "layers": [
+    {
+      "id": "bg",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"30\" height=\"30\" patternUnits=\"userSpaceOnUse\"><path d=\"M 30 0 L 0 0 0 30\" fill=\"none\" stroke=\"{{color}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid",
+        "locked": true
+      }
+    },
+    {
+      "id": "image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Image",
+        "source": "{{image}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.1)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "editorMeta": {
+        "name": "Image"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.6)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.84)"
+      },
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "padding": "calc(var(--image-width) * 0.018) calc(var(--image-width) * 0.05)",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "borderRadius": "calc(var(--image-width) * 0.03)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.8)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "auto"
+      },
+      "editorMeta": {
+        "name": "CTA"
+      }
+    },
+    {
+      "id": "name",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont2}}"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.94)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)"
+      },
+      "editorMeta": {
+        "name": "Name"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 6,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1200px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "metadata": {
+    "nicheName": "psicologia",
+    "packageId": "pack-universal",
+    "aspectRatio": "4:5"
+  },
+  "packageId": "imobiliario-02",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-image-2",
+  "aspectRatio": "4:5",
+  "displayName": "Main Text with Image 2",
+  "templateName": "main-text-with-image-2",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "fontFields": [
+      "textFont1",
+      "textFont2"
+    ],
+    "textFields": [
+      "headline",
+      "ctaText"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "bgColor3",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "image"
+    ],
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo",
+      "businessName",
+      "businessLogo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

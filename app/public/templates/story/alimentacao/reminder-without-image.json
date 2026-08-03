@@ -1,0 +1,213 @@
+{
+  "props": {
+    "bgColor1": "#5A6B4A",
+    "bgColor2": "#F5F0E6",
+    "bgColor3": "#FFFBF2",
+    "headline": "Lembrete: Reservas Abertas para o Fim de Semana",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#F5F0E6",
+    "textColor2": "#FFFBF2",
+    "textColor3": "#5A6B4A",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"60\" height=\"60\" patternUnits=\"userSpaceOnUse\"><path d=\"M 60 0 L 0 0 0 60\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.1\"/></pattern></defs><rect width=\"1080\" height=\"1920\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "bell-icon",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"200\" viewBox=\"0 0 200 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M100 20C65 20 40 50 40 85V120L20 150V160H180V150L160 120V85C160 50 135 20 100 20Z\" stroke=\"{{c1}}\" stroke-width=\"6\" fill=\"none\"/><circle cx=\"100\" cy=\"180\" r=\"18\" stroke=\"{{c1}}\" stroke-width=\"6\" fill=\"none\"/><circle cx=\"100\" cy=\"20\" r=\"8\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "580px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "Bell Icon",
+        "locked": true
+      }
+    },
+    {
+      "id": "reminder-label",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"60\" viewBox=\"0 0 400 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"400\" height=\"60\" rx=\"30\" fill=\"{{c1}}\"/><text x=\"200\" y=\"40\" text-anchor=\"middle\" font-family=\"Inter\" font-size=\"22\" font-weight=\"600\" fill=\"{{c2}}\" letter-spacing=\"0.15em\">LEMBRETE</text></svg>"
+        }
+      },
+      "position": {
+        "top": "460px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Reminder Label",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "860px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "400px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "decorative-lines",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1920\" viewBox=\"0 0 1080 1920\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"1400\" x2=\"1000\" y2=\"1400\" stroke=\"{{c1}}\" stroke-width=\"2\" opacity=\"0.2\"/><line x1=\"80\" y1=\"1440\" x2=\"1000\" y2=\"1440\" stroke=\"{{c1}}\" stroke-width=\"2\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1920px"
+      },
+      "editorMeta": {
+        "name": "Decorative Lines",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1840px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "reminder-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "reminder-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

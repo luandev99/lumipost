@@ -1,0 +1,306 @@
+{
+  "props": {
+    "bgColor1": "#0a1628",
+    "bgColor2": "#1a3a5c",
+    "bgColor3": "#d4af37",
+    "imageLeft": "",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "imageRight": "",
+    "textColor1": "#ffffff",
+    "textColor2": "#c9d1d9",
+    "textColor3": "#d4af37",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "renaissance-texture",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"rg1\" cx=\"0.25\" cy=\"0.5\" r=\"0.4\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.06\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"rg2\" cx=\"0.75\" cy=\"0.5\" r=\"0.4\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#rg1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#rg2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Renaissance Texture",
+        "locked": true
+      }
+    },
+    {
+      "id": "elegant-frame",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1000\" height=\"1270\" viewBox=\"0 0 1000 1270\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"998\" height=\"1268\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "40px",
+        "left": "40px",
+        "type": "absolute",
+        "width": "1000px",
+        "height": "1270px"
+      },
+      "editorMeta": {
+        "name": "Elegant Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "left-label",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.2em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "ANTES"
+      },
+      "position": {
+        "top": "100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Left Label",
+        "locked": true
+      }
+    },
+    {
+      "id": "right-label",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.2em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "DEPOIS"
+      },
+      "position": {
+        "top": "100px",
+        "left": "580px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Right Label",
+        "locked": true
+      }
+    },
+    {
+      "id": "image-left",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "4px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Before image",
+        "source": "{{imageLeft}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "160px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "imageLeft",
+      "editorMeta": {
+        "name": "Image Left"
+      }
+    },
+    {
+      "id": "image-right",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "4px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "After image",
+        "source": "{{imageRight}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "160px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "imageRight",
+      "editorMeta": {
+        "name": "Image Right"
+      }
+    },
+    {
+      "id": "left-frame",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"480\" height=\"1040\" viewBox=\"0 0 480 1040\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"478\" height=\"1038\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.4\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "140px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "480px",
+        "height": "1040px"
+      },
+      "editorMeta": {
+        "name": "Left Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "right-frame",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"480\" height=\"1040\" viewBox=\"0 0 480 1040\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"478\" height=\"1038\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.8\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "140px",
+        "left": "540px",
+        "type": "absolute",
+        "width": "480px",
+        "height": "1040px"
+      },
+      "editorMeta": {
+        "name": "Right Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "center-divider",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"8\" height=\"1000\" viewBox=\"0 0 8 1000\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"8\" height=\"1000\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "160px",
+        "left": "536px",
+        "type": "absolute",
+        "width": "8px",
+        "height": "1000px"
+      },
+      "editorMeta": {
+        "name": "Center Divider",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1200px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "50px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "arte",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "before-and-after",
+  "aspectRatio": "4:5",
+  "templateName": "before-and-after",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "content-background",
+      "type": "container",
+      "styles": {
+        "borderRadius": "calc(var(--image-width) * 0.025)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.5801)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8056)",
+        "height": "calc(var(--image-height-post) * 0.3556)"
+      },
+      "editorMeta": {
+        "name": "Content Background"
+      }
+    },
+    {
+      "id": "layer_1768584654066_55obc",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0593)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 2,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.6113)",
+        "left": "calc(var(--image-width) * 0.1662)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6676)",
+        "height": "calc(var(--image-height-post) * 0.2933)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_1768585063475_4zboq",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain",
+        "borderRadius": "27px 0px 0px 0px"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0572)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2315)",
+        "height": "calc(var(--image-height-post) * 0.1852)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1768588441307_xt71u",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "var(--image-height-post)"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true
+      }
+    },
+    {
+      "id": "layer_1784898990598_38v0p",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "27px",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0573)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8056)",
+        "height": "calc(var(--image-height-post) * 0.4896)"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal"
+      }
+    }
+  ],
+  "packageId": "package-2",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-image-1",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-with-image-1",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "cover",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

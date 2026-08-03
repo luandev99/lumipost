@@ -1,0 +1,247 @@
+{
+  "props": {
+    "image": "",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "textFont1": "Kenony",
+    "textFont2": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessLogo": "",
+    "businessName": "Usuário"
+  },
+  "layers": [
+    {
+      "id": "bg",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-texture",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"30\" height=\"30\" patternUnits=\"userSpaceOnUse\"><path d=\"M 30 0 L 0 0 0 30\" fill=\"none\" stroke=\"{{color}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Texture",
+        "locked": true
+      }
+    },
+    {
+      "id": "blob",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color": "{{bgColor2}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 400 500\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M100,50 Q50,100 80,200 T120,400 Q180,480 280,420 T360,250 Q380,150 300,80 T150,40 Z\" fill=\"{{color}}\" opacity=\"0.12\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "180px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "500px"
+      },
+      "editorMeta": {
+        "name": "Organic Blob",
+        "locked": true
+      }
+    },
+    {
+      "id": "frame-tl",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color": "{{bgColor3}}"
+          },
+          "svgContent": "<svg viewBox=\"0 0 280 280\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"20\" width=\"240\" height=\"240\" fill=\"none\" stroke=\"{{color}}\" stroke-width=\"12\" opacity=\"0.25\" rx=\"4\"/><rect x=\"32\" y=\"32\" width=\"216\" height=\"216\" fill=\"none\" stroke=\"{{color}}\" stroke-width=\"4\" opacity=\"0.15\" rx=\"2\"/><path d=\"M30,100 L30,30 L100,30 M180,30 L250,30 L250,100\" stroke=\"{{color}}\" stroke-width=\"3\" fill=\"none\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "280px",
+        "height": "280px"
+      },
+      "editorMeta": {
+        "name": "Ornate Frame Top-Left",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Image",
+        "source": "{{image}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.15)",
+        "left": "calc(var(--image-width) * 0.5)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.45)",
+        "height": "calc(var(--image-height-post) * 0.52)"
+      },
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "64px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.1"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.72)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.84)"
+      },
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "business-name",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.94)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)"
+      },
+      "editorMeta": {
+        "name": "Business Name"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.93)",
+        "left": "calc(var(--image-width) * 0.82)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.1)",
+        "height": "calc(var(--image-width) * 0.1)"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "metadata": {
+    "nicheName": "psicologia",
+    "packageId": "pack-universal",
+    "aspectRatio": "4:5"
+  },
+  "packageId": "imobiliario",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-image-1",
+  "aspectRatio": "4:5",
+  "displayName": "Main Text with Image 1",
+  "templateName": "main-text-with-image-1",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "fontFields": [
+      "textFont1",
+      "textFont2"
+    ],
+    "textFields": [
+      "headline"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "bgColor3",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "image"
+    ],
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo",
+      "businessName",
+      "businessLogo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

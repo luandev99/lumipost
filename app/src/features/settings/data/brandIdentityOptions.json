@@ -1,0 +1,39 @@
+{
+  "personalities": [
+    "Acolhedora", "Acessível", "Alegre", "Altruísta", "Ambiciosa", "Amigável", "Apaixonada", "Autêntica", "Autoritária", "Aventureira",
+    "Calma", "Carismática", "Cativante", "Clássica", "Colaborativa", "Confiante", "Consciente", "Consistente", "Contemporânea", "Corajosa",
+    "Criativa", "Curiosa", "Descontraída", "Determinada", "Didática", "Dinâmica", "Discreta", "Divertida", "Elegante", "Empática",
+    "Enérgica", "Espontânea", "Estratégica", "Exclusiva", "Experimental", "Extrovertida", "Familiar", "Feminina", "Forte", "Generosa",
+    "Genuína", "Humana", "Inovadora", "Inspiradora", "Inteligente", "Intensa", "Irreverente", "Jovial", "Leve", "Líder",
+    "Lúdica", "Madura", "Magnética", "Minimalista", "Moderna", "Motivadora", "Ousada", "Otimista", "Premium", "Prestativa",
+    "Próxima", "Questionadora", "Refinada", "Resiliente", "Responsável", "Romântica", "Segura", "Sensível", "Serena", "Sofisticada",
+    "Sustentável", "Técnica", "Transparente", "Visionária", "Vibrante", "Confiável", "Pragmática", "Analítica", "Artística", "Atenciosa",
+    "Cuidadosa", "Desafiadora", "Diplomática", "Educativa", "Eficiente", "Emocional", "Empreendedora", "Especialista", "Ética", "Flexível",
+    "Gentil", "Independente", "Inclusiva", "Intuitiva", "Organizada", "Paciente", "Pioneira", "Positiva", "Rebelde", "Simples",
+    "Solar", "Tradicional", "Urbana", "Versátil", "Arrojada", "Afetuosa", "Competitiva", "Detalhista", "Encantadora", "Objetiva"
+  ],
+  "tones": [
+    "Acolhedor", "Amigável", "Animado", "Assertivo", "Autêntico", "Calmo", "Casual", "Cativante", "Celebrativo", "Claro",
+    "Confiante", "Conversacional", "Convincente", "Criativo", "Cuidadoso", "Curioso", "Desafiador", "Descontraído", "Didático", "Direto",
+    "Divertido", "Elegante", "Emocional", "Empático", "Encorajador", "Energético", "Entusiasmado", "Especialista", "Espirituoso", "Formal",
+    "Gentil", "Humano", "Inspirador", "Institucional", "Inteligente", "Íntimo", "Irônico", "Jovial", "Leve", "Lúdico",
+    "Maduro", "Minimalista", "Motivador", "Objetivo", "Ousado", "Otimista", "Persuasivo", "Poético", "Prático", "Premium",
+    "Professoral", "Profissional", "Próximo", "Provocativo", "Questionador", "Refinado", "Respeitoso", "Seguro", "Sensível", "Sereno",
+    "Sincero", "Sofisticado", "Técnico", "Transparente", "Urgente", "Visionário", "Vibrante", "Acessível", "Afetuoso", "Analítico",
+    "Autoritário", "Bem-humorado", "Comercial", "Compreensivo", "Conciso", "Confessional", "Contemplativo", "Corajoso", "Crítico", "Diplomático",
+    "Educativo", "Exclusivo", "Experimental", "Familiar", "Firme", "Informal", "Informativo", "Inovador", "Inspiracional", "Narrativo",
+    "Neutro", "Rebelde", "Romântico", "Sensorial", "Solidário", "Surpreendente", "Tradicional", "Transformador", "Vendedor", "Vanguardista"
+  ],
+  "visualStyles": [
+    "Elegante", "Minimalista", "Editorial", "Moderno", "Contemporâneo", "Sofisticado", "Premium", "Luxuoso", "Clássico", "Atemporal",
+    "Clean", "Corporativo", "Institucional", "Tecnológico", "Futurista", "Digital", "Geométrico", "Tipográfico", "Monocromático", "Colorido",
+    "Vibrante", "Pastel", "Neon", "Dark", "Light", "Orgânico", "Natural", "Sustentável", "Artesanal", "Rústico",
+    "Boho", "Romântico", "Delicado", "Feminino", "Masculino", "Jovial", "Divertido", "Lúdico", "Infantil", "Ilustrado",
+    "Fotográfico", "Cinematográfico", "Dramático", "Conceitual", "Artístico", "Abstrato", "Experimental", "Surrealista", "Collage", "Recortes",
+    "Retrô", "Vintage", "Anos 50", "Anos 60", "Anos 70", "Anos 80", "Anos 90", "Y2K", "Brutalista", "Grunge",
+    "Street", "Urbano", "Industrial", "Arquitetônico", "Escandinavo", "Japonês", "Mediterrâneo", "Tropical", "Brasileiro", "Regional",
+    "Afrofuturista", "Étnico", "Cultural", "Fashion", "Beauty", "Editorial de moda", "Gastronômico", "Fitness", "Wellness", "Esportivo",
+    "Educacional", "Científico", "Financeiro", "Imobiliário", "Automotivo", "Musical", "Gamer", "Cyberpunk", "Steampunk", "Pop art",
+    "Bauhaus", "Art déco", "Art nouveau", "Memphis", "Gradiente", "Glassmorphism", "Claymorphism", "Flat design", "Material design", "Maximalista"
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#1a2e1a",
+    "bgColor2": "#d4af37",
+    "bgColor3": "#2d4a2d",
+    "headline": "Headline: lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#f5f0e6",
+    "textColor2": "#d4af37",
+    "textColor3": "#ffffff",
+    "contentList0": "Item 1: lorem ipsum dolor sit amet",
+    "contentList1": "Item 2: lorem ipsum dolor sit amet",
+    "contentList2": "Item 3: lorem ipsum dolor sit amet",
+    "contentList3": "Item 4: lorem ipsum dolor sit amet",
+    "contentList4": "Item 5: lorem ipsum dolor sit amet"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "inner-frame",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"40\" width=\"1000\" height=\"1270\" rx=\"24\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Inner Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-coins",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"120\" cy=\"1220\" r=\"45\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.4\"/><circle cx=\"120\" cy=\"1220\" r=\"30\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.3\"/><text x=\"120\" y=\"1228\" text-anchor=\"middle\" font-size=\"28\" fill=\"{{c1}}\" opacity=\"0.5\">$</text><circle cx=\"220\" cy=\"1260\" r=\"35\" stroke=\"{{c2}}\" stroke-width=\"2\" fill=\"{{c2}}\" fill-opacity=\"0.15\" opacity=\"0.5\"/><text x=\"220\" y=\"1268\" text-anchor=\"middle\" font-size=\"22\" fill=\"{{c2}}\" opacity=\"0.6\">%</text><circle cx=\"950\" cy=\"1200\" r=\"50\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.35\"/><circle cx=\"950\" cy=\"1200\" r=\"35\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.25\"/><text x=\"950\" y=\"1210\" text-anchor=\"middle\" font-size=\"32\" fill=\"{{c1}}\" opacity=\"0.45\">$</text><path d=\"M800 1280 L830 1250 L860 1270 L890 1230 L920 1260 L950 1220\" stroke=\"{{c2}}\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.5\"/><rect x=\"780\" y=\"1250\" width=\"12\" height=\"40\" fill=\"{{c2}}\" opacity=\"0.3\"/><rect x=\"800\" y=\"1270\" width=\"12\" height=\"20\" fill=\"{{c2}}\" opacity=\"0.25\"/><rect x=\"820\" y=\"1240\" width=\"12\" height=\"50\" fill=\"{{c2}}\" opacity=\"0.35\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Decorative Coins",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "16px"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Finance image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "80px",
+        "left": "600px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "500px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "58px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "62px",
+        "minFontSize": "36px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "480px",
+        "height": "200px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "list-item-0",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "01  {{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "620px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "50px"
+      },
+      "fieldName": "contentList0",
+      "editorMeta": {
+        "name": "List Item 1"
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "02  {{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "680px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "50px"
+      },
+      "fieldName": "contentList1",
+      "editorMeta": {
+        "name": "List Item 2"
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "03  {{contentList2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "740px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "50px"
+      },
+      "fieldName": "contentList2",
+      "editorMeta": {
+        "name": "List Item 3"
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "04  {{contentList3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "800px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "50px"
+      },
+      "fieldName": "contentList3",
+      "editorMeta": {
+        "name": "List Item 4"
+      }
+    },
+    {
+      "id": "list-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "05  {{contentList4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "860px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "50px"
+      },
+      "fieldName": "contentList4",
+      "editorMeta": {
+        "name": "List Item 5"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"280\" height=\"56\" viewBox=\"0 0 280 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"278\" height=\"54\" rx=\"27\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "960px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "14px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1",
+        "letterSpacing": "0.1em",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "960px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "56px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    }
+  ],
+  "packageId": "comercio",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-with-image",
+  "aspectRatio": "4:5",
+  "templateName": "list-with-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

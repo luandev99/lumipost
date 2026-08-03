@@ -1,0 +1,229 @@
+{
+  "props": {
+    "bgColor1": "#F5F3EE",
+    "bgColor2": "#3D2314",
+    "bgColor3": "#A8C4D4",
+    "headline": "Aqui vai um titulo chamativo para a audiencia",
+    "textColor1": "#3D2314",
+    "textColor2": "#3D2314",
+    "textColor3": "#A8C4D4"
+  },
+  "layers": [
+    {
+      "id": "decorative-text-top",
+      "type": "text",
+      "style": {
+        "color": "var(--decorative-text-color)",
+        "opacity": "0.15",
+        "fontSize": "280px",
+        "fontStyle": "italic",
+        "fontFamily": "var(--font-secondary)",
+        "fontWeight": "400",
+        "lineHeight": "1",
+        "whiteSpace": "nowrap"
+      },
+      "content": "frase",
+      "position": {
+        "top": "80px",
+        "left": "-60px"
+      },
+      "editableFields": []
+    },
+    {
+      "id": "decorative-text-bottom",
+      "type": "text",
+      "style": {
+        "color": "var(--decorative-text-color)",
+        "opacity": "0.15",
+        "fontSize": "280px",
+        "fontStyle": "italic",
+        "fontFamily": "var(--font-secondary)",
+        "fontWeight": "400",
+        "lineHeight": "1",
+        "whiteSpace": "nowrap"
+      },
+      "content": "frase",
+      "position": {
+        "right": "-80px",
+        "bottom": "120px"
+      },
+      "editableFields": []
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "style": {
+        "color": "var(--text-color)",
+        "fontSize": "64px",
+        "maxWidth": "800px",
+        "textAlign": "center",
+        "fontFamily": "var(--font-primary)",
+        "fontWeight": "400",
+        "lineHeight": "1.2"
+      },
+      "content": "Aqui vai um <span class='highlight'>título</span> chamativo para a audiência",
+      "position": {
+        "top": "50%",
+        "left": "50%",
+        "transform": "translate(-50%, -50%)"
+      },
+      "editableFields": [
+        {
+          "id": "headline-text",
+          "path": "content",
+          "type": "text",
+          "label": "Texto Principal"
+        }
+      ],
+      "highlightStyle": {
+        "color": "var(--text-color)",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "style": {
+        "color": "var(--text-color)",
+        "fontSize": "28px",
+        "maxWidth": "600px",
+        "textAlign": "center",
+        "fontFamily": "var(--font-primary)",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "content": "Lorem ipsum <span class='highlight'>dolor sit amet</span>, consectetur adipiscing elit",
+      "position": {
+        "top": "calc(50% + 120px)",
+        "left": "50%",
+        "transform": "translateX(-50%)"
+      },
+      "editableFields": [
+        {
+          "id": "subtitle-text",
+          "path": "content",
+          "type": "text",
+          "label": "Subtítulo"
+        }
+      ],
+      "highlightStyle": {
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "id": "footer",
+      "type": "container",
+      "style": {
+        "display": "flex",
+        "padding": "0 60px",
+        "alignItems": "center",
+        "justifyContent": "space-between"
+      },
+      "children": [
+        {
+          "id": "footer-left",
+          "type": "text",
+          "style": {
+            "color": "var(--text-color)",
+            "fontSize": "14px",
+            "fontFamily": "var(--font-primary)",
+            "fontWeight": "500",
+            "letterSpacing": "3px",
+            "textTransform": "uppercase"
+          },
+          "content": "SEU NOME",
+          "editableFields": [
+            {
+              "id": "footer-left-text",
+              "path": "content",
+              "type": "text",
+              "label": "Nome Esquerda"
+            }
+          ]
+        },
+        {
+          "id": "footer-center",
+          "type": "text",
+          "style": {
+            "color": "var(--text-color)",
+            "fontSize": "14px",
+            "fontFamily": "var(--font-primary)",
+            "fontWeight": "700",
+            "letterSpacing": "3px",
+            "textTransform": "uppercase"
+          },
+          "content": "TEMA",
+          "editableFields": [
+            {
+              "id": "footer-center-text",
+              "path": "content",
+              "type": "text",
+              "label": "Tema"
+            }
+          ]
+        },
+        {
+          "id": "footer-right",
+          "type": "text",
+          "style": {
+            "color": "var(--text-color)",
+            "fontSize": "14px",
+            "fontFamily": "var(--font-primary)",
+            "fontWeight": "500",
+            "letterSpacing": "3px",
+            "textTransform": "uppercase"
+          },
+          "content": "SEU NOME",
+          "editableFields": [
+            {
+              "id": "footer-right-text",
+              "path": "content",
+              "type": "text",
+              "label": "Nome Direita"
+            }
+          ]
+        }
+      ],
+      "position": {
+        "left": "0",
+        "right": "0",
+        "bottom": "40px"
+      }
+    }
+  ],
+  "packageId": "pacote-novo",
+  "background": {
+    "type": "solid",
+    "style": {
+      "backgroundColor": "var(--background-color)"
+    }
+  },
+  "dimensions": {
+    "width": 1080,
+    "height": 1080
+  },
+  "templateId": "main-text-without-image",
+  "aspectRatio": "1:1",
+  "templateName": "main-text-without-image",
+  "templateType": "post",
+  "fontVariables": {
+    "--font-primary": "'Playfair Display', serif",
+    "--font-secondary": "'Great Vibes', cursive"
+  },
+  "schemaVersion": "2.0",
+  "colorVariables": {
+    "--text-color": "#3D2314",
+    "--background-color": "#F5F3EE",
+    "--decorative-text-color": "#A8C4D4"
+  },
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

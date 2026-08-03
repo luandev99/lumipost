@@ -1,0 +1,314 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "content-bg",
+      "type": "container",
+      "styles": {
+        "borderRadius": "calc(var(--image-width) * 0.025)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.337)",
+        "left": "calc(var(--image-width) * 0.1111)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7778)",
+        "height": "calc(var(--image-width) * 0.4685)"
+      },
+      "editorMeta": {
+        "name": "Content Bg"
+      }
+    },
+    {
+      "id": "icon-return",
+      "type": "svg",
+      "styles": {},
+      "zIndex": 3,
+      "content": {
+        "svg": "getReturnIconSvg",
+        "params": [
+          "{{textColor2}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3625)",
+        "left": "calc(var(--image-width) * 0.1389)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0648)",
+        "height": "calc(var(--image-height-story) * 0.0365)"
+      },
+      "editorMeta": {
+        "name": "Icon Return"
+      }
+    },
+    {
+      "id": "message-title",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "margin": "0",
+        "display": "flex",
+        "fontSize": "calc(var(--image-width) * 0.037)",
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "alignItems": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.0",
+        "whiteSpace": "nowrap",
+        "verticalAlign": "middle",
+        "justifyContent": "flex-start"
+      },
+      "zIndex": 2,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": false,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "Mensagem do dia"
+      },
+      "editable": false,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3661)",
+        "left": "calc(var(--image-width) * 0.2139)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3435)",
+        "height": "calc(var(--image-height-story) * 0.0281)"
+      },
+      "fieldName": "messageLabel",
+      "editorMeta": {
+        "name": "Message Title",
+        "hidden": false
+      }
+    },
+    {
+      "id": "icon-menu",
+      "type": "svg",
+      "styles": {},
+      "zIndex": 3,
+      "content": {
+        "svg": "getMenuIconSvg",
+        "params": [
+          "{{textColor2}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3656)",
+        "left": "calc(var(--image-width) * 0.8102)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0556)",
+        "height": "calc(var(--image-height-story) * 0.0313)"
+      },
+      "editorMeta": {
+        "name": "Icon Menu"
+      }
+    },
+    {
+      "id": "line",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{textColor2}}"
+      },
+      "zIndex": 6,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.403)",
+        "left": "calc(var(--image-width) * 0.1111)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7778)",
+        "height": "calc(var(--image-width) * 0.003)"
+      },
+      "editorMeta": {
+        "name": "Line"
+      }
+    },
+    {
+      "id": "message-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "margin": "0",
+        "display": "flex",
+        "fontSize": "calc(var(--image-width) * 0.037)",
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "alignItems": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "500",
+        "lineHeight": "1.5",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.4218)",
+        "left": "calc(var(--image-width) * 0.1565)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.6954)",
+        "height": "calc(var(--image-height-story) * 0.1484)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Message Text"
+      }
+    },
+    {
+      "id": "layer_1768419785947_9ze2p",
+      "type": "container",
+      "styles": {
+        "borderRadius": "27px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 8,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.6182)",
+        "left": "calc(var(--image-width) * 0.1111)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7778)",
+        "height": "calc(var(--image-height-story) * 0.0865)"
+      },
+      "editorMeta": {
+        "name": "Cta Background"
+      }
+    },
+    {
+      "id": "layer_1768419895733_vc6mp",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": false,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.6276)",
+        "left": "calc(var(--image-width) * 0.1685)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.663)",
+        "height": "calc(var(--image-height-story) * 0.0677)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "Cta Text"
+      }
+    },
+    {
+      "id": "layer_1768420093463_0gurl",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "svg": "getCircleIconSvg",
+        "params": [
+          "{{textColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.6583)",
+        "left": "calc(var(--image-width) * 0.1481)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0093)",
+        "height": "calc(var(--image-height-story) * 0.0052)"
+      },
+      "editorMeta": {
+        "name": "Cta Icon"
+      }
+    },
+    {
+      "id": "layer_1769446892095_dfs52",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0781)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2315)",
+        "height": "calc(var(--image-height-story) * 0.1302)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "package-2",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "message-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "message-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

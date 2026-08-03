@@ -1,0 +1,357 @@
+{
+  "props": {
+    "ctaText": "SALVE ESTE POST",
+    "bgColor1": "#FAFAF8",
+    "bgColor2": "#1A1A1A",
+    "headline": "O segredo esta na consistencia",
+    "subtitle": "Pequenas acoes diarias geram grandes resultados",
+    "username": "@seuprofile",
+    "textFont1": "Playfair Display, serif",
+    "textFont2": "Inter, sans-serif",
+    "textColor1": "#1A1A1A",
+    "textColor2": "#6B6B6B",
+    "textColor3": "#C9A962",
+    "textColor4": "#4A4A4A",
+    "textColor5": "#FFFFFF",
+    "description": "Nao sao os grandes saltos que constroem riqueza, mas sim os habitos financeiros praticados com disciplina ao longo do tempo. Comece hoje, mesmo que pequeno.",
+    "preHeadline": "EDUCACAO FINANCEIRA",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "organic-shape-top",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"280\" viewBox=\"0 0 1080 280\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,0 L1080,0 L1080,180 Q800,250 540,220 Q280,190 0,280 L0,0 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "280px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Top",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-shape-bottom",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"250\" viewBox=\"0 0 1080 250\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,100 Q280,30 540,60 Q800,90 1080,0 L1080,250 L0,250 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1100px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "250px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Bottom",
+        "locked": true
+      }
+    },
+    {
+      "id": "pre-headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "40px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.25em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{preHeadline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "80px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "30px"
+      },
+      "fieldName": "preHeadline",
+      "editorMeta": {
+        "name": "Pre Headline"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.15"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "400px",
+        "left": "90px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "120px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "divider-top",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor3}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"2\" viewBox=\"0 0 200 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"2\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "560px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Divider Top",
+        "locked": true
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "40px",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "610px",
+        "left": "140px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "80px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "divider-bottom",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor3}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"1\" viewBox=\"0 0 200 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"200\" height=\"1\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "720px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Divider Bottom",
+        "locked": true
+      }
+    },
+    {
+      "id": "description",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor4}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.7"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{description}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "780px",
+        "left": "165px",
+        "type": "absolute",
+        "width": "750px",
+        "height": "120px"
+      },
+      "fieldName": "description",
+      "editorMeta": {
+        "name": "Description"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 9,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "970px",
+        "left": "510px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    },
+    {
+      "id": "username",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400"
+      },
+      "zIndex": 10,
+      "content": {
+        "text": "{{username}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1040px",
+        "left": "490px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "24px"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor5}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 11,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1180px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "24px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    }
+  ],
+  "packageId": "negocios",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-subtitle-and-description-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-subtitle-and-description-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "preHeadline",
+      "subtitle",
+      "description",
+      "ctaText",
+      "username"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

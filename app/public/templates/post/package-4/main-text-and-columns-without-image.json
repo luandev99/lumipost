@@ -1,0 +1,809 @@
+{
+  "props": {
+    "bgColor1": "#1a1a2e",
+    "bgColor2": "#e94560",
+    "bgColor3": "#0f3460",
+    "textColor1": "#ffffff",
+    "textColor2": "#e0e0e0",
+    "textColor3": "#a0a0a0"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-gradient-overlay",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}",
+            "color2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"glow1\" cx=\"0.15\" cy=\"0.1\" r=\"0.55\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.14\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"glow2\" cx=\"0.85\" cy=\"0.92\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{color2}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{color2}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"glow3\" cx=\"0.9\" cy=\"0.3\" r=\"0.4\"><stop offset=\"0%\" stop-color=\"{{color2}}\" stop-opacity=\"0.06\"/><stop offset=\"100%\" stop-color=\"{{color2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#glow1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#glow2)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#glow3)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Ambient Glow",
+        "locked": true
+      }
+    },
+    {
+      "id": "decor-grid-dots",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"dots\" x=\"0\" y=\"0\" width=\"54\" height=\"54\" patternUnits=\"userSpaceOnUse\"><circle cx=\"2\" cy=\"2\" r=\"1.2\" fill=\"{{color1}}\" opacity=\"0.07\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#dots)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Dot Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "decor-sphere-top-left",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"430\" height=\"430\" viewBox=\"0 0 430 430\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"sptl\" cx=\"0.4\" cy=\"0.35\" r=\"0.65\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.3\"/><stop offset=\"55%\" stop-color=\"{{color1}}\" stop-opacity=\"0.12\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0\"/></radialGradient></defs><circle cx=\"215\" cy=\"215\" r=\"205\" fill=\"url(#sptl)\"/><ellipse cx=\"170\" cy=\"160\" rx=\"65\" ry=\"38\" fill=\"white\" opacity=\"0.06\" transform=\"rotate(-25 170 160)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * -0.05)",
+        "left": "calc(var(--image-width) * -0.12)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)",
+        "height": "calc(var(--image-width) * 0.4)"
+      },
+      "editorMeta": {
+        "name": "3D Sphere Top-Left"
+      }
+    },
+    {
+      "id": "decor-sphere-bottom-right",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"380\" height=\"380\" viewBox=\"0 0 380 380\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"spbr\" cx=\"0.35\" cy=\"0.35\" r=\"0.6\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.25\"/><stop offset=\"60%\" stop-color=\"{{color1}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0\"/></radialGradient></defs><circle cx=\"190\" cy=\"190\" r=\"180\" fill=\"url(#spbr)\"/><ellipse cx=\"148\" cy=\"140\" rx=\"55\" ry=\"30\" fill=\"white\" opacity=\"0.05\" transform=\"rotate(-20 148 140)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.82)",
+        "left": "calc(var(--image-width) * 0.75)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.35)",
+        "height": "calc(var(--image-width) * 0.35)"
+      },
+      "editorMeta": {
+        "name": "3D Sphere Bottom-Right"
+      }
+    },
+    {
+      "id": "decor-ring-center",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"260\" height=\"260\" viewBox=\"0 0 260 260\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"130\" cy=\"130\" r=\"120\" stroke=\"{{color1}}\" stroke-width=\"1.5\" opacity=\"0.08\"/><circle cx=\"130\" cy=\"130\" r=\"90\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.05\"/><circle cx=\"130\" cy=\"130\" r=\"55\" stroke=\"{{color1}}\" stroke-width=\"0.8\" opacity=\"0.03\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.14)",
+        "left": "calc(var(--image-width) * 0.38)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.24)",
+        "height": "calc(var(--image-width) * 0.24)"
+      },
+      "editorMeta": {
+        "name": "Decorative Rings Center"
+      }
+    },
+    {
+      "id": "decor-ring-right",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"200\" viewBox=\"0 0 200 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"100\" cy=\"100\" r=\"88\" stroke=\"{{color1}}\" stroke-width=\"1.5\" opacity=\"0.1\"/><circle cx=\"100\" cy=\"100\" r=\"60\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.05\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.42)",
+        "left": "calc(var(--image-width) * 0.88)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.18)",
+        "height": "calc(var(--image-width) * 0.18)"
+      },
+      "editorMeta": {
+        "name": "Decorative Ring Right"
+      }
+    },
+    {
+      "id": "decor-diamond-left",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"86\" height=\"86\" viewBox=\"0 0 86 86\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"43\" y=\"3\" width=\"56\" height=\"56\" rx=\"8\" transform=\"rotate(45 43 3)\" stroke=\"{{color1}}\" stroke-width=\"1.5\" opacity=\"0.12\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.48)",
+        "left": "calc(var(--image-width) * -0.02)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.08)",
+        "height": "calc(var(--image-width) * 0.08)"
+      },
+      "editorMeta": {
+        "name": "Decorative Diamond Left"
+      }
+    },
+    {
+      "id": "headline-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.06)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "800",
+        "lineHeight": "1.15",
+        "letterSpacing": "0.02em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 10,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "9%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.15
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.04)",
+        "left": "calc(var(--image-width) * 0.074)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.852)",
+        "height": "calc(var(--image-height-post) * 0.1)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "headline-underline",
+      "type": "svg",
+      "zIndex": 9,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"540\" height=\"8\" viewBox=\"0 0 540 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"linegrad\" x1=\"0\" y1=\"4\" x2=\"540\" y2=\"4\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0\"/><stop offset=\"30%\" stop-color=\"{{color1}}\" stop-opacity=\"0.6\"/><stop offset=\"70%\" stop-color=\"{{color1}}\" stop-opacity=\"0.6\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0\"/></linearGradient></defs><rect y=\"2\" width=\"540\" height=\"4\" rx=\"2\" fill=\"url(#linegrad)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.145)",
+        "left": "calc(var(--image-width) * 0.25)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5)",
+        "height": "calc(var(--image-height-post) * 0.006)"
+      },
+      "editorMeta": {
+        "name": "Headline Underline"
+      }
+    },
+    {
+      "id": "subtitle-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.032)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 10,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "1.5%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.16)",
+        "left": "calc(var(--image-width) * 0.12)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.76)",
+        "height": "calc(var(--image-height-post) * 0.05)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "col-left-header-bg",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"57\" viewBox=\"0 0 454 57\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"lhbg\" x1=\"0\" y1=\"28\" x2=\"454\" y2=\"28\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.2\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.05\"/></linearGradient><filter id=\"lhsh\" x=\"0\" y=\"2\" width=\"454\" height=\"60\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"3\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter></defs><rect width=\"454\" height=\"57\" rx=\"14\" fill=\"url(#lhbg)\" filter=\"url(#lhsh)\"/><rect width=\"454\" height=\"57\" rx=\"14\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.225)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.042)"
+      },
+      "editorMeta": {
+        "name": "Left Column Header BG"
+      }
+    },
+    {
+      "id": "col-left-header-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.033)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.06em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 11,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "1.5%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{subtitleLeft}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.225)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.042)"
+      },
+      "fieldName": "img_content_col_left_title",
+      "editorMeta": {
+        "name": "Left Column Title"
+      }
+    },
+    {
+      "id": "col-right-header-bg",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"57\" viewBox=\"0 0 454 57\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"rhbg\" x1=\"0\" y1=\"28\" x2=\"454\" y2=\"28\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.05\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.2\"/></linearGradient><filter id=\"rhsh\" x=\"0\" y=\"2\" width=\"454\" height=\"60\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"2\" stdDeviation=\"3\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter></defs><rect width=\"454\" height=\"57\" rx=\"14\" fill=\"url(#rhbg)\" filter=\"url(#rhsh)\"/><rect width=\"454\" height=\"57\" rx=\"14\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.225)",
+        "left": "calc(var(--image-width) * 0.53)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.042)"
+      },
+      "editorMeta": {
+        "name": "Right Column Header BG"
+      }
+    },
+    {
+      "id": "col-right-header-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.033)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.06em",
+        "textTransform": "uppercase",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 11,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "5%",
+        "minFontSize": "1.5%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{subtitleRight}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.225)",
+        "left": "calc(var(--image-width) * 0.53)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.042)"
+      },
+      "fieldName": "img_content_col_right_title",
+      "editorMeta": {
+        "name": "Right Column Title"
+      }
+    },
+    {
+      "id": "col-divider-vertical",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"22\" height=\"850\" viewBox=\"0 0 22 850\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"vdiv\" x1=\"11\" y1=\"0\" x2=\"11\" y2=\"850\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0\"/><stop offset=\"15%\" stop-color=\"{{color1}}\" stop-opacity=\"0.15\"/><stop offset=\"50%\" stop-color=\"{{color1}}\" stop-opacity=\"0.2\"/><stop offset=\"85%\" stop-color=\"{{color1}}\" stop-opacity=\"0.15\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0\"/></linearGradient></defs><rect x=\"10\" y=\"0\" width=\"2\" height=\"850\" rx=\"1\" fill=\"url(#vdiv)\"/><circle cx=\"11\" cy=\"425\" r=\"5\" fill=\"{{color1}}\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.235)",
+        "left": "calc(var(--image-width) * 0.49)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.02)",
+        "height": "calc(var(--image-height-post) * 0.63)"
+      },
+      "editorMeta": {
+        "name": "Vertical Column Divider"
+      }
+    },
+    {
+      "id": "l1-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"l1cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"l1cg\" x1=\"0\" y1=\"0\" x2=\"454\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#l1cg)\" filter=\"url(#l1cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.285)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Left Item 1 Card"
+      }
+    },
+    {
+      "id": "l2-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"l2cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"l2cg\" x1=\"0\" y1=\"0\" x2=\"454\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#l2cg)\" filter=\"url(#l2cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.405)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Left Item 2 Card"
+      }
+    },
+    {
+      "id": "l3-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"l3cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"l3cg\" x1=\"0\" y1=\"0\" x2=\"454\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#l3cg)\" filter=\"url(#l3cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.525)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Left Item 3 Card"
+      }
+    },
+    {
+      "id": "l4-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"l4cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"l4cg\" x1=\"0\" y1=\"0\" x2=\"454\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#l4cg)\" filter=\"url(#l4cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.645)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Left Item 4 Card"
+      }
+    },
+    {
+      "id": "l5-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"l5cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"l5cg\" x1=\"0\" y1=\"0\" x2=\"454\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#l5cg)\" filter=\"url(#l5cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.765)",
+        "left": "calc(var(--image-width) * 0.05)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Left Item 5 Card"
+      }
+    },
+    {
+      "id": "r1-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"r1cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"r1cg\" x1=\"454\" y1=\"0\" x2=\"0\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#r1cg)\" filter=\"url(#r1cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.285)",
+        "left": "calc(var(--image-width) * 0.53)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Right Item 1 Card"
+      }
+    },
+    {
+      "id": "r2-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"r2cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"r2cg\" x1=\"454\" y1=\"0\" x2=\"0\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#r2cg)\" filter=\"url(#r2cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.405)",
+        "left": "calc(var(--image-width) * 0.53)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Right Item 2 Card"
+      }
+    },
+    {
+      "id": "r3-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"r3cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"r3cg\" x1=\"454\" y1=\"0\" x2=\"0\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#r3cg)\" filter=\"url(#r3cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.525)",
+        "left": "calc(var(--image-width) * 0.53)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Right Item 3 Card"
+      }
+    },
+    {
+      "id": "r4-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"r4cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"r4cg\" x1=\"454\" y1=\"0\" x2=\"0\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#r4cg)\" filter=\"url(#r4cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.645)",
+        "left": "calc(var(--image-width) * 0.53)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Right Item 4 Card"
+      }
+    },
+    {
+      "id": "r5-card",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"454\" height=\"146\" viewBox=\"0 0 454 146\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"r5cs\" x=\"0\" y=\"2\" width=\"454\" height=\"150\" filterUnits=\"userSpaceOnUse\"><feDropShadow dx=\"0\" dy=\"3\" stdDeviation=\"5\" flood-color=\"#000\" flood-opacity=\"0.12\"/></filter><linearGradient id=\"r5cg\" x1=\"454\" y1=\"0\" x2=\"0\" y2=\"146\"><stop offset=\"0%\" stop-color=\"{{color1}}\" stop-opacity=\"0.08\"/><stop offset=\"100%\" stop-color=\"{{color1}}\" stop-opacity=\"0.03\"/></linearGradient></defs><rect width=\"454\" height=\"146\" rx=\"16\" fill=\"url(#r5cg)\" filter=\"url(#r5cs)\"/><rect width=\"454\" height=\"146\" rx=\"16\" stroke=\"{{color1}}\" stroke-width=\"1\" opacity=\"0.1\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.765)",
+        "left": "calc(var(--image-width) * 0.53)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.42)",
+        "height": "calc(var(--image-height-post) * 0.108)"
+      },
+      "editorMeta": {
+        "name": "Right Item 5 Card"
+      }
+    },
+    {
+      "id": "logo-bar-shape",
+      "type": "svg",
+      "zIndex": 14,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"567\" height=\"104\" viewBox=\"0 0 567 104\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><mask id=\"mask0\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"104\"><path d=\"M0 0H567V104H0V0Z\" fill=\"white\"/></mask><g mask=\"url(#mask0)\"><mask id=\"mask1\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"114\"><path d=\"M90.5166 0H476.489C487.778 0 498.369 5.47203 504.925 14.6914L564.969 99.1238C566.984 101.956 567.25 105.683 565.667 108.777C564.079 111.871 560.897 113.815 557.429 113.815H9.57087C6.10288 113.815 2.9265 111.871 1.33831 108.777C-0.249883 105.683 0.0208909 101.956 2.03607 99.1238L62.0801 14.6914C68.636 5.47203 79.2274 0 90.5166 0Z\" fill=\"white\"/></mask><g mask=\"url(#mask1)\"><path d=\"M-8.41479 0H575.415V113.815H-8.41479V0Z\" fill=\"{{primary}}\"/></g></g></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.923)",
+        "left": "calc(var(--image-width) * 0.237)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.525)",
+        "height": "calc(var(--image-height-post) * 0.077)"
+      },
+      "editorMeta": {
+        "name": "Logo Bar Shape"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 15,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.9244)",
+        "left": "calc(var(--image-width) * 0.319)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.362)",
+        "height": "calc(var(--image-height-post) * 0.0741)"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    },
+    {
+      "id": "layer_1773249878251_ugxpu",
+      "type": "list-container",
+      "zIndex": 16,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3089)",
+        "left": "calc(var(--image-width) * 0.0834)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3667)",
+        "height": "calc(var(--image-height-post) * 0.5782)"
+      },
+      "editorMeta": {
+        "name": "Lista Esquerda"
+      },
+      "listConfig": {
+        "columns": 1,
+        "itemGap": "calc(var(--image-width) * 0.02)",
+        "iconSize": "calc(var(--image-width) * 0.130)",
+        "maxItems": 5,
+        "iconColor": "{{bgColor1}}",
+        "iconStyle": "none",
+        "itemAlign": "top",
+        "textStyles": {
+          "color": "{{textColor1}}",
+          "fontSize": "calc(var(--image-width) * 0.037)",
+          "textAlign": "left",
+          "fontFamily": "Poppins",
+          "fontWeight": "400",
+          "lineHeight": "1.2"
+        },
+        "iconTextGap": "calc(var(--image-width) * 0.02)",
+        "startNumber": 1,
+        "iconStrokeWidth": 2,
+        "iconColorSecondary": "{{bgColor2}}",
+        "itemVariablePrefix": "contentListLeft"
+      }
+    },
+    {
+      "id": "layer_1773249933353_4wzpr",
+      "type": "list-container",
+      "zIndex": 17,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3095)",
+        "left": "calc(var(--image-width) * 0.5622)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.45)",
+        "height": "calc(var(--image-height-post) * 0.5389)"
+      },
+      "editorMeta": {
+        "name": "Lista Direita"
+      },
+      "listConfig": {
+        "columns": 1,
+        "itemGap": "calc(var(--image-width) * 0.02)",
+        "iconSize": "calc(var(--image-width) * 0.130)",
+        "maxItems": 5,
+        "iconColor": "{{bgColor1}}",
+        "iconStyle": "none",
+        "itemAlign": "top",
+        "textStyles": {
+          "color": "{{textColor1}}",
+          "fontSize": "calc(var(--image-width) * 0.043)",
+          "textAlign": "left",
+          "fontFamily": "Poppins",
+          "fontWeight": "400",
+          "lineHeight": "1.2"
+        },
+        "iconTextGap": "calc(var(--image-width) * 0.010)",
+        "startNumber": 1,
+        "iconStrokeWidth": 2,
+        "iconColorSecondary": "{{bgColor2}}",
+        "itemVariablePrefix": "contentListRight"
+      }
+    }
+  ],
+  "packageId": "package-4",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-columns-without-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-and-columns-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "maxListItems": 5,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "contentListLeft",
+      "contentListRight"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

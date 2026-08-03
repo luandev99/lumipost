@@ -1,0 +1,338 @@
+{
+  "props": {
+    "image": "",
+    "bgColor1": "#F5F0E6",
+    "bgColor2": "#5A6B4A",
+    "bgColor3": "#8B7355",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#5A6B4A",
+    "textColor2": "#3D4A35",
+    "textColor3": "#FFFBF2",
+    "businessLogo": "",
+    "subtitleLeft": "Antes",
+    "subtitleRight": "Depois"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><path d=\"M 40 0 L 0 0 0 40\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "left-image-container",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"460\" height=\"800\" viewBox=\"0 0 460 800\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"460\" height=\"800\" rx=\"20\" fill=\"{{c1}}\" opacity=\"0.08\"/><rect x=\"1\" y=\"1\" width=\"458\" height=\"798\" rx=\"19\" stroke=\"{{c1}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "200px",
+        "left": "60px",
+        "type": "absolute",
+        "width": "460px",
+        "height": "800px"
+      },
+      "editorMeta": {
+        "name": "Left Image Container",
+        "locked": true
+      }
+    },
+    {
+      "id": "right-image-container",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"460\" height=\"800\" viewBox=\"0 0 460 800\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"460\" height=\"800\" rx=\"20\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "200px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "460px",
+        "height": "800px"
+      },
+      "editorMeta": {
+        "name": "Right Image Container",
+        "locked": true
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "12px"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Before image",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "220px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "subtitle-left-pill",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"140\" height=\"48\" viewBox=\"0 0 140 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"138\" height=\"46\" rx=\"23\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "180px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "48px"
+      },
+      "editorMeta": {
+        "name": "Subtitle Left Pill",
+        "locked": true
+      }
+    },
+    {
+      "id": "subtitle-left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "40px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "48px",
+        "letterSpacing": "0.05em"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{subtitleLeft}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "100px",
+        "left": "180px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "48px"
+      },
+      "fieldName": "subtitleLeft",
+      "editorMeta": {
+        "name": "Subtitle Left"
+      }
+    },
+    {
+      "id": "subtitle-right-pill",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"140\" height=\"48\" viewBox=\"0 0 140 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"140\" height=\"48\" rx=\"24\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "100px",
+        "left": "720px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "48px"
+      },
+      "editorMeta": {
+        "name": "Subtitle Right Pill",
+        "locked": true
+      }
+    },
+    {
+      "id": "subtitle-right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "40px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "48px",
+        "letterSpacing": "0.05em"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{subtitleRight}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "100px",
+        "left": "720px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "48px"
+      },
+      "fieldName": "subtitleRight",
+      "editorMeta": {
+        "name": "Subtitle Right"
+      }
+    },
+    {
+      "id": "vs-circle",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"50\" cy=\"50\" r=\"48\" fill=\"{{c1}}\"/><circle cx=\"50\" cy=\"50\" r=\"48\" stroke=\"{{c2}}\" stroke-width=\"2\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "550px",
+        "left": "490px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "100px"
+      },
+      "editorMeta": {
+        "name": "VS Circle",
+        "locked": true
+      }
+    },
+    {
+      "id": "vs-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "100px"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "VS"
+      },
+      "position": {
+        "top": "550px",
+        "left": "490px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "100px"
+      },
+      "editorMeta": {
+        "name": "VS Text",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1210px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "before-and-after",
+  "aspectRatio": "4:5",
+  "templateName": "before-and-after",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "subtitleLeft",
+      "subtitleRight"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

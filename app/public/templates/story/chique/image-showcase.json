@@ -1,0 +1,203 @@
+{
+  "props": {
+    "bgColor1": "#f5ebe0",
+    "bgColor2": "#c9a96e",
+    "bgColor3": "#6b4423",
+    "headline": "CUIDADOS",
+    "subtitle": "Os cuidados essenciais com a pele baseiam-se em tres pilares diarios: limpeza, hidratacao e protecao solar.",
+    "mainImage": "",
+    "textColor1": "#6b4423",
+    "textColor2": "#090909",
+    "textColor3": "#f5ebe0",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": false,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_mainImage",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Main Image",
+        "source": "{{mainImage}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.2719)",
+        "left": "calc(var(--image-width) * 0.0787)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9213)",
+        "height": "calc(var(--image-height-story) * 0.7276)"
+      },
+      "fieldName": "mainImage",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0724)",
+        "left": "calc(var(--image-width) * 0.712)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.1667)",
+        "height": "calc(var(--image-height-story) * 0.0469)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1781204513824_htu8v",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.1296)",
+        "textAlign": "left",
+        "fontFamily": "Montserrat",
+        "fontWeight": "400",
+        "lineHeight": 0.9,
+        "letterSpacing": "-6px",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0583)",
+        "left": "calc(var(--image-width) * 0.0787)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9)",
+        "height": "calc(var(--image-height-story) * 0.3688)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      },
+      "textSplitParts": [
+        {
+          "textStyles": {
+            "fontWeight": "700"
+          },
+          "wordPercent": 50
+        },
+        {
+          "textStyles": {
+            "color": "{{textColor2}}"
+          },
+          "wordPercent": 50
+        }
+      ],
+      "textSplitLayout": "inline"
+    },
+    {
+      "id": "layer_1781204758638_b4ix5",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.0463)",
+        "textAlign": "left",
+        "fontFamily": "Poppins",
+        "fontWeight": "400",
+        "lineHeight": 0.9,
+        "letterSpacing": "-2.5px",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 4,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.6755)",
+        "left": "calc(var(--image-width) * 0.0787)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3241)",
+        "height": "calc(var(--image-height-story) * 0.1417)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA"
+      },
+      "textSplitParts": [
+        {
+          "textStyles": {
+            "fontFamily": "Montserrat"
+          },
+          "wordPercent": 50
+        },
+        {
+          "textStyles": {
+            "color": "{{textColor2}}",
+            "fontFamily": "Montserrat",
+            "fontWeight": "800"
+          },
+          "wordPercent": 50
+        }
+      ],
+      "textSplitLayout": "inline"
+    }
+  ],
+  "packageId": "chique",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "image-showcase",
+  "aspectRatio": "9:16",
+  "templateName": "image-showcase",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  },
+  "imageGenerationInstructions": "Dimensions: 995px width × 1397px height\nBackground: remove background\nComposition: single subject, isolated\nLayout: centered with minimal elements\nSpacing: large, clear spacing between objects\nStructure: no overlapping parts, clean silhouette\nStyle: simple, plain, and easy to cut out"
+}

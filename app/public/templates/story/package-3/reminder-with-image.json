@@ -1,0 +1,208 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1770408125034_boy8a",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0208)",
+        "left": "calc(var(--image-width) * 0.6852)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2778)",
+        "height": "calc(var(--image-height-story) * 0.1563)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1770408182094_fe8ds",
+      "type": "container",
+      "styles": {
+        "borderRadius": "calc(var(--image-width) * 0.02)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 3,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.875)",
+        "left": "calc(var(--image-width) * 0.0833)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8333)",
+        "height": "calc(var(--image-height-story) * 0.0521)"
+      },
+      "editorMeta": {
+        "name": "Cta Background"
+      }
+    },
+    {
+      "id": "layer_1770408276806_rkuam",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0296)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.8881)",
+        "left": "calc(var(--image-width) * 0.1065)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.787)",
+        "height": "calc(var(--image-height-story) * 0.026)"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "layer_1770408624466_59ew9",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0593)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.5744)",
+        "left": "calc(var(--image-width) * 0.1231)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7537)",
+        "height": "calc(var(--image-height-story) * 0.1859)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_1770409466526_f4zkx",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{bgColor3}}",
+            "color2": "{{bgColor2}}",
+            "color3": "{{bgColor3}}",
+            "color4": "{{bgColor2}}",
+            "primary": "{{bgColor1}}"
+          },
+          "svgContent": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"916\" zoomAndPan=\"magnify\" viewBox=\"0 0 687 306.749988\" height=\"409\" preserveAspectRatio=\"xMidYMid meet\" version=\"1.0\"><defs><g/></defs><path fill=\"{{color1}}\" d=\"M 86.617188 172.28125 C 86.617188 172.28125 7.734375 196.363281 9.578125 120.414062 C 11.421875 44.460938 79.972656 0.0078125 172.59375 33.347656 C 265.21875 66.6875 268.917969 94.472656 285.585938 122.269531 C 302.257812 150.039062 86.617188 172.28125 86.617188 172.28125 Z M 619.984375 138.5625 C 573.839844 154.226562 533.882812 189.007812 514.238281 230.625 C 510.34375 238.878906 507.175781 247.632812 507.734375 256.191406 C 508.667969 270.375 519.683594 281.40625 532.011719 289 C 546.964844 298.214844 564.820312 303.980469 583.65625 304.46875 C 602.492188 304.957031 622.273438 300.015625 638.707031 289.644531 C 666.9375 271.8125 682.210938 240.035156 684.933594 210.0625 C 686.679688 190.847656 683.59375 170.96875 671.335938 156.699219 C 657.554688 140.671875 632.453125 133.886719 609.277344 139.917969 M 586.15625 49.976562 C 590.316406 43.902344 594.492188 37.828125 598.652344 31.753906 C 601.179688 28.070312 599.335938 22.582031 595.675781 20.433594 C 591.585938 18.03125 586.894531 19.707031 584.355469 23.40625 C 580.195312 29.480469 576.019531 35.554688 571.859375 41.625 C 569.332031 45.3125 571.175781 50.800781 574.832031 52.949219 C 578.9375 55.335938 583.628906 53.660156 586.15625 49.976562 Z M 637.746094 50.046875 C 641.375 45.757812 645.003906 41.460938 648.632812 37.171875 C 651.425781 33.878906 652.109375 28.671875 648.632812 25.472656 C 645.5625 22.652344 639.921875 21.941406 636.933594 25.472656 C 633.304688 29.757812 629.675781 34.058594 626.042969 38.34375 C 623.253906 41.640625 622.566406 46.847656 626.042969 50.046875 C 629.128906 52.867188 634.757812 53.578125 637.746094 50.046875 Z M 17.132812 300.769531 C 21.292969 294.695312 25.464844 288.625 29.628906 282.550781 C 32.15625 278.863281 30.3125 273.378906 26.652344 271.226562 C 22.5625 268.824219 17.871094 270.5 15.332031 274.199219 C 11.167969 280.273438 6.996094 286.347656 2.835938 292.421875 C 0.308594 296.105469 2.152344 301.59375 5.808594 303.742188 C 9.914062 306.132812 14.589844 304.46875 17.132812 300.769531 Z M 68.71875 300.855469 C 72.351562 296.566406 75.980469 292.265625 79.609375 287.980469 C 82.402344 284.6875 83.085938 279.480469 79.609375 276.28125 C 76.539062 273.460938 70.898438 272.75 67.910156 276.28125 C 64.28125 280.566406 60.648438 284.867188 57.019531 289.152344 C 54.226562 292.449219 53.542969 297.65625 57.019531 300.855469 C 60.089844 303.675781 65.730469 304.371094 68.71875 300.855469 Z M 68.71875 300.855469 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/><path fill=\"{{color2}}\" d=\"M 619.550781 273.742188 L 51.296875 255.953125 C 42.082031 255.660156 34.777344 247.898438 35.074219 238.683594 L 39.929688 83.316406 C 40.222656 74.101562 47.988281 66.800781 57.203125 67.09375 L 625.457031 84.878906 C 634.671875 85.171875 641.976562 92.9375 641.679688 102.152344 L 636.824219 257.515625 C 636.53125 266.730469 628.765625 274.035156 619.550781 273.742188 Z M 619.550781 273.742188 \" fill-opacity=\"1\" fill-rule=\"nonzero\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.4514)",
+        "left": "calc(var(--image-width) * 0.0236)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.9528)",
+        "height": "calc(var(--image-height-story) * 0.3859)"
+      },
+      "editorMeta": {
+        "name": "Reminber Background"
+      }
+    },
+    {
+      "id": "layer_1770410782546_4tb3x",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "backgroundColor": "#F0F0F0"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "calc(var(--image-height-story) * 0.5)"
+      },
+      "editorMeta": {
+        "name": "Imagem Principal",
+        "locked": true
+      }
+    }
+  ],
+  "packageId": "package-3",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "reminder-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "reminder-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline"
+    ],
+    "businessFields": [
+      "logo",
+      "username"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

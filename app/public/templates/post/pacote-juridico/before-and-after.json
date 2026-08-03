@@ -1,0 +1,381 @@
+{
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "bg-text-antes",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "opacity": "0.03",
+        "fontSize": "340px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900"
+      },
+      "zIndex": 1,
+      "content": {
+        "text": "ANTES"
+      },
+      "position": {
+        "top": "300px",
+        "left": "-100px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "BG Antes",
+        "locked": true
+      }
+    },
+    {
+      "id": "bg-text-depois",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "opacity": "0.03",
+        "fontSize": "340px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900"
+      },
+      "zIndex": 1,
+      "content": {
+        "text": "DEPOIS"
+      },
+      "position": {
+        "top": "800px",
+        "left": "400px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "BG Depois",
+        "locked": true
+      }
+    },
+    {
+      "id": "spot-lights",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"light1\" cx=\"25%\" cy=\"25%\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.2\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"light2\" cx=\"75%\" cy=\"75%\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.2\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><ellipse cx=\"270\" cy=\"340\" rx=\"300\" ry=\"300\" fill=\"url(#light1)\"/><ellipse cx=\"810\" cy=\"1010\" rx=\"300\" ry=\"300\" fill=\"url(#light2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Spot Lights",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "68px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900",
+        "lineHeight": "1",
+        "verticalAlign": "top"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "72px",
+        "minFontSize": "34px",
+        "lineHeightRatio": 1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "80px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "120px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "before-box",
+      "type": "container",
+      "styles": {
+        "border": "3px solid {{bgColor3}}",
+        "opacity": "0.15",
+        "borderRadius": "20px",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 3,
+      "position": {
+        "top": "220px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "500px"
+      },
+      "editorMeta": {
+        "name": "Before Box",
+        "locked": true
+      }
+    },
+    {
+      "id": "before-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "Before",
+        "source": "{{beforeImage}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "240px",
+        "left": "100px",
+        "type": "absolute",
+        "width": "360px",
+        "height": "460px"
+      },
+      "fieldName": "beforeImage",
+      "editorMeta": {
+        "name": "Before Image"
+      }
+    },
+    {
+      "id": "label-antes",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "ANTES"
+      },
+      "position": {
+        "top": "760px",
+        "left": "180px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Label Antes",
+        "locked": true
+      }
+    },
+    {
+      "id": "after-box",
+      "type": "container",
+      "styles": {
+        "border": "3px solid {{bgColor3}}",
+        "opacity": "0.15",
+        "borderRadius": "20px",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 3,
+      "position": {
+        "top": "220px",
+        "left": "600px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "500px"
+      },
+      "editorMeta": {
+        "name": "After Box",
+        "locked": true
+      }
+    },
+    {
+      "id": "after-image",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 4,
+      "content": {
+        "alt": "After",
+        "source": "{{afterImage}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "240px",
+        "left": "620px",
+        "type": "absolute",
+        "width": "360px",
+        "height": "460px"
+      },
+      "fieldName": "afterImage",
+      "editorMeta": {
+        "name": "After Image"
+      }
+    },
+    {
+      "id": "label-depois",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "900"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "DEPOIS"
+      },
+      "position": {
+        "top": "760px",
+        "left": "690px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "40px"
+      },
+      "editorMeta": {
+        "name": "Label Depois",
+        "locked": true
+      }
+    },
+    {
+      "id": "arrow",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"80\" height=\"80\" viewBox=\"0 0 80 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><filter id=\"arrowGlow\"><feGaussianBlur stdDeviation=\"3\"/><feMerge><feMergeNode/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter></defs><path d=\"M20,40 L60,40 M45,25 L60,40 L45,55\" stroke=\"{{c1}}\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" filter=\"url(#arrowGlow)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "445px",
+        "left": "500px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "Arrow",
+        "locked": true
+      }
+    },
+    {
+      "id": "footer-bar",
+      "type": "container",
+      "styles": {
+        "opacity": "0.1",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 7,
+      "position": {
+        "top": "1240px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "110px"
+      },
+      "editorMeta": {
+        "name": "Footer Bar",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 8,
+      "content": {
+        "alt": "Business logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1265px",
+        "left": "490px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "pacote-juridico",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "before-and-after",
+  "aspectRatio": "4:5",
+  "templateName": "before-and-after",
+  "templateType": "post",
+  "contentRequirements": {
+    "textFields": [
+      {
+        "label": "Headline",
+        "fieldName": "headline",
+        "maxLength": 50,
+        "placeholder": "Antes e Depois"
+      }
+    ],
+    "imageFields": [
+      {
+        "label": "Imagem Antes",
+        "required": true,
+        "fieldName": "beforeImage"
+      },
+      {
+        "label": "Imagem Depois",
+        "required": true,
+        "fieldName": "afterImage"
+      },
+      {
+        "label": "Business Logo",
+        "required": true,
+        "fieldName": "businessLogo"
+      }
+    ]
+  }
+}

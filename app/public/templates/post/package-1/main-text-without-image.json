@@ -1,0 +1,243 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1768996530331_xqksq",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.0444)",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "calc(var(--image-height-post) * 0.9111)"
+      },
+      "editorMeta": {
+        "name": "Second Background",
+        "locked": true
+      }
+    },
+    {
+      "id": "svg-1768996873843",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"567\" height=\"104\" viewBox=\"0 0 567 104\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n  <mask id=\"mask0_9_1505\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"104\">\n    <path d=\"M0 0H567V104H0V0Z\" fill=\"white\"/>\n  </mask>\n\n  <g mask=\"url(#mask0_9_1505)\">\n    <mask id=\"mask1_9_1505\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"114\">\n      <path\n        d=\"M90.5166 0H476.489C487.778 0 498.369 5.47203 504.925 14.6914L564.969 99.1238C566.984 101.956 567.25 105.683 565.667 108.777C564.079 111.871 560.897 113.815 557.429 113.815H9.57087C6.10288 113.815 2.9265 111.871 1.33831 108.777C-0.249883 105.683 0.0208909 101.956 2.03607 99.1238L62.0801 14.6914C68.636 5.47203 79.2274 0 90.5166 0Z\"\n        fill=\"white\"\n      />\n    </mask>\n\n    <g mask=\"url(#mask1_9_1505)\">\n      <!-- COR FINAL DO SVG -->\n      <path\n        d=\"M-8.41479 0H575.415V113.815H-8.41479V0Z\"\n        fill=\"{{primary}}\"\n      />\n    </g>\n  </g>\n</svg>\n"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.923)",
+        "left": "calc(var(--image-width) * 0.237)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.525)",
+        "height": "calc(var(--image-height-post) * 0.077)"
+      },
+      "editorMeta": {
+        "name": "Logo Background"
+      }
+    },
+    {
+      "id": "layer_1768997308570_hb02c",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 3,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.9244)",
+        "left": "calc(var(--image-width) * 0.319)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.362)",
+        "height": "calc(var(--image-height-post) * 0.0741)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1769000059496_z0mnu",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.06)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.3244)",
+        "left": "calc(var(--image-width) * 0.0991)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8037)",
+        "height": "calc(var(--image-height-post) * 0.2104)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_1769000188437_ermw6",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "svg": "getLineSvg",
+        "params": [
+          "{{bgColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.837)",
+        "left": "calc(var(--image-width) * 0.3)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)",
+        "height": "calc(var(--image-height-post) * 0.0178)"
+      },
+      "editorMeta": {
+        "name": "Line Bottom"
+      }
+    },
+    {
+      "id": "layer_1769000239518_xfb1u",
+      "type": "container",
+      "styles": {
+        "borderRadius": "25px",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 8,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.6874)",
+        "left": "calc(var(--image-width) * 0.1935)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.613)",
+        "height": "calc(var(--image-height-post) * 0.0474)"
+      },
+      "editorMeta": {
+        "name": "Cta Background"
+      }
+    },
+    {
+      "id": "layer_1769000432527_ob5un",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.0269)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "lineHeight": 1,
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.6948)",
+        "left": "calc(var(--image-width) * 0.2213)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.5574)",
+        "height": "calc(var(--image-height-post) * 0.0326)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "Cta Text"
+      }
+    },
+    {
+      "id": "layer_1769000753443_8zgd8",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "svg": "getLineSvg",
+        "params": [
+          "{{bgColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.1541)",
+        "left": "calc(var(--image-width) * 0.3009)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)",
+        "height": "calc(var(--image-height-post) * 0.0178)"
+      },
+      "editorMeta": {
+        "name": "Line Upper"
+      }
+    }
+  ],
+  "packageId": "package-1",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-without-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "main-text-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

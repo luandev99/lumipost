@@ -1,0 +1,314 @@
+{
+  "props": {
+    "bgColor1": "#e8e0d5",
+    "bgColor2": "#3d2b1f",
+    "bgColor3": "#7a9a5a",
+    "textColor1": "#3d2b1f",
+    "textColor2": "#5a4a3a",
+    "textColor3": "#e8e0d5"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_header_left",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "letterSpacing": "0.2em"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.025)",
+        "left": "calc(var(--image-width) * 0.04)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Username Esquerda"
+      }
+    },
+    {
+      "id": "layer_header_center",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.2em"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{preHeadline}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.025)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Tema"
+      }
+    },
+    {
+      "id": "layer_header_right",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.018)",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "letterSpacing": "0.2em"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{username}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.025)",
+        "left": "calc(var(--image-width) * 0.71)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.25)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "editorMeta": {
+        "name": "Username Direita"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.055)",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 10,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "8%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.08)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.84)",
+        "height": "calc(var(--image-height-post) * 0.15)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_image_left",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "calc(var(--image-width) * 0.03)",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Imagem Antes",
+        "source": "{{mainImage}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.26)",
+        "left": "calc(var(--image-width) * 0.08)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.38)",
+        "height": "calc(var(--image-height-post) * 0.52)"
+      },
+      "editorMeta": {
+        "name": "Imagem Antes"
+      }
+    },
+    {
+      "id": "layer_image_right",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "calc(var(--image-width) * 0.03)",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Imagem Depois",
+        "source": "{{image2Url}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.26)",
+        "left": "calc(var(--image-width) * 0.54)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.38)",
+        "height": "calc(var(--image-height-post) * 0.52)"
+      },
+      "editorMeta": {
+        "name": "Imagem Depois"
+      }
+    },
+    {
+      "id": "layer_label_antes_bg",
+      "type": "container",
+      "styles": {
+        "opacity": "0.9",
+        "borderRadius": "50px",
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 6,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.72)",
+        "left": "calc(var(--image-width) * 0.14)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.22)",
+        "height": "calc(var(--image-height-post) * 0.04)"
+      },
+      "editorMeta": {
+        "name": "Label Antes BG"
+      }
+    },
+    {
+      "id": "layer_label_antes",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.025)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{subtitleLeft}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.725)",
+        "left": "calc(var(--image-width) * 0.15)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "fieldName": "img_content_subtitle_left",
+      "editorMeta": {
+        "name": "Label Antes"
+      }
+    },
+    {
+      "id": "layer_label_depois_bg",
+      "type": "container",
+      "styles": {
+        "opacity": "0.9",
+        "borderRadius": "50px",
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 6,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.72)",
+        "left": "calc(var(--image-width) * 0.6)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.22)",
+        "height": "calc(var(--image-height-post) * 0.04)"
+      },
+      "editorMeta": {
+        "name": "Label Depois BG"
+      }
+    },
+    {
+      "id": "layer_label_depois",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.025)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 7,
+      "content": {
+        "text": "{{subtitleRight}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-post) * 0.725)",
+        "left": "calc(var(--image-width) * 0.61)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2)",
+        "height": "calc(var(--image-height-post) * 0.03)"
+      },
+      "fieldName": "img_content_subtitle_right",
+      "editorMeta": {
+        "name": "Label Depois"
+      }
+    }
+  ],
+  "packageId": "pacote-novo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "before-and-after",
+  "aspectRatio": "1:1.25",
+  "templateName": "before-and-after",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "preHeadline",
+      "subtitleLeft",
+      "subtitleRight"
+    ],
+    "businessFields": [
+      "username"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

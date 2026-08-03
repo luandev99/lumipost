@@ -1,0 +1,254 @@
+{
+  "props": {
+    "bgColor1": "#F5F5F0",
+    "bgColor2": "#5C4033",
+    "bgColor3": "#E8C9A0",
+    "textColor1": "#5C4033",
+    "textColor2": "#D4A853"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_floral_decoration",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"600\" viewBox=\"0 0 400 600\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M350 50 Q380 150 350 250 Q320 350 350 450 Q380 550 350 650\" stroke=\"{{primary}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.3\"/><path d=\"M370 100 Q400 200 370 300\" stroke=\"{{primary}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.3\"/><ellipse cx=\"380\" cy=\"150\" rx=\"20\" ry=\"30\" stroke=\"{{primary}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.2)",
+        "left": "calc(var(--image-width) * 0.6)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4)",
+        "height": "calc(var(--image-height-story) * 0.5)"
+      },
+      "editorMeta": {
+        "name": "Floral Decoration Right"
+      }
+    },
+    {
+      "id": "layer_floral_bottom",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"600\" height=\"300\" viewBox=\"0 0 600 300\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M50 250 Q150 200 250 250 Q350 300 450 250\" stroke=\"{{primary}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.3\"/><ellipse cx=\"100\" cy=\"200\" rx=\"40\" ry=\"60\" stroke=\"{{primary}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.3\"/><ellipse cx=\"200\" cy=\"220\" rx=\"30\" ry=\"50\" stroke=\"{{primary}}\" stroke-width=\"1\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.75)",
+        "left": "0",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7)",
+        "height": "calc(var(--image-height-story) * 0.25)"
+      },
+      "editorMeta": {
+        "name": "Floral Decoration Bottom"
+      }
+    },
+    {
+      "id": "layer_speech_bubble",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"700\" height=\"450\" viewBox=\"0 0 700 450\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M20 0 H680 Q700 0 700 20 V350 Q700 370 680 370 H380 L350 420 L320 370 H20 Q0 370 0 350 V20 Q0 0 20 0 Z\" fill=\"{{primary}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.05)",
+        "left": "calc(var(--image-width) * 0.06)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.65)",
+        "height": "calc(var(--image-height-story) * 0.22)"
+      },
+      "editorMeta": {
+        "name": "Speech Bubble"
+      }
+    },
+    {
+      "id": "layer_list_count",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.2)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.0",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{listCount}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.07)",
+        "left": "calc(var(--image-width) * 0.1)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2)",
+        "height": "calc(var(--image-height-story) * 0.12)"
+      },
+      "fieldName": "img_content_list_count",
+      "editorMeta": {
+        "name": "List Count"
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.032)",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4",
+        "verticalAlign": "top"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "6%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.4
+      },
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.075)",
+        "left": "calc(var(--image-width) * 0.3)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.38)",
+        "height": "calc(var(--image-height-story) * 0.15)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "layer_list_container",
+      "type": "list-container",
+      "zIndex": 6,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.34)",
+        "left": "calc(var(--image-width) * 0.06)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.88)",
+        "height": "calc(var(--image-height-story) * 0.42)"
+      },
+      "editorMeta": {
+        "name": "Lista Numerada"
+      },
+      "listConfig": {
+        "columns": 1,
+        "itemGap": "calc(var(--image-width) * 0.08)",
+        "iconSize": "calc(var(--image-width) * 0.08)",
+        "maxItems": 3,
+        "iconColor": "{{textColor2}}",
+        "iconStyle": "number-square",
+        "itemAlign": "center",
+        "textStyles": {
+          "color": "{{textColor1}}",
+          "fontSize": "calc(var(--image-width) * 0.035)",
+          "fontStyle": "italic",
+          "textAlign": "left",
+          "fontFamily": "{{textFont2}}",
+          "fontWeight": "400",
+          "lineHeight": "1.3"
+        },
+        "iconTextGap": "calc(var(--image-width) * 0.04)",
+        "startNumber": 1,
+        "iconStrokeWidth": 0,
+        "iconColorSecondary": "{{bgColor2}}",
+        "itemVariablePrefix": "contentList"
+      },
+      "itemOverrides": {
+        "2": {
+          "iconColorSecondary": "{{bgColor3}}"
+        }
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.92)",
+        "left": "calc(var(--image-width) * 0.85)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.1)",
+        "height": "calc(var(--image-height-story) * 0.04)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "numbered-list-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "numbered-list-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "maxListItems": 3,
+    "textVariables": [
+      "listCount",
+      "subtitle",
+      "contentList"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

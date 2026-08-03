@@ -1,0 +1,311 @@
+{
+  "props": {
+    "bgColor1": "#2e7d6b",
+    "bgColor2": "#c97a4a",
+    "bgColor3": "#243a5e",
+    "textColor1": "#f6faf8",
+    "textColor2": "#2a1e1a",
+    "textColor3": "#c0cde2"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_1769086929915_7wrjn",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0281)",
+        "left": "0",
+        "type": "absolute",
+        "width": "var(--image-width)",
+        "height": "calc(var(--image-height-story) * 0.9453)"
+      },
+      "editorMeta": {
+        "name": "Second Background",
+        "locked": true
+      }
+    },
+    {
+      "id": "svg-1769087036459",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"567\" height=\"104\" viewBox=\"0 0 567 104\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n  <mask id=\"mask0_9_1505\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"104\">\n    <path d=\"M0 0H567V104H0V0Z\" fill=\"white\"/>\n  </mask>\n\n  <g mask=\"url(#mask0_9_1505)\">\n    <mask id=\"mask1_9_1505\" style=\"mask-type:luminance\" maskUnits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"567\" height=\"114\">\n      <path\n        d=\"M90.5166 0H476.489C487.778 0 498.369 5.47203 504.925 14.6914L564.969 99.1238C566.984 101.956 567.25 105.683 565.667 108.777C564.079 111.871 560.897 113.815 557.429 113.815H9.57087C6.10288 113.815 2.9265 111.871 1.33831 108.777C-0.249883 105.683 0.0208909 101.956 2.03607 99.1238L62.0801 14.6914C68.636 5.47203 79.2274 0 90.5166 0Z\"\n        fill=\"white\"\n      />\n    </mask>\n\n    <g mask=\"url(#mask1_9_1505)\">\n      <!-- COR FINAL DO SVG -->\n      <path\n        d=\"M-8.41479 0H575.415V113.815H-8.41479V0Z\"\n        fill=\"{{primary}}\"\n      />\n    </g>\n  </g>\n</svg>\n"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.9458)",
+        "left": "calc(var(--image-width) * 0.2375)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.525)",
+        "height": "calc(var(--image-height-story) * 0.0542)"
+      },
+      "editorMeta": {
+        "name": "logoBackground"
+      }
+    },
+    {
+      "id": "layer_1769087132040_btwja",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.9479)",
+        "left": "calc(var(--image-width) * 0.319)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.362)",
+        "height": "calc(var(--image-height-story) * 0.0521)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    },
+    {
+      "id": "layer_1769097162352_4qqtm",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.06)",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 9,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "10%",
+        "minFontSize": "2%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3353)",
+        "left": "calc(var(--image-width) * 0.1231)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7528)",
+        "height": "calc(var(--image-height-story) * 0.1813)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "svg-1769097708198",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"23\" height=\"41\" viewBox=\"0 0 23 41\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M21.5784 38.9142L2.82837 20.1642L21.5784 1.41418\" stroke=\"{{color1}}\" stroke-width=\"4\" stroke-miterlimit=\"10\"/>\n</svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.2894)",
+        "left": "calc(var(--image-width) * 0.1194)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0176)",
+        "height": "calc(var(--image-height-story) * 0.0198)"
+      },
+      "editorMeta": {
+        "name": "Return Icon"
+      }
+    },
+    {
+      "id": "svg-1769097819654",
+      "type": "svg",
+      "zIndex": 6,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"47\" height=\"56\" viewBox=\"0 0 47 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M6.4 21.1203C5.2218 21.1203 4.26667 22.0754 4.26667 23.2536V48.8538C4.26667 50.0318 5.2218 50.9871 6.4 50.9871H40.5333C41.7114 50.9871 42.6667 50.0318 42.6667 48.8538V23.2536C42.6667 22.0754 41.7114 21.1203 40.5333 21.1203H35.2C34.0218 21.1203 33.0667 20.1651 33.0667 18.9869C33.0667 17.8087 34.0218 16.8536 35.2 16.8536H40.5333C44.0678 16.8536 46.9333 19.719 46.9333 23.2536V48.8538C46.9333 52.3883 44.0678 55.2538 40.5333 55.2538H6.4C2.86537 55.2538 0 52.3883 0 48.8538V23.2536C0 19.719 2.86537 16.8536 6.4 16.8536H11.7333C12.9115 16.8536 13.8667 17.8087 13.8667 18.9869C13.8667 20.1651 12.9115 21.1203 11.7333 21.1203H6.4ZM21.3333 6.76864L15.2243 12.8777C14.4745 13.6274 13.2588 13.6274 12.509 12.8777C11.7592 12.1278 11.7592 10.9122 12.509 10.1624L22.109 0.56236C22.4691 0.202287 22.9574 0 23.4667 0C23.9759 0 24.4643 0.202287 24.8243 0.56236L34.4243 10.1624C35.174 10.9122 35.174 12.1278 34.4243 12.8777C33.6745 13.6274 32.4588 13.6274 31.709 12.8777L25.6 6.76864V36.0533C25.6 37.2315 24.6449 38.1867 23.4667 38.1867C22.2885 38.1867 21.3333 37.2315 21.3333 36.0533V6.76864Z\" fill=\"{{color1}}\"/>\n</svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.2827)",
+        "left": "calc(var(--image-width) * 0.7667)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.0435)",
+        "height": "calc(var(--image-height-story) * 0.0292)"
+      },
+      "editorMeta": {
+        "name": "Share Icon"
+      }
+    },
+    {
+      "id": "layer_1769097976917_guk6l",
+      "type": "container",
+      "styles": {
+        "borderRadius": "25px",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 6,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.266)",
+        "left": "calc(var(--image-width) * 0.0833)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.8333)",
+        "height": "calc(var(--image-height-story) * 0.2875)"
+      },
+      "editorMeta": {
+        "name": "Message Background"
+      }
+    },
+    {
+      "id": "svg-1769098306270",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "primary": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"200\" height=\"200\" viewBox=\"0 0 200 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M129.98 189.167C129.552 189.596 128.935 189.795 128.323 189.669L105.058 185.074C104.06 184.875 103.411 183.908 103.61 182.915C103.803 181.916 104.771 181.273 105.769 181.466L124.977 185.262L115.028 168.668C114.505 167.795 114.788 166.661 115.661 166.143C116.534 165.62 117.663 165.902 118.181 166.776L130.257 186.925C130.634 187.547 130.603 188.331 130.184 188.927C130.122 189.016 130.054 189.094 129.98 189.167Z\" fill=\"{{primary}}\"/>\n<path d=\"M127.356 186.444C126.765 187.034 125.824 187.16 125.087 186.705C105.257 174.372 84.9092 159.158 94.6125 134.576C97.4461 127.377 105.79 119.754 114.631 111.677C128.961 98.5858 143.777 85.0346 137.938 72.001C131.449 57.5245 110.893 60.8914 91.0103 64.1432C74.7719 66.7991 59.4328 69.3086 53.1747 61.09C48.1035 54.4243 50.017 42.0546 59.1923 22.1566C59.6157 21.2364 60.7084 20.8339 61.6285 21.2626C62.5539 21.6861 62.9565 22.7735 62.533 23.6989C54.2256 41.7148 52.0559 53.5459 56.1025 58.8629C61.0221 65.3248 75.2999 62.9878 90.4143 60.515C110.678 57.1951 133.65 53.4414 141.289 70.5006C148.221 85.9548 131.695 101.059 117.114 114.39C108.598 122.17 100.557 129.515 98.0264 135.925C89.3687 157.872 108.456 172.035 127.027 183.579C127.889 184.117 128.151 185.252 127.617 186.114C127.539 186.234 127.455 186.344 127.356 186.444Z\" fill=\"{{primary}}\"/>\n</svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.5889)",
+        "left": "calc(var(--image-width) * 0.5)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.1852)",
+        "height": "calc(var(--image-height-story) * 0.1042)"
+      },
+      "editorMeta": {
+        "name": "assimetricArrow"
+      }
+    },
+    {
+      "id": "layer_1769098355393_pygl3",
+      "type": "container",
+      "styles": {
+        "borderRadius": "calc(var(--image-width) * 0.02)",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 11,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.7224)",
+        "left": "calc(var(--image-width) * 0.5481)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.4222)",
+        "height": "calc(var(--image-height-story) * 0.0885)"
+      },
+      "editorMeta": {
+        "name": "Retângulo Arredondado"
+      }
+    },
+    {
+      "id": "layer_1769098377044_66573",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "calc(var(--image-width) * 0.0333)",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 12,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.7302)",
+        "left": "calc(var(--image-width) * 0.5787)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.3611)",
+        "height": "calc(var(--image-height-story) * 0.0729)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA"
+      }
+    },
+    {
+      "id": "svg-1769196334161",
+      "type": "svg",
+      "zIndex": 13,
+      "content": {
+        "embedded": {
+          "colors": {
+            "color1": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"54\" height=\"54\" viewBox=\"0 0 54 54\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M30.7632 26.9451C30.7632 27.4407 30.6651 27.9248 30.4746 28.3858C30.2841 28.8468 30.0128 29.2501 29.6548 29.6016C29.3027 29.9589 28.8986 30.2297 28.4367 30.4199C27.9691 30.6101 27.49 30.708 26.9935 30.708C26.4913 30.708 26.0121 30.6101 25.5503 30.4199C25.0884 30.2297 24.6786 29.9589 24.3264 29.6016C23.9685 29.2501 23.6972 28.8468 23.5067 28.3858C23.3162 27.9248 23.218 27.4407 23.218 26.9451C23.218 26.4438 23.3162 25.9655 23.5067 25.5045C23.6972 25.0435 23.9685 24.6344 24.3264 24.2829C24.6786 23.9256 25.0884 23.6548 25.5503 23.4646C26.0121 23.2745 26.4913 23.1765 26.9935 23.1765C27.49 23.1765 27.9691 23.2745 28.4367 23.4646C28.8986 23.6548 29.3027 23.9256 29.6548 24.2829C30.0128 24.6344 30.2841 25.0435 30.4746 25.5045C30.6651 25.9655 30.7632 26.4438 30.7632 26.9451Z\" fill=\"{{color1}}\"/>\n<path d=\"M17.26 26.9451C17.26 27.4407 17.1677 27.9248 16.9714 28.3858C16.7809 28.8468 16.5095 29.2501 16.1574 29.6016C15.8053 29.9589 15.3954 30.2297 14.9335 30.4199C14.4717 30.6101 13.9926 30.708 13.4903 30.708C12.9881 30.708 12.5089 30.6101 12.0471 30.4199C11.5852 30.2297 11.1754 29.9589 10.8232 29.6016C10.4711 29.2501 10.194 28.8468 10.0035 28.3858C9.81295 27.9248 9.72058 27.4407 9.72058 26.9451C9.72058 26.4438 9.81295 25.9655 10.0035 25.5045C10.194 25.0435 10.4711 24.6344 10.8232 24.2829C11.1754 23.9256 11.5852 23.6548 12.0471 23.4646C12.5089 23.2745 12.9881 23.1765 13.4903 23.1765C13.9926 23.1765 14.4717 23.2745 14.9335 23.4646C15.3954 23.6548 15.8053 23.9256 16.1574 24.2829C16.5095 24.6344 16.7809 25.0435 16.9714 25.5045C17.1677 25.9655 17.26 26.4438 17.26 26.9451Z\" fill=\"{{color1}}\"/>\n<path d=\"M44.26 26.9451C44.26 27.4407 44.1677 27.9248 43.9772 28.3858C43.7867 28.8468 43.5095 29.2501 43.1574 29.6016C42.8052 29.9589 42.3954 30.2297 41.9335 30.4199C41.4717 30.6101 40.9926 30.708 40.4903 30.708C39.9938 30.708 39.5089 30.6101 39.0471 30.4199C38.5852 30.2297 38.1811 29.9589 37.8232 29.6016C37.4711 29.2501 37.1997 28.8468 37.0092 28.3858C36.8129 27.9248 36.7206 27.4407 36.7206 26.9451C36.7206 26.4438 36.8129 25.9655 37.0092 25.5045C37.1997 25.0435 37.4711 24.6344 37.8232 24.2829C38.1811 23.9256 38.5852 23.6548 39.0471 23.4646C39.5089 23.2745 39.9938 23.1765 40.4903 23.1765C40.9926 23.1765 41.4717 23.2745 41.9335 23.4646C42.3954 23.6548 42.8052 23.9256 43.1574 24.2829C43.5095 24.6344 43.7867 25.0435 43.9772 25.5045C44.1677 25.9655 44.26 26.4438 44.26 26.9451Z\" fill=\"{{color1}}\"/>\n<path d=\"M26.9942 53.8848C12.1058 53.8848 0 41.8009 0 26.9453C0 12.0839 12.1058 0 26.9942 0C41.8768 0 53.9827 12.0839 53.9827 26.9453C53.9827 41.8009 41.8768 53.8848 26.9942 53.8848ZM26.9942 2.88123C13.6992 2.88123 2.88647 13.6743 2.88647 26.9453C2.88647 40.2104 13.6992 51.0035 26.9942 51.0035C40.2835 51.0035 51.0962 40.2104 51.0962 26.9453C51.0962 13.6743 40.2835 2.88123 26.9942 2.88123Z\" fill=\"{{color1}}\"/>\n</svg>"
+        }
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.2853)",
+        "left": "calc(var(--image-width) * 0.8306)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.05)",
+        "height": "calc(var(--image-height-story) * 0.0281)"
+      },
+      "editorMeta": {
+        "name": "Menu Icon"
+      }
+    }
+  ],
+  "packageId": "package-1",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "message-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "message-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

@@ -1,0 +1,20 @@
+node_modules
+dist
+coverage
+.vite
+*.log
+
+.vercel
+
+# Local/runtime credentials. Only placeholder examples may be committed.
+.env
+.env.*
+!.env.example
+supabase/functions/.env
+supabase/functions/.env.*
+!supabase/functions/.env.example
+*.pem
+*.key
+secrets*.json
+.supabase
+supabase/functions/node_modules

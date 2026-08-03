@@ -1,0 +1,321 @@
+{
+  "props": {
+    "image": "",
+    "ctaText": "Siga para dicas diarias",
+    "bgColor1": "#FAFAF8",
+    "bgColor2": "#1A1A1A",
+    "headline": "Seu futuro financeiro comeca agora",
+    "subtitle": "Cada decisao de hoje impacta seu amanha. Construa sua liberdade financeira com escolhas conscientes.",
+    "username": "@seuprofile",
+    "textFont1": "Playfair Display, serif",
+    "textFont2": "Inter, sans-serif",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#4A4A4A",
+    "textColor3": "#C9A962",
+    "preHeadline": "ECONOMIA",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "organic-shape-left",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor1}}"
+          },
+          "svgContent": "<svg width=\"340\" height=\"1350\" viewBox=\"0 0 340 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,0 L200,0 Q280,200 250,400 Q220,600 280,800 Q340,1000 250,1200 Q160,1350 0,1350 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "340px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Left",
+        "locked": true
+      }
+    },
+    {
+      "id": "image-container",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "0 200px 200px 0"
+      },
+      "zIndex": 2,
+      "content": {
+        "alt": "Imagem principal",
+        "source": "{{image}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "900px",
+        "height": "900px"
+      },
+      "fieldName": "image",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "pre-headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "40px",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "letterSpacing": "0.25em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{preHeadline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "300px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "460px",
+        "height": "30px"
+      },
+      "fieldName": "preHeadline",
+      "editorMeta": {
+        "name": "Pre Headline"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "fontStyle": "italic",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "350px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "460px",
+        "height": "180px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "divider",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor3}}"
+          },
+          "svgContent": "<svg width=\"100\" height=\"2\" viewBox=\"0 0 100 2\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"100\" height=\"2\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "560px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "100px",
+        "height": "2px"
+      },
+      "editorMeta": {
+        "name": "Divider",
+        "locked": true
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "opacity": "0.8",
+        "fontSize": "40px",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "600px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "120px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "900px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "50px",
+        "height": "50px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    },
+    {
+      "id": "username",
+      "type": "text",
+      "styles": {
+        "color": "{{bgColor2}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500"
+      },
+      "zIndex": 8,
+      "content": {
+        "text": "{{username}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "908px",
+        "left": "146px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "24px"
+      },
+      "fieldName": "username",
+      "editorMeta": {
+        "name": "Username"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400"
+      },
+      "zIndex": 9,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "938px",
+        "left": "146px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "20px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "organic-accent-bottom",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor3}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0,0 Q100,50 200,30 Q300,10 400,60 L400,150 L0,150 Z\" fill=\"{{c1}}\" opacity=\"0.15\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1050px",
+        "left": "0",
+        "type": "absolute",
+        "width": "400px",
+        "height": "150px"
+      },
+      "editorMeta": {
+        "name": "Organic Accent Bottom",
+        "locked": true
+      }
+    }
+  ],
+  "packageId": "negocios",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-with-image-2",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-with-image-2",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "preHeadline",
+      "subtitle",
+      "ctaText",
+      "username"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

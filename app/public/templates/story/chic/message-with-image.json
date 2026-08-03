@@ -1,0 +1,257 @@
+{
+  "props": {
+    "ctaText": "AGENDE AGORA",
+    "bgColor1": "#1a1a1a",
+    "bgColor2": "#d4af37",
+    "bgColor3": "#2d3a2d",
+    "headline": "bem",
+    "subtitle": "com voce mesma",
+    "mainImage": "",
+    "textColor1": "#d4af37",
+    "textColor2": "#f5f0eb",
+    "textColor3": "#1a1a1a",
+    "preHeadline": "sobre estar",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "layer_mainImage",
+      "type": "image",
+      "styles": {
+        "objectFit": "cover",
+        "borderRadius": "15px"
+      },
+      "zIndex": 1,
+      "content": {
+        "alt": "Main Image",
+        "source": "{{mainImage}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.02)",
+        "left": "calc(var(--image-width) * 0.02)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.96)",
+        "height": "calc(var(--image-height-story) * 0.75)"
+      },
+      "fieldName": "mainImage",
+      "editorMeta": {
+        "name": "Main Image"
+      }
+    },
+    {
+      "id": "layer_preHeadline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "calc(var(--image-width) * 0.045)",
+        "fontStyle": "italic",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "300",
+        "lineHeight": "1.2",
+        "verticalAlign": "bottom"
+      },
+      "zIndex": 2,
+      "content": {
+        "text": "{{preHeadline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.35)",
+        "left": "calc(var(--image-width) * 0.40)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.55)",
+        "height": "calc(var(--image-height-story) * 0.04)"
+      },
+      "fieldName": "img_content_pre_headline",
+      "editorMeta": {
+        "name": "Pre Headline"
+      }
+    },
+    {
+      "id": "layer_headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.22)",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "0.85",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "25%",
+        "minFontSize": "8%",
+        "lineHeightRatio": 0.85
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.38)",
+        "left": "calc(var(--image-width) * 0.02)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.96)",
+        "height": "calc(var(--image-height-story) * 0.15)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "layer_subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.05)",
+        "fontStyle": "italic",
+        "textAlign": "right",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "300",
+        "lineHeight": "1.2",
+        "verticalAlign": "top"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.53)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.60)",
+        "height": "calc(var(--image-height-story) * 0.05)"
+      },
+      "fieldName": "img_content_subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "layer_ctaButton",
+      "type": "container",
+      "styles": {
+        "borderColor": "{{bgColor2}}",
+        "borderStyle": "solid",
+        "borderWidth": "2px",
+        "borderRadius": "50px",
+        "backgroundColor": "transparent"
+      },
+      "zIndex": 5,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.66)",
+        "left": "calc(var(--image-width) * 0.20)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.60)",
+        "height": "calc(var(--image-height-story) * 0.04)"
+      },
+      "editorMeta": {
+        "name": "CTA Button Background"
+      }
+    },
+    {
+      "id": "layer_ctaText",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "calc(var(--image-width) * 0.04)",
+        "fontStyle": "italic",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 6,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.668)",
+        "left": "calc(var(--image-width) * 0.22)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.56)",
+        "height": "calc(var(--image-height-story) * 0.028)"
+      },
+      "fieldName": "img_content_cta",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "layer_logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.90)",
+        "left": "calc(var(--image-width) * 0.35)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.30)",
+        "height": "calc(var(--image-height-story) * 0.05)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "chic",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "message-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "message-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "preHeadline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

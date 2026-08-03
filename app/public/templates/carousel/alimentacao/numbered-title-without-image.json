@@ -1,0 +1,277 @@
+{
+  "props": {
+    "bgColor1": "#5A6B4A",
+    "bgColor2": "#F5F0E6",
+    "bgColor3": "#FFFBF2",
+    "headline": "Massa Fresca com Pesto",
+    "subtitle": "Use manjericao fresco e azeite de qualidade para o melhor sabor",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#F5F0E6",
+    "textColor2": "#FFFBF2",
+    "textColor3": "#5A6B4A",
+    "slideNumber": "01",
+    "businessLogo": ""
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"54\" height=\"54\" patternUnits=\"userSpaceOnUse\"><path d=\"M 54 0 L 0 0 0 54\" fill=\"none\" stroke=\"{{c1}}\" stroke-width=\"0.5\" opacity=\"0.1\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Grid Pattern",
+        "locked": true
+      }
+    },
+    {
+      "id": "large-number-bg",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "variables": {
+            "num": "{{slideNumber}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"500\" viewBox=\"0 0 1080 500\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"540\" y=\"420\" text-anchor=\"middle\" font-family=\"Playfair Display\" font-size=\"480\" font-weight=\"700\" fill=\"{{c1}}\" opacity=\"0.06\">{{num}}</text></svg>"
+        }
+      },
+      "position": {
+        "top": "200px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "500px"
+      },
+      "editorMeta": {
+        "name": "Large Number BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "number-badge",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"160\" height=\"160\" viewBox=\"0 0 160 160\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"80\" cy=\"80\" r=\"78\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "320px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "160px",
+        "height": "160px"
+      },
+      "editorMeta": {
+        "name": "Number Badge",
+        "locked": true
+      }
+    },
+    {
+      "id": "slideNumber",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "72px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{slideNumber}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "355px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "160px",
+        "height": "90px"
+      },
+      "fieldName": "slideNumber",
+      "editorMeta": {
+        "name": "Slide Number"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "560px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "280px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "opacity": "0.85",
+        "fontSize": "40px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.6"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{subtitle}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "880px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "800px",
+        "height": "160px"
+      },
+      "fieldName": "subtitle",
+      "editorMeta": {
+        "name": "Subtitle"
+      }
+    },
+    {
+      "id": "bottom-line",
+      "type": "svg",
+      "zIndex": 3,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"4\" viewBox=\"0 0 920 4\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"920\" height=\"4\" rx=\"2\" fill=\"{{c1}}\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1180px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "4px"
+      },
+      "editorMeta": {
+        "name": "Bottom Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 7,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1210px",
+        "left": "450px",
+        "type": "absolute",
+        "width": "180px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "alimentacao",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "numbered-title-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "numbered-title-without-image",
+  "templateType": "carousel",
+  "schemaVersion": "2.0",
+  "carouselSlideType": "content",
+  "contentRequirements": {
+    "hasList": false,
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "slideNumber"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

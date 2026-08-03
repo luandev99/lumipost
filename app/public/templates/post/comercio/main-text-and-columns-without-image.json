@@ -1,0 +1,499 @@
+{
+  "props": {
+    "ctaText": "COMECE AGORA",
+    "bgColor1": "#1a2e1a",
+    "bgColor2": "#d4af37",
+    "bgColor3": "#2d4a2d",
+    "headline": "Invista Com Inteligencia",
+    "textFont1": "Playfair Display",
+    "textFont2": "Inter",
+    "textColor1": "#f5f0e6",
+    "textColor2": "#d4af37",
+    "textColor3": "#ffffff",
+    "contentListLeftItem0": "Renda Fixa",
+    "contentListLeftItem1": "Tesouro Direto",
+    "contentListLeftItem2": "CDB e LCI",
+    "contentListLeftItem3": "Fundos de Renda Fixa",
+    "contentListLeftItem4": "Debentures",
+    "contentListRightItem0": "Renda Variavel",
+    "contentListRightItem1": "Acoes",
+    "contentListRightItem2": "Fundos Imobiliarios",
+    "contentListRightItem3": "ETFs",
+    "contentListRightItem4": "BDRs"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "inner-frame",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"40\" width=\"1000\" height=\"1270\" rx=\"24\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Inner Frame",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-elements",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "fonts": {
+            "f1": "{{textFont1}}"
+          },
+          "colors": {
+            "c1": "{{textColor1}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"120\" cy=\"1180\" r=\"58\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.28\"/><circle cx=\"120\" cy=\"1180\" r=\"40\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.22\"/><text x=\"120\" y=\"1194\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"36\" fill=\"{{c1}}\" opacity=\"0.36\">$</text><circle cx=\"260\" cy=\"1260\" r=\"44\" stroke=\"{{c2}}\" stroke-width=\"2\" fill=\"{{c2}}\" fill-opacity=\"0.1\" opacity=\"0.32\"/><text x=\"260\" y=\"1272\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"28\" fill=\"{{c2}}\" opacity=\"0.42\">%</text><circle cx=\"940\" cy=\"1160\" r=\"56\" stroke=\"{{c1}}\" stroke-width=\"2\" fill=\"none\" opacity=\"0.26\"/><circle cx=\"940\" cy=\"1160\" r=\"38\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.2\"/><text x=\"940\" y=\"1174\" text-anchor=\"middle\" font-family=\"{{f1}}\" font-size=\"34\" fill=\"{{c1}}\" opacity=\"0.34\">$</text><path d=\"M800 1280 L840 1225 L880 1255 L920 1190 L960 1240\" stroke=\"{{c2}}\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" opacity=\"0.36\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Decorative Elements",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "78px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "1.05",
+        "letterSpacing": "-0.02em"
+      },
+      "zIndex": 3,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "82px",
+        "minFontSize": "44px",
+        "lineHeightRatio": 1.05
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "180px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "left-column-title",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeftItem0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "340px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "50px"
+      },
+      "fieldName": "contentListLeftItem0",
+      "editorMeta": {
+        "name": "Left Column Title"
+      }
+    },
+    {
+      "id": "left-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeftItem1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "410px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "40px"
+      },
+      "fieldName": "contentListLeftItem1",
+      "editorMeta": {
+        "name": "Left Item 1"
+      }
+    },
+    {
+      "id": "left-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeftItem2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "460px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "40px"
+      },
+      "fieldName": "contentListLeftItem2",
+      "editorMeta": {
+        "name": "Left Item 2"
+      }
+    },
+    {
+      "id": "left-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeftItem3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "510px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "40px"
+      },
+      "fieldName": "contentListLeftItem3",
+      "editorMeta": {
+        "name": "Left Item 3"
+      }
+    },
+    {
+      "id": "left-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListLeftItem4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "560px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "40px"
+      },
+      "fieldName": "contentListLeftItem4",
+      "editorMeta": {
+        "name": "Left Item 4"
+      }
+    },
+    {
+      "id": "right-column-title",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "32px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRightItem0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "340px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "50px"
+      },
+      "fieldName": "contentListRightItem0",
+      "editorMeta": {
+        "name": "Right Column Title"
+      }
+    },
+    {
+      "id": "right-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRightItem1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "410px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "40px"
+      },
+      "fieldName": "contentListRightItem1",
+      "editorMeta": {
+        "name": "Right Item 1"
+      }
+    },
+    {
+      "id": "right-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRightItem2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "460px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "40px"
+      },
+      "fieldName": "contentListRightItem2",
+      "editorMeta": {
+        "name": "Right Item 2"
+      }
+    },
+    {
+      "id": "right-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRightItem3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "510px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "40px"
+      },
+      "fieldName": "contentListRightItem3",
+      "editorMeta": {
+        "name": "Right Item 3"
+      }
+    },
+    {
+      "id": "right-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "22px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentListRightItem4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "560px",
+        "left": "560px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "40px"
+      },
+      "fieldName": "contentListRightItem4",
+      "editorMeta": {
+        "name": "Right Item 4"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "svg",
+      "zIndex": 4,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"300\" height=\"56\" viewBox=\"0 0 300 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"1\" y=\"1\" width=\"298\" height=\"54\" rx=\"27\" stroke=\"{{c1}}\" stroke-width=\"1.5\" fill=\"none\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "680px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "56px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "14px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "56px",
+        "letterSpacing": "0.1em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "680px",
+        "left": "390px",
+        "type": "absolute",
+        "width": "300px",
+        "height": "56px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    }
+  ],
+  "packageId": "comercio",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-columns-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-and-columns-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "headline",
+      "contentListLeftItem0",
+      "contentListLeftItem1",
+      "contentListLeftItem2",
+      "contentListLeftItem3",
+      "contentListLeftItem4",
+      "contentListRightItem0",
+      "contentListRightItem1",
+      "contentListRightItem2",
+      "contentListRightItem3",
+      "contentListRightItem4",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

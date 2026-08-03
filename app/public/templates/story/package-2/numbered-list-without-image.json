@@ -1,0 +1,356 @@
+{
+  "props": {
+    "bgColor1": "#5A3D3D",
+    "bgColor2": "#D4A574",
+    "bgColor3": "#8B6B4E",
+    "textColor2": "#3D2B1F",
+    "textColor3": "#FFFFFF"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "100%",
+        "height": "100%"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "box-1-background",
+      "type": "container",
+      "styles": {
+        "borderRadius": "calc(var(--image-width) * 0.025)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 1,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.2447)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7917)",
+        "height": "calc(var(--image-height-story) * 0.0942)"
+      },
+      "editorMeta": {
+        "name": "Box 1 Background"
+      }
+    },
+    {
+      "id": "box-1-dots",
+      "type": "svg",
+      "styles": {},
+      "zIndex": 2,
+      "content": {
+        "svg": "getThreeDotsIconSvg",
+        "params": [
+          "{{textColor2}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.2592)",
+        "left": "calc(var(--image-width) * 0.125)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.035)",
+        "height": "calc(var(--image-height-story) * 0.0056)"
+      },
+      "editorMeta": {
+        "name": "Box 1 Dots"
+      }
+    },
+    {
+      "id": "box-1-arrow",
+      "type": "svg",
+      "styles": {},
+      "zIndex": 2,
+      "content": {
+        "svg": "getChevronDownCircleIconSvg",
+        "params": [
+          "{{textColor2}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.2592)",
+        "left": "calc(var(--image-width) * 0.8296)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.035)",
+        "height": "calc(var(--image-height-story) * 0.0197)"
+      },
+      "editorMeta": {
+        "name": "Box 1 Arrow"
+      }
+    },
+    {
+      "id": "box-2-background",
+      "type": "container",
+      "styles": {
+        "borderRadius": "calc(var(--image-width) * 0.025)",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "zIndex": 3,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.2896)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7917)",
+        "height": "calc(var(--image-height-story) * 0.1998)"
+      },
+      "editorMeta": {
+        "name": "Box 2 Background"
+      }
+    },
+    {
+      "id": "box-2-dots",
+      "type": "svg",
+      "styles": {},
+      "zIndex": 4,
+      "content": {
+        "svg": "getThreeDotsIconSvg",
+        "params": [
+          "{{textColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3064)",
+        "left": "calc(var(--image-width) * 0.125)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.035)",
+        "height": "calc(var(--image-height-story) * 0.0056)"
+      },
+      "editorMeta": {
+        "name": "Box 2 Dots"
+      }
+    },
+    {
+      "id": "box-2-arrow",
+      "type": "svg",
+      "styles": {},
+      "zIndex": 4,
+      "content": {
+        "svg": "getChevronDownCircleIconSvg",
+        "params": [
+          "{{textColor3}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3014)",
+        "left": "calc(var(--image-width) * 0.8296)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.035)",
+        "height": "calc(var(--image-height-story) * 0.0197)"
+      },
+      "editorMeta": {
+        "name": "Box 2 Arrow"
+      }
+    },
+    {
+      "id": "box-2-title",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "margin": "0",
+        "fontSize": "calc(var(--image-width) * 0.0593)",
+        "fontStyle": "normal",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "lineHeight": "1.2",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "6%",
+        "minFontSize": "3%",
+        "lineHeightRatio": 1.2
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.3271)",
+        "left": "calc(var(--image-width) * 0.125)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7361)",
+        "height": "calc(var(--image-height-story) * 0.1052)"
+      },
+      "fieldName": "img_content_headline",
+      "editorMeta": {
+        "name": "Title"
+      }
+    },
+    {
+      "id": "box-3-background",
+      "type": "container",
+      "styles": {
+        "borderRadius": "calc(var(--image-width) * 0.025)",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 6,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.4496)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7917)",
+        "height": "calc(var(--image-height-story) * 0.4718)"
+      },
+      "editorMeta": {
+        "name": "Box 3 Background"
+      }
+    },
+    {
+      "id": "box-3-dots",
+      "type": "svg",
+      "styles": {},
+      "zIndex": 7,
+      "content": {
+        "svg": "getThreeDotsIconSvg",
+        "params": [
+          "{{textColor2}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.4664)",
+        "left": "calc(var(--image-width) * 0.125)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.035)",
+        "height": "calc(var(--image-height-story) * 0.0056)"
+      },
+      "editorMeta": {
+        "name": "Box 3 Dots"
+      }
+    },
+    {
+      "id": "box-3-arrow",
+      "type": "svg",
+      "styles": {},
+      "zIndex": 7,
+      "content": {
+        "svg": "getChevronUpCircleIconSvg",
+        "params": [
+          "{{textColor2}}"
+        ]
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.4614)",
+        "left": "calc(var(--image-width) * 0.8296)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.035)",
+        "height": "calc(var(--image-height-story) * 0.0197)"
+      },
+      "editorMeta": {
+        "name": "Box 3 Arrow"
+      }
+    },
+    {
+      "id": "box-3-line",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{textColor2}}"
+      },
+      "zIndex": 8,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.4886)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7917)",
+        "height": "calc(var(--image-height-story) * 0.0017)"
+      },
+      "editorMeta": {
+        "name": "Box 3 Line"
+      }
+    },
+    {
+      "id": "numbered-list-items",
+      "type": "list-container",
+      "zIndex": 9,
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.5096)",
+        "left": "calc(var(--image-width) * 0.125)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.7346)",
+        "height": "calc(var(--image-height-story) * 0.3932)"
+      },
+      "editorMeta": {
+        "name": "Numbered List Items",
+        "hidden": false
+      },
+      "listConfig": {
+        "columns": 1,
+        "itemGap": "calc(var(--image-width) * 0.070)",
+        "iconSize": "calc(var(--image-width) * 0.055)",
+        "maxItems": 5,
+        "iconColor": "{{textColor2}}",
+        "iconStyle": "numbered",
+        "itemAlign": "center",
+        "textStyles": {
+          "color": "{{textColor2}}",
+          "fontSize": "calc(var(--image-width) * 0.050)",
+          "textAlign": "left",
+          "fontFamily": "{{textFont2}}",
+          "fontWeight": "400",
+          "lineHeight": "1"
+        },
+        "iconTextGap": "calc(var(--image-width) * 0.027)",
+        "iconColorSecondary": "{{textColor2}}",
+        "itemVariablePrefix": "contentList"
+      }
+    },
+    {
+      "id": "layer_1768500099651_2i7pq",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 10,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "calc(var(--image-height-story) * 0.0781)",
+        "left": "calc(var(--image-width) * 0.0972)",
+        "type": "absolute",
+        "width": "calc(var(--image-width) * 0.2315)",
+        "height": "calc(var(--image-height-story) * 0.1302)"
+      },
+      "editorMeta": {
+        "name": "Logo"
+      }
+    }
+  ],
+  "packageId": "package-2",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "numbered-list-without-image",
+  "aspectRatio": "9:16",
+  "templateName": "numbered-list-without-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "maxListItems": 5,
+    "textVariables": [
+      "headline",
+      "contentList"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

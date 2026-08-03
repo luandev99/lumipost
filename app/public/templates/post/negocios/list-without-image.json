@@ -1,0 +1,483 @@
+{
+  "props": {
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#FAFAF8",
+    "bgColor2": "#1A1A1A",
+    "bgColor3": "#2C2C2C",
+    "textFont1": "Playfair Display, serif",
+    "textFont2": "Inter, sans-serif",
+    "textColor1": "#1A1A1A",
+    "textColor2": "#5A5A5A",
+    "textColor3": "#FAFAF8",
+    "businessLogo": "",
+    "contentList0": "Item da lista numero 1",
+    "contentList1": "Item da lista numero 2",
+    "contentList2": "Item da lista numero 3",
+    "contentList3": "Item da lista numero 4",
+    "contentList4": "Item da lista numero 5"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "organic-shape-top-left",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"500\" height=\"550\" viewBox=\"0 0 500 550\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 550 L0 220 Q0 0, 250 0 L500 0 L500 550 Q250 550, 250 330 Q250 110, 0 220 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "-80px",
+        "left": "-120px",
+        "type": "absolute",
+        "width": "500px",
+        "height": "550px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Top Left",
+        "locked": true
+      }
+    },
+    {
+      "id": "organic-shape-top-right",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"440\" height=\"480\" viewBox=\"0 0 440 480\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0 L440 0 L440 240 Q440 480, 220 480 Q0 480, 0 240 Z\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "-60px",
+        "left": "700px",
+        "type": "absolute",
+        "width": "440px",
+        "height": "480px"
+      },
+      "editorMeta": {
+        "name": "Organic Shape Top Right",
+        "locked": true
+      }
+    },
+    {
+      "id": "list-item-0",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList0}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "500px",
+        "left": "160px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "80px"
+      },
+      "fieldName": "contentList0",
+      "editorMeta": {
+        "name": "List Item 1"
+      }
+    },
+    {
+      "id": "list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList1}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "610px",
+        "left": "160px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "80px"
+      },
+      "fieldName": "contentList1",
+      "editorMeta": {
+        "name": "List Item 2"
+      }
+    },
+    {
+      "id": "list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList2}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "720px",
+        "left": "160px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "80px"
+      },
+      "fieldName": "contentList2",
+      "editorMeta": {
+        "name": "List Item 3"
+      }
+    },
+    {
+      "id": "list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList3}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "830px",
+        "left": "160px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "80px"
+      },
+      "fieldName": "contentList3",
+      "editorMeta": {
+        "name": "List Item 4"
+      }
+    },
+    {
+      "id": "list-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "400",
+        "lineHeight": "1.5",
+        "verticalAlign": "middle"
+      },
+      "zIndex": 3,
+      "content": {
+        "text": "{{contentList4}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "940px",
+        "left": "160px",
+        "type": "absolute",
+        "width": "840px",
+        "height": "80px"
+      },
+      "fieldName": "contentList4",
+      "editorMeta": {
+        "name": "List Item 5"
+      }
+    },
+    {
+      "id": "number-0",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "opacity": "0.5",
+        "fontSize": "45px",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "300",
+        "lineHeight": "1"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "01"
+      },
+      "position": {
+        "top": "500px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Number 1",
+        "locked": true
+      }
+    },
+    {
+      "id": "number-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "opacity": "0.5",
+        "fontSize": "45px",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "300",
+        "lineHeight": "1"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "02"
+      },
+      "position": {
+        "top": "610px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Number 2",
+        "locked": true
+      }
+    },
+    {
+      "id": "number-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "opacity": "0.5",
+        "fontSize": "45px",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "300",
+        "lineHeight": "1"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "03"
+      },
+      "position": {
+        "top": "720px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Number 3",
+        "locked": true
+      }
+    },
+    {
+      "id": "number-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "opacity": "0.5",
+        "fontSize": "45px",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "300",
+        "lineHeight": "1"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "04"
+      },
+      "position": {
+        "top": "830px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Number 4",
+        "locked": true
+      }
+    },
+    {
+      "id": "number-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "opacity": "0.5",
+        "fontSize": "45px",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "300",
+        "lineHeight": "1"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "05"
+      },
+      "position": {
+        "top": "940px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "60px",
+        "height": "60px"
+      },
+      "editorMeta": {
+        "name": "Number 5",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "600",
+        "lineHeight": "1.4",
+        "letterSpacing": "0.08em",
+        "textTransform": "uppercase"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1100px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "50px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 6,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1200px",
+        "left": "500px",
+        "type": "absolute",
+        "width": "80px",
+        "height": "80px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    },
+    {
+      "id": "footer-separator",
+      "type": "svg",
+      "zIndex": 7,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"920\" height=\"1\" viewBox=\"0 0 920 1\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"920\" height=\"1\" fill=\"{{c1}}\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1200px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "1px"
+      },
+      "editorMeta": {
+        "name": "Footer Separator",
+        "locked": true
+      }
+    }
+  ],
+  "packageId": "negocios",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "list-without-image",
+  "aspectRatio": "1:1.25",
+  "templateName": "list-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "headline",
+      "contentList0",
+      "contentList1",
+      "contentList2",
+      "contentList3",
+      "contentList4",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": false
+  }
+}

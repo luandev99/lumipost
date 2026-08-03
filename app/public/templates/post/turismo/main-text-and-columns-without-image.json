@@ -1,0 +1,617 @@
+{
+  "props": {
+    "ctaText": "Reserve Agora",
+    "bgColor1": "#1A0533",
+    "bgColor2": "#7B2CBF",
+    "bgColor3": "#FF6B35",
+    "headline": "Descubra os Melhores Destinos",
+    "textFont1": "Montserrat",
+    "textFont2": "Inter",
+    "textColor1": "#FFFFFF",
+    "textColor2": "#E0E0E0",
+    "textColor3": "#FF6B35",
+    "businessLogo": "",
+    "contentList0": [
+      "Praias paradisíacas",
+      "Montanhas nevadas",
+      "Cidades históricas",
+      "Resorts all-inclusive",
+      "Aventuras radicais"
+    ],
+    "contentList1": [
+      "Passagens aéreas",
+      "Hospedagem 5 estrelas",
+      "Transfer incluso",
+      "Seguro viagem",
+      "Guia local"
+    ]
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "gradient-overlay",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}",
+            "c2": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" viewBox=\"0 0 1080 1350\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><radialGradient id=\"glow1\" cx=\"0.8\" cy=\"0.2\" r=\"0.6\"><stop offset=\"0%\" stop-color=\"{{c1}}\" stop-opacity=\"0.15\"/><stop offset=\"100%\" stop-color=\"{{c1}}\" stop-opacity=\"0\"/></radialGradient><radialGradient id=\"glow2\" cx=\"0.2\" cy=\"0.8\" r=\"0.5\"><stop offset=\"0%\" stop-color=\"{{c2}}\" stop-opacity=\"0.1\"/><stop offset=\"100%\" stop-color=\"{{c2}}\" stop-opacity=\"0\"/></radialGradient></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#glow1)\"/><rect width=\"1080\" height=\"1350\" fill=\"url(#glow2)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Gradient Overlay",
+        "locked": true
+      }
+    },
+    {
+      "id": "decorative-plane",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{textColor1}}"
+          },
+          "svgContent": "<svg width=\"280\" height=\"200\" viewBox=\"0 0 280 200\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M240 80L180 95L60 75L180 105L180 120L60 140L180 115L240 130L260 105L240 80Z\" fill=\"{{c1}}\" opacity=\"0.08\"/><path d=\"M20 160Q80 140 140 160Q200 180 260 160\" stroke=\"{{c1}}\" stroke-width=\"1\" stroke-dasharray=\"4 4\" opacity=\"0.2\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "60px",
+        "left": "750px",
+        "type": "absolute",
+        "width": "280px",
+        "height": "200px"
+      },
+      "editorMeta": {
+        "name": "Decorative Plane",
+        "locked": true
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "150px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.03em"
+      },
+      "zIndex": 5,
+      "autoFit": {
+        "mode": "scale",
+        "enabled": true,
+        "maxFontSize": "150px",
+        "minFontSize": "150px",
+        "lineHeightRatio": 1.1
+      },
+      "content": {
+        "text": "{{headline}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "120px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "920px",
+        "height": "180px"
+      },
+      "fieldName": "headline",
+      "editorMeta": {
+        "name": "Headline"
+      }
+    },
+    {
+      "id": "divider-line",
+      "type": "svg",
+      "zIndex": 5,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}"
+          },
+          "svgContent": "<svg width=\"320\" height=\"4\" viewBox=\"0 0 320 4\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"320\" height=\"4\" rx=\"2\" fill=\"{{c1}}\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "320px",
+        "left": "380px",
+        "type": "absolute",
+        "width": "320px",
+        "height": "4px"
+      },
+      "editorMeta": {
+        "name": "Divider Line",
+        "locked": true
+      }
+    },
+    {
+      "id": "left-column-title",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "DESTINOS"
+      },
+      "position": {
+        "top": "380px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "Left Column Title",
+        "locked": true
+      }
+    },
+    {
+      "id": "right-column-title",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "letterSpacing": "0.1em"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "INCLUSOS"
+      },
+      "position": {
+        "top": "380px",
+        "left": "580px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "50px"
+      },
+      "editorMeta": {
+        "name": "Right Column Title",
+        "locked": true
+      }
+    },
+    {
+      "id": "left-list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList0[0]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "450px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList0[0]",
+      "editorMeta": {
+        "name": "Left List Item 1"
+      }
+    },
+    {
+      "id": "left-list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList0[1]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "520px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList0[1]",
+      "editorMeta": {
+        "name": "Left List Item 2"
+      }
+    },
+    {
+      "id": "left-list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList0[2]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "590px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList0[2]",
+      "editorMeta": {
+        "name": "Left List Item 3"
+      }
+    },
+    {
+      "id": "left-list-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList0[3]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "660px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList0[3]",
+      "editorMeta": {
+        "name": "Left List Item 4"
+      }
+    },
+    {
+      "id": "left-list-item-5",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList0[4]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "730px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList0[4]",
+      "editorMeta": {
+        "name": "Left List Item 5"
+      }
+    },
+    {
+      "id": "right-list-item-1",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList1[0]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "450px",
+        "left": "580px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList1[0]",
+      "editorMeta": {
+        "name": "Right List Item 1"
+      }
+    },
+    {
+      "id": "right-list-item-2",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList1[1]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "520px",
+        "left": "580px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList1[1]",
+      "editorMeta": {
+        "name": "Right List Item 2"
+      }
+    },
+    {
+      "id": "right-list-item-3",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList1[2]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "590px",
+        "left": "580px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList1[2]",
+      "editorMeta": {
+        "name": "Right List Item 3"
+      }
+    },
+    {
+      "id": "right-list-item-4",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList1[3]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "660px",
+        "left": "580px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList1[3]",
+      "editorMeta": {
+        "name": "Right List Item 4"
+      }
+    },
+    {
+      "id": "right-list-item-5",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "fontWeight": "500",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{contentList1[4]}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "730px",
+        "left": "580px",
+        "type": "absolute",
+        "width": "420px",
+        "height": "60px"
+      },
+      "fieldName": "contentList1[4]",
+      "editorMeta": {
+        "name": "Right List Item 5"
+      }
+    },
+    {
+      "id": "cta-button",
+      "type": "svg",
+      "zIndex": 8,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor3}}",
+            "c2": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"400\" height=\"80\" viewBox=\"0 0 400 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><defs><linearGradient id=\"ctaGrad\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"{{c1}}\"/><stop offset=\"100%\" stop-color=\"{{c2}}\"/></linearGradient></defs><rect width=\"400\" height=\"80\" rx=\"40\" fill=\"url(#ctaGrad)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "880px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "80px"
+      },
+      "editorMeta": {
+        "name": "CTA Button BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "cta-text",
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "32px",
+        "textAlign": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "700",
+        "lineHeight": "80px",
+        "letterSpacing": "0.02em"
+      },
+      "zIndex": 9,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "880px",
+        "left": "340px",
+        "type": "absolute",
+        "width": "400px",
+        "height": "80px"
+      },
+      "fieldName": "ctaText",
+      "editorMeta": {
+        "name": "CTA Text"
+      }
+    },
+    {
+      "id": "logo-container",
+      "type": "svg",
+      "zIndex": 10,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c1": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"150\" viewBox=\"0 0 1080 150\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"1080\" height=\"150\" fill=\"{{c1}}\" opacity=\"0.3\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "1200px",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "150px"
+      },
+      "editorMeta": {
+        "name": "Logo Container BG",
+        "locked": true
+      }
+    },
+    {
+      "id": "business-logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 11,
+      "content": {
+        "alt": "Business Logo",
+        "source": "{{businessLogo}}"
+      },
+      "editable": true,
+      "position": {
+        "top": "1280px",
+        "left": "440px",
+        "type": "absolute",
+        "width": "200px",
+        "height": "70px"
+      },
+      "fieldName": "businessLogo",
+      "editorMeta": {
+        "name": "Business Logo"
+      }
+    }
+  ],
+  "packageId": "turismo",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-columns-without-image",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-and-columns-without-image",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "headline",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

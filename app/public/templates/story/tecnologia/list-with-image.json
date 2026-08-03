@@ -1,0 +1,322 @@
+{
+  "props": {
+    "bgColor1": "#0a0a14",
+    "bgColor2": "#1a1a2e",
+    "bgColor3": "#6366f1",
+    "mainText": "ERROS FINANCEIROS",
+    "listItem1": "GASTAR SEM PLANEJAR",
+    "listItem2": "IGNORAR A RESERVA",
+    "listItem3": "NÃO DIVERSIFICAR",
+    "textColor1": "#ffffff",
+    "textColor2": "#a5b4fc",
+    "textColor3": "#6366f1",
+    "fontFamily1": "Inter",
+    "fontFamily2": "Inter"
+  },
+  "layers": [
+    {
+      "id": "background",
+      "size": {
+        "width": 1080,
+        "height": 1920
+      },
+      "type": "rectangle",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "grid-pattern",
+      "size": {
+        "width": 1080,
+        "height": 1920
+      },
+      "type": "rectangle",
+      "styles": {
+        "opacity": 0.8,
+        "backgroundSize": "60px 60px",
+        "backgroundImage": "linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px)"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "image-section",
+      "size": {
+        "width": 1080,
+        "height": 700
+      },
+      "type": "rectangle",
+      "styles": {
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "image-placeholder",
+      "size": {
+        "width": 1080,
+        "height": 700
+      },
+      "type": "image",
+      "styles": {
+        "objectFit": "cover"
+      },
+      "content": {
+        "source": "{{imagePlaceholder}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 350,
+        "width": "900px",
+        "height": "900px"
+      }
+    },
+    {
+      "id": "image-overlay",
+      "size": {
+        "width": 1080,
+        "height": 700
+      },
+      "type": "rectangle",
+      "styles": {
+        "background": "linear-gradient(180deg, rgba(10, 10, 20, 0.3) 0%, rgba(10, 10, 20, 0.95) 100%)"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "business-logo",
+      "size": {
+        "width": 140,
+        "height": 70
+      },
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "content": {
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "x": 470,
+        "y": 1850
+      }
+    },
+    {
+      "id": "main-text",
+      "size": {
+        "width": 900,
+        "height": "auto"
+      },
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "48px",
+        "textAlign": "center",
+        "fontFamily": "{{fontFamily1}}",
+        "fontWeight": "800",
+        "lineHeight": "1.15",
+        "letterSpacing": "2px",
+        "textTransform": "uppercase"
+      },
+      "content": {
+        "text": "{{mainText}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 800
+      }
+    },
+    {
+      "id": "divider",
+      "size": {
+        "width": 250,
+        "height": 4
+      },
+      "type": "rectangle",
+      "styles": {
+        "borderRadius": "2px",
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 900
+      }
+    },
+    {
+      "id": "list-item-1-bg",
+      "size": {
+        "width": 850,
+        "height": 90
+      },
+      "type": "rectangle",
+      "styles": {
+        "border": "1px solid rgba(99, 102, 241, 0.3)",
+        "background": "linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(99, 102, 241, 0.1) 100%)",
+        "borderRadius": "45px"
+      },
+      "position": {
+        "x": 540,
+        "y": 1050
+      }
+    },
+    {
+      "id": "list-item-1-text",
+      "size": {
+        "width": 750,
+        "height": "auto"
+      },
+      "type": "text",
+      "styles": {
+        "color": "{{textColor1}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{fontFamily1}}",
+        "fontWeight": "700",
+        "letterSpacing": "1px",
+        "textTransform": "uppercase"
+      },
+      "content": {
+        "text": "{{listItem1}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 1050
+      }
+    },
+    {
+      "id": "list-item-2-bg",
+      "size": {
+        "width": 850,
+        "height": 90
+      },
+      "type": "rectangle",
+      "styles": {
+        "border": "1px solid rgba(165, 180, 252, 0.3)",
+        "background": "linear-gradient(135deg, rgba(165, 180, 252, 0.25) 0%, rgba(99, 102, 241, 0.15) 100%)",
+        "borderRadius": "45px"
+      },
+      "position": {
+        "x": 540,
+        "y": 1180
+      }
+    },
+    {
+      "id": "list-item-2-text",
+      "size": {
+        "width": 750,
+        "height": "auto"
+      },
+      "type": "text",
+      "styles": {
+        "color": "{{textColor2}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{fontFamily1}}",
+        "fontWeight": "700",
+        "letterSpacing": "1px",
+        "textTransform": "uppercase"
+      },
+      "content": {
+        "text": "{{listItem2}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 1180
+      }
+    },
+    {
+      "id": "list-item-3-bg",
+      "size": {
+        "width": 850,
+        "height": 90
+      },
+      "type": "rectangle",
+      "styles": {
+        "border": "1px solid rgba(99, 102, 241, 0.4)",
+        "background": "linear-gradient(135deg, rgba(99, 102, 241, 0.4) 0%, rgba(99, 102, 241, 0.2) 100%)",
+        "borderRadius": "45px"
+      },
+      "position": {
+        "x": 540,
+        "y": 1310
+      }
+    },
+    {
+      "id": "list-item-3-text",
+      "size": {
+        "width": 750,
+        "height": "auto"
+      },
+      "type": "text",
+      "styles": {
+        "color": "{{textColor3}}",
+        "fontSize": "45px",
+        "textAlign": "center",
+        "fontFamily": "{{fontFamily1}}",
+        "fontWeight": "700",
+        "letterSpacing": "1px",
+        "textTransform": "uppercase"
+      },
+      "content": {
+        "text": "{{listItem3}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 1310
+      }
+    },
+    {
+      "id": "glow-bottom",
+      "size": {
+        "width": 700,
+        "height": 350
+      },
+      "type": "ellipse",
+      "styles": {
+        "filter": "blur(120px)",
+        "opacity": 0.12,
+        "backgroundColor": "{{bgColor3}}"
+      },
+      "position": {
+        "x": 540,
+        "y": 1750
+      }
+    }
+  ],
+  "packageId": "tecnologia",
+  "dimensions": {
+    "width": 1080,
+    "height": 1920
+  },
+  "templateId": "list-with-image",
+  "aspectRatio": "9:16",
+  "templateName": "list-with-image",
+  "templateType": "story",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": true,
+    "textVariables": [
+      "mainText",
+      "listItem1",
+      "listItem2",
+      "listItem3"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "hasImagePlaceholder": true
+  }
+}

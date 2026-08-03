@@ -1,0 +1,251 @@
+{
+  "props": {
+    "ctaText": "Engaging CTA text",
+    "bgColor1": "#000000",
+    "bgColor2": "#ffffff",
+    "bgColor3": "#a856df",
+    "headline": "Headline: lorem ipsum dolor sit amet",
+    "subtitle": "Subtitle placeholder",
+    "textFont1": "Kenony",
+    "textFont2": "Kenony",
+    "textColor1": "#ffffff",
+    "textColor2": "#000000",
+    "textColor3": "#ffffff",
+    "businessLogo": "",
+    "businessName": "Usuário"
+  },
+  "layers": [
+    {
+      "id": "bg",
+      "type": "container",
+      "styles": {
+        "backgroundColor": "{{bgColor1}}"
+      },
+      "zIndex": 0,
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      },
+      "editorMeta": {
+        "name": "Background",
+        "locked": true,
+        "isBackground": true
+      }
+    },
+    {
+      "id": "grid",
+      "type": "svg",
+      "zIndex": 1,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{textColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" xmlns=\"http://www.w3.org/2000/svg\"><defs><pattern id=\"grid\" width=\"50\" height=\"50\" patternUnits=\"userSpaceOnUse\"><path d=\"M 50 0 L 0 0 0 50\" fill=\"none\" stroke=\"{{c}}\" stroke-width=\"0.5\" opacity=\"0.08\"/></pattern></defs><rect width=\"1080\" height=\"1350\" fill=\"url(#grid)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      }
+    },
+    {
+      "id": "blob",
+      "type": "svg",
+      "zIndex": 2,
+      "content": {
+        "embedded": {
+          "colors": {
+            "c": "{{bgColor2}}"
+          },
+          "svgContent": "<svg width=\"1080\" height=\"1350\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"280\" cy=\"400\" rx=\"180\" ry=\"220\" fill=\"{{c}}\" opacity=\"0.08\" transform=\"rotate(-25 280 400)\"/></svg>"
+        }
+      },
+      "position": {
+        "top": "0",
+        "left": "0",
+        "type": "absolute",
+        "width": "1080px",
+        "height": "1350px"
+      }
+    },
+    {
+      "id": "headline",
+      "type": "text",
+      "style": {
+        "color": "{{textColor1}}",
+        "fontSize": "64px",
+        "textAlign": "left",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "400",
+        "lineHeight": "1.1"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{headline}}",
+        "autoFit": true
+      },
+      "position": {
+        "top": "400px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px"
+      }
+    },
+    {
+      "id": "subtitle",
+      "type": "text",
+      "style": {
+        "color": "{{textColor1}}",
+        "opacity": "0.85",
+        "fontSize": "40px",
+        "fontStyle": "italic",
+        "textAlign": "left",
+        "fontFamily": "{{textFont2}}",
+        "lineHeight": "1.4"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{subtitle}}",
+        "autoFit": true
+      },
+      "position": {
+        "top": "750px",
+        "left": "120px",
+        "type": "absolute",
+        "width": "840px"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "text",
+      "style": {
+        "color": "{{textColor2}}",
+        "display": "flex",
+        "fontSize": "32px",
+        "alignItems": "center",
+        "fontFamily": "{{textFont1}}",
+        "fontWeight": "600",
+        "borderRadius": "40px",
+        "justifyContent": "center",
+        "backgroundColor": "{{bgColor2}}"
+      },
+      "zIndex": 4,
+      "content": {
+        "text": "{{ctaText}}"
+      },
+      "position": {
+        "top": "1100px",
+        "left": "680px",
+        "type": "absolute",
+        "width": "320px",
+        "height": "80px"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "image",
+      "styles": {
+        "objectFit": "contain"
+      },
+      "zIndex": 5,
+      "content": {
+        "alt": "Logo",
+        "source": "{{businessLogo}}"
+      },
+      "position": {
+        "top": "1230px",
+        "left": "80px",
+        "type": "absolute",
+        "width": "140px",
+        "height": "80px"
+      }
+    },
+    {
+      "id": "name",
+      "type": "text",
+      "style": {
+        "color": "{{textColor1}}",
+        "opacity": "0.7",
+        "fontSize": "24px",
+        "fontFamily": "{{textFont2}}"
+      },
+      "zIndex": 5,
+      "content": {
+        "text": "{{businessName}}"
+      },
+      "position": {
+        "top": "1245px",
+        "left": "240px",
+        "type": "absolute",
+        "width": "600px"
+      }
+    }
+  ],
+  "metadata": {
+    "name": "Texto Principal e Subtítulo sem Imagem 1 - Psicologia",
+    "tags": [
+      "texto",
+      "subtitulo",
+      "cta",
+      "clássico"
+    ],
+    "category": "Psicologia",
+    "packageId": "pack-universal",
+    "dimensions": {
+      "width": 1080,
+      "height": 1350
+    },
+    "aspectRatio": "4:5",
+    "description": "Headline, subtitle e CTA com estética clássica"
+  },
+  "packageId": "imobiliario",
+  "dimensions": {
+    "width": 1080,
+    "height": 1350
+  },
+  "templateId": "main-text-and-subtitle-without-image-1",
+  "aspectRatio": "4:5",
+  "templateName": "main-text-and-subtitle-without-image-1",
+  "templateType": "post",
+  "schemaVersion": "2.0",
+  "contentRequirements": {
+    "hasList": false,
+    "fontFields": [
+      "textFont1",
+      "textFont2"
+    ],
+    "textFields": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "colorFields": [
+      "bgColor1",
+      "bgColor2",
+      "textColor1",
+      "textColor2"
+    ],
+    "imageFields": [
+      "businessLogo"
+    ],
+    "textVariables": [
+      "headline",
+      "subtitle",
+      "ctaText"
+    ],
+    "businessFields": [
+      "logo"
+    ],
+    "metadataFields": [
+      "businessName"
+    ],
+    "hasImagePlaceholder": true
+  }
+}
