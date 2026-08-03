@@ -2,6 +2,8 @@ import { z } from "npm:zod@3.24.2";
 import type { SupabaseClient } from "npm:@supabase/supabase-js@2";
 import { HttpError } from "./http.ts";
 import {
+  describeReferenceImageWithOpenAI,
+  editImageWithOpenAI,
   generateContentDraftsWithOpenAI,
   generateImageWithOpenAI,
 } from "./openai.ts";
@@ -35,6 +37,8 @@ export const generateAiContentInputSchema = z.object({
   scheduledAt: z.string().datetime({ offset: true }).optional(),
   timezone: z.string().trim().min(3).max(80).default("America/Sao_Paulo"),
   socialAccountId: z.string().uuid().optional(),
+  referenceImagePath: z.string().trim().min(3).max(400).optional(),
+  referenceMode: z.enum(["base", "context"]).optional(),
 }).strict();
 
 export type GenerateAiContentInput = z.infer<typeof generateAiContentInputSchema>;
@@ -265,6 +269,29 @@ export const generateAiContent = async (
     if (input.format === "carousel" && slideTexts?.length !== slides)
       throw new Error("OPENAI_INVALID_CAROUSEL_SLIDES");
 
+    // Foto de referência (opcional): "context" descreve a imagem uma única
+    // vez e injeta a descrição no prompt de cada slide; "base" reusa os
+    // bytes originais como ponto de partida (edição) em cada imagem gerada.
+    let referenceDescription: string | undefined;
+    let referenceBytes: Uint8Array | undefined;
+    if (input.referenceImagePath) {
+      const { data: signedRef, error: signedRefError } = await admin.storage
+        .from("content-uploads")
+        .createSignedUrl(input.referenceImagePath, 60 * 15);
+      if (signedRefError || !signedRef?.signedUrl)
+        throw signedRefError ?? new Error("REFERENCE_IMAGE_NOT_FOUND");
+      if (input.referenceMode === "base") {
+        const refResponse = await fetch(signedRef.signedUrl);
+        if (!refResponse.ok) throw new Error("REFERENCE_IMAGE_FETCH_FAILED");
+        referenceBytes = new Uint8Array(await refResponse.arrayBuffer());
+      } else {
+        referenceDescription = await describeReferenceImageWithOpenAI(
+          signedRef.signedUrl,
+          userId,
+        );
+      }
+    }
+
     let imageModel: string | undefined;
     if (input.format !== "caption") {
       const imageSubjects = input.format === "carousel"
@@ -272,24 +299,36 @@ export const generateAiContent = async (
         : [title ?? input.topic];
       const textOverlayFormats = new Set(["post", "story", "carousel"]);
       for (let index = 0; index < imageSubjects.length; index += 1) {
-        const generatedImage = await generateImageWithOpenAI({
-          userId,
-          vertical: ["story", "reel", "video", "carousel"].includes(input.format),
-          textOverlay: textOverlayFormats.has(input.format)
-            ? imageSubjects[index]
-            : undefined,
-          prompt: JSON.stringify({
-            brand: brand ?? {},
-            format: input.format,
-            topic: input.topic,
-            title,
-            visualSubject: imageSubjects[index],
-            slide: index + 1,
-            slides: imageSubjects.length,
-            style: input.style,
-            selectedTemplate,
-          }),
+        const imagePrompt = JSON.stringify({
+          brand: brand ?? {},
+          format: input.format,
+          topic: input.topic,
+          title,
+          visualSubject: imageSubjects[index],
+          slide: index + 1,
+          slides: imageSubjects.length,
+          style: input.style,
+          selectedTemplate,
+          referenceDescription,
         });
+        const generatedImage = referenceBytes
+          ? await editImageWithOpenAI({
+              userId,
+              imageBytes: referenceBytes,
+              vertical: ["story", "reel", "video", "carousel"].includes(input.format),
+              textOverlay: textOverlayFormats.has(input.format)
+                ? imageSubjects[index]
+                : undefined,
+              prompt: imagePrompt,
+            })
+          : await generateImageWithOpenAI({
+              userId,
+              vertical: ["story", "reel", "video", "carousel"].includes(input.format),
+              textOverlay: textOverlayFormats.has(input.format)
+                ? imageSubjects[index]
+                : undefined,
+              prompt: imagePrompt,
+            });
         imageModel = generatedImage.model;
         const objectPath = `${organizationId}/${userId}/ai/${generationId}/${String(index + 1).padStart(2, "0")}.png`;
         // upsert: true — um retry após reclaim de "processing" travado reusa

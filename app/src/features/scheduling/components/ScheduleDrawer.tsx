@@ -128,6 +128,8 @@ export function ScheduleDrawer({
         cta: content.cta,
         slideTexts: content.slideTexts,
         reelScript: content.reelScript,
+        referenceImagePath: content.referenceImagePath,
+        referenceMode: content.referenceMode,
       }),
     ).unwrap();
     navigate(`/planning/${result.planId}`);

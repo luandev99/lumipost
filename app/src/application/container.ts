@@ -968,6 +968,8 @@ export class ApplicationContainer {
       cta?: string;
       slideTexts?: string[];
       reelScript?: Content["reelScript"];
+      referenceImagePath?: string;
+      referenceMode?: "base" | "context";
     },
   ) {
     return this.planner.createPendingWeeklyPlan({
@@ -991,6 +993,8 @@ export class ApplicationContainer {
             slideTexts: input.slideTexts,
             reelScript: input.reelScript,
             socialAccountId: input.socialAccountId,
+            referenceImagePath: input.referenceImagePath,
+            referenceMode: input.referenceMode,
           },
         },
       ],

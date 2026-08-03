@@ -17,6 +17,7 @@ import {
 import {
   aiGenerationActions,
   previewAiContent,
+  uploadMedia,
 } from "../../../presentation/store/store";
 import {
   Badge,
@@ -98,6 +99,35 @@ export function AiContentWizard({
   const [style, setStyle] = useState("Profissional");
   const [instructions, setInstructions] = useState("");
   const [displayGenerating, setDisplayGenerating] = useState(false);
+  const [referenceImagePath, setReferenceImagePath] = useState<string>();
+  const [referenceMode, setReferenceMode] = useState<"base" | "context">();
+  const [referenceFileName, setReferenceFileName] = useState<string>();
+  const [uploadingReference, setUploadingReference] = useState(false);
+  const [referenceError, setReferenceError] = useState("");
+
+  const pickReferenceImage = async (file: File) => {
+    setReferenceError("");
+    setUploadingReference(true);
+    try {
+      const [uploaded] = await dispatch(uploadMedia([file])).unwrap();
+      setReferenceImagePath(uploaded.replace(/^content-uploads\//, ""));
+      setReferenceFileName(file.name);
+      setReferenceMode("context");
+    } catch (caught) {
+      setReferenceError(
+        caught instanceof Error
+          ? caught.message
+          : "Não foi possível enviar a foto de referência.",
+      );
+    } finally {
+      setUploadingReference(false);
+    }
+  };
+  const removeReferenceImage = () => {
+    setReferenceImagePath(undefined);
+    setReferenceFileName(undefined);
+    setReferenceMode(undefined);
+  };
 
   const effectiveObjective =
     objective === "Outro objetivo" ? customObjective : objective;
@@ -149,6 +179,8 @@ export function AiContentWizard({
       slideTexts: draft.slideTexts,
       reelScript: draft.reelScript,
       creditCost: draft.creditCost,
+      referenceImagePath,
+      referenceMode,
     });
 
   return (
@@ -274,6 +306,67 @@ export function AiContentWizard({
                   value={instructions}
                   onChange={(event) => setInstructions(event.target.value)}
                 />
+              </div>
+              <div className="mt-5">
+                <p className="mb-2 text-sm font-semibold">
+                  Foto de referência (opcional)
+                </p>
+                {!referenceImagePath ? (
+                  <label className="surface-subtle flex min-h-11 cursor-pointer items-center justify-center rounded-xl border border-dashed border-app-border px-3 text-sm font-semibold text-app-muted hover:border-app-primary hover:text-app-primary">
+                    {uploadingReference ? "Enviando…" : "Enviar 1 foto"}
+                    <input
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      disabled={uploadingReference}
+                      onChange={(event) => {
+                        const file = event.target.files?.[0];
+                        if (file) void pickReferenceImage(file);
+                        event.target.value = "";
+                      }}
+                    />
+                  </label>
+                ) : (
+                  <div className="surface-subtle flex items-center justify-between rounded-xl border border-app-border p-3">
+                    <span className="min-w-0 truncate text-sm font-semibold">
+                      {referenceFileName}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={removeReferenceImage}
+                      className="text-muted text-xs font-bold uppercase hover:text-app-primary"
+                    >
+                      Remover
+                    </button>
+                  </div>
+                )}
+                {referenceError && (
+                  <p className="mt-2 text-xs text-red-500">{referenceError}</p>
+                )}
+                {referenceImagePath && (
+                  <div className="mt-3 flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setReferenceMode("base")}
+                      className={`flex-1 rounded-xl border px-3 py-2.5 text-left text-xs font-semibold ${referenceMode === "base" ? "border-app-primary bg-app-soft text-app-primary" : "border-app-border bg-app-surface"}`}
+                    >
+                      Usar como base visual
+                      <span className="text-muted mt-1 block font-normal">
+                        A IA edita em cima desta foto.
+                      </span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setReferenceMode("context")}
+                      className={`flex-1 rounded-xl border px-3 py-2.5 text-left text-xs font-semibold ${referenceMode === "context" ? "border-app-primary bg-app-soft text-app-primary" : "border-app-border bg-app-surface"}`}
+                    >
+                      Usar só como referência
+                      <span className="text-muted mt-1 block font-normal">
+                        A IA cria uma imagem nova inspirada nela.
+                      </span>
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           )}

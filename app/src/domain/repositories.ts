@@ -107,6 +107,8 @@ export interface PlannerRepository {
         slideTexts?: string[];
         reelScript?: Content["reelScript"];
         socialAccountId?: string;
+        referenceImagePath?: string;
+        referenceMode?: "base" | "context";
       };
     }>;
   }): Promise<{ planId: string; slotIds: string[] }>;

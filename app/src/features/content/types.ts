@@ -22,6 +22,8 @@ export interface PreparedContent {
   firstComment?: string
   collaborators?: string[]
   taggedPeople?: string[]
+  referenceImagePath?: string
+  referenceMode?: 'base' | 'context'
 }
 
 export function contentToPrepared(content: Content, duplicateBeforeSchedule = true): PreparedContent {
