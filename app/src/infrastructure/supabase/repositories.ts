@@ -69,6 +69,16 @@ const currentAuthUser = async () => {
   return data.user;
 };
 
+const withSignedLogo = async (user: User): Promise<User> => {
+  const path = user.brand?.logoUrl;
+  if (!path || /^https?:\/\//.test(path)) return user;
+  const { data } = await getSupabaseClient()
+    .storage.from("brand-assets")
+    .createSignedUrl(path, 60 * 60);
+  if (!data?.signedUrl) return user;
+  return { ...user, brand: { ...user.brand!, logoUrl: data.signedUrl } };
+};
+
 export class SupabaseAuthRepository implements AuthRepository {
   async login(email: string, password: string): Promise<User> {
     const client = getSupabaseClient();
@@ -80,7 +90,7 @@ export class SupabaseAuthRepository implements AuthRepository {
     const { data: workspace, error: workspaceError } =
       await client.rpc("get_my_workspace");
     if (workspaceError) throw new Error(workspaceError.message);
-    const user = mapWorkspaceUser(data.user, workspace);
+    const user = await withSignedLogo(mapWorkspaceUser(data.user, workspace));
     if (user.status !== "active") {
       await client.auth.signOut();
       throw new Error("Esta conta está suspensa.");
@@ -108,7 +118,7 @@ export class SupabaseAuthRepository implements AuthRepository {
     const { data: workspace, error: workspaceError } =
       await client.rpc("get_my_workspace");
     if (workspaceError) throw new Error(workspaceError.message);
-    return mapWorkspaceUser(data.user, workspace);
+    return withSignedLogo(mapWorkspaceUser(data.user, workspace));
   }
 
   async loginWithGoogle(redirectTo: string): Promise<void> {
@@ -132,7 +142,7 @@ export class SupabaseAuthRepository implements AuthRepository {
     const { data: workspace, error: workspaceError } =
       await client.rpc("get_my_workspace");
     if (workspaceError || !workspace) return undefined;
-    const user = mapWorkspaceUser(data.user, workspace);
+    const user = await withSignedLogo(mapWorkspaceUser(data.user, workspace));
     if (user.status !== "active") {
       await client.auth.signOut();
       return undefined;

@@ -134,6 +134,26 @@ Deno.serve(async (request) => {
     let status: "review" | "applied" = "review";
 
     if (parsed.data.applyAutomatically) {
+      let logoPath: string | undefined;
+      if (profile.profile_picture_url) {
+        try {
+          const avatarResponse = await fetch(profile.profile_picture_url);
+          if (avatarResponse.ok) {
+            const contentType =
+              avatarResponse.headers.get("content-type") ?? "image/jpeg";
+            const extension = contentType.includes("png") ? "png" : "jpg";
+            const path = `${brand.organization_id}/logo/instagram-avatar.${extension}`;
+            const bytes = new Uint8Array(await avatarResponse.arrayBuffer());
+            const { error: uploadError } = await admin.storage
+              .from("brand-assets")
+              .upload(path, bytes, { contentType, upsert: true });
+            if (!uploadError) logoPath = path;
+          }
+        } catch {
+          // Best-effort: a logo não é essencial para aplicar a identidade.
+        }
+      }
+
       const { error: brandError } = await admin
         .from("brands")
         .update({
@@ -150,6 +170,7 @@ Deno.serve(async (request) => {
           body_font: proposal.bodyFont,
           instagram_handle: profile.username,
           instagram_connected: true,
+          ...(logoPath ? { logo_path: logoPath } : {}),
         })
         .eq("id", brand.id)
         .eq("organization_id", brand.organization_id);
