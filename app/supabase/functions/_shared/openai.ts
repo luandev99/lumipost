@@ -376,6 +376,16 @@ export const generateImageWithOpenAI = async (input: {
   const instruction = input.textOverlay
     ? `Crie uma composição editorial completa, pronta para publicação. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal da peça): "${input.textOverlay.slice(0, 280)}". Use boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
     : `Crie uma composição editorial original, sem logotipos de terceiros, sem marcas d'água e sem texto legível.`;
+  const safeUser = await privacySafeIdentifier(input.userId);
+  const body = JSON.stringify({
+    model,
+    prompt: `${input.prompt.slice(0, 3000)}\n${instruction}`,
+    n: 1,
+    size: input.vertical ? "1024x1536" : "1024x1024",
+    quality: "low",
+    output_format: "png",
+    user: safeUser,
+  });
   const response = await fetchImageWithSingleRetry(() =>
     fetch("https://api.openai.com/v1/images/generations", {
       method: "POST",
@@ -384,15 +394,7 @@ export const generateImageWithOpenAI = async (input: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify({
-        model,
-        prompt: `${input.prompt.slice(0, 3000)}\n${instruction}`,
-        n: 1,
-        size: input.vertical ? "1024x1536" : "1024x1024",
-        quality: "low",
-        output_format: "png",
-        user: await privacySafeIdentifier(input.userId),
-      }),
+      body,
     })
   );
   const payload = (await response.json().catch(() => ({}))) as {
