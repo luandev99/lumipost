@@ -39,6 +39,11 @@ type Job = {
   provider_response: Record<string, unknown> | null;
 };
 
+// Chamado pelo cron de publicação recorrentemente — criado uma única vez por
+// isolate para reaproveitar a mesma conexão entre execuções, em vez de abrir
+// uma nova a cada tick.
+const admin = createAdminClient();
+
 Deno.serve(async (request) => {
   if (request.method !== "POST")
     return response({ error: "METHOD_NOT_ALLOWED" }, 405);
@@ -48,7 +53,6 @@ Deno.serve(async (request) => {
   const parsed = inputSchema.safeParse(await request.json().catch(() => ({})));
   if (!parsed.success) return response({ error: "INVALID_INPUT" }, 422);
 
-  const admin = createAdminClient();
   const { data: claimed, error: claimError } = await admin.rpc(
     "claim_due_publishing_jobs_service",
     {

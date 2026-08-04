@@ -29,6 +29,11 @@ type WeeklySlot = {
   draft: Record<string, unknown>;
 };
 
+// Este worker é chamado pelo pg_cron a cada minuto. Criado uma única vez por
+// isolate (fora do handler), o cliente admin reaproveita a mesma conexão
+// HTTP/keep-alive entre execuções, em vez de abrir uma nova a cada tick.
+const admin = createAdminClient();
+
 Deno.serve(async (request) => {
   if (request.method !== "POST")
     return response({ error: "METHOD_NOT_ALLOWED" }, 405);
@@ -38,7 +43,6 @@ Deno.serve(async (request) => {
   const parsed = inputSchema.safeParse(await request.json().catch(() => ({})));
   if (!parsed.success) return response({ error: "INVALID_INPUT" }, 422);
 
-  const admin = createAdminClient();
   const { data: claimed, error: claimError } = await admin.rpc(
     "claim_due_weekly_slots_service",
     { batch_size: parsed.data.batchSize },

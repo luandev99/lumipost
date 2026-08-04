@@ -16,6 +16,10 @@ type CatalogItem = {
 const safe = (value: string) =>
   value.toLowerCase().replace(/[^a-z0-9._-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 180);
 
+// Reaproveita o mesmo cliente entre execuções do worker em vez de recriar a
+// cada chamada.
+const admin = createAdminClient();
+
 Deno.serve(async (request) => {
   if (request.method !== "POST") return new Response("Method Not Allowed", { status: 405 });
   const provided = request.headers.get("x-worker-secret") ?? "";
@@ -30,7 +34,6 @@ Deno.serve(async (request) => {
     return Response.json({ error: "CATALOG_FETCH_FAILED" }, { status: 502 });
   const catalog = await catalogResponse.json() as CatalogItem[];
   const batch = catalog.slice(offset, offset + limit);
-  const admin = createAdminClient();
   const results: Array<{ id: string; status: "synced" | "failed"; error?: string }> = [];
   // Processa grupos pequenos em paralelo. Isso mantém a função abaixo do
   // timeout sem abrir centenas de conexões simultâneas ao Storage/PostgREST.
