@@ -3,6 +3,7 @@ import { CalendarDays, GalleryHorizontalEnd, Image, Sparkles, Video } from 'luci
 import { useLocation, useNavigate } from 'react-router-dom'
 import type { ContentFormat, ContentSource } from '../../../domain/models'
 import { formatLabels } from '../../../domain/models'
+import { AI_VIDEO_GENERATION_ENABLED } from '../../../domain/featureFlags'
 import { AddContentModal } from '../../calendar/components/AddContentModal'
 import { Button, Card, PageHeader } from '../../../presentation/ui'
 import { ContentSourceSelector } from '../components/ContentSourceSelector'
@@ -13,7 +14,7 @@ const formats: { value: ContentFormat; icon: typeof Image; description: string }
   { value: 'post', icon: Image, description: 'Imagem única para o feed' },
   { value: 'carousel', icon: GalleryHorizontalEnd, description: 'De 2 a 10 slides editáveis' },
   { value: 'story', icon: Sparkles, description: 'Conteúdo vertical e rápido' },
-  { value: 'reel', icon: Video, description: 'Roteiro, capa e vídeo' },
+  ...(AI_VIDEO_GENERATION_ENABLED ? [{ value: 'reel' as const, icon: Video, description: 'Roteiro, capa e vídeo' }] : []),
 ]
 
 export function ContentCreatePage() {

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight, ImagePlus } from "lucide-react";
 import type { ContentFormat } from "../../../domain/models";
 import { formatLabels } from "../../../domain/models";
+import { AI_VIDEO_GENERATION_ENABLED } from "../../../domain/featureFlags";
 import { Button, Input, Select, Textarea } from "../../../presentation/ui";
 import { InstagramPreview } from "../components/InstagramPreview";
 import { useAppSelector } from "../../../presentation/store/hooks";
@@ -13,8 +14,7 @@ const formats: ContentFormat[] = [
   "post",
   "carousel",
   "story",
-  "reel",
-  "video",
+  ...(AI_VIDEO_GENERATION_ENABLED ? (["reel", "video"] as const) : []),
   "caption",
 ];
 
