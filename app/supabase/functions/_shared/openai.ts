@@ -378,6 +378,15 @@ const decodeBase64Image = (encoded: string): Uint8Array => {
   return bytes;
 };
 
+const encodeBase64Image = (bytes: Uint8Array): string => {
+  let binary = "";
+  const chunkSize = 0x8000;
+  for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(offset, offset + chunkSize));
+  }
+  return btoa(binary);
+};
+
 // A API da OpenAI devolve 429 tanto para limite de taxa quanto para pico
 // momentâneo de fila de imagens; uma única nova tentativa após uma pequena
 // espera resolve a maioria dos casos sem precisar de retry manual do usuário.
@@ -395,11 +404,20 @@ export const generateImageWithOpenAI = async (input: {
   prompt: string;
   textOverlay?: string;
   vertical?: boolean;
+  // Descrição textual (não a imagem em si) do sistema gráfico do slide
+  // anterior de um carrossel — paleta, tipografia, painéis, tratamento de
+  // fundo. Gerar do zero a partir de uma descrição, em vez de editar os
+  // pixels do slide anterior, é o que permite uma foto/cena nova por slide
+  // sem herdar o mesmo fundo repetido.
+  designSystemDescription?: string;
 }): Promise<{ bytes: Uint8Array; model: string; usage: OpenAiUsage }> => {
   const model = Deno.env.get("OPENAI_IMAGE_MODEL")?.trim() || "gpt-image-2";
+  const designSystemNote = input.designSystemDescription
+    ? ` Replique fielmente o sistema visual a seguir, usado nos outros slides deste mesmo carrossel, para manter a mesma identidade gráfica: ${input.designSystemDescription} Use uma cena, foto ou ilustração NOVA e diferente das demais — mantenha apenas a linguagem visual (paleta, tipografia, painéis, tratamento gráfico de fundo), nunca repita a mesma foto de fundo dos outros slides.`
+    : "";
   const instruction = input.textOverlay
-    ? `Crie uma composição editorial completa, pronta para publicação. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal da peça): "${input.textOverlay.slice(0, 280)}". Use boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
-    : `Crie uma composição editorial original, sem logotipos de terceiros, sem marcas d'água e sem texto legível.`;
+    ? `Crie uma composição editorial completa, pronta para publicação. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal da peça): "${input.textOverlay.slice(0, 280)}". Use boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.${designSystemNote}`
+    : `Crie uma composição editorial original, sem logotipos de terceiros, sem marcas d'água e sem texto legível.${designSystemNote}`;
   const safeUser = await privacySafeIdentifier(input.userId);
   const body = JSON.stringify({
     model,
@@ -440,24 +458,11 @@ export const editImageWithOpenAI = async (input: {
   prompt: string;
   textOverlay?: string;
   vertical?: boolean;
-  // "carousel-continuity": a imagem enviada é o slide anterior do mesmo
-  // carrossel, não uma foto do usuário. O objetivo deixa de ser preservar o
-  // assunto e passa a ser repetir o sistema visual (paleta, tipografia,
-  // composição) trocando só o conteúdo — como um designer faria a página
-  // seguinte de um mesmo material.
-  mode?: "reference" | "carousel-continuity";
 }): Promise<{ bytes: Uint8Array; model: string; usage: OpenAiUsage }> => {
   const model = Deno.env.get("OPENAI_IMAGE_MODEL")?.trim() || "gpt-image-2";
-  const continuity = input.mode === "carousel-continuity";
-  const instruction = continuity
-    ? `A imagem enviada é o slide anterior deste mesmo carrossel. Crie o PRÓXIMO slide reproduzindo fielmente o mesmo sistema visual: mesma paleta, mesmo estilo e peso tipográfico, mesma malha de composição, mesmas margens e o mesmo tratamento gráfico de fundo e elementos. Não copie o conteúdo do slide anterior — troque a imagem/ilustração e o texto.${
-        input.textOverlay
-          ? ` Inclua o texto a seguir, exatamente como escrito, como tipografia principal do slide: "${input.textOverlay.slice(0, 280)}".`
-          : ""
-      } Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água. O resultado precisa parecer parte da mesma peça, feita pelo mesmo designer.`
-    : input.textOverlay
-      ? `Use a foto enviada como base visual desta peça. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}". Mantenha o assunto original da foto reconhecível, aplique boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
-      : `Use a foto enviada como base visual desta peça, mantendo o assunto original reconhecível. Sem logotipos de terceiros, sem marcas d'água e sem texto legível.`;
+  const instruction = input.textOverlay
+    ? `Use a foto enviada como base visual desta peça. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}". Mantenha o assunto original da foto reconhecível, aplique boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
+    : `Use a foto enviada como base visual desta peça, mantendo o assunto original reconhecível. Sem logotipos de terceiros, sem marcas d'água e sem texto legível.`;
   const form = new FormData();
   form.set("model", model);
   form.set("prompt", `${input.prompt.slice(0, 3000)}\n${instruction}`);
@@ -530,6 +535,54 @@ export const describeReferenceImageWithOpenAI = async (
   const text = outputText(payload);
   if (!text) throw new Error("OPENAI_EMPTY_OUTPUT");
   return text.slice(0, 600);
+};
+
+// Descreve só o SISTEMA GRÁFICO de um slide já gerado (paleta, tipografia,
+// painéis, tratamento de fundo) — nunca o assunto/foto — para que o próximo
+// slide do carrossel seja gerado do zero (texto-para-imagem) replicando essa
+// linguagem visual com uma cena nova, em vez de editar os pixels do slide
+// anterior (o que fazia o fundo se repetir quase sem mudança).
+export const describeDesignSystemWithOpenAI = async (
+  imageBytes: Uint8Array,
+  userId: string,
+): Promise<string> => {
+  const model = Deno.env.get("OPENAI_IDENTITY_MODEL")?.trim() || "gpt-5.6-terra";
+  const dataUrl = `data:image/png;base64,${encodeBase64Image(imageBytes)}`;
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${required("OPENAI_API_KEY")}`,
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      model,
+      store: false,
+      safety_identifier: await privacySafeIdentifier(userId),
+      reasoning: { effort: "low" },
+      input: [
+        {
+          role: "system",
+          content: [{
+            type: "input_text",
+            text: "Descreva em até 4 frases, em português do Brasil, apenas o SISTEMA VISUAL/gráfico desta imagem — paleta de cores (nomes ou tons aproximados), estilo e peso da tipografia usada, formato e posição de painéis/faixas/molduras, tratamento de fundo (textura, gradiente, iluminação) e estilo geral de composição. Não descreva o assunto, a foto ou o texto em si: só os elementos de design reutilizáveis por um designer para criar a próxima página do mesmo material, com uma foto diferente.",
+          }],
+        },
+        {
+          role: "user",
+          content: [{ type: "input_image", image_url: dataUrl, detail: "low" }],
+        },
+      ],
+    }),
+  });
+  const payload = (await response.json().catch(() => ({}))) as Record<
+    string,
+    unknown
+  >;
+  if (!response.ok) throw new Error(`OPENAI_API_ERROR:${response.status}`);
+  const text = outputText(payload);
+  if (!text) throw new Error("OPENAI_EMPTY_OUTPUT");
+  return text.slice(0, 700);
 };
 
 export const analyzeBrandWithOpenAI = async (

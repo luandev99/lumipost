@@ -2,6 +2,7 @@ import { z } from "npm:zod@3.24.2";
 import type { SupabaseClient } from "npm:@supabase/supabase-js@2";
 import { HttpError } from "./http.ts";
 import {
+  describeDesignSystemWithOpenAI,
   describeReferenceImageWithOpenAI,
   editImageWithOpenAI,
   generateContentDraftsWithOpenAI,
@@ -314,7 +315,13 @@ export const generateAiContent = async (
     }
 
     let imageModel: string | undefined;
-    let previousSlideBytes: Uint8Array | undefined;
+    // Continuidade de design do carrossel: em vez de editar os pixels do
+    // slide anterior (o que fazia o modelo preservar quase o fundo inteiro e
+    // parecer a MESMA foto repetida), o slide 1 é descrito só no seu sistema
+    // gráfico — paleta, tipografia, painéis, tratamento de fundo — e essa
+    // descrição guia a geração dos slides seguintes do zero (texto-para-
+    // imagem), cada um com uma cena/foto nova mas a mesma linguagem visual.
+    let designSystemDescription: string | undefined;
     if (input.format !== "caption") {
       const imageSubjects = input.format === "carousel"
         ? slideTexts ?? []
@@ -333,40 +340,41 @@ export const generateAiContent = async (
           selectedTemplate,
           referenceDescription,
         });
-        // A partir do segundo slide do carrossel, o slide anterior vira a
-        // base: o modelo repete o sistema visual em vez de inventar um design
-        // novo por slide, que é o que fazia o carrossel parecer três peças
-        // soltas. A foto de referência do usuário, quando existe, entra só no
-        // primeiro slide e se propaga naturalmente pelos seguintes.
-        const chainFromPreviousSlide =
-          input.format === "carousel" && index > 0 && previousSlideBytes;
-        const baseBytes = chainFromPreviousSlide
-          ? previousSlideBytes
-          : referenceBytes;
-        const generatedImage = baseBytes
+        // A foto de referência do usuário (modo "base"), quando existe, é a
+        // base visual de TODOS os slides — é o produto/pessoa real dele, não
+        // um sistema de design a copiar. Sem ela, cada slide é gerado do
+        // zero; do segundo em diante, com a descrição do sistema gráfico do
+        // primeiro slide para manter a mesma identidade.
+        const textOverlay = textOverlayFormats.has(input.format)
+          ? imageSubjects[index]
+          : undefined;
+        const vertical = ["story", "reel", "video", "carousel"].includes(input.format);
+        const generatedImage = referenceBytes
           ? await editImageWithOpenAI({
               userId,
-              imageBytes: baseBytes,
-              mode: chainFromPreviousSlide
-                ? "carousel-continuity"
-                : "reference",
-              vertical: ["story", "reel", "video", "carousel"].includes(input.format),
-              textOverlay: textOverlayFormats.has(input.format)
-                ? imageSubjects[index]
-                : undefined,
+              imageBytes: referenceBytes,
+              vertical,
+              textOverlay,
               prompt: imagePrompt,
             })
           : await generateImageWithOpenAI({
               userId,
-              vertical: ["story", "reel", "video", "carousel"].includes(input.format),
-              textOverlay: textOverlayFormats.has(input.format)
-                ? imageSubjects[index]
-                : undefined,
+              vertical,
+              textOverlay,
               prompt: imagePrompt,
+              designSystemDescription:
+                input.format === "carousel" && index > 0
+                  ? designSystemDescription
+                  : undefined,
             });
         imageModel = generatedImage.model;
         addUsage(generatedImage.usage, generatedImage.model);
-        previousSlideBytes = generatedImage.bytes;
+        if (input.format === "carousel" && index === 0 && !referenceBytes) {
+          designSystemDescription = await describeDesignSystemWithOpenAI(
+            generatedImage.bytes,
+            userId,
+          );
+        }
         const objectPath = `${organizationId}/${userId}/ai/${generationId}/${String(index + 1).padStart(2, "0")}.png`;
         // upsert: true — um retry após reclaim de "processing" travado reusa
         // o mesmo generationId (mesmo path). Sem isso, uma imagem já
