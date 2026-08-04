@@ -217,6 +217,7 @@ export const createSingleContentPlan = createAsyncThunk(
     reelScript?: Content["reelScript"];
     referenceImagePath?: string;
     referenceMode?: "base" | "context";
+    useBrandLogo?: boolean;
   }) => appContainer.createSingleContentPlan(input.userId, input),
 );
 export const fetchWeeklyPlanProgress = createAsyncThunk(

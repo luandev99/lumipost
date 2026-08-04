@@ -458,11 +458,22 @@ export const editImageWithOpenAI = async (input: {
   prompt: string;
   textOverlay?: string;
   vertical?: boolean;
+  // "logo": a imagem enviada é o logotipo da própria marca do usuário, não
+  // uma foto de produto/referência — o objetivo muda de "manter o assunto
+  // reconhecível" para "incluir esta marca de forma sutil, sem distorcer".
+  purpose?: "reference" | "logo";
 }): Promise<{ bytes: Uint8Array; model: string; usage: OpenAiUsage }> => {
   const model = Deno.env.get("OPENAI_IMAGE_MODEL")?.trim() || "gpt-image-2";
-  const instruction = input.textOverlay
-    ? `Use a foto enviada como base visual desta peça. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}". Mantenha o assunto original da foto reconhecível, aplique boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
-    : `Use a foto enviada como base visual desta peça, mantendo o assunto original reconhecível. Sem logotipos de terceiros, sem marcas d'água e sem texto legível.`;
+  const isLogo = input.purpose === "logo";
+  const instruction = isLogo
+    ? `A imagem enviada é o logotipo da marca do usuário. Crie a peça do zero em torno do tema pedido e inclua esse logotipo de forma sutil e profissional (por exemplo, em um canto, como assinatura visual), sem distorcer suas cores, proporções ou formato original — não o torne o elemento principal da composição.${
+        input.textOverlay
+          ? ` Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}".`
+          : ""
+      } Não adicione nenhum outro logotipo, sem marcas d'água.`
+    : input.textOverlay
+      ? `Use a foto enviada como base visual desta peça. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}". Mantenha o assunto original da foto reconhecível, aplique boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
+      : `Use a foto enviada como base visual desta peça, mantendo o assunto original reconhecível. Sem logotipos de terceiros, sem marcas d'água e sem texto legível.`;
   const form = new FormData();
   form.set("model", model);
   form.set("prompt", `${input.prompt.slice(0, 3000)}\n${instruction}`);

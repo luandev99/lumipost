@@ -130,6 +130,7 @@ export function ScheduleDrawer({
         reelScript: content.reelScript,
         referenceImagePath: content.referenceImagePath,
         referenceMode: content.referenceMode,
+        useBrandLogo: content.useBrandLogo,
       }),
     ).unwrap();
     navigate(`/planning/${result.planId}`);
@@ -197,8 +198,10 @@ export function ScheduleDrawer({
       setError(INSTAGRAM_REQUIRED_MESSAGE);
       return;
     }
-    if (new Date(scheduledAt) <= new Date()) {
-      setError("Escolha uma data e um horário futuros.");
+    if (new Date(scheduledAt).getTime() < Date.now() + 60 * 60 * 1000) {
+      setError(
+        "Escolha um horário com pelo menos 1 hora de antecedência a partir de agora.",
+      );
       return;
     }
     if (insufficientCredits) {
@@ -299,10 +302,14 @@ export function ScheduleDrawer({
                 <Input
                   label="Data e horário"
                   type="datetime-local"
-                  min={formatISO(new Date()).slice(0, 16)}
+                  min={formatISO(new Date(Date.now() + 60 * 60 * 1000)).slice(0, 16)}
                   value={scheduledAt}
                   onChange={(event) => setScheduledAt(event.target.value)}
                 />
+                <p className="text-muted -mt-2 text-[11px]">
+                  Agendamento manual só pode ser marcado a partir de 1 hora a
+                  partir de agora.
+                </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Select
                     label="Fuso horário"

@@ -28,6 +28,7 @@ import {
   Badge,
   Button,
   Card,
+  ConfirmDialog,
   Input,
   Notice,
   PageHeader,
@@ -83,6 +84,9 @@ export function WeeklyPlanningPage() {
   const [notice, setNotice] = useState("");
   const [error, setError] = useState("");
   const [confirming, setConfirming] = useState(false);
+  const [pendingAction, setPendingAction] = useState<
+    "plan" | "contents" | null
+  >(null);
   const monday = useMemo(() => new Date(`${weekStart}T12:00:00`), [weekStart]);
   // Antes da IA sugerir a semana ainda não dá pra saber o mix exato de
   // formatos por dia — estima usando o mesmo custo por formato do backend
@@ -503,7 +507,7 @@ export function WeeklyPlanningPage() {
                     generatingPlan ||
                     confirming
                   }
-                  onClick={() => void generatePlan()}
+                  onClick={() => setPendingAction("plan")}
                 >
                   <PencilLine size={17} />
                   Gerar apenas planejamento
@@ -518,7 +522,7 @@ export function WeeklyPlanningPage() {
                     generatingPlan ||
                     confirming
                   }
-                  onClick={() => void generateContents()}
+                  onClick={() => setPendingAction("contents")}
                 >
                   <WandSparkles size={17} />
                   Gerar planejamento e conteúdos
@@ -574,6 +578,27 @@ export function WeeklyPlanningPage() {
           </Button>
         </div>
       )}
+      <ConfirmDialog
+        open={pendingAction !== null}
+        title={
+          pendingAction === "contents"
+            ? "Gerar planejamento e conteúdos?"
+            : "Gerar planejamento?"
+        }
+        description={
+          pendingAction === "contents"
+            ? `A IA vai propor ${totalItems} conteúdo(s) para ${selectedDays.length} dia(s) selecionado(s) e já gerar as mídias, consumindo até ~${totalCost} créditos do seu saldo (${credits} disponíveis). Você ainda revisa cada item antes da publicação.`
+            : `A IA vai propor ${totalItems} conteúdo(s) para ${selectedDays.length} dia(s) selecionado(s). Isso ainda não gera mídia nem consome créditos — só o planejamento fica pronto para revisão.`
+        }
+        confirmLabel={pendingAction === "contents" ? "Gerar conteúdos" : "Gerar planejamento"}
+        onCancel={() => setPendingAction(null)}
+        onConfirm={() => {
+          const action = pendingAction;
+          setPendingAction(null);
+          if (action === "contents") void generateContents();
+          else if (action === "plan") void generatePlan();
+        }}
+      />
     </div>
   );
 }

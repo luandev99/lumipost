@@ -970,6 +970,7 @@ export class ApplicationContainer {
       reelScript?: Content["reelScript"];
       referenceImagePath?: string;
       referenceMode?: "base" | "context";
+      useBrandLogo?: boolean;
     },
   ) {
     return this.planner.createPendingWeeklyPlan({
@@ -995,6 +996,7 @@ export class ApplicationContainer {
             socialAccountId: input.socialAccountId,
             referenceImagePath: input.referenceImagePath,
             referenceMode: input.referenceMode,
+            useBrandLogo: input.useBrandLogo,
           },
         },
       ],

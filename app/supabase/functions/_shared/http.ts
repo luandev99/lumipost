@@ -63,11 +63,11 @@ export const errorResponse = (
       )
     : message.includes("CONTENT_NOT_FOUND")
       ? new HttpError(404, "CONTENT_NOT_FOUND", "Conteúdo não encontrado.")
-      : message.includes("SCHEDULE_MUST_BE_FUTURE")
+      : message.includes("SCHEDULE_MUST_BE_AT_LEAST_1H_AHEAD")
         ? new HttpError(
             422,
-            "SCHEDULE_MUST_BE_FUTURE",
-            "Escolha um horário futuro.",
+            "SCHEDULE_MUST_BE_AT_LEAST_1H_AHEAD",
+            "Escolha um horário com pelo menos 1 hora de antecedência.",
           )
         : new HttpError(
             500,

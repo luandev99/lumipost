@@ -42,6 +42,7 @@ export const generateAiContentInputSchema = z.object({
   socialAccountId: z.string().uuid().optional(),
   referenceImagePath: z.string().trim().min(3).max(400).optional(),
   referenceMode: z.enum(["base", "context"]).optional(),
+  useBrandLogo: z.boolean().optional(),
 }).strict();
 
 export type GenerateAiContentInput = z.infer<typeof generateAiContentInputSchema>;
@@ -99,8 +100,15 @@ export const generateAiContent = async (
         "VIDEO_UPLOAD_REQUIRED",
         "Para agendar Reel ou vídeo, envie um MP4 real. A Lumipost não publica vídeo demonstrativo.",
       );
-    if (input.scheduledAt && new Date(input.scheduledAt) <= new Date())
-      throw new HttpError(422, "SCHEDULE_MUST_BE_FUTURE", "Escolha um horário futuro.");
+    if (
+      input.scheduledAt &&
+      new Date(input.scheduledAt).getTime() < Date.now() + 60 * 60 * 1000
+    )
+      throw new HttpError(
+        422,
+        "SCHEDULE_MUST_BE_AT_LEAST_1H_AHEAD",
+        "Escolha um horário com pelo menos 1 hora de antecedência.",
+      );
 
     // Resolve a conta ANTES de debitar créditos ou chamar a OpenAI: falhar
     // rápido aqui evita gastar geração de verdade com uma conta inválida.
@@ -296,6 +304,7 @@ export const generateAiContent = async (
     // bytes originais como ponto de partida (edição) em cada imagem gerada.
     let referenceDescription: string | undefined;
     let referenceBytes: Uint8Array | undefined;
+    let referencePurpose: "reference" | "logo" = "reference";
     if (input.referenceImagePath) {
       const { data: signedRef, error: signedRefError } = await admin.storage
         .from("content-uploads")
@@ -312,6 +321,16 @@ export const generateAiContent = async (
           userId,
         );
       }
+    } else if (input.useBrandLogo && brand?.logo_path) {
+      const { data: signedLogo, error: signedLogoError } = await admin.storage
+        .from("brand-assets")
+        .createSignedUrl(brand.logo_path as string, 60 * 15);
+      if (signedLogoError || !signedLogo?.signedUrl)
+        throw signedLogoError ?? new Error("BRAND_LOGO_NOT_FOUND");
+      const logoResponse = await fetch(signedLogo.signedUrl);
+      if (!logoResponse.ok) throw new Error("BRAND_LOGO_FETCH_FAILED");
+      referenceBytes = new Uint8Array(await logoResponse.arrayBuffer());
+      referencePurpose = "logo";
     }
 
     let imageModel: string | undefined;
@@ -356,6 +375,7 @@ export const generateAiContent = async (
               vertical,
               textOverlay,
               prompt: imagePrompt,
+              purpose: referencePurpose,
             })
           : await generateImageWithOpenAI({
               userId,

@@ -85,6 +85,7 @@ export function AiContentWizard({
 }) {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.auth.user)!;
+  const brandLogoUrl = useAppSelector((state) => state.brand.profile?.logoUrl);
   const credits = useAppSelector(
     (state) => state.credits.current?.available ?? 0,
   );
@@ -104,6 +105,7 @@ export function AiContentWizard({
   const [referenceFileName, setReferenceFileName] = useState<string>();
   const [uploadingReference, setUploadingReference] = useState(false);
   const [referenceError, setReferenceError] = useState("");
+  const [useBrandLogo, setUseBrandLogo] = useState(false);
 
   const pickReferenceImage = async (file: File) => {
     setReferenceError("");
@@ -113,6 +115,7 @@ export function AiContentWizard({
       setReferenceImagePath(uploaded.replace(/^content-uploads\//, ""));
       setReferenceFileName(file.name);
       setReferenceMode("context");
+      setUseBrandLogo(false);
     } catch (caught) {
       setReferenceError(
         caught instanceof Error
@@ -127,6 +130,13 @@ export function AiContentWizard({
     setReferenceImagePath(undefined);
     setReferenceFileName(undefined);
     setReferenceMode(undefined);
+  };
+  const toggleBrandLogo = () => {
+    setUseBrandLogo((current) => {
+      const next = !current;
+      if (next) removeReferenceImage();
+      return next;
+    });
   };
 
   const effectiveObjective =
@@ -181,6 +191,7 @@ export function AiContentWizard({
       creditCost: draft.creditCost,
       referenceImagePath,
       referenceMode,
+      useBrandLogo,
     });
 
   return (
@@ -312,13 +323,15 @@ export function AiContentWizard({
                   Foto de referência (opcional)
                 </p>
                 {!referenceImagePath ? (
-                  <label className="surface-subtle flex min-h-11 cursor-pointer items-center justify-center rounded-xl border border-dashed border-app-border px-3 text-sm font-semibold text-app-muted hover:border-app-primary hover:text-app-primary">
+                  <label
+                    className={`surface-subtle flex min-h-11 items-center justify-center rounded-xl border border-dashed border-app-border px-3 text-sm font-semibold ${useBrandLogo ? "cursor-not-allowed text-app-muted/50" : "cursor-pointer text-app-muted hover:border-app-primary hover:text-app-primary"}`}
+                  >
                     {uploadingReference ? "Enviando…" : "Enviar 1 foto"}
                     <input
                       type="file"
                       accept="image/*"
                       className="hidden"
-                      disabled={uploadingReference}
+                      disabled={uploadingReference || useBrandLogo}
                       onChange={(event) => {
                         const file = event.target.files?.[0];
                         if (file) void pickReferenceImage(file);
@@ -366,6 +379,35 @@ export function AiContentWizard({
                       </span>
                     </button>
                   </div>
+                )}
+                {brandLogoUrl && !referenceImagePath && (
+                  <button
+                    type="button"
+                    onClick={toggleBrandLogo}
+                    className={`surface-subtle mt-3 flex w-full items-center gap-3 rounded-xl border p-3 text-left ${useBrandLogo ? "border-app-primary bg-app-soft" : "border-app-border"}`}
+                  >
+                    <img
+                      src={brandLogoUrl}
+                      alt="Logo da marca"
+                      className="h-9 w-9 shrink-0 rounded-lg object-contain"
+                    />
+                    <span className="min-w-0 flex-1">
+                      <span
+                        className={`block text-xs font-semibold ${useBrandLogo ? "text-app-primary" : ""}`}
+                      >
+                        Usar o logo da marca nesta peça
+                      </span>
+                      <span className="text-muted mt-0.5 block text-[11px] font-normal">
+                        A IA cria a arte do zero e inclui seu logo de forma
+                        sutil, sem distorcer.
+                      </span>
+                    </span>
+                    <span
+                      className={`shrink-0 rounded-full border px-2 py-0.5 text-[10px] font-bold uppercase ${useBrandLogo ? "border-app-primary bg-app-primary text-white" : "border-app-border text-app-muted"}`}
+                    >
+                      {useBrandLogo ? "Ativo" : "Ativar"}
+                    </span>
+                  </button>
                 )}
               </div>
             </div>

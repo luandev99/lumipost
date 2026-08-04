@@ -109,6 +109,7 @@ export interface PlannerRepository {
         socialAccountId?: string;
         referenceImagePath?: string;
         referenceMode?: "base" | "context";
+        useBrandLogo?: boolean;
       };
     }>;
   }): Promise<{ planId: string; slotIds: string[] }>;

@@ -31,8 +31,15 @@ Deno.serve(async (request) => {
     if (!parsed.success)
       throw new HttpError(422, "INVALID_INPUT", "Revise a operação da fila.");
     const input = parsed.data;
-    if (input.action === "reschedule" && new Date(input.scheduledAt) <= new Date())
-      throw new HttpError(422, "SCHEDULE_MUST_BE_FUTURE", "Escolha um horário futuro.");
+    if (
+      input.action === "reschedule" &&
+      new Date(input.scheduledAt).getTime() < Date.now() + 60 * 60 * 1000
+    )
+      throw new HttpError(
+        422,
+        "SCHEDULE_MUST_BE_AT_LEAST_1H_AHEAD",
+        "Escolha um horário com pelo menos 1 hora de antecedência.",
+      );
 
     const admin = createAdminClient();
     const { data: profile, error: profileError } = await admin
