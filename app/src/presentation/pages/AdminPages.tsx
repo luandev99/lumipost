@@ -64,6 +64,7 @@ import {
 } from "../ui";
 import { errorMessage } from "../utils/errors";
 import { downloadBlob } from "../utils/downloads";
+import { AiCostPanel } from "../components/AiCostPanel";
 
 const money = (value: number) =>
   value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -126,6 +127,9 @@ export function AdminDashboardPage() {
             <div className="mt-1 text-3xl font-black">{value}</div>
           </Card>
         ))}
+      </div>
+      <div className="mt-5">
+        <AiCostPanel />
       </div>
       <div className="mt-5 grid gap-5 xl:grid-cols-[1.2fr_.8fr]">
         <Card className="p-5">

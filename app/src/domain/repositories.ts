@@ -216,6 +216,7 @@ export interface SecureBackendGateway {
     idempotencyKey: string;
   }): Promise<AdminSnapshot>;
   adminUpdatePlan(plan: Plan): Promise<AdminSnapshot>;
+  adminSaveAiBudget(monthlyBudgetCents: number): Promise<AdminSnapshot>;
   adminSaveCreditProduct(product: CreditProduct): Promise<AdminSnapshot>;
   adminSavePrompt(prompt: PromptTemplate): Promise<AdminSnapshot>;
   adminArchivePrompt(promptId: string): Promise<AdminSnapshot>;

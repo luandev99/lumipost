@@ -39,7 +39,6 @@ import {
   Input,
   Notice,
   PageHeader,
-  Select,
   Textarea,
 } from "../../../presentation/ui";
 import { errorMessage } from "../../../presentation/utils/errors";
@@ -49,17 +48,11 @@ import {
   IdentityMultiCombobox,
 } from "../components/IdentityCombobox";
 
-const brandFonts = [
-  { value: "Inter", label: "Inter", group: "Modernas" },
-  { value: "Arial", label: "Arial", group: "Modernas" },
-  { value: "Verdana", label: "Verdana", group: "Modernas" },
-  { value: "Trebuchet MS", label: "Trebuchet MS", group: "Modernas" },
-  { value: "Playfair Display", label: "Playfair Display", group: "Editoriais" },
-  { value: "Georgia", label: "Georgia", group: "Editoriais" },
-  { value: "Times New Roman", label: "Times New Roman", group: "Editoriais" },
-  { value: "Courier New", label: "Courier New", group: "Criativas" },
-] as const;
-
+// A escolha de fonte saiu da tela: o texto das peças é desenhado pelo modelo
+// de imagem, que não aplica uma família tipográfica específica de forma
+// confiável. Os nomes continuam salvos na marca (propostos pela análise do
+// Instagram) e seguem indo no prompt, mas deixaram de ser prometidos ao
+// usuário como algo que ele controla.
 const fontFallbacks: Record<string, string> = {
   Inter: 'Inter, "Segoe UI", Arial, sans-serif',
   Arial: "Arial, sans-serif",
@@ -72,21 +65,6 @@ const fontFallbacks: Record<string, string> = {
 };
 
 const fontFamilyFor = (font: string) => fontFallbacks[font] ?? font;
-const fontOptions = ["Modernas", "Editoriais", "Criativas"].map((group) => (
-  <optgroup key={group} label={group}>
-    {brandFonts
-      .filter((font) => font.group === group)
-      .map((font) => (
-        <option
-          key={font.value}
-          value={font.value}
-          style={{ fontFamily: fontFamilyFor(font.value) }}
-        >
-          {font.label}
-        </option>
-      ))}
-  </optgroup>
-));
 
 export function CreditsPage() {
   const navigate = useNavigate();
@@ -401,40 +379,6 @@ export function BrandPage() {
                   patch({ secondaryColor: event.target.value })
                 }
               />
-              <Select
-                label="Fonte dos títulos"
-                value={brand.headingFont}
-                style={{ fontFamily: fontFamilyFor(brand.headingFont) }}
-                onChange={(event) => patch({ headingFont: event.target.value })}
-              >
-                {fontOptions}
-              </Select>
-              <Select
-                label="Fonte dos textos"
-                value={brand.bodyFont}
-                style={{ fontFamily: fontFamilyFor(brand.bodyFont) }}
-                onChange={(event) => patch({ bodyFont: event.target.value })}
-              >
-                {fontOptions}
-              </Select>
-              <div className="sm:col-span-2 rounded-2xl border border-app-border bg-app-elevated p-4">
-                <span className="text-muted block text-[10px] font-bold uppercase tracking-wider">
-                  Prévia tipográfica
-                </span>
-                <b
-                  className="mt-2 block text-2xl leading-tight"
-                  style={{ fontFamily: fontFamilyFor(brand.headingFont) }}
-                >
-                  {brand.brandName || "O título da sua marca"}
-                </b>
-                <p
-                  className="text-muted mt-2 text-sm"
-                  style={{ fontFamily: fontFamilyFor(brand.bodyFont) }}
-                >
-                  Esta é a fonte escolhida para legendas, descrições e textos de
-                  apoio.
-                </p>
-              </div>
               <div className="sm:col-span-2">
                 <IdentityCombobox
                   label="Estilo visual"
@@ -478,9 +422,6 @@ export function BrandPage() {
               </p>
               <p>
                 <b>Tom:</b> {brand.tone.join(", ")}
-              </p>
-              <p>
-                <b>Fontes:</b> {brand.headingFont} / {brand.bodyFont}
               </p>
               <p>
                 <b>Estilo:</b> {brand.visualStyle}

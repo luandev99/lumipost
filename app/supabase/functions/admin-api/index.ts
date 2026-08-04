@@ -82,6 +82,12 @@ const requestSchema = z.discriminatedUnion("action", [
     }).strict(),
   }).strict(),
   z.object({ action: z.literal("archive-prompt"), promptId: z.string().uuid() }).strict(),
+  z.object({
+    action: z.literal("save-ai-budget"),
+    // Teto de US$ 100.000/mês é folgado o bastante para qualquer uso real e
+    // barra um zero digitado a mais por engano.
+    monthlyBudgetCents: z.number().int().min(0).max(10_000_000),
+  }).strict(),
 ]);
 
 const assertSystemAdmin = async (userId: string) => {
@@ -113,6 +119,8 @@ const snapshot = async () => {
     prompts,
     audit,
     templates,
+    aiUsage,
+    aiCostSettings,
   ] = await Promise.all([
     admin.auth.admin.listUsers({ page: 1, perPage: 1000 }),
     admin.from("profiles").select("*").order("created_at", { ascending: false }),
@@ -128,8 +136,16 @@ const snapshot = async () => {
     admin.from("prompt_templates").select("*").order("updated_at", { ascending: false }),
     admin.from("audit_logs").select("*").order("created_at", { ascending: false }).limit(500),
     admin.from("visual_templates").select("*").order("updated_at", { ascending: false }),
+    // 90 dias cobre a visão de mês do painel com folga, sem trazer histórico
+    // inteiro de custo para dentro de um snapshot já grande.
+    admin.from("ai_usage_events")
+      .select("organization_id,format,total_tokens,input_tokens,output_tokens,cost_millicents,credits_charged,api_calls,created_at")
+      .gte("created_at", new Date(Date.now() - 90 * 24 * 60 * 60 * 1000).toISOString())
+      .order("created_at", { ascending: false })
+      .limit(5000),
+    admin.from("ai_cost_settings").select("monthly_budget_cents").eq("id", true).maybeSingle(),
   ]);
-  const firstError = [profiles, memberships, organizations, brands, subscriptions, wallets, plans, creditProducts, contents, jobs, prompts, audit, templates]
+  const firstError = [profiles, memberships, organizations, brands, subscriptions, wallets, plans, creditProducts, contents, jobs, prompts, audit, templates, aiUsage, aiCostSettings]
     .find((result) => result.error)?.error ?? authUsers.error;
   if (firstError) throw firstError;
   return {
@@ -153,6 +169,8 @@ const snapshot = async () => {
     prompts: prompts.data ?? [],
     audit: audit.data ?? [],
     templates: templates.data ?? [],
+    aiUsage: aiUsage.data ?? [],
+    aiMonthlyBudgetCents: aiCostSettings.data?.monthly_budget_cents ?? 0,
   };
 };
 
@@ -443,6 +461,25 @@ Deno.serve(async (request) => {
         entity_id: job.id,
         before_data: job,
         after_data: { status },
+      });
+      return json(request, { snapshot: await snapshot(), traceId });
+    }
+
+    if (input.action === "save-ai-budget") {
+      const { error: budgetError } = await admin
+        .from("ai_cost_settings")
+        .update({
+          monthly_budget_cents: input.monthlyBudgetCents,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", true);
+      if (budgetError) throw budgetError;
+      await admin.from("audit_logs").insert({
+        actor_user_id: user.id,
+        action: "ai_budget_updated",
+        entity_type: "ai_cost_settings",
+        entity_id: null,
+        after_data: { monthly_budget_cents: input.monthlyBudgetCents },
       });
       return json(request, { snapshot: await snapshot(), traceId });
     }

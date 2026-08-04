@@ -178,6 +178,20 @@ export interface AiContentDraft {
   reelScript?: ReelScript;
 }
 
+/** Consumo de IA por geração, para o painel de custo do admin. */
+export interface AiUsageEvent {
+  organizationId: string;
+  format: ContentFormat;
+  totalTokens: number;
+  inputTokens: number;
+  outputTokens: number;
+  /** Milésimos de centavo de dólar: uma imagem custa frações de centavo. */
+  costMillicents: number;
+  creditsCharged: number;
+  apiCalls: number;
+  createdAt: string;
+}
+
 export interface AdminSnapshot {
   users: User[];
   plans: Plan[];
@@ -188,6 +202,9 @@ export interface AdminSnapshot {
   prompts: PromptTemplate[];
   audit: AuditEvent[];
   templates: TemplateMeta[];
+  aiUsage: AiUsageEvent[];
+  /** Teto mensal declarado pelo admin — a OpenAI não expõe saldo por API. */
+  aiMonthlyBudgetCents: number;
 }
 
 export interface SocialAccount {

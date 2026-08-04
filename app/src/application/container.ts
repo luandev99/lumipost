@@ -1176,6 +1176,11 @@ export class ApplicationContainer {
     });
     return plan;
   }
+  async saveAiBudget(monthlyBudgetCents: number) {
+    if (!this.backend)
+      throw new Error("O painel de custo exige o backend Supabase configurado.");
+    return this.backend.adminSaveAiBudget(monthlyBudgetCents);
+  }
   async saveCreditProduct(product: CreditProduct) {
     if (!this.backend)
       throw new Error("O catÃ¡logo Stripe exige o backend Supabase configurado.");

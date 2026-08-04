@@ -993,6 +993,18 @@ export class SupabaseBackendGateway implements SecureBackendGateway {
         at: row.created_at,
       })),
       templates: (raw.templates ?? []).map(mapTemplateMeta),
+      aiUsage: (raw.aiUsage ?? []).map((row: Row) => ({
+        organizationId: row.organization_id,
+        format: row.format,
+        totalTokens: Number(row.total_tokens ?? 0),
+        inputTokens: Number(row.input_tokens ?? 0),
+        outputTokens: Number(row.output_tokens ?? 0),
+        costMillicents: Number(row.cost_millicents ?? 0),
+        creditsCharged: Number(row.credits_charged ?? 0),
+        apiCalls: Number(row.api_calls ?? 0),
+        createdAt: row.created_at,
+      })),
+      aiMonthlyBudgetCents: Number(raw.aiMonthlyBudgetCents ?? 0),
     };
   }
   private async admin(input: Row): Promise<AdminSnapshot> {
@@ -1001,6 +1013,9 @@ export class SupabaseBackendGateway implements SecureBackendGateway {
   }
   async getAdminSnapshot() {
     return this.admin({ action: "snapshot" });
+  }
+  async adminSaveAiBudget(monthlyBudgetCents: number) {
+    return this.admin({ action: "save-ai-budget", monthlyBudgetCents });
   }
   async adminUpdateUser(input: {
     userId: string;

@@ -273,7 +273,9 @@ export const generateContentDraftsWithOpenAI = async (input: {
   brand?: Record<string, unknown> | null;
   template?: Record<string, unknown> | null;
   promptTemplate?: { systemPrompt?: string; userPrompt?: string } | null;
-}): Promise<{ drafts: GeneratedContentDraft[]; model: string }> => {
+}): Promise<
+  { drafts: GeneratedContentDraft[]; model: string; usage: OpenAiUsage }
+> => {
   const prompt = mergeContentPrompt(input.format, input.promptTemplate);
   const model = Deno.env.get("OPENAI_CONTENT_MODEL")?.trim() ||
     Deno.env.get("OPENAI_IDENTITY_MODEL")?.trim() || "gpt-5.6-terra";
@@ -343,6 +345,28 @@ export const generateContentDraftsWithOpenAI = async (input: {
   return {
     drafts: parsed.drafts.slice(0, Math.min(3, input.variations)),
     model,
+    usage: readUsage(payload),
+  };
+};
+
+// Tokens relatados pela própria OpenAI em cada resposta (texto e imagem).
+// Guardamos para poder somar custo real por organização no painel admin —
+// antes esse bloco era simplesmente descartado junto com o resto do payload.
+export type OpenAiUsage = {
+  inputTokens: number;
+  outputTokens: number;
+  totalTokens: number;
+};
+
+const readUsage = (payload: unknown): OpenAiUsage => {
+  const usage = (payload as { usage?: Record<string, unknown> } | null)?.usage;
+  const input = Number(usage?.input_tokens ?? usage?.prompt_tokens ?? 0);
+  const output = Number(usage?.output_tokens ?? usage?.completion_tokens ?? 0);
+  const total = Number(usage?.total_tokens ?? input + output);
+  return {
+    inputTokens: Number.isFinite(input) ? input : 0,
+    outputTokens: Number.isFinite(output) ? output : 0,
+    totalTokens: Number.isFinite(total) ? total : 0,
   };
 };
 
@@ -371,7 +395,7 @@ export const generateImageWithOpenAI = async (input: {
   prompt: string;
   textOverlay?: string;
   vertical?: boolean;
-}): Promise<{ bytes: Uint8Array; model: string }> => {
+}): Promise<{ bytes: Uint8Array; model: string; usage: OpenAiUsage }> => {
   const model = Deno.env.get("OPENAI_IMAGE_MODEL")?.trim() || "gpt-image-2";
   const instruction = input.textOverlay
     ? `Crie uma composição editorial completa, pronta para publicação. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal da peça): "${input.textOverlay.slice(0, 280)}". Use boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
@@ -403,7 +427,11 @@ export const generateImageWithOpenAI = async (input: {
   if (!response.ok) throw new Error(`OPENAI_IMAGE_ERROR:${response.status}`);
   const encoded = payload.data?.[0]?.b64_json;
   if (!encoded) throw new Error("OPENAI_IMAGE_EMPTY");
-  return { bytes: decodeBase64Image(encoded), model };
+  return {
+    bytes: decodeBase64Image(encoded),
+    model,
+    usage: readUsage(payload),
+  };
 };
 
 export const editImageWithOpenAI = async (input: {
@@ -412,11 +440,24 @@ export const editImageWithOpenAI = async (input: {
   prompt: string;
   textOverlay?: string;
   vertical?: boolean;
-}): Promise<{ bytes: Uint8Array; model: string }> => {
+  // "carousel-continuity": a imagem enviada é o slide anterior do mesmo
+  // carrossel, não uma foto do usuário. O objetivo deixa de ser preservar o
+  // assunto e passa a ser repetir o sistema visual (paleta, tipografia,
+  // composição) trocando só o conteúdo — como um designer faria a página
+  // seguinte de um mesmo material.
+  mode?: "reference" | "carousel-continuity";
+}): Promise<{ bytes: Uint8Array; model: string; usage: OpenAiUsage }> => {
   const model = Deno.env.get("OPENAI_IMAGE_MODEL")?.trim() || "gpt-image-2";
-  const instruction = input.textOverlay
-    ? `Use a foto enviada como base visual desta peça. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}". Mantenha o assunto original da foto reconhecível, aplique boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
-    : `Use a foto enviada como base visual desta peça, mantendo o assunto original reconhecível. Sem logotipos de terceiros, sem marcas d'água e sem texto legível.`;
+  const continuity = input.mode === "carousel-continuity";
+  const instruction = continuity
+    ? `A imagem enviada é o slide anterior deste mesmo carrossel. Crie o PRÓXIMO slide reproduzindo fielmente o mesmo sistema visual: mesma paleta, mesmo estilo e peso tipográfico, mesma malha de composição, mesmas margens e o mesmo tratamento gráfico de fundo e elementos. Não copie o conteúdo do slide anterior — troque a imagem/ilustração e o texto.${
+        input.textOverlay
+          ? ` Inclua o texto a seguir, exatamente como escrito, como tipografia principal do slide: "${input.textOverlay.slice(0, 280)}".`
+          : ""
+      } Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água. O resultado precisa parecer parte da mesma peça, feita pelo mesmo designer.`
+    : input.textOverlay
+      ? `Use a foto enviada como base visual desta peça. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}". Mantenha o assunto original da foto reconhecível, aplique boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
+      : `Use a foto enviada como base visual desta peça, mantendo o assunto original reconhecível. Sem logotipos de terceiros, sem marcas d'água e sem texto legível.`;
   const form = new FormData();
   form.set("model", model);
   form.set("prompt", `${input.prompt.slice(0, 3000)}\n${instruction}`);
@@ -442,7 +483,11 @@ export const editImageWithOpenAI = async (input: {
   if (!response.ok) throw new Error(`OPENAI_IMAGE_ERROR:${response.status}`);
   const encoded = payload.data?.[0]?.b64_json;
   if (!encoded) throw new Error("OPENAI_IMAGE_EMPTY");
-  return { bytes: decodeBase64Image(encoded), model };
+  return {
+    bytes: decodeBase64Image(encoded),
+    model,
+    usage: readUsage(payload),
+  };
 };
 
 export const describeReferenceImageWithOpenAI = async (

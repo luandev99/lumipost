@@ -8,6 +8,7 @@ import { appContainer } from "../../application/container";
 import type {
   AiContentDraft,
   AiGenerationRequest,
+  AiUsageEvent,
   AuditEvent,
   BrandProfile,
   Content,
@@ -292,6 +293,11 @@ export const saveAdminCreditProduct = createAsyncThunk(
   "admin/saveCreditProduct",
   (input: { product: CreditProduct; actor: string }) =>
     appContainer.saveCreditProduct(input.product),
+);
+export const saveAdminAiBudget = createAsyncThunk(
+  "admin/saveAiBudget",
+  (monthlyBudgetCents: number) =>
+    appContainer.saveAiBudget(monthlyBudgetCents),
 );
 export const loadTemplate = createAsyncThunk("templates/load", (id: string) =>
   appContainer.templates.load(id),
@@ -861,34 +867,59 @@ const promptsSlice = createSlice({
 interface AdminState {
   users: User[];
   audit: AuditEvent[];
+  aiUsage: AiUsageEvent[];
+  aiMonthlyBudgetCents: number;
 }
 const adminSlice = createSlice({
   name: "admin",
-  initialState: { users: [], audit: [] } as AdminState,
+  initialState: {
+    users: [],
+    audit: [],
+    aiUsage: [],
+    aiMonthlyBudgetCents: 0,
+  } as AdminState,
   reducers: {},
   extraReducers: (builder) =>
     builder
       .addCase(bootstrapApp.fulfilled, (state, action) => {
         state.users = action.payload.users;
         state.audit = action.payload.audit;
+        const admin = action.payload as typeof action.payload & {
+          aiUsage?: AiUsageEvent[];
+          aiMonthlyBudgetCents?: number;
+        };
+        state.aiUsage = admin.aiUsage ?? [];
+        state.aiMonthlyBudgetCents = admin.aiMonthlyBudgetCents ?? 0;
+      })
+      .addCase(saveAdminAiBudget.fulfilled, (state, action) => {
+        state.aiUsage = action.payload.aiUsage;
+        state.aiMonthlyBudgetCents = action.payload.aiMonthlyBudgetCents;
       })
       .addCase(login.fulfilled, (state, action) => {
         const adminPayload = action.payload as typeof action.payload & {
           users?: User[];
           audit?: AuditEvent[];
+          aiUsage?: AiUsageEvent[];
+          aiMonthlyBudgetCents?: number;
         };
         state.users = adminPayload.users ?? [];
         state.audit = adminPayload.audit ?? [];
+        state.aiUsage = adminPayload.aiUsage ?? [];
+        state.aiMonthlyBudgetCents = adminPayload.aiMonthlyBudgetCents ?? 0;
       })
       .addCase(restoreSession.fulfilled, (state, action) => {
         const adminPayload = action.payload as
           | (NonNullable<typeof action.payload> & {
               users?: User[];
               audit?: AuditEvent[];
+              aiUsage?: AiUsageEvent[];
+              aiMonthlyBudgetCents?: number;
             })
           | undefined;
         state.users = adminPayload?.users ?? [];
         state.audit = adminPayload?.audit ?? [];
+        state.aiUsage = adminPayload?.aiUsage ?? [];
+        state.aiMonthlyBudgetCents = adminPayload?.aiMonthlyBudgetCents ?? 0;
       })
       .addCase(updateAdminUser.fulfilled, (state, action) => {
         state.users = state.users.map((item) =>

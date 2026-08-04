@@ -6,7 +6,9 @@ import {
   editImageWithOpenAI,
   generateContentDraftsWithOpenAI,
   generateImageWithOpenAI,
+  type OpenAiUsage,
 } from "./openai.ts";
+import { costMillicents } from "./ai-pricing.ts";
 import { selectVisualTemplate } from "./template-selection.ts";
 import { submitVideoJob } from "./higgsfield.ts";
 
@@ -215,6 +217,24 @@ export const generateAiContent = async (
     let reelScript = input.reelScript;
     let textModel: string | undefined;
     let selectedTemplate: Awaited<ReturnType<typeof selectVisualTemplate>>;
+    // Somatório de tokens de todas as chamadas OpenAI desta geração (copy +
+    // cada imagem), gravado no fim para o painel de custo do admin. O custo
+    // é acumulado por chamada, não no total: texto e imagem rodam em modelos
+    // com preços muito diferentes e somar os tokens antes de precificar daria
+    // um número errado.
+    const usageTotals = { input: 0, output: 0, total: 0, calls: 0 };
+    let usageCostMillicents = 0;
+    const addUsage = (usage: OpenAiUsage, model: string) => {
+      usageTotals.input += usage.inputTokens;
+      usageTotals.output += usage.outputTokens;
+      usageTotals.total += usage.totalTokens;
+      usageTotals.calls += 1;
+      usageCostMillicents += costMillicents({
+        model,
+        inputTokens: usage.inputTokens,
+        outputTokens: usage.outputTokens,
+      });
+    };
 
     if (!title || !caption || !hashtags?.length || !cta ||
       (input.format === "carousel" && slideTexts?.length !== slides)) {
@@ -253,6 +273,7 @@ export const generateAiContent = async (
       });
       const draft = generated.drafts[0];
       textModel = generated.model;
+      addUsage(generated.usage, generated.model);
       title ||= draft.title;
       caption ||= draft.caption;
       hashtags = hashtags?.length ? hashtags : draft.hashtags;
@@ -293,6 +314,7 @@ export const generateAiContent = async (
     }
 
     let imageModel: string | undefined;
+    let previousSlideBytes: Uint8Array | undefined;
     if (input.format !== "caption") {
       const imageSubjects = input.format === "carousel"
         ? slideTexts ?? []
@@ -311,10 +333,23 @@ export const generateAiContent = async (
           selectedTemplate,
           referenceDescription,
         });
-        const generatedImage = referenceBytes
+        // A partir do segundo slide do carrossel, o slide anterior vira a
+        // base: o modelo repete o sistema visual em vez de inventar um design
+        // novo por slide, que é o que fazia o carrossel parecer três peças
+        // soltas. A foto de referência do usuário, quando existe, entra só no
+        // primeiro slide e se propaga naturalmente pelos seguintes.
+        const chainFromPreviousSlide =
+          input.format === "carousel" && index > 0 && previousSlideBytes;
+        const baseBytes = chainFromPreviousSlide
+          ? previousSlideBytes
+          : referenceBytes;
+        const generatedImage = baseBytes
           ? await editImageWithOpenAI({
               userId,
-              imageBytes: referenceBytes,
+              imageBytes: baseBytes,
+              mode: chainFromPreviousSlide
+                ? "carousel-continuity"
+                : "reference",
               vertical: ["story", "reel", "video", "carousel"].includes(input.format),
               textOverlay: textOverlayFormats.has(input.format)
                 ? imageSubjects[index]
@@ -330,6 +365,8 @@ export const generateAiContent = async (
               prompt: imagePrompt,
             });
         imageModel = generatedImage.model;
+        addUsage(generatedImage.usage, generatedImage.model);
+        previousSlideBytes = generatedImage.bytes;
         const objectPath = `${organizationId}/${userId}/ai/${generationId}/${String(index + 1).padStart(2, "0")}.png`;
         // upsert: true — um retry após reclaim de "processing" travado reusa
         // o mesmo generationId (mesmo path). Sem isso, uma imagem já
@@ -444,6 +481,35 @@ export const generateAiContent = async (
       })
       .eq("id", generationId);
     if (completeError) throw completeError;
+
+    // Custo real desta geração. Falha aqui não derruba o conteúdo já criado:
+    // é telemetria de operação, não parte do que o cliente pediu.
+    if (usageTotals.calls > 0) {
+      const { error: usageError } = await admin.from("ai_usage_events").insert({
+        organization_id: organizationId,
+        user_id: userId,
+        generation_id: generationId,
+        content_id: content.id,
+        format: input.format,
+        text_model: textModel ?? null,
+        image_model: imageModel ?? null,
+        api_calls: usageTotals.calls,
+        input_tokens: usageTotals.input,
+        output_tokens: usageTotals.output,
+        total_tokens: usageTotals.total,
+        cost_millicents: usageCostMillicents,
+        credits_charged: creditCost,
+      });
+      if (usageError)
+        console.error(
+          JSON.stringify({
+            level: "warn",
+            code: "AI_USAGE_TRACK_FAILED",
+            message: usageError.message?.slice(0, 200),
+          }),
+        );
+    }
+
     await admin.from("audit_logs").insert({
       organization_id: organizationId,
       actor_user_id: userId,
