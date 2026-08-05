@@ -166,10 +166,14 @@ export const generateAiContent = async (
     // "processing" só bloqueia retry enquanto for recente. Se a Edge
     // Function anterior morreu no meio (timeout da plataforma, crash), a
     // linha fica presa em "processing" pra sempre — sem isso, o request_key
-    // ficava permanentemente inutilizável e o item nunca mais gerava.
+    // ficava permanentemente inutilizável e o item nunca mais gerava. Mesma
+    // janela usada pelo lock de weekly_slots (claim_due_weekly_slots_service)
+    // — se ficassem diferentes, o worker reivindicava o slot de novo antes
+    // desta trava liberar e toda tentativa falhava na hora com
+    // GENERATION_IN_PROGRESS, sem sequer chamar a OpenAI.
     const isStaleProcessing =
       previous?.status === "processing" &&
-      new Date(previous.started_at).getTime() < Date.now() - 5 * 60 * 1000;
+      new Date(previous.started_at).getTime() < Date.now() - 2 * 60 * 1000;
     if (previous?.status === "processing" && !isStaleProcessing)
       throw new HttpError(409, "GENERATION_IN_PROGRESS", "Esta geração ainda está em andamento.");
 

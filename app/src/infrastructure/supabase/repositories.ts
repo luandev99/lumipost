@@ -664,9 +664,12 @@ export class SupabasePlannerRepository implements PlannerRepository {
     if (error) throw new Error(error.message);
   }
   async retryWeeklySlot(slotId: string): Promise<void> {
+    // attempts: 0 — sem isso, um slot que já bateu o teto de tentativas
+    // automáticas (MAX_ATTEMPTS em process-weekly-slots) falhava de novo na
+    // hora ao clicar "Tentar novamente", sem sequer tentar gerar.
     const { error } = await getSupabaseClient()
       .from("weekly_slots")
-      .update({ status: "pending", error_code: null, locked_at: null })
+      .update({ status: "pending", error_code: null, locked_at: null, attempts: 0 })
       .eq("id", slotId)
       .eq("status", "failed");
     if (error) throw new Error(error.message);
