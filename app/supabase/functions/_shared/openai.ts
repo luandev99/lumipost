@@ -399,6 +399,23 @@ const fetchImageWithSingleRetry = async (
   return attempt();
 };
 
+// Sem uma instrução explícita, o modelo de imagem tende a cair no próprio
+// viés estético padrão (gradiente roxo/violeta é um dos mais comuns) mesmo
+// recebendo as cores da marca soltas dentro do JSON do prompt como contexto.
+// Isso força a paleta como regra, não como dado solto.
+export const buildPaletteInstruction = (
+  primaryColor?: string,
+  secondaryColor?: string,
+): string => {
+  const colors = [primaryColor, secondaryColor].filter(
+    (color): color is string => Boolean(color?.trim()),
+  );
+  if (!colors.length) return "";
+  return ` Use como paleta dominante da peça exatamente ${
+    colors.length === 2 ? `estas cores: ${colors[0]} (principal) e ${colors[1]} (secundária)` : `esta cor: ${colors[0]}`
+  }, com preto, branco ou cinza apenas como apoio de contraste quando necessário. Não introduza nenhuma outra cor como cor dominante — em especial, não use roxo/violeta a menos que seja uma das cores informadas.`;
+};
+
 export const generateImageWithOpenAI = async (input: {
   userId: string;
   prompt: string;
@@ -410,14 +427,15 @@ export const generateImageWithOpenAI = async (input: {
   // pixels do slide anterior, é o que permite uma foto/cena nova por slide
   // sem herdar o mesmo fundo repetido.
   designSystemDescription?: string;
+  paletteInstruction?: string;
 }): Promise<{ bytes: Uint8Array; model: string; usage: OpenAiUsage }> => {
   const model = Deno.env.get("OPENAI_IMAGE_MODEL")?.trim() || "gpt-image-2";
   const designSystemNote = input.designSystemDescription
     ? ` Replique fielmente o sistema visual a seguir, usado nos outros slides deste mesmo carrossel, para manter a mesma identidade gráfica: ${input.designSystemDescription} Use uma cena, foto ou ilustração NOVA e diferente das demais — mantenha apenas a linguagem visual (paleta, tipografia, painéis, tratamento gráfico de fundo), nunca repita a mesma foto de fundo dos outros slides.`
     : "";
   const instruction = input.textOverlay
-    ? `Crie uma composição editorial completa, pronta para publicação. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal da peça): "${input.textOverlay.slice(0, 280)}". Use boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.${designSystemNote}`
-    : `Crie uma composição editorial original, sem logotipos de terceiros, sem marcas d'água e sem texto legível.${designSystemNote}`;
+    ? `Crie uma composição editorial completa, pronta para publicação. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal da peça): "${input.textOverlay.slice(0, 280)}". Use boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.${designSystemNote}${input.paletteInstruction ?? ""}`
+    : `Crie uma composição editorial original, sem logotipos de terceiros, sem marcas d'água e sem texto legível.${designSystemNote}${input.paletteInstruction ?? ""}`;
   const safeUser = await privacySafeIdentifier(input.userId);
   const body = JSON.stringify({
     model,
@@ -462,18 +480,20 @@ export const editImageWithOpenAI = async (input: {
   // uma foto de produto/referência — o objetivo muda de "manter o assunto
   // reconhecível" para "incluir esta marca de forma sutil, sem distorcer".
   purpose?: "reference" | "logo";
+  paletteInstruction?: string;
 }): Promise<{ bytes: Uint8Array; model: string; usage: OpenAiUsage }> => {
   const model = Deno.env.get("OPENAI_IMAGE_MODEL")?.trim() || "gpt-image-2";
   const isLogo = input.purpose === "logo";
+  const palette = input.paletteInstruction ?? "";
   const instruction = isLogo
     ? `A imagem enviada é o logotipo da marca do usuário. Crie a peça do zero em torno do tema pedido e inclua esse logotipo de forma sutil e profissional (por exemplo, em um canto, como assinatura visual), sem distorcer suas cores, proporções ou formato original — não o torne o elemento principal da composição.${
         input.textOverlay
           ? ` Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}".`
           : ""
-      } Não adicione nenhum outro logotipo, sem marcas d'água.`
+      } Não adicione nenhum outro logotipo, sem marcas d'água.${palette}`
     : input.textOverlay
-      ? `Use a foto enviada como base visual desta peça. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}". Mantenha o assunto original da foto reconhecível, aplique boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.`
-      : `Use a foto enviada como base visual desta peça, mantendo o assunto original reconhecível. Sem logotipos de terceiros, sem marcas d'água e sem texto legível.`;
+      ? `Use a foto enviada como base visual desta peça. Inclua o texto a seguir, exatamente como escrito, como tipografia legível e bem integrada ao design (destaque tipográfico principal): "${input.textOverlay.slice(0, 280)}". Mantenha o assunto original da foto reconhecível, aplique boa hierarquia visual e contraste. Não adicione nenhum outro texto além do fornecido, sem logotipos de terceiros e sem marcas d'água.${palette}`
+      : `Use a foto enviada como base visual desta peça, mantendo o assunto original reconhecível. Sem logotipos de terceiros, sem marcas d'água e sem texto legível.${palette}`;
   const form = new FormData();
   form.set("model", model);
   form.set("prompt", `${input.prompt.slice(0, 3000)}\n${instruction}`);

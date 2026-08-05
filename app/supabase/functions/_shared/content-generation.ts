@@ -2,6 +2,7 @@ import { z } from "npm:zod@3.24.2";
 import type { SupabaseClient } from "npm:@supabase/supabase-js@2";
 import { HttpError } from "./http.ts";
 import {
+  buildPaletteInstruction,
   describeDesignSystemWithOpenAI,
   describeReferenceImageWithOpenAI,
   editImageWithOpenAI,
@@ -341,6 +342,14 @@ export const generateAiContent = async (
     // descrição guia a geração dos slides seguintes do zero (texto-para-
     // imagem), cada um com uma cena/foto nova mas a mesma linguagem visual.
     let designSystemDescription: string | undefined;
+    // Sem isso, as cores da marca só existiam soltas dentro do JSON do
+    // prompt (brand.primary_color/secondary_color) como dado de contexto, e
+    // o modelo de imagem preferia seu próprio viés estético padrão (gradiente
+    // roxo/violeta é um dos mais comuns) em vez de respeitar a paleta real.
+    const paletteInstruction = buildPaletteInstruction(
+      brand?.primary_color,
+      brand?.secondary_color,
+    );
     if (input.format !== "caption") {
       const imageSubjects = input.format === "carousel"
         ? slideTexts ?? []
@@ -376,6 +385,7 @@ export const generateAiContent = async (
               textOverlay,
               prompt: imagePrompt,
               purpose: referencePurpose,
+              paletteInstruction,
             })
           : await generateImageWithOpenAI({
               userId,
@@ -386,6 +396,7 @@ export const generateAiContent = async (
                 input.format === "carousel" && index > 0
                   ? designSystemDescription
                   : undefined,
+              paletteInstruction,
             });
         imageModel = generatedImage.model;
         addUsage(generatedImage.usage, generatedImage.model);
