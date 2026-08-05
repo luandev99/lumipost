@@ -32,6 +32,16 @@ const dateForDay = (weekStart: string, dayIndex: number) => {
   return date.toISOString().slice(0, 10);
 };
 
+// America/Sao_Paulo não observa horário de verão desde 2019 — UTC-3 fixo.
+// Mesma simplificação já usada no resto do app (timezone default hardcoded).
+const BRAZIL_OFFSET_MS = -3 * 60 * 60 * 1000;
+const nowInBrazil = () => new Date(Date.now() + BRAZIL_OFFSET_MS);
+const todayInBrazil = () => nowInBrazil().toISOString().slice(0, 10);
+const nowMinutesInBrazil = () => {
+  const now = nowInBrazil();
+  return now.getUTCHours() * 60 + now.getUTCMinutes();
+};
+
 Deno.serve(async (request) => {
   const preflightResponse = preflight(request);
   if (preflightResponse) return preflightResponse;
@@ -44,6 +54,17 @@ Deno.serve(async (request) => {
       throw new HttpError(422, "INVALID_INPUT", "Revise os dados do planejamento.");
 
     const selectedDays = [...new Set(parsed.data.selectedDays)].sort((a, b) => a - b);
+    const todayBrazil = todayInBrazil();
+    if (
+      selectedDays.some(
+        (dayIndex) => dateForDay(parsed.data.weekStart, dayIndex) < todayBrazil,
+      )
+    )
+      throw new HttpError(
+        422,
+        "PAST_DAY_SELECTED",
+        "Um ou mais dias selecionados já passaram — atualize o planejamento.",
+      );
     const workspace = await client.rpc("get_my_workspace");
     if (workspace.error || !workspace.data?.organization?.id)
       throw workspace.error ?? new Error("WORKSPACE_NOT_FOUND");
@@ -105,17 +126,32 @@ Deno.serve(async (request) => {
         "A IA não retornou a quantidade certa de publicações para cada dia.",
       );
 
-    const scheduleTime = (initial: string, index: number) => {
-      const [hour, minute] = initial.split(":").map(Number);
-      const totalMinutes = Math.min(
-        hour * 60 + minute + index * 120,
-        23 * 60 + 59,
-      );
-      return `${String(Math.floor(totalMinutes / 60)).padStart(2, "0")}:${String(totalMinutes % 60).padStart(2, "0")}`;
-    };
+    const minutesToTime = (totalMinutes: number) =>
+      `${String(Math.floor(totalMinutes / 60)).padStart(2, "0")}:${String(totalMinutes % 60).padStart(2, "0")}`;
+    const scheduleTime = (baseMinutes: number, index: number) =>
+      minutesToTime(Math.min(baseMinutes + index * 120, 23 * 60 + 59));
+    const [preferredHour, preferredMinute] = parsed.data.preferredTime
+      .split(":")
+      .map(Number);
+    const preferredMinutes = preferredHour * 60 + preferredMinute;
+    // No dia de hoje, o primeiro horário nunca pode ficar no passado — usa
+    // o maior entre o horário preferido e "agora + 1h" (mesma regra de
+    // antecedência mínima já aplicada na hora de agendar de verdade).
+    const nowMinutes = nowMinutesInBrazil();
 
-    const slots = selectedDays.flatMap((dayIndex) =>
-      byDay.get(dayIndex)!.map((slot, position) => {
+    const slots = selectedDays.flatMap((dayIndex) => {
+      const date = dateForDay(parsed.data.weekStart, dayIndex);
+      const isToday = date === todayBrazil;
+      const baseMinutes = isToday
+        ? Math.max(preferredMinutes, nowMinutes + 60)
+        : preferredMinutes;
+      if (isToday && baseMinutes >= 23 * 60 + 59)
+        throw new HttpError(
+          422,
+          "TODAY_HAS_NO_TIME_LEFT",
+          "Não sobra horário útil hoje — desmarque o dia de hoje ou tente de novo amanhã.",
+        );
+      return byDay.get(dayIndex)!.map((slot, position) => {
         if (!parsed.data.formats.includes(slot.format))
           throw new HttpError(502, "INVALID_AI_FORMAT", "A IA retornou um formato não permitido.");
         const slides = slot.format === "carousel" ? 5 : 1;
@@ -125,13 +161,13 @@ Deno.serve(async (request) => {
           source: "ai",
           topic: slot.topic,
           date: dateForDay(parsed.data.weekStart, dayIndex),
-          time: scheduleTime(parsed.data.preferredTime, position),
+          time: scheduleTime(baseMinutes, position),
           quantity: 1,
           slides,
           cost: 5 * slides,
         };
-      }),
-    );
+      });
+    });
     return json(request, { slots, model: generated.model, traceId });
   } catch (error) {
     return errorResponse(request, error, traceId);

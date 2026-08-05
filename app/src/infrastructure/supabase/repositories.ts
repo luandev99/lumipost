@@ -40,6 +40,7 @@ import type {
   WeeklyPlanSummary,
 } from "../../domain/repositories";
 import type { CreditPackageId } from "../../domain/creditRules";
+import { optimizeImageFile } from "../imageProcessing";
 import { getSupabaseClient, invokeSecureFunction } from "./client";
 import {
   mapContent,
@@ -55,6 +56,13 @@ import {
 type Row = Record<string, any>;
 const uuidPattern =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
+// America/Sao_Paulo não observa horário de verão desde 2019 — UTC-3 fixo,
+// mesma simplificação usada no resto do app. Sem o offset explícito aqui,
+// timestamptz no Postgres interpretava "date T time" como UTC, adiantando
+// o horário agendado em 3h em relação ao que o usuário escolheu.
+const scheduledAtBrazil = (date: string, time: string) =>
+  `${date}T${time}:00-03:00`;
 
 const currentWorkspace = async (): Promise<Row> => {
   const { data, error } = await getSupabaseClient().rpc("get_my_workspace");
@@ -318,7 +326,12 @@ const brandAssetUploadTypes: Record<string, string> = {
 const MAX_BRAND_ASSET_BYTES = 10 * 1024 * 1024;
 
 export class SupabaseBrandAssetRepository implements BrandAssetRepository {
-  private async uploadToPath(file: File, path: string): Promise<string> {
+  private async uploadToPath(
+    rawFile: File,
+    path: string,
+    options: { forceJpeg?: boolean } = {},
+  ): Promise<string> {
+    const file = await optimizeImageFile(rawFile, options);
     const extension = brandAssetUploadTypes[file.type];
     if (!extension) throw new Error("Formato de imagem não permitido.");
     if (file.size <= 0 || file.size > MAX_BRAND_ASSET_BYTES)
@@ -336,6 +349,7 @@ export class SupabaseBrandAssetRepository implements BrandAssetRepository {
   }
   async uploadLogo(file: File): Promise<string> {
     const workspace = await currentWorkspace();
+    // Preserva o formato original (PNG/WEBP) para não perder transparência.
     return this.uploadToPath(file, `${workspace.organization.id}/brand/logo`);
   }
   async uploadLogomark(file: File): Promise<string> {
@@ -347,9 +361,11 @@ export class SupabaseBrandAssetRepository implements BrandAssetRepository {
   }
   async uploadReferenceImage(file: File): Promise<string> {
     const workspace = await currentWorkspace();
+    // Referência de estilo é sempre uma foto/composição — pode virar JPEG.
     return this.uploadToPath(
       file,
       `${workspace.organization.id}/brand/references/${crypto.randomUUID()}`,
+      { forceJpeg: true },
     );
   }
 }
@@ -508,7 +524,7 @@ export class SupabasePlannerRepository implements PlannerRepository {
         weekly_plan_id: data.id,
         day: slot.date,
         local_time: slot.time,
-        scheduled_at: `${slot.date}T${slot.time}:00`,
+        scheduled_at: scheduledAtBrazil(slot.date, slot.time),
         format: slot.format,
         source: slot.source,
         topic: slot.topic,
@@ -615,7 +631,8 @@ export class SupabasePlannerRepository implements PlannerRepository {
       weekly_plan_id: plan.id,
       day: item.date,
       local_time: item.time,
-      scheduled_at: item.scheduled === false ? null : `${item.date}T${item.time}:00`,
+      scheduled_at:
+        item.scheduled === false ? null : scheduledAtBrazil(item.date, item.time),
       format: item.format,
       source: item.source,
       topic: item.topic,

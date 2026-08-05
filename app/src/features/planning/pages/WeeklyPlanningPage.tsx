@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { addDays, format, formatISO, startOfWeek } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import {
@@ -88,6 +88,27 @@ export function WeeklyPlanningPage() {
     "plan" | "contents" | null
   >(null);
   const monday = useMemo(() => new Date(`${weekStart}T12:00:00`), [weekStart]);
+  const todayIso = useMemo(
+    () => formatISO(new Date(), { representation: "date" }),
+    [],
+  );
+  // Data de cada um dos 7 dias da semana selecionada, na mesma ordem de
+  // dayLabels — usado tanto para travar dias já passados quanto para saber
+  // se "hoje" está entre os selecionados.
+  const dayDates = useMemo(
+    () =>
+      Array.from({ length: 7 }, (_, index) =>
+        formatISO(addDays(monday, index), { representation: "date" }),
+      ),
+    [monday],
+  );
+  // Se a semana mudar (ou o dia virar) e um dia antes selecionado ficar no
+  // passado, remove ele da seleção em vez de deixar travado mas marcado.
+  useEffect(() => {
+    setSelectedDays((current) =>
+      current.filter((index) => dayDates[index] >= todayIso),
+    );
+  }, [dayDates, todayIso]);
   // Antes da IA sugerir a semana ainda não dá pra saber o mix exato de
   // formatos por dia — estima usando o mesmo custo por formato do backend
   // (costFor em content-generation.ts), com 5 slides como padrão de
@@ -330,21 +351,33 @@ export function WeeklyPlanningPage() {
               <div className="mt-5">
                 <b className="text-sm">Dias de publicação</b>
                 <div className="mt-2 grid grid-cols-4 gap-2 sm:grid-cols-7">
-                  {dayLabels.map((label, index) => (
-                    <button
-                      key={label}
-                      onClick={() => {
-                        toggleDay(index);
-                        setPlan([]);
-                      }}
-                      className={`min-h-16 rounded-2xl border text-sm font-bold ${selectedDays.includes(index) ? "border-app-primary bg-app-primary text-white" : "border-app-border bg-app-elevated"}`}
-                    >
-                      {selectedDays.includes(index) && (
-                        <Check className="mx-auto mb-1" size={13} />
-                      )}
-                      {label}
-                    </button>
-                  ))}
+                  {dayLabels.map((label, index) => {
+                    const locked = dayDates[index] < todayIso;
+                    return (
+                      <button
+                        key={label}
+                        disabled={locked}
+                        title={locked ? "Este dia já passou" : undefined}
+                        onClick={() => {
+                          if (locked) return;
+                          toggleDay(index);
+                          setPlan([]);
+                        }}
+                        className={`min-h-16 rounded-2xl border text-sm font-bold ${
+                          locked
+                            ? "cursor-not-allowed border-app-border bg-app-elevated opacity-40"
+                            : selectedDays.includes(index)
+                              ? "border-app-primary bg-app-primary text-white"
+                              : "border-app-border bg-app-elevated"
+                        }`}
+                      >
+                        {!locked && selectedDays.includes(index) && (
+                          <Check className="mx-auto mb-1" size={13} />
+                        )}
+                        {label}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
               <div className="mt-5">

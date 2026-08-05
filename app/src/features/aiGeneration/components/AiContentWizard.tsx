@@ -28,6 +28,7 @@ import {
 } from "../../../presentation/ui";
 import type { PreparedContent } from "../../content/types";
 import { GenerationProgress } from "./GenerationProgress";
+import { optimizeImageFile } from "../../../infrastructure/imageProcessing";
 
 const objectives = [
   "Vender um produto",
@@ -105,10 +106,11 @@ export function AiContentWizard({
   const [uploadingReference, setUploadingReference] = useState(false);
   const [referenceError, setReferenceError] = useState("");
 
-  const pickReferenceImage = async (file: File) => {
+  const pickReferenceImage = async (rawFile: File) => {
     setReferenceError("");
     setUploadingReference(true);
     try {
+      const file = await optimizeImageFile(rawFile, { forceJpeg: true });
       const [uploaded] = await dispatch(uploadMedia([file])).unwrap();
       setReferenceImagePath(uploaded.replace(/^content-uploads\//, ""));
       setReferenceFileName(file.name);

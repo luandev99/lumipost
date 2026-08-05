@@ -371,12 +371,6 @@ export const generateAiContent = async (
             });
         imageModel = generatedImage.model;
         addUsage(generatedImage.usage, generatedImage.model);
-        if (input.format === "carousel" && index === 0) {
-          designSystemDescription = await describeDesignSystemWithOpenAI(
-            generatedImage.bytes,
-            userId,
-          );
-        }
         const objectPath = `${organizationId}/${userId}/ai/${generationId}/${String(index + 1).padStart(2, "0")}.png`;
         // upsert: true — um retry após reclaim de "processing" travado reusa
         // o mesmo generationId (mesmo path). Sem isso, uma imagem já
@@ -390,6 +384,21 @@ export const generateAiContent = async (
         );
         if (upload.error) throw upload.error;
         uploadedPaths.push(objectPath);
+        // Descreve via URL assinada (não base64 inline) — o upload já
+        // aconteceu de qualquer forma, então isso não é uma chamada extra,
+        // só evita inflar o payload da chamada de visão com a imagem inteira
+        // codificada em base64.
+        if (input.format === "carousel" && index === 0) {
+          const { data: signedSlide } = await admin.storage
+            .from("generated-media")
+            .createSignedUrl(objectPath, 60 * 15);
+          if (signedSlide?.signedUrl) {
+            designSystemDescription = await describeDesignSystemWithOpenAI(
+              signedSlide.signedUrl,
+              userId,
+            );
+          }
+        }
       }
     }
 

@@ -36,11 +36,13 @@ export const buildBrandIdentityBrief = (
   if (personality.length) lines.push(`- Personalidade: ${personality.join(", ")}`);
   if (tone.length) lines.push(`- Tom de voz: ${tone.join(", ")}`);
   if (visualStyle) lines.push(`- Estilo visual: ${visualStyle}`);
+  // A regra forte de paleta (com a lista de cores proibidas) já vai
+  // separadamente em buildPaletteInstruction, direto para a geração de
+  // imagem — repeti-la aqui por inteiro só inflaria o prompt à toa. Aqui
+  // basta o dado bruto, para a etapa de texto ter contexto.
   if (primaryColor || secondaryColor) {
     const colors = [primaryColor, secondaryColor].filter(Boolean);
-    lines.push(
-      `- Paleta de cores: use somente ${colors.join(" e ")} como cor dominante (preto, branco ou cinza só como apoio de contraste). Nunca use roxo, violeta, lilás, lavanda ou púrpura — nem em gradiente, sombra ou elemento decorativo — a menos que seja uma das cores acima.`,
-    );
+    lines.push(`- Cores da marca: ${colors.join(" e ")}.`);
   }
   if (headingFont || bodyFont)
     lines.push(
