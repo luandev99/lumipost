@@ -1,12 +1,11 @@
--- claim_due_weekly_slots_service só reivindicava status='pending': uma vez
--- que um slot virava 'processing', se a Edge Function morresse no meio
--- (timeout de execução, geração de carrossel com várias imagens sequenciais
--- passando do limite da plataforma), o slot ficava travado em 'processing'
--- para sempre — sem retry automático nem botão de retry manual na UI (que só
--- aparece para status='failed'). Agora reivindica também 'processing' com
--- lock antigo, igual ao padrão já usado em claim_video_generation_jobs_service.
--- Ver também 202608050002_weekly_slot_max_attempts.sql: intervalo de lock
--- reduzido de 5min para 2min e attempts agora tem um teto que vira "failed".
+-- Carrossel (5 imagens sequenciais) pode estourar o limite de execução da
+-- Edge Function no meio da geração, deixando o slot travado em 'processing'.
+-- O worker (process-weekly-slots) só devolvia isso pro cron depois de 5min
+-- parado, e tentava de novo pra sempre sem limite — o card ficava "Gerando"
+-- indefinidamente. O worker agora tem um teto de tentativas (MAX_ATTEMPTS)
+-- que marca o slot como 'failed' de vez; aqui só reduzimos o intervalo de
+-- lock travado de 5min para 2min, para esse ciclo de retry acontecer mais
+-- rápido enquanto o teto de tentativas não é atingido.
 
 create or replace function public.claim_due_weekly_slots_service(batch_size integer default 10)
 returns setof public.weekly_slots language plpgsql security definer set search_path = '' as $$
@@ -18,7 +17,7 @@ begin
     select s.id
     from public.weekly_slots s
     where s.status in ('pending', 'processing')
-      and (s.locked_at is null or s.locked_at < now() - interval '5 minutes')
+      and (s.locked_at is null or s.locked_at < now() - interval '2 minutes')
     order by s.created_at
     for update skip locked
     limit batch_size

@@ -27,7 +27,17 @@ type WeeklySlot = {
   topic: string;
   slides: number;
   draft: Record<string, unknown>;
+  attempts: number;
 };
+
+// Sem isso, um slot que estoura o limite de execução da plataforma toda vez
+// (ex.: carrossel de 5 imagens sequenciais) ficava reivindicado, travado,
+// devolvido pelo stale reclaim e tentado de novo pra sempre — sem nunca virar
+// "failed" nem mostrar o botão de tentar novamente na UI. Teto baixo de
+// propósito: cada tentativa chama a OpenAI de novo (texto + imagens) e cobra
+// de verdade mesmo quando falha no meio — depois do teto, só tenta de novo
+// se o usuário clicar manualmente em "Tentar novamente".
+const MAX_ATTEMPTS = 2;
 
 // Este worker é chamado pelo pg_cron a cada minuto. Criado uma única vez por
 // isolate (fora do handler), o cliente admin reaproveita a mesma conexão
@@ -75,6 +85,10 @@ Deno.serve(async (request) => {
         .eq("id", slot.id);
       results.push({ id: slot.id, status: "failed" });
     };
+    if (slot.attempts > MAX_ATTEMPTS) {
+      await fail("MAX_ATTEMPTS_EXCEEDED");
+      continue;
+    }
     try {
       const { data: plan, error: planError } = await admin
         .from("weekly_plans")
