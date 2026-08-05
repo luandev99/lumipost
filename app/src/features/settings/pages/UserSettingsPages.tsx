@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   CreditCard,
   Facebook,
+  ImagePlus,
   Instagram,
   Link2,
   LogOut,
@@ -16,6 +17,7 @@ import {
   Sparkles,
   Unlink,
   UserRound,
+  X,
 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { BrandProfile, SocialAccount } from "../../../domain/models";
@@ -31,6 +33,9 @@ import {
   logoutSession,
   restoreSession,
   uiActions,
+  uploadBrandLogo,
+  uploadBrandLogomark,
+  uploadBrandReferenceImage,
 } from "../../../presentation/store/store";
 import {
   Badge,
@@ -39,6 +44,7 @@ import {
   Input,
   Notice,
   PageHeader,
+  Select,
   Textarea,
 } from "../../../presentation/ui";
 import { errorMessage } from "../../../presentation/utils/errors";
@@ -48,11 +54,10 @@ import {
   IdentityMultiCombobox,
 } from "../components/IdentityCombobox";
 
-// A escolha de fonte saiu da tela: o texto das peças é desenhado pelo modelo
-// de imagem, que não aplica uma família tipográfica específica de forma
-// confiável. Os nomes continuam salvos na marca (propostos pela análise do
-// Instagram) e seguem indo no prompt, mas deixaram de ser prometidos ao
-// usuário como algo que ele controla.
+// Lista curta e curada: o modelo de imagem não garante renderizar a fonte
+// exata mesmo quando ela é informada no prompt, então a escolha aqui serve
+// mais como referência de estilo do que uma promessa de precisão tipográfica
+// (aviso repetido na tela, perto dos seletores).
 const fontFallbacks: Record<string, string> = {
   Inter: 'Inter, "Segoe UI", Arial, sans-serif',
   Arial: "Arial, sans-serif",
@@ -231,6 +236,83 @@ export function BrandPage() {
   const [analyzing, setAnalyzing] = useState(false);
   const patch = (value: Partial<BrandProfile>) =>
     setBrand((current) => ({ ...current, ...value }));
+
+  // Preview local por asset: enquanto o path recém-enviado ainda não foi
+  // assinado (só acontece no próximo login/restoreSession), a tela mostra o
+  // blob local em vez do path cru — o campo persistido (brand.logoUrl etc.)
+  // sempre guarda o path real, nunca a blob URL.
+  const [logoPreview, setLogoPreview] = useState<string | undefined>(
+    base.logoUrl && /^https?:\/\//.test(base.logoUrl) ? base.logoUrl : undefined,
+  );
+  const [logomarkPreview, setLogomarkPreview] = useState<string | undefined>(
+    base.logomarkUrl && /^https?:\/\//.test(base.logomarkUrl)
+      ? base.logomarkUrl
+      : undefined,
+  );
+  const [referencePreviews, setReferencePreviews] = useState<
+    Record<string, string>
+  >(() => {
+    const initial: Record<string, string> = {};
+    for (const path of base.referenceImageUrls ?? [])
+      if (/^https?:\/\//.test(path)) initial[path] = path;
+    return initial;
+  });
+  const [uploadingLogo, setUploadingLogo] = useState(false);
+  const [uploadingLogomark, setUploadingLogomark] = useState(false);
+  const [uploadingReference, setUploadingReference] = useState(false);
+  const [assetError, setAssetError] = useState("");
+
+  const pickLogo = async (file: File) => {
+    setAssetError("");
+    setUploadingLogo(true);
+    setLogoPreview(URL.createObjectURL(file));
+    try {
+      const path = await dispatch(uploadBrandLogo(file)).unwrap();
+      patch({ logoUrl: path });
+    } catch (caught) {
+      setAssetError(errorMessage(caught, "Não foi possível enviar o logo."));
+    } finally {
+      setUploadingLogo(false);
+    }
+  };
+  const pickLogomark = async (file: File) => {
+    setAssetError("");
+    setUploadingLogomark(true);
+    setLogomarkPreview(URL.createObjectURL(file));
+    try {
+      const path = await dispatch(uploadBrandLogomark(file)).unwrap();
+      patch({ logomarkUrl: path });
+    } catch (caught) {
+      setAssetError(errorMessage(caught, "Não foi possível enviar a logomarca."));
+    } finally {
+      setUploadingLogomark(false);
+    }
+  };
+  const addReferenceImage = async (file: File) => {
+    if ((brand.referenceImageUrls ?? []).length >= 5) return;
+    setAssetError("");
+    setUploadingReference(true);
+    try {
+      const path = await dispatch(uploadBrandReferenceImage(file)).unwrap();
+      setReferencePreviews((current) => ({
+        ...current,
+        [path]: URL.createObjectURL(file),
+      }));
+      patch({ referenceImageUrls: [...(brand.referenceImageUrls ?? []), path] });
+    } catch (caught) {
+      setAssetError(
+        errorMessage(caught, "Não foi possível enviar a imagem de referência."),
+      );
+    } finally {
+      setUploadingReference(false);
+    }
+  };
+  const removeReferenceImage = (path: string) =>
+    patch({
+      referenceImageUrls: (brand.referenceImageUrls ?? []).filter(
+        (item) => item !== path,
+      ),
+    });
   const save = async () => {
     await dispatch(completeOnboarding({ userId: user.id, brand })).unwrap();
     setNotice(
@@ -296,6 +378,9 @@ export function BrandPage() {
       {analysisError && (
         <div className="mb-4"><Notice tone="error">{analysisError}</Notice></div>
       )}
+      {assetError && (
+        <div className="mb-4"><Notice tone="error">{assetError}</Notice></div>
+      )}
       <div className="grid gap-5 xl:grid-cols-[1fr_320px]">
         <main className="space-y-5">
           <Card className="p-5">
@@ -319,6 +404,15 @@ export function BrandPage() {
                 value={brand.specialty}
                 onChange={(event) => patch({ specialty: event.target.value })}
               />
+              <IdentityCombobox
+                label="Tipo de negócio"
+                options={identityOptions.businessTypes}
+                value={brand.businessType ?? ""}
+                allowCustom
+                placeholder="Ex.: Corporativo, Industrial..."
+                description="Orienta o tom e o estilo das peças geradas pela IA."
+                onChange={(businessType) => patch({ businessType })}
+              />
               <Input
                 label="Instagram"
                 value={brand.instagram}
@@ -339,6 +433,132 @@ export function BrandPage() {
                   value={brand.audience}
                   onChange={(event) => patch({ audience: event.target.value })}
                 />
+              </div>
+            </div>
+          </Card>
+          <Card className="p-5">
+            <div className="mb-5 flex items-center gap-3">
+              <ImagePlus className="text-app-primary" />
+              <h2 className="text-xl font-bold">Logo, logomarca e referências</h2>
+            </div>
+            <p className="text-muted -mt-3 mb-4 text-sm">
+              Logo e logomarca são reproduzidos nas peças geradas. As
+              referências de estilo ajudam a IA a copiar layout e composição —
+              como os exemplos que você já tem em mente.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <p className="mb-1.5 text-sm font-semibold">
+                  Logo (símbolo)
+                </p>
+                <label className="surface-subtle flex aspect-square cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-dashed border-app-border hover:border-app-primary">
+                  {logoPreview ? (
+                    <img
+                      src={logoPreview}
+                      alt="Logo da marca"
+                      className="h-full w-full object-contain p-3"
+                    />
+                  ) : (
+                    <span className="text-muted flex flex-col items-center gap-1 text-xs font-semibold">
+                      <ImagePlus size={20} />
+                      {uploadingLogo ? "Enviando…" : "Enviar logo"}
+                    </span>
+                  )}
+                  <input
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                    className="hidden"
+                    disabled={uploadingLogo}
+                    onChange={(event) => {
+                      const file = event.target.files?.[0];
+                      if (file) void pickLogo(file);
+                      event.target.value = "";
+                    }}
+                  />
+                </label>
+              </div>
+              <div>
+                <p className="mb-1.5 text-sm font-semibold">
+                  Logomarca (peça completa)
+                </p>
+                <label className="surface-subtle flex aspect-square cursor-pointer items-center justify-center overflow-hidden rounded-2xl border border-dashed border-app-border hover:border-app-primary">
+                  {logomarkPreview ? (
+                    <img
+                      src={logomarkPreview}
+                      alt="Logomarca da marca"
+                      className="h-full w-full object-contain p-3"
+                    />
+                  ) : (
+                    <span className="text-muted flex flex-col items-center gap-1 text-xs font-semibold">
+                      <ImagePlus size={20} />
+                      {uploadingLogomark ? "Enviando…" : "Enviar logomarca"}
+                    </span>
+                  )}
+                  <input
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                    className="hidden"
+                    disabled={uploadingLogomark}
+                    onChange={(event) => {
+                      const file = event.target.files?.[0];
+                      if (file) void pickLogomark(file);
+                      event.target.value = "";
+                    }}
+                  />
+                </label>
+              </div>
+            </div>
+            <div className="mt-5">
+              <div className="mb-1.5 flex items-end justify-between">
+                <p className="text-sm font-semibold">
+                  Referências de estilo
+                </p>
+                <span className="text-muted text-[10px]">
+                  {(brand.referenceImageUrls ?? []).length}/5
+                </span>
+              </div>
+              <div className="grid grid-cols-3 gap-3 sm:grid-cols-5">
+                {(brand.referenceImageUrls ?? []).map((path) => (
+                  <div
+                    key={path}
+                    className="surface-subtle relative aspect-square overflow-hidden rounded-2xl border border-app-border"
+                  >
+                    {referencePreviews[path] && (
+                      <img
+                        src={referencePreviews[path]}
+                        alt="Referência de estilo"
+                        className="h-full w-full object-cover"
+                      />
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => removeReferenceImage(path)}
+                      aria-label="Remover referência"
+                      className="absolute right-1.5 top-1.5 rounded-full bg-black/60 p-1 text-white hover:bg-black/80"
+                    >
+                      <X size={12} />
+                    </button>
+                  </div>
+                ))}
+                {(brand.referenceImageUrls ?? []).length < 5 && (
+                  <label className="surface-subtle flex aspect-square cursor-pointer items-center justify-center rounded-2xl border border-dashed border-app-border hover:border-app-primary">
+                    <span className="text-muted flex flex-col items-center gap-1 text-[10px] font-semibold">
+                      <ImagePlus size={18} />
+                      {uploadingReference ? "Enviando…" : "Adicionar"}
+                    </span>
+                    <input
+                      type="file"
+                      accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                      className="hidden"
+                      disabled={uploadingReference}
+                      onChange={(event) => {
+                        const file = event.target.files?.[0];
+                        if (file) void addReferenceImage(file);
+                        event.target.value = "";
+                      }}
+                    />
+                  </label>
+                )}
               </div>
             </div>
           </Card>
@@ -384,10 +604,38 @@ export function BrandPage() {
                   label="Estilo visual"
                   options={identityOptions.visualStyles}
                   value={brand.visualStyle}
+                  allowCustom
                   description="Pesquise e escolha a direção visual principal da marca."
                   onChange={(visualStyle) => patch({ visualStyle })}
                 />
               </div>
+              <Select
+                label="Fonte dos títulos"
+                value={brand.headingFont}
+                onChange={(event) => patch({ headingFont: event.target.value })}
+              >
+                {Object.keys(fontFallbacks).map((font) => (
+                  <option key={font} value={font}>
+                    {font}
+                  </option>
+                ))}
+              </Select>
+              <Select
+                label="Fonte dos textos"
+                value={brand.bodyFont}
+                onChange={(event) => patch({ bodyFont: event.target.value })}
+              >
+                {Object.keys(fontFallbacks).map((font) => (
+                  <option key={font} value={font}>
+                    {font}
+                  </option>
+                ))}
+              </Select>
+              <p className="text-muted sm:col-span-2 text-[11px]">
+                A IA de imagem não garante renderizar exatamente esta fonte —
+                é uma referência para o estilo, não uma promessa de precisão
+                tipográfica.
+              </p>
             </div>
           </Card>
         </main>
@@ -425,6 +673,14 @@ export function BrandPage() {
               </p>
               <p>
                 <b>Estilo:</b> {brand.visualStyle}
+              </p>
+              {brand.businessType && (
+                <p>
+                  <b>Tipo de negócio:</b> {brand.businessType}
+                </p>
+              )}
+              <p>
+                <b>Fontes:</b> {brand.headingFont} / {brand.bodyFont}
               </p>
             </div>
             <Button className="mt-5 w-full" onClick={() => void save()}>

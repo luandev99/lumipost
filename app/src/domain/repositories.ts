@@ -109,7 +109,6 @@ export interface PlannerRepository {
         socialAccountId?: string;
         referenceImagePath?: string;
         referenceMode?: "base" | "context";
-        useBrandLogo?: boolean;
       };
     }>;
   }): Promise<{ planId: string; slotIds: string[] }>;
@@ -161,6 +160,11 @@ export interface CreditRepository {
 }
 export interface MediaRepository {
   upload(files: File[]): Promise<string[]>;
+}
+export interface BrandAssetRepository {
+  uploadLogo(file: File): Promise<string>;
+  uploadLogomark(file: File): Promise<string>;
+  uploadReferenceImage(file: File): Promise<string>;
 }
 export interface SecureBackendGateway {
   generateWeeklyPlan(input: {

@@ -22,6 +22,7 @@ import type {
   AiGenerationRepository,
   AuditRepository,
   AuthRepository,
+  BrandAssetRepository,
   ContentRepository,
   CreditRepository,
   MediaRepository,
@@ -44,6 +45,7 @@ import {
   MemoryAiGenerationRepository,
   MemoryAuditRepository,
   MemoryAuthRepository,
+  MemoryBrandAssetRepository,
   MemoryContentRepository,
   MemoryMediaRepository,
   MemoryPlannerRepository,
@@ -58,6 +60,7 @@ import {
   SupabaseAuditRepository,
   SupabaseAuthRepository,
   SupabaseBackendGateway,
+  SupabaseBrandAssetRepository,
   SupabaseContentRepository,
   SupabaseCreditRepository,
   SupabaseMediaRepository,
@@ -89,6 +92,7 @@ export class ApplicationContainer {
   ai?: AiGenerationRepository;
   socialAccounts: SocialAccountRepository;
   media: MediaRepository;
+  brandAssets: BrandAssetRepository;
   credits?: CreditRepository;
   backend?: SecureBackendGateway;
 
@@ -100,6 +104,7 @@ export class ApplicationContainer {
       this.subscriptions = new SupabaseSubscriptionRepository();
       this.contents = new SupabaseContentRepository();
       this.media = new SupabaseMediaRepository();
+      this.brandAssets = new SupabaseBrandAssetRepository();
       this.planner = new SupabasePlannerRepository();
       this.prompts = new SupabasePromptRepository();
       this.queue = new SupabaseQueueRepository();
@@ -115,6 +120,7 @@ export class ApplicationContainer {
       this.subscriptions = new MemorySubscriptionRepository();
       this.contents = new MemoryContentRepository();
       this.media = new MemoryMediaRepository();
+      this.brandAssets = new MemoryBrandAssetRepository();
       this.planner = new MemoryPlannerRepository();
       this.prompts = new MemoryPromptRepository();
       this.queue = new MemoryQueueRepository();
@@ -192,6 +198,15 @@ export class ApplicationContainer {
   }
   async uploadMedia(files: File[]) {
     return this.media.upload(files);
+  }
+  async uploadBrandLogo(file: File) {
+    return this.brandAssets.uploadLogo(file);
+  }
+  async uploadBrandLogomark(file: File) {
+    return this.brandAssets.uploadLogomark(file);
+  }
+  async uploadBrandReferenceImage(file: File) {
+    return this.brandAssets.uploadReferenceImage(file);
   }
   subscribeCreditBalance(
     organizationId: string,
@@ -970,7 +985,6 @@ export class ApplicationContainer {
       reelScript?: Content["reelScript"];
       referenceImagePath?: string;
       referenceMode?: "base" | "context";
-      useBrandLogo?: boolean;
     },
   ) {
     return this.planner.createPendingWeeklyPlan({
@@ -996,7 +1010,6 @@ export class ApplicationContainer {
             socialAccountId: input.socialAccountId,
             referenceImagePath: input.referenceImagePath,
             referenceMode: input.referenceMode,
-            useBrandLogo: input.useBrandLogo,
           },
         },
       ],

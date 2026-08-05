@@ -130,7 +130,6 @@ export function ScheduleDrawer({
         reelScript: content.reelScript,
         referenceImagePath: content.referenceImagePath,
         referenceMode: content.referenceMode,
-        useBrandLogo: content.useBrandLogo,
       }),
     ).unwrap();
     navigate(`/planning/${result.planId}`);

@@ -42,6 +42,9 @@ export interface BrandProfile {
   personality: string[];
   tone: string[];
   logoUrl?: string;
+  logomarkUrl?: string;
+  referenceImageUrls?: string[];
+  businessType?: string;
   primaryColor: string;
   secondaryColor: string;
   headingFont: string;

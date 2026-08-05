@@ -1,5 +1,5 @@
 import type { AiContentDraft, AiGenerationRequest, AuditEvent, BrandProfile, Content, Plan, PromptTemplate, QueueItem, SocialAccount, Subscription, TemplateMeta, User, VisualTemplateV2, WeeklyPlan } from '../domain/models'
-import type { AiGenerationRepository, AuditRepository, AuthRepository, ContentRepository, MediaRepository, PlannerRepository, PromptRepository, PublishingQueueRepository, SocialAccountRepository, SubscriptionRepository, TemplateRepository, UserRepository, WeeklyPlanProgress } from '../domain/repositories'
+import type { AiGenerationRepository, AuditRepository, AuthRepository, BrandAssetRepository, ContentRepository, MediaRepository, PlannerRepository, PromptRepository, PublishingQueueRepository, SocialAccountRepository, SubscriptionRepository, TemplateRepository, UserRepository, WeeklyPlanProgress } from '../domain/repositories'
 import { seedAudit, seedContents, seedPlans, seedPrompts, seedQueue, seedSocialAccounts, seedSubscriptions, seedUsers, seedWeeklyPlans } from './seed'
 import { validateTemplate } from './templateSchema'
 
@@ -107,4 +107,10 @@ export class MemoryMediaRepository implements MediaRepository {
   async upload(files: File[]) {
     return files.map((file) => URL.createObjectURL(file))
   }
+}
+
+export class MemoryBrandAssetRepository implements BrandAssetRepository {
+  async uploadLogo(file: File) { return URL.createObjectURL(file) }
+  async uploadLogomark(file: File) { return URL.createObjectURL(file) }
+  async uploadReferenceImage(file: File) { return URL.createObjectURL(file) }
 }

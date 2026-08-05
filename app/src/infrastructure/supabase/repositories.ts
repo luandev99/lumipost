@@ -23,6 +23,7 @@ import type {
 import type {
   AuditRepository,
   AuthRepository,
+  BrandAssetRepository,
   ContentRepository,
   CreditRepository,
   MediaRepository,
@@ -69,14 +70,42 @@ const currentAuthUser = async () => {
   return data.user;
 };
 
-const withSignedLogo = async (user: User): Promise<User> => {
-  const path = user.brand?.logoUrl;
-  if (!path || /^https?:\/\//.test(path)) return user;
+// Assina logo, logomarca e cada imagem de referência em paralelo — uma
+// referência apagada/inacessível não pode derrubar login/current() inteiro,
+// então cada assinatura falha isoladamente (vira undefined/entrada removida)
+// em vez de propagar o erro.
+const signBrandAssetPath = async (
+  path: string | undefined,
+): Promise<string | undefined> => {
+  if (!path) return undefined;
+  if (/^https?:\/\//.test(path)) return path;
   const { data } = await getSupabaseClient()
     .storage.from("brand-assets")
     .createSignedUrl(path, 60 * 60);
-  if (!data?.signedUrl) return user;
-  return { ...user, brand: { ...user.brand!, logoUrl: data.signedUrl } };
+  return data?.signedUrl ?? undefined;
+};
+const withSignedBrandAssets = async (user: User): Promise<User> => {
+  if (!user.brand) return user;
+  const [logoUrl, logomarkUrl, referenceImageUrls] = await Promise.all([
+    signBrandAssetPath(user.brand.logoUrl),
+    signBrandAssetPath(user.brand.logomarkUrl),
+    Promise.all(
+      (user.brand.referenceImageUrls ?? []).map((path) =>
+        signBrandAssetPath(path),
+      ),
+    ),
+  ]);
+  return {
+    ...user,
+    brand: {
+      ...user.brand,
+      logoUrl,
+      logomarkUrl,
+      referenceImageUrls: referenceImageUrls.filter(
+        (url): url is string => Boolean(url),
+      ),
+    },
+  };
 };
 
 export class SupabaseAuthRepository implements AuthRepository {
@@ -90,7 +119,7 @@ export class SupabaseAuthRepository implements AuthRepository {
     const { data: workspace, error: workspaceError } =
       await client.rpc("get_my_workspace");
     if (workspaceError) throw new Error(workspaceError.message);
-    const user = await withSignedLogo(mapWorkspaceUser(data.user, workspace));
+    const user = await withSignedBrandAssets(mapWorkspaceUser(data.user, workspace));
     if (user.status !== "active") {
       await client.auth.signOut();
       throw new Error("Esta conta está suspensa.");
@@ -118,7 +147,7 @@ export class SupabaseAuthRepository implements AuthRepository {
     const { data: workspace, error: workspaceError } =
       await client.rpc("get_my_workspace");
     if (workspaceError) throw new Error(workspaceError.message);
-    return withSignedLogo(mapWorkspaceUser(data.user, workspace));
+    return withSignedBrandAssets(mapWorkspaceUser(data.user, workspace));
   }
 
   async loginWithGoogle(redirectTo: string): Promise<void> {
@@ -142,7 +171,7 @@ export class SupabaseAuthRepository implements AuthRepository {
     const { data: workspace, error: workspaceError } =
       await client.rpc("get_my_workspace");
     if (workspaceError || !workspace) return undefined;
-    const user = await withSignedLogo(mapWorkspaceUser(data.user, workspace));
+    const user = await withSignedBrandAssets(mapWorkspaceUser(data.user, workspace));
     if (user.status !== "active") {
       await client.auth.signOut();
       return undefined;
@@ -277,6 +306,51 @@ export class SupabaseMediaRepository implements MediaRepository {
           .remove(uploaded);
       throw error;
     }
+  }
+}
+
+const brandAssetUploadTypes: Record<string, string> = {
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp",
+  "image/svg+xml": "svg",
+};
+const MAX_BRAND_ASSET_BYTES = 10 * 1024 * 1024;
+
+export class SupabaseBrandAssetRepository implements BrandAssetRepository {
+  private async uploadToPath(file: File, path: string): Promise<string> {
+    const extension = brandAssetUploadTypes[file.type];
+    if (!extension) throw new Error("Formato de imagem não permitido.");
+    if (file.size <= 0 || file.size > MAX_BRAND_ASSET_BYTES)
+      throw new Error("Arquivo vazio ou acima do limite de 10 MB.");
+    const objectPath = `${path}.${extension}`;
+    const { error } = await getSupabaseClient()
+      .storage.from("brand-assets")
+      .upload(objectPath, file, {
+        contentType: file.type,
+        cacheControl: "3600",
+        upsert: true,
+      });
+    if (error) throw new Error(error.message);
+    return objectPath;
+  }
+  async uploadLogo(file: File): Promise<string> {
+    const workspace = await currentWorkspace();
+    return this.uploadToPath(file, `${workspace.organization.id}/brand/logo`);
+  }
+  async uploadLogomark(file: File): Promise<string> {
+    const workspace = await currentWorkspace();
+    return this.uploadToPath(
+      file,
+      `${workspace.organization.id}/brand/logomark`,
+    );
+  }
+  async uploadReferenceImage(file: File): Promise<string> {
+    const workspace = await currentWorkspace();
+    return this.uploadToPath(
+      file,
+      `${workspace.organization.id}/brand/references/${crypto.randomUUID()}`,
+    );
   }
 }
 

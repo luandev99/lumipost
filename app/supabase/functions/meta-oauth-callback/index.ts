@@ -1,6 +1,13 @@
 import { appUrl, createAdminClient, metaConfig } from "../_shared/config.ts";
 import { sha256 } from "../_shared/crypto.ts";
 import { getMetaProfile, getRecentMetaMedia } from "../_shared/meta.ts";
+import { runBrandAnalysis } from "../_shared/brand-analysis.ts";
+
+// O runtime de Edge Functions do Supabase expõe este global para manter a
+// function viva executando trabalho em background depois que a resposta já
+// foi devolvida — é o que permite disparar a análise do Instagram sem
+// atrasar o redirect do OAuth por causa de uma chamada de visão da OpenAI.
+declare const EdgeRuntime: { waitUntil(promise: Promise<unknown>): void };
 
 const redirect = (path: string, result: "success" | "error", code?: string) => {
   const safePath = ["/social-accounts", "/brand", "/onboarding"].includes(path)
@@ -165,14 +172,41 @@ Deno.serve(async (request) => {
       profile,
       recent_media: recentMedia,
     });
-    await admin
+    const { data: brandRow } = await admin
       .from("brands")
       .update({
         instagram_handle: profile.username,
         instagram_connected: true,
       })
       .eq("organization_id", oauthState.organization_id)
-      .eq("is_default", true);
+      .eq("is_default", true)
+      .select("id")
+      .maybeSingle();
+    // Só encontra uma linha aqui em reconexões pós-onboarding — no fluxo mais
+    // comum (conectar o Instagram no passo 0 do onboarding), a marca ainda
+    // nem existe (só é criada depois, em complete_my_onboarding), então esse
+    // caminho fica a cargo do gatilho equivalente no finish() do onboarding.
+    if (brandRow?.id && accountId) {
+      EdgeRuntime.waitUntil(
+        runBrandAnalysis(admin, {
+          brandId: brandRow.id,
+          organizationId: oauthState.organization_id,
+          socialAccountId: accountId,
+          requestedBy: oauthState.user_id,
+          applyAutomatically: true,
+        }).catch((analysisError) => {
+          console.error(
+            JSON.stringify({
+              level: "error",
+              code: "AUTO_BRAND_ANALYSIS_FAILED",
+              message: analysisError instanceof Error
+                ? analysisError.message.slice(0, 300)
+                : "UNKNOWN",
+            }),
+          );
+        }),
+      );
+    }
     await admin.from("audit_logs").insert({
       organization_id: oauthState.organization_id,
       actor_user_id: oauthState.user_id,

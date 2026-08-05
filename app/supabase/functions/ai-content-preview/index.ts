@@ -8,8 +8,6 @@ import {
   traceIdFor,
 } from "../_shared/http.ts";
 import { generateContentDraftsWithOpenAI } from "../_shared/openai.ts";
-import { createAdminClient } from "../_shared/config.ts";
-import { selectVisualTemplate } from "../_shared/template-selection.ts";
 
 const formats = ["post", "carousel", "story", "reel", "video", "caption"] as const;
 const inputSchema = z.object({
@@ -41,7 +39,7 @@ Deno.serve(async (request) => {
       throw workspaceResult.error ?? new Error("WORKSPACE_NOT_FOUND");
     const promptResult = await client
       .from("prompt_templates")
-      .select("system_prompt,user_prompt,packages")
+      .select("system_prompt,user_prompt")
       .eq("task", "visual-copy")
       .in("format", [parsed.data.format, "all"])
       .eq("status", "active")
@@ -49,18 +47,12 @@ Deno.serve(async (request) => {
       .limit(1)
       .maybeSingle();
     if (promptResult.error) throw promptResult.error;
-    const selectedTemplate = await selectVisualTemplate(
-      createAdminClient(),
-      parsed.data.format,
-      promptResult.data?.packages ?? [],
-    );
 
     const generated = await generateContentDraftsWithOpenAI({
       userId: user.id,
       ...parsed.data,
       slides: parsed.data.format === "carousel" ? parsed.data.slides ?? 5 : 1,
       brand: workspaceResult.data.brand ?? null,
-      template: selectedTemplate,
       promptTemplate: promptResult.data
         ? {
             systemPrompt: promptResult.data.system_prompt,

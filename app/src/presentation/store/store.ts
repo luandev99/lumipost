@@ -48,6 +48,18 @@ export const fetchCreditTransactions = createAsyncThunk(
 export const uploadMedia = createAsyncThunk("media/upload", (files: File[]) =>
   appContainer.uploadMedia(files),
 );
+export const uploadBrandLogo = createAsyncThunk(
+  "brand/uploadLogo",
+  (file: File) => appContainer.uploadBrandLogo(file),
+);
+export const uploadBrandLogomark = createAsyncThunk(
+  "brand/uploadLogomark",
+  (file: File) => appContainer.uploadBrandLogomark(file),
+);
+export const uploadBrandReferenceImage = createAsyncThunk(
+  "brand/uploadReferenceImage",
+  (file: File) => appContainer.uploadBrandReferenceImage(file),
+);
 export const login = createAsyncThunk(
   "auth/login",
   (input: { email: string; password: string }) =>
@@ -217,7 +229,6 @@ export const createSingleContentPlan = createAsyncThunk(
     reelScript?: Content["reelScript"];
     referenceImagePath?: string;
     referenceMode?: "base" | "context";
-    useBrandLogo?: boolean;
   }) => appContainer.createSingleContentPlan(input.userId, input),
 );
 export const fetchWeeklyPlanProgress = createAsyncThunk(

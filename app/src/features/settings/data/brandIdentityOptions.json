@@ -35,5 +35,9 @@
     "Afrofuturista", "Étnico", "Cultural", "Fashion", "Beauty", "Editorial de moda", "Gastronômico", "Fitness", "Wellness", "Esportivo",
     "Educacional", "Científico", "Financeiro", "Imobiliário", "Automotivo", "Musical", "Gamer", "Cyberpunk", "Steampunk", "Pop art",
     "Bauhaus", "Art déco", "Art nouveau", "Memphis", "Gradiente", "Glassmorphism", "Claymorphism", "Flat design", "Material design", "Maximalista"
+  ],
+  "businessTypes": [
+    "Corporativo", "Industrial", "Varejo", "Serviços", "Saúde", "Educacional", "Alimentício", "Imobiliário", "Tecnologia", "Financeiro",
+    "Jurídico", "Beleza e Estética", "Fitness e Bem-estar", "Moda", "Turismo e Hospitalidade", "Automotivo", "Agronegócio", "Entretenimento", "ONG", "E-commerce"
   ]
 }

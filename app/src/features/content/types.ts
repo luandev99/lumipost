@@ -24,7 +24,6 @@ export interface PreparedContent {
   taggedPeople?: string[]
   referenceImagePath?: string
   referenceMode?: 'base' | 'context'
-  useBrandLogo?: boolean
 }
 
 export function contentToPrepared(content: Content, duplicateBeforeSchedule = true): PreparedContent {

@@ -4,12 +4,13 @@ import { HttpError } from "./http.ts";
 import {
   buildPaletteInstruction,
   describeDesignSystemWithOpenAI,
-  describeReferenceImageWithOpenAI,
   editImageWithOpenAI,
   generateContentDraftsWithOpenAI,
   generateImageWithOpenAI,
   type OpenAiUsage,
 } from "./openai.ts";
+import { buildBrandIdentityBrief } from "./brand-brief.ts";
+import { resolveGenerationImageAssets } from "./brand-assets.ts";
 import { costMillicents } from "./ai-pricing.ts";
 import { selectVisualTemplate } from "./template-selection.ts";
 import { submitVideoJob } from "./higgsfield.ts";
@@ -43,7 +44,6 @@ export const generateAiContentInputSchema = z.object({
   socialAccountId: z.string().uuid().optional(),
   referenceImagePath: z.string().trim().min(3).max(400).optional(),
   referenceMode: z.enum(["base", "context"]).optional(),
-  useBrandLogo: z.boolean().optional(),
 }).strict();
 
 export type GenerateAiContentInput = z.infer<typeof generateAiContentInputSchema>;
@@ -226,7 +226,6 @@ export const generateAiContent = async (
     let slideTexts = input.slideTexts;
     let reelScript = input.reelScript;
     let textModel: string | undefined;
-    let selectedTemplate: Awaited<ReturnType<typeof selectVisualTemplate>>;
     // Somatório de tokens de todas as chamadas OpenAI desta geração (copy +
     // cada imagem), gravado no fim para o painel de custo do admin. O custo
     // é acumulado por chamada, não no total: texto e imagem rodam em modelos
@@ -250,7 +249,7 @@ export const generateAiContent = async (
       (input.format === "carousel" && slideTexts?.length !== slides)) {
       const promptResult = await admin
         .from("prompt_templates")
-        .select("system_prompt,user_prompt,packages")
+        .select("system_prompt,user_prompt")
         .eq("task", "visual-copy")
         .in("format", [input.format, "all"])
         .eq("status", "active")
@@ -258,11 +257,6 @@ export const generateAiContent = async (
         .limit(1)
         .maybeSingle();
       if (promptResult.error) throw promptResult.error;
-      selectedTemplate = await selectVisualTemplate(
-        admin,
-        input.format,
-        promptResult.data?.packages ?? [],
-      );
       const generated = await generateContentDraftsWithOpenAI({
         userId,
         objective: input.objective,
@@ -273,7 +267,6 @@ export const generateAiContent = async (
         variations: 1,
         slides,
         brand,
-        template: selectedTemplate,
         promptTemplate: promptResult.data
           ? {
               systemPrompt: promptResult.data.system_prompt,
@@ -300,47 +293,31 @@ export const generateAiContent = async (
     if (input.format === "carousel" && slideTexts?.length !== slides)
       throw new Error("OPENAI_INVALID_CAROUSEL_SLIDES");
 
-    // Foto de referência (opcional): "context" descreve a imagem uma única
-    // vez e injeta a descrição no prompt de cada slide; "base" reusa os
-    // bytes originais como ponto de partida (edição) em cada imagem gerada.
-    let referenceDescription: string | undefined;
-    let referenceBytes: Uint8Array | undefined;
-    let referencePurpose: "reference" | "logo" = "reference";
-    if (input.referenceImagePath) {
-      const { data: signedRef, error: signedRefError } = await admin.storage
-        .from("content-uploads")
-        .createSignedUrl(input.referenceImagePath, 60 * 15);
-      if (signedRefError || !signedRef?.signedUrl)
-        throw signedRefError ?? new Error("REFERENCE_IMAGE_NOT_FOUND");
-      if (input.referenceMode === "base") {
-        const refResponse = await fetch(signedRef.signedUrl);
-        if (!refResponse.ok) throw new Error("REFERENCE_IMAGE_FETCH_FAILED");
-        referenceBytes = new Uint8Array(await refResponse.arrayBuffer());
-      } else {
-        referenceDescription = await describeReferenceImageWithOpenAI(
-          signedRef.signedUrl,
-          userId,
-        );
-      }
-    } else if (input.useBrandLogo && brand?.logo_path) {
-      const { data: signedLogo, error: signedLogoError } = await admin.storage
-        .from("brand-assets")
-        .createSignedUrl(brand.logo_path as string, 60 * 15);
-      if (signedLogoError || !signedLogo?.signedUrl)
-        throw signedLogoError ?? new Error("BRAND_LOGO_NOT_FOUND");
-      const logoResponse = await fetch(signedLogo.signedUrl);
-      if (!logoResponse.ok) throw new Error("BRAND_LOGO_FETCH_FAILED");
-      referenceBytes = new Uint8Array(await logoResponse.arrayBuffer());
-      referencePurpose = "logo";
-    }
+    // Combina, numa única chamada de edição, todos os assets visuais
+    // disponíveis para esta geração — logo, logomarca e referências de
+    // estilo da identidade, mais a foto de referência específica desta peça
+    // (se enviada) — respeitando um teto e prioridade (ver brand-assets.ts).
+    // Qualquer um que não exista é simplesmente omitido, nunca substituído
+    // por um placeholder.
+    const { images, referenceDescription } = await resolveGenerationImageAssets(
+      admin,
+      {
+        brand,
+        referenceImagePath: input.referenceImagePath,
+        referenceMode: input.referenceMode,
+        userId,
+      },
+    );
 
     let imageModel: string | undefined;
     // Continuidade de design do carrossel: em vez de editar os pixels do
     // slide anterior (o que fazia o modelo preservar quase o fundo inteiro e
     // parecer a MESMA foto repetida), o slide 1 é descrito só no seu sistema
     // gráfico — paleta, tipografia, painéis, tratamento de fundo — e essa
-    // descrição guia a geração dos slides seguintes do zero (texto-para-
-    // imagem), cada um com uma cena/foto nova mas a mesma linguagem visual.
+    // descrição guia a geração dos slides seguintes, tanto no caminho de
+    // edição quanto no de geração pura (antes só rodava sem nenhum asset de
+    // marca; como logo/logomarca agora estão quase sempre presentes, a
+    // continuidade entre slides precisa valer nos dois casos).
     let designSystemDescription: string | undefined;
     // Sem isso, as cores da marca só existiam soltas dentro do JSON do
     // prompt (brand.primary_color/secondary_color) como dado de contexto, e
@@ -350,41 +327,35 @@ export const generateAiContent = async (
       brand?.primary_color,
       brand?.secondary_color,
     );
+    const brandBrief = buildBrandIdentityBrief(brand);
     if (input.format !== "caption") {
       const imageSubjects = input.format === "carousel"
         ? slideTexts ?? []
         : [title ?? input.topic];
       const textOverlayFormats = new Set(["post", "story", "carousel"]);
       for (let index = 0; index < imageSubjects.length; index += 1) {
-        const imagePrompt = JSON.stringify({
-          brand: brand ?? {},
-          format: input.format,
-          topic: input.topic,
-          title,
-          visualSubject: imageSubjects[index],
-          slide: index + 1,
-          slides: imageSubjects.length,
-          style: input.style,
-          selectedTemplate,
-          referenceDescription,
-        });
-        // A foto de referência do usuário (modo "base"), quando existe, é a
-        // base visual de TODOS os slides — é o produto/pessoa real dele, não
-        // um sistema de design a copiar. Sem ela, cada slide é gerado do
-        // zero; do segundo em diante, com a descrição do sistema gráfico do
-        // primeiro slide para manter a mesma identidade.
+        const imagePrompt = [
+          brandBrief,
+          `Peça: ${input.format}, tema "${input.topic}"${title ? ` (título: "${title}")` : ""}.`,
+          `Assunto visual deste slide (${index + 1}/${imageSubjects.length}): ${imageSubjects[index]}.`,
+          `Estilo pedido: ${input.style}.`,
+          referenceDescription ? `Referência visual enviada pelo usuário: ${referenceDescription}` : "",
+        ].filter(Boolean).join("\n");
         const textOverlay = textOverlayFormats.has(input.format)
           ? imageSubjects[index]
           : undefined;
         const vertical = ["story", "reel", "video", "carousel"].includes(input.format);
-        const generatedImage = referenceBytes
+        const generatedImage = images.length
           ? await editImageWithOpenAI({
               userId,
-              imageBytes: referenceBytes,
+              images,
               vertical,
               textOverlay,
               prompt: imagePrompt,
-              purpose: referencePurpose,
+              designSystemDescription:
+                input.format === "carousel" && index > 0
+                  ? designSystemDescription
+                  : undefined,
               paletteInstruction,
             })
           : await generateImageWithOpenAI({
@@ -400,7 +371,7 @@ export const generateAiContent = async (
             });
         imageModel = generatedImage.model;
         addUsage(generatedImage.usage, generatedImage.model);
-        if (input.format === "carousel" && index === 0 && !referenceBytes) {
+        if (input.format === "carousel" && index === 0) {
           designSystemDescription = await describeDesignSystemWithOpenAI(
             generatedImage.bytes,
             userId,
@@ -422,7 +393,7 @@ export const generateAiContent = async (
       }
     }
 
-    selectedTemplate ??= await selectVisualTemplate(admin, input.format);
+    const selectedTemplate = await selectVisualTemplate(admin, input.format);
 
     const { data: content, error: contentError } = await admin
       .from("contents")

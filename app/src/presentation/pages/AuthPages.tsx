@@ -12,12 +12,15 @@ import {
 import type { BrandProfile, ContentFormat } from "../../domain/models";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import {
+  analyzeInstagramBrand,
   completeOnboarding,
   connectInstagram,
   login,
   loginWithGoogle,
   register,
   restoreSession,
+  uploadBrandLogo,
+  uploadBrandLogomark,
 } from "../store/store";
 import { Button, Card, Input, Notice, Select, Textarea } from "../ui";
 import { errorMessage } from "../utils/errors";
@@ -252,8 +255,8 @@ const defaultBrand: BrandProfile = {
   contentTypes: ["post", "carousel"],
   personality: [],
   tone: [],
-  primaryColor: "#7C3AED",
-  secondaryColor: "#F2EAFE",
+  primaryColor: "#111111",
+  secondaryColor: "#FFFFFF",
   headingFont: "Playfair Display",
   bodyFont: "Inter",
   visualStyle: "Elegante",
@@ -327,6 +330,34 @@ export function OnboardingPage() {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
   const [saving, setSaving] = useState(false);
+  const [logoPreview, setLogoPreview] = useState<string>();
+  const [logomarkPreview, setLogomarkPreview] = useState<string>();
+  const [uploadingLogo, setUploadingLogo] = useState(false);
+  const [uploadingLogomark, setUploadingLogomark] = useState(false);
+  const pickLogo = async (file: File) => {
+    setUploadingLogo(true);
+    setLogoPreview(URL.createObjectURL(file));
+    try {
+      const path = await dispatch(uploadBrandLogo(file)).unwrap();
+      setBrand((current) => ({ ...current, logoUrl: path }));
+    } catch (caught) {
+      setError(errorText(caught));
+    } finally {
+      setUploadingLogo(false);
+    }
+  };
+  const pickLogomark = async (file: File) => {
+    setUploadingLogomark(true);
+    setLogomarkPreview(URL.createObjectURL(file));
+    try {
+      const path = await dispatch(uploadBrandLogomark(file)).unwrap();
+      setBrand((current) => ({ ...current, logomarkUrl: path }));
+    } catch (caught) {
+      setError(errorText(caught));
+    } finally {
+      setUploadingLogomark(false);
+    }
+  };
   const steps = [
     "Instagram",
     "Sua marca",
@@ -374,8 +405,21 @@ export function OnboardingPage() {
     if (!user) return;
     setSaving(true);
     try {
-      await dispatch(completeOnboarding({ userId: user.id, brand })).unwrap();
+      const result = await dispatch(
+        completeOnboarding({ userId: user.id, brand }),
+      ).unwrap();
       sessionStorage.removeItem(ONBOARDING_STEP_KEY);
+      // Conectar o Instagram é o passo 0 — a marca ainda não existia naquele
+      // momento, então a análise automática do lado do backend (callback do
+      // OAuth) não tinha o que analisar. Aqui, com a marca já salva, dispara
+      // sem aguardar para não travar a navegação.
+      if (instagramAccount && result.brand?.id)
+        void dispatch(
+          analyzeInstagramBrand({
+            brandId: result.brand.id,
+            socialAccountId: instagramAccount.id,
+          }),
+        );
       navigate("/assinar");
     } catch (caught) {
       setError(errorText(caught));
@@ -560,27 +604,66 @@ export function OnboardingPage() {
         {step === 5 && (
           <div className="space-y-5">
             <h1 className="text-2xl font-bold">Sua direção visual</h1>
-            <label className="surface-subtle flex cursor-pointer items-center gap-4 p-4">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-app-soft text-app-primary">
-                <Upload />
-              </span>
-              <span>
-                <b className="block text-sm">Enviar logo</b>
-                <span className="text-muted text-xs">
-                  PNG ou JPG para esta sessão
+            <div className="grid grid-cols-2 gap-3">
+              <label className="surface-subtle flex cursor-pointer items-center gap-3 p-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-app-soft text-app-primary">
+                  {logoPreview ? (
+                    <img
+                      src={logoPreview}
+                      alt="Logo"
+                      className="h-full w-full object-contain"
+                    />
+                  ) : (
+                    <Upload />
+                  )}
                 </span>
-              </span>
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (file)
-                    setBrand({ ...brand, logoUrl: URL.createObjectURL(file) });
-                }}
-              />
-            </label>
+                <span>
+                  <b className="block text-sm">
+                    {uploadingLogo ? "Enviando…" : "Enviar logo"}
+                  </b>
+                  <span className="text-muted text-xs">Símbolo da marca</span>
+                </span>
+                <input
+                  type="file"
+                  accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                  className="hidden"
+                  disabled={uploadingLogo}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) void pickLogo(file);
+                  }}
+                />
+              </label>
+              <label className="surface-subtle flex cursor-pointer items-center gap-3 p-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-app-soft text-app-primary">
+                  {logomarkPreview ? (
+                    <img
+                      src={logomarkPreview}
+                      alt="Logomarca"
+                      className="h-full w-full object-contain"
+                    />
+                  ) : (
+                    <Upload />
+                  )}
+                </span>
+                <span>
+                  <b className="block text-sm">
+                    {uploadingLogomark ? "Enviando…" : "Enviar logomarca"}
+                  </b>
+                  <span className="text-muted text-xs">Peça completa</span>
+                </span>
+                <input
+                  type="file"
+                  accept="image/png,image/jpeg,image/webp,image/svg+xml"
+                  className="hidden"
+                  disabled={uploadingLogomark}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) void pickLogomark(file);
+                  }}
+                />
+              </label>
+            </div>
             <div className="grid grid-cols-2 gap-3">
               <label className="text-sm font-semibold">
                 Cor principal
